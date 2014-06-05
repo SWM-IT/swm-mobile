@@ -1,0 +1,99 @@
+@if swmmobile.css pretty {
+	@external header-Panel, gwt-Label, button, pressed, pointer, backButton;
+}
+/** PRUEFEN: War noetig um es kompilliert zu bekommen. Header muss wahrscheinlich von Button erben. **/
+@external gwt-Label;
+
+.header-Panel {
+	position: relative;
+	display: \-webkit-box;
+	\-webkit-box-orient: horizontal;
+	\-webkit-box-align: center;
+	\-webkit-box-pack: justify;
+	\-webkit-user-select: none;
+	padding: 0.3em 0.3em;
+	background-image: literal('-webkit-gradient(linear, 0% 0%, 0% 100%, from(#53a9e8), to(#2e76cd))');
+	\-webkit-box-shadow: 0 0 .6em white;
+	z-index: 1;
+    color: white;
+}
+
+/* needed this to get around the android browser bug when scroll, causing controls to disapear.*/
+.header-Panel * {
+	z-index: 1;
+}
+
+.header-Panel > div > div.gwt-Label {
+	font-weight: bold;
+	color: white;/*#8b9094;*/
+}
+
+.header-Panel > div:first-child, .header-Panel > div:last-child {
+	min-width:3em;
+}
+
+.header-Panel > div:nth-child\(2\) {
+	\-webkit-box-flex: 1;
+	display: \-webkit-box;
+	\-webkit-box-pack: center;
+	\-webkit-box-align: center;
+}
+
+.header-Panel > div > div.button {
+	color: white;
+	background-image: literal('-webkit-linear-gradient(top, #53a9e8, #2e76cd)');
+	border: 1px solid white;
+
+}
+
+.header-Panel > div > div.pressed {
+	background-image: literal('-webkit-linear-gradient(top, #4295d3, #2e76cd)');
+}
+
+
+.header-Panel > div > div.backButton > span.button {
+    \-webkit-box-shadow: white 1px 1px 1px;
+    border: none;
+    background-image: literal('-webkit-linear-gradient(top, #53a9e8, #2e76cd)');
+}
+
+.header-Panel > div > div.backButton.pressed > span.button {
+	background-image: literal('-webkit-linear-gradient(top, #4295d3, #2e76cd)');
+}
+
+
+.header-Panel > div > div.backButton > span.pointer {
+	\-webkit-box-shadow: white 1px 1px 1px;
+	border: none;
+	background-image: literal('-webkit-linear-gradient(top, #53a9e8, #2e76cd)');
+}
+
+.header-Panel > div > div.backButton.pressed > span.pointer {
+	background: literal('-webkit-linear-gradient(top, #4295d3, #2e76cd)');
+}
+
+
+.header-Panel > div > div.nextButton {
+	position: relative;
+	margin-right: 0.8em;
+}
+
+.header-Panel > div > div.nextButton > span.button {
+    \-webkit-box-shadow: white 1px 1px 1px;
+    border: none;
+	background-image: literal('-webkit-linear-gradient(top, #53a9e8, #2e76cd)');
+}
+
+.header-Panel > div > div.nextButton.pressed > span.button {
+	background: literal('-webkit-linear-gradient(top, #53a9e8, #2e76cd)');
+}
+
+.header-Panel > div > div.nextButton > span.pointer {
+    \-webkit-box-shadow: white 1px 1px 1px;
+    border: none;
+	background-image: literal('-webkit-linear-gradient(top, #53a9e8, #2e76cd)');
+}
+
+.header-Panel > div > div.nextButton.pressed > span.pointer {
+    background: literal('-webkit-linear-gradient(top, #53a9e8, #2e76cd)');
+}

@@ -1,0 +1,170 @@
+@if swmmobile.css pretty {
+	@external loadingIndicatorPopup, loadingIndicatorGlassPanel, commandPopup, commandGlassPanel, datePopup, dateGlassPanel, dateValueLabel, dateCommandPanel, dateOkButton, dateCancelButton, dateRelativeTimeChooserPanel, dateSpinnerPanel, dateInputPanel, simplePopup, simplePopupGlass, selectPopup;
+}
+
+.loadingIndicatorPopup {
+	background-image: literal('-webkit-gradient(linear, 0% 0%, 0% 100%, from(#F0F2F1), to(#D5D9E0), color-stop(.6,#F0F2F1))');
+	padding: 10px;
+	border-radius: 6px;	
+}
+
+.loadingIndicatorGlassPanel {
+	background-image: literal('-webkit-gradient(linear, 0% 0%, 0% 100%, from(#F0F2F1), to(#D5D9E0), color-stop(.6,#F0F2F1))');
+	opacity: 0.7;
+}
+
+.loadingIndicatorHeader {
+	display: block;
+	width: 220px;
+}
+
+.loadingIndicatorSubheader {
+	display: block;
+	width: 260px;
+}
+
+/********** Command Popup **********/
+
+.commandPopup {
+	background-image: literal('-webkit-gradient(linear, 0% 0%, 0% 100%, from(#F0F2F1), to(#D5D9E0), color-stop(.6,#F0F2F1))');
+	padding: 10px;
+	border-radius: 6px;
+	border-color: black;
+	border-width: 1px;
+	border-style: solid;
+	max-width: 80%;
+	\-webkit-user-select: none;
+	\-webkit-box-shadow: 0px 4px 6px #666666, 0 0 50px rgba(255, 255, 255, 1);
+}
+
+/* header */
+.commandPopup > div > div > div:first-child {
+	margin-top: 0px;
+	margin-bottom: 12px;
+	font-weight: bold;
+}
+
+/* content */
+.commandPopup > div > div > div { 
+	margin-top: 6px;
+	text-align: center;
+}
+
+.commandGlassPanel {
+	background: black;
+	opacity: 0.7;
+}
+
+/********** Date Popup **********/
+
+.datePopup {
+	background-image: literal('-webkit-gradient(linear, 0% 0%, 0% 100%, from(#F0F2F1), to(#D5D9E0), color-stop(.6,#F0F2F1))');
+	padding: 10px;
+	border-radius: 6px;
+	border-color: black;
+	border-width: 1px;
+	border-style: solid;
+	\-webkit-user-select: none;
+	\-webkit-box-shadow: 0px 4px 6px #666666, 0 0 50px rgba(255, 255, 255, 1);
+}
+
+.dateGlassPanel {
+    \-webkit-user-select: none;
+	background-image: literal('-webkit-gradient(linear, 0% 0%, 0% 100%, from(#F0F2F1), to(#D5D9E0), color-stop(.6,#F0F2F1))');
+	opacity: 0.7;
+}
+
+.dateValueLabel {
+	background: white;
+	color: black;
+	padding: .4em;
+	border: 1px solid black;
+	text-align: right;
+}
+
+.dateCommandPanel {
+	padding-top: 24px;
+	\-webkit-box-pack: end;
+}
+
+.dateRelativeTimeChooserPanel {
+}
+
+.dateSpinnerPanel {
+}
+
+.dateInputPanel {
+    font-size: 1em;
+}
+
+.dateInputPanel > * {
+    font-size: 1em;
+}
+
+.dateOkButton {
+	margin-right: 6px;
+	min-width: 3em;
+}
+
+.dateCancelButton {
+	margin-right: 6px;
+	min-width: 3em;
+}
+
+
+/********** Simple Popup **********/
+
+.simplePopup {
+	background: #333;
+	padding: 10px;
+	border-radius: 6px;
+	border-color: black;
+	border-width: 1px;
+	border-style: solid;
+	\-webkit-box-shadow: 0px 4px 6px #666666, 0 0 50px rgba(255, 255, 255, 1);
+}
+
+/* header */
+.simplePopup > div > div > div:first-child {
+	margin-top: 0px;
+	margin-bottom: 12px;
+	font-weight: bold;
+}
+
+/* content */
+.simplePopup > div > div > div {
+	margin-top: 6px;
+}
+
+.simplePopupGlass {
+	background-color: rgba(255, 255, 255, 0.2);
+}
+
+/********** Select Popup **********/
+
+.selectPopup {
+	background: white;
+	color: black;
+	padding: 0.3em;
+	border-radius: 6px;
+	border-color: black;
+	border-width: 1px;
+	border-style: solid;
+	\-webkit-box-shadow: none;
+
+	box-shadow: none;
+}
+
+/********** Slide Popup **********/
+
+.slidePopup {
+	padding: 10px;
+	background: #999;
+	border-color: black;
+	border-top-width: 1px;
+	border-top-style: solid;
+	border-top-right-radius: 6px;
+	border-top-left-radius: 6px;
+	-webkit-box-shadow: 0 -0.3em .3em black;
+	box-shadow: 0 -0.3em .3em black;
+}

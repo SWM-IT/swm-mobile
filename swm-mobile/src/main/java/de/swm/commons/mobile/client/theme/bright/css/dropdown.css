@@ -1,0 +1,50 @@
+@if swmmobile.css pretty {
+	@external iOS, desktop, android, dropDownList, focus;
+}
+
+/** currently drop down list are Fullsreen. **/
+.dropDownList,
+.desktop .dropDownList,
+.android .dropDownList {
+	display: -webkit-box;
+	display: -ms-flexbox;
+}
+
+.dropDownList > select,
+.desktop .dropDownList > select,
+.android .dropDownList > select,
+input[type="datetime-local"] {
+	-webkit-appearance: none;
+	-webkit-box-flex: 1;
+	display: -webkit-box;
+	padding: 0.4em;
+	border: 1px solid #B1B1B1;
+	border-radius: 0;
+	-webkit-box-shadow: 0 0 1px white;
+	background-color: white;
+	margin: 0px;
+	font-size: 0.9em;
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD8AAAA9CAMAAAAtSUHmAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAATVQTFRFurm5t7a2ubi4tra2u7q6vby8wcDAuLe3wMDAvr6+vr29vb29ubm5urq6uLi4trW1tbW1tbS0tLS0rq6utLOzqKiopqamp6enOTg4oKCgpaWlrKysTEtLoaGho6OjpKSkTUxMrayst7e3oqKira2tg4KCsLCww8PDYWBgsbGxwcHByMjIOjk5fXx8Xl1dqaiofHx8x8fHmJiYaGdnsrGxXl5erKurxMPDv7+/vLy8k5OTZGNjx8bGfn19h4aGxMTEzMvLZmVlZGRkl5eXSUhIwsHBYmFhODc3kZGRS0pKxcXFnJubUVBQn5+ff39/X19fVlVVxsbGrq2tycjIY2NjOTk5Z2ZmyMfHqKennZ2dmpqaZWRkamlpsrKys7OzMC8vv76+wL+/vLu7qqmpqampq6urqqqqaH+ahAAAAdtJREFUeNrEzHlT2kAYx/EnJHi1NUAhXEYhRq3Vqqi1Wu9bW8/easkqkH3/L6G7y0wTIJtOn3WG73/7zH5+ULwcUAmKxachfE/cq8T8ugJfh1Ix+YgvyfyGgt9gvjGMr8H9CD7ujRf4DCjZRhKfAZYNDXzwDD5h4Etw/wpfAmwblLJs5yU+B6xJLYFPg/ykPopPZ94cxGcyn9LwpZhP6/jSzGfMUMMfzNicnx0fMpAfz6aChvbOVrSUPK12XPkRemeZ99JBtW1Cbr6kZem1txVCToKDB7lxLxNkjhFCxtxMdOYW5+QouHBfz4aqioFqNirtVvALPzjVuffClcVA2ett8KvD+ZvwjftVL2LA7eHOnDvfzb1V5mfrna2ds28Vq+vqzFUF77zOQm6i29fpPvv4/a7jpkdy4d3XPT2wr4X70MH7RAvsdt390YXWhB/RAR9Y/vucnlnk/H3vR4n3N8MDcs49jRz4xgc+h/lCxC8q9f5vRsiU4DkZj/P+VHsgjnNfkvn2wM6u4O/8//ftgRUi520vTwxwLv0BNM7TK8GXKNbTw0Is/6enH0/jOPMWVanv3u+7byrwJvj5fvuWgm/BmqIv51tNfM/gfyn6nLJXSdlX++xdNf9HgAEAqCHyqXf3xu4AAAAASUVORK5CYII=);
+	background-repeat: no-repeat;
+	background-position: right top;
+	background-size: 2.125em 100%;
+	padding-right: 2.3em;
+	display: -ms-flexbox;
+	-ms-flex: 1;
+	box-shadow: 0 0 1px white;
+}
+
+input[type="datetime-local"] {
+	margin-left: 0;
+	margin-right: 0;
+	width: auto !important;
+	height: auto !important;
+}
+
+.desktop .dropDownList > select {	/* bug in Desktop Chrome? */
+/*	height: 25px;	*/
+}
+
+
+/* added empty .focus */
+.focus {}

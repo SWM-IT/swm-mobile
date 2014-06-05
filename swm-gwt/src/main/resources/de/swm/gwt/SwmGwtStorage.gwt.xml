@@ -1,0 +1,5 @@
+<module>
+    <inherits name='com.google.code.gwt.database.Html5Database' />
+    <inherits name='com.google.web.bindery.event.EventBinder'/>
+    <source path="storage"/>
+</module>

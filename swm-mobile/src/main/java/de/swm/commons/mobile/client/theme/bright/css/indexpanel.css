@@ -1,0 +1,38 @@
+@if swmmobile.css pretty {
+	@external indexedScrollPanel, indexPanel, indexHeaderListItem, gwt-Label;
+}
+ /** PRUEFEN: War noetig um es kompilliert zu bekommen. **/
+@external gwt-Label, indexPanel;
+
+.indexedScrollPanel {
+	-ms-flex-align: start !important;
+}
+
+.indexPanel {
+	position: absolute;
+	z-index: 1;
+	right: 0;
+	padding-right: 4px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	background: rgba(1, 1, 1, 0.2);
+	padding-left: 8px;
+	margin-top: 4px;
+	margin-right: 10px;
+	\-webkit-border-radius: 8px;
+	\-webkit-box-align: center;
+	font-size: 0.5em;
+	color: #D2D2D2;
+	font-weight: bold;
+}
+
+.indexHeaderListItem {
+	font-size: 0.6em;
+	font-weight: bold;
+	color: white !important;
+	background-image: literal('-webkit-gradient(linear, 0% 0%, 0% 100%, from(#53a9e8), to(#2e76cd))') !important;
+}
+
+.indexHeaderListItem > div {
+    color: white !important;
+}

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module PUBLIC "-//Google Inc.//DTD Google Web Toolkit 2.1.1//EN" "https://github.com/gwtproject/gwt/blob/master/distro-source/core/src/gwt-module.dtd">
+<module rename-to='kitchensink'>
+	<inherits name="com.google.gwt.user.User" />
+	
+	<!-- CSS Dateien alle ueber GWT-Mittel einbinden -->
+	<stylesheet src="css/application.css" />
+	
+	<!-- Inherit GWT Mobile UI module -->
+	<inherits name='de.swm.commons.mobile.swm-mobile'/>
+    <inherits name='org.gwtbootstrap3.GwtBootstrap3'/>
+
+    <!--For SDM-->
+    <!--<add-linker name="xsiframe"/>-->
+    <set-configuration-property name="devModeRedirectEnabled" value="true"/>
+    <set-configuration-property name="gwt.superdevmode" value="on"/>
+
+    <set-configuration-property name="swmmobile.css"
+                                value="pretty" />
+	
+	<!-- Properties -->
+	<set-configuration-property name="UiBinder.useSafeHtmlTemplates" value="true" />
+    <set-configuration-property name="CssResource.style" value="pretty"/>
+
+
+    <!-- GWT Logging -->
+    <inherits name='com.google.gwt.logging.Logging'/>
+    <!-- 1) Loggin an: TRUE / aus FALSE-->
+    <set-property name="gwt.logging.enabled" value="TRUE"/>
+
+    <set-property name="gwt.logging.logLevel" value="INFO"/>
+    <set-property name="gwt.logging.developmentModeHandler" value="ENABLED" />
+    <set-property name="gwt.logging.consoleHandler" value="DISABLED"/>
+    <set-property name="gwt.logging.popupHandler" value="DISABLED"/>
+    <set-property name="gwt.logging.systemHandler" value="DISABLED"/>
+    <!--<set-property name="phonegap.logging.remoteHandler" value="DISABLED" />-->
+    <!--2)  gwt-phongap Logging einstellungen - console Hanlder an: ENABLED-->
+    <!--<set-property name="phonegap.logging.consoleHandler" value="ENABLED" />-->
+
+	<!-- Only compile WebKit permutation -->
+	<set-property name="user.agent" value="safari"/>
+
+	<!-- HTML5 Application cache support -->
+	<inherits name='de.swm.gwt.linker.Linker'/>
+    <add-linker name="permutationmaplinker" />
+    <extend-configuration-property name="html5manifestlinker_files" value="images/apple-touch-icon.png" />
+    <extend-configuration-property name="html5manifestlinker_files" value="images/startup.png" />
+
+    
+	<entry-point class="de.swm.mobile.kitchensink.client.Application" />
+
+</module>

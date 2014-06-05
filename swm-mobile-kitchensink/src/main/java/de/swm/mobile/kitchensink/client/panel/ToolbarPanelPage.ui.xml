@@ -1,0 +1,41 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui"
+	xmlns:m="urn:import:de.swm.commons.mobile.client.widgets">
+	<ui:style>
+	</ui:style>
+	
+	<ui:with field='icon' type='de.swm.mobile.kitchensink.client.icon.IconResources'/>
+	
+	<g:HTMLPanel>
+		<m:SimpleHeaderPanel ui:field="header" leftButton="Back">
+			<g:Label>Toolbar Panel</g:Label>			
+		</m:SimpleHeaderPanel>
+		<m:ToolbarPanel indexToSelectOnInit="0" ui:field="toolbar">
+			<m:ToolbarElement>
+				<m:ToolbarHeader headerText='Item 1' headerImage='{icon.tab0}' highlightImage='{icon.tab0selected}' />
+				<m:ToolbarContent>
+					<g:HTMLPanel styleName="Toolbar-Content">
+						<g:Label>Tab1 Content</g:Label>
+					</g:HTMLPanel>
+				</m:ToolbarContent>
+			</m:ToolbarElement>
+			<m:ToolbarElement>
+				<m:ToolbarHeader headerText='Item 2' headerImage='{icon.tab1}' highlightImage='{icon.tab1selected}' />
+				<m:ToolbarContent>
+					<g:HTMLPanel styleName="Toolbar-Content">
+						<g:Label>Tab2 Content</g:Label>
+					</g:HTMLPanel>
+				</m:ToolbarContent>
+			</m:ToolbarElement>
+			<m:ToolbarElement>
+				<m:ToolbarHeader headerText='Item 3' headerImage='{icon.tab2}' highlightImage='{icon.tab2selected}' />
+				<m:ToolbarContent>
+					<g:HTMLPanel styleName="Toolbar-Content">
+						<g:Label>Tab3 Content</g:Label>
+					</g:HTMLPanel>
+				</m:ToolbarContent>
+			</m:ToolbarElement>
+		</m:ToolbarPanel>
+	</g:HTMLPanel>	
+</ui:UiBinder> 

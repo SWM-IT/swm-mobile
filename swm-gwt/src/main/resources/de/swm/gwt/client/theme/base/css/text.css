@@ -1,0 +1,30 @@
+@if swmgwt.css pretty {
+	@external title, subtitle, sub-subtitle;
+}
+
+.title {
+	font-weight: bold;
+	font-size: medium;
+	text-overflow: ellipsis;
+	white-space: pre;
+	overflow: hidden;
+}
+
+.subtitle {
+	color: #D2D2D2;
+	font-style: italic;
+	font-size: small;
+	text-overflow: ellipsis;
+	white-space: normal;
+	overflow: hidden;
+}
+
+.sub-subtitle{
+	color: #D2D2D2;
+	font-style: italic;
+	font-weight: bold;
+	font-size: small;
+	text-overflow: ellipsis;
+	white-space: normal;
+	overflow: hidden;
+}

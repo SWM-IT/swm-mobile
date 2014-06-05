@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<fileset-config file-format-version="1.2.0" simple-config="false">
+  <local-check-config name="swm_config_cs_v0.7" location="src/test/resources/swm_config_cs_v0.7.xml" type="project" description="">
+    <additional-data name="protect-config-file" value="false"/>
+  </local-check-config>
+  <fileset name="Alle" enabled="true" check-config-name="swm_config_cs_v0.7" local="true">
+    <file-match-pattern match-pattern="src/main/java/." include-pattern="true"/>
+    <file-match-pattern match-pattern="src/main/java/com/." include-pattern="false"/>
+    <file-match-pattern match-pattern="src/main/java/de/swm/gwt/server/." include-pattern="false"/>
+  </fileset>
+</fileset-config>

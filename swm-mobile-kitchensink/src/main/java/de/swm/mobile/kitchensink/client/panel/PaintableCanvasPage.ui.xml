@@ -1,0 +1,23 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui"
+	xmlns:m="urn:import:de.swm.commons.mobile.client.widgets">
+	<ui:style>
+	</ui:style>
+	<g:HTMLPanel ui:field="htmlPanel">
+		<m:SimpleHeaderPanel ui:field="header">
+			<g:Label>Paintable Canvas</g:Label>
+		</m:SimpleHeaderPanel>
+        <g:HTMLPanel ui:field="canvasHTML">
+            <g:Label>Color:</g:Label>
+            <g:ListBox ui:field="dropdownColor">
+            </g:ListBox>
+            <br/><br/>
+            <g:Label>Line width:</g:Label>
+            <g:ListBox ui:field="dropdownLineWidth">
+            </g:ListBox>
+            <br/>
+            <br/>
+        </g:HTMLPanel>
+	</g:HTMLPanel>	
+</ui:UiBinder> 

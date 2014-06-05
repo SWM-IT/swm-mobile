@@ -1,0 +1,101 @@
+@if swmmobile.css pretty {
+	@external textBox, textArea, focus, decoratedTextBox, decoratedTextBoxIcon, decoratedTextBoxInput,
+	decoratedSuggestBox, decoratedSuggestBoxIcon, decoratedSuggestBoxInput, suggestPopupContent, item, item-selected,
+	decoratedTextBoxCaption, decoratedTextBoxVPanel, decoratedTextBoxHPanel;
+}
+
+.textBox, .textArea {
+	padding: .5em;
+	font: normal 0.8em Helvetica, Arial, sans-serif;
+	border: 1px solid black;
+	\-webkit-appearance: none;						
+}
+
+.textBox.focus, .textArea.focus {
+	\-webkit-box-shadow: lightgreen 0em 0em .4em;
+	
+	box-shadow: lightgreen 0em 0em .4em;
+}
+
+.textBox.error, .textArea.error {
+	\-webkit-box-shadow: red 0em 0em .8em;
+	
+	box-shadow: red 0em 0em .8em;
+}
+
+.decoratedTextBox {
+}
+
+.decoratedTextBoxCaption {
+	color: white;
+}
+
+.decoratedTextBoxVPanel {
+	padding-left: 1em;
+	padding-right: 1em;
+	padding-top: 0.5em;
+	padding-bottom: 1em;
+	border-bottom: 1px solid white;
+}
+
+.decoratedTextBoxHPanel {
+	\-webkit-box-pack: start;
+	\-webkit-box-orient: horizontal;
+	display: -webkit-box !important;
+	display: block;
+
+	display: -ms-flexbox;
+	-ms-flex-pack: start;
+}
+
+.decoratedTextBoxIcon {
+	z-index: 1;
+	display: \-webkit-box;
+
+	display: -ms-flexbox;
+}
+
+.decoratedTextBoxInput {
+	width: 100%;
+	padding-right: 1.4em;
+	font-size: 1em;
+}
+
+.decoratedSuggestBox {
+}
+
+.decoratedSuggestBoxIcon {
+	z-index: 1;
+	display: \-webkit-box;
+
+	display: -ms-flexbox;
+}
+
+.decoratedSuggestBoxInput {
+	width: 100%;
+	padding-right: 1.4em;
+	font-size: 1em;
+}
+
+.suggestPopupContent {
+	font-size: 1em;
+	text-align: left;
+	border: 1px solid #666;
+	border-top: 0;
+	background-image: literal('-webkit-gradient(linear, 0% 0%, 0% 100%, from(#4c4d4e), to(#404142))');
+	\-webkit-box-shadow: rgba(0, 0, 0, 0.5) 0em 0.2em 0.2em;
+
+	background-image: literal('linear-gradient(to bottom, #4c4d4e 0%, #404142 100%)');
+	box-shadow: rgba(0, 0, 0, 0.5) 0em 0.2em 0.2em;
+}
+
+.suggestPopupContent .item {
+	padding: 0.4em;
+}
+
+.suggestPopupContent .item-selected {
+	text-shadow: darkgreen 0 -0.1em 0.1em;
+	background: literal('-webkit-gradient(linear, 0% 0%, 0% 100%, from(lightgreen), color-stop(0.5, #298C08), color-stop(0.5, darkgreen), to(darkgreen))');
+
+	background: literal('linear-gradient(to bottom, lightgreen 0%, #298C08 50%, darkgreen 50%, darkgreen 100%)');
+}

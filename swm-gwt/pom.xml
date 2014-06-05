@@ -1,0 +1,171 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>de.swm.commons</groupId>
+	<artifactId>swm-gwt-client</artifactId>
+	<packaging>jar</packaging>
+	<version>1.23-SNAPSHOT</version>
+	<!-- lesbare Namen u. Beschreibung fuer nicht computer (Menschen). -->
+	<name>SWM-GWT-Client</name>
+	<description>Plain GWT Swm erweiterungen, auch zur benutzung in mobilen Geraeten</description>
+	<properties>
+		<gwt.version>2.6.0</gwt.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<swm.annotations.version>1.17</swm.annotations.version>
+        <maven.javadoc.skip>true</maven.javadoc.skip>
+	</properties>
+
+	<scm>
+		<connection>scm:svn:https://swm-gwt.googlecode.com/svn/trunk</connection>
+		<developerConnection>scm:svn:https://swm-gwt.googlecode.com/svn/trunk</developerConnection>
+		<url>https://swm-gwt.googlecode.com/svn/trunk</url>
+	</scm>
+
+	<dependencies>
+		<!-- GWT dependencies (from maven "central" repo).. -->
+		<dependency>
+			<groupId>com.google.gwt</groupId>
+			<artifactId>gwt-servlet</artifactId>
+			<version>${gwt.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.google.gwt</groupId>
+			<artifactId>gwt-user</artifactId>
+			<version>${gwt.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.google.gwt</groupId>
+			<artifactId>gwt-dev</artifactId>
+			<version>${gwt.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.easymock</groupId>
+			<artifactId>easymock</artifactId>
+			<version>3.0</version>
+			<scope>test</scope>
+		</dependency>
+		<!-- Gin 1.5 -->
+		<dependency>
+			<groupId>com.google.gwt.inject</groupId>
+			<artifactId>gin</artifactId>
+			<version>1.5.0</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.google.inject</groupId>
+			<artifactId>guice</artifactId>
+			<version>3.0</version>
+			<scope>provided</scope>
+		</dependency>
+		<!-- Piriti for GWT-JSON-Mapping http://code.google.com/p/piriti/ -->
+		<dependency>
+			<groupId>name.pehl.piriti</groupId>
+			<artifactId>piriti-core</artifactId>
+			<version>0.7b3</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>name.pehl</groupId>
+			<artifactId>totoe</artifactId>
+			<version>0.2.4</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+            <groupId>javax.inject</groupId>
+            <artifactId>javax.inject</artifactId>
+            <version>1</version>
+            <scope>provided</scope>
+        </dependency>
+        <!-- GWT Event bus -->
+        <dependency>
+            <groupId>com.google.gwt.eventbinder</groupId>
+            <artifactId>eventbinder</artifactId>
+            <version>1.0.2</version>
+        </dependency>
+        <!--http://gwt-mobile-webkit.googlecode.com/svn/repo/  -->
+        <dependency>
+            <groupId>com.google.code.gwt-mobile-webkit</groupId>
+            <artifactId>gwt-html5-database</artifactId>
+            <version>1.5.1.gwt2</version>
+			<scope>provided</scope>
+        </dependency>
+        <!-- Testing -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.5</version>
+            <scope>test</scope>
+        </dependency>
+        <!-- Test -->
+
+        <!-- zur Emulation von Json reader / Writer -->
+        <dependency>
+            <groupId>com.thoughtworks.xstream</groupId>
+            <artifactId>xstream</artifactId>
+            <scope>test</scope>
+            <version>1.3.1</version>
+        </dependency>
+    </dependencies>
+
+    <repositories>
+        <repository>
+            <id>OpenSourceRepository</id>
+            <name>SWM-Open-Source-Repository</name>
+            <url>http://swm-mobile.googlecode.com/svn/repository</url>
+        </repository>
+        <repository>
+            <id>Central</id>
+            <name>Cebtral-Repository</name>
+            <url>http://repo1.maven.org/maven2</url>
+        </repository>
+    </repositories>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+                <version>3.0</version>
+				<configuration>
+					<encoding>UTF-8</encoding>
+					<source>1.6</source>
+					<target>1.6</target>
+				</configuration>
+			</plugin>
+            <plugin>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>2.2.1</version>
+            </plugin>
+		</plugins>
+
+		<!-- Include SOURCE in output artifact for GWT (GWT libraries must include 
+			source) -->
+		<resources>
+			<resource>
+				<directory>src/main/java</directory>
+			</resource>
+			<resource>
+				<directory>src/main/resources</directory>
+			</resource>
+		</resources>
+
+	</build>
+
+	<!-- SWM Distribution -->
+	<distributionManagement>
+		<repository>
+			<id>SWMRepository</id>
+			<name>SWM-Main-Repository</name>
+              <url>file:///Users/Shared/Development/swm-mobile/repository</url>
+			<!--<url>http://ci.intra.swm.de/nexus/content/repositories/SWM-S-IP-AN-Repository</url>-->
+		</repository>
+        <snapshotRepository>
+            <id>SWMSnapshots</id>
+            <name>SWM Snapshots</name>
+            <url>http://nexus.intra.swm.de/nexus/content/repositories/swm-snapshot-repo/</url>
+        </snapshotRepository>
+	</distributionManagement>
+
+</project>

@@ -1,0 +1,17 @@
+
+/* Android Galaxy S3:font-size: 180% !important; */
+html {
+    font: normal 0.8rem Helvetica, Arial, sans-serif;
+    color: white;
+    font-size: 150% !important;
+}
+@media screen and (max-width:330px) {
+    html {
+        font-size: 80% !important;
+    }
+}
+@media screen and (min-width:700px) {
+    html {
+        font-size: 180% !important;
+    }
+}

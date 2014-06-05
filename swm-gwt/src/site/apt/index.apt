@@ -1,0 +1,51 @@
+SWM GXT Client
+
+ Erweiterungen fuer das GXT-Framwork
+
+%{toc|section=1|fromDepth=1|toDepth=3}
+
+* {Ansprechpartner}
+
+ * Steiner Christian
+
+ * Wiese Daniel
+ 
+* {Release Notes}
+
+ * 20.01.2010 Webseite erstellt.
+
+
+* {Definition in pom.xml}
+
+ Die Abh\u00E4ngigkeit zu Projekt XXX muss wie folgt in die pom.xml eingetragen werden:
+
+----------------------------------------------------	
+  <dependency>
+       <groupId>de.swm.commons</groupId>
+       <artifactId>swm-gxt-client</artifactId>
+       <version>1.0-SNAPSHOT</version>
+  </dependency>
+----------------------------------------------------
+
+
+* {Package de.swm.gwt.client.interfaces}
+
+ Beinhaltet allgemeine Interfaces fuer GXT-Formulare und -Controller
+ 
+ * IForm - Formular zur Dateneingabe
+ 
+ * IFormController -  Controller fuer ein IForm
+ 
+ * IHasButtonsController - Controller, der ein Formular mit Buttons kontrolliert.
+
+
+* {Package de.swm.gwt.client.tabbedform}
+
+ Klassen, um mehrere GXT-Formulare in einem Formular mit mehreren Reitern(Tabs) anzuzeigen. 
+ 
+ * TabbedFormController - Abstrakte Implementierung des Formularcontrollers, die in der Anwendung implementiert werden muss. Verwendung siehe Javadoc.
+
+ * ITabbedForm und TabbedForm - Die Implementierung des Formulares mit Interface. Eine Instanz davon muss dem TabbedFormController uebergeben werden.
+ 
+
+

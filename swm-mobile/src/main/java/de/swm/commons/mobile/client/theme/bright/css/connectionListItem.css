@@ -1,0 +1,34 @@
+@if swmmobile.css pretty {
+	@external connection-list-item-text, connection-list-time-panel, connection-list-item-past, connection-list-item-cover;
+}
+
+.connection-list-item-text {
+	color: #D2D2D2;
+	font-size: 0.7em;
+	font-style: italic;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.connection-list-time-panel {
+	\-webkit-box-pack: end;
+	\-webkit-box-flex: 1;	
+}
+
+.connection-list-item-past {
+	background-image: literal('-webkit-gradient(linear, 0% 0%, 0% 100%, from(#2c2d2e), to(#202122)) !important');
+}
+
+.connection-list-item-recomended {
+	background-image: literal('-webkit-gradient(linear, 0% 0%, 0% 100%, from(#014A23), to(#01B601)) !important');
+}
+
+.connection-list-item-cover {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	background-color: rgba(0, 0, 0, 0.6);
+}

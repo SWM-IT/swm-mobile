@@ -1,0 +1,32 @@
+@if swmmobile.css pretty {
+	@external horizontalPanel, alignTop, hCenter, verticalPanel;	
+}
+
+.horizontalPanel {
+	display: \-webkit-box;
+	\-webkit-box-orient: horizontal;
+	\-webkit-box-align: center;
+
+	display: -ms-flexbox;
+	-ms-flex-align: center;
+}
+
+.horizontalPanel.alignTop {
+	\-webkit-box-align: start;
+
+	-ms-flex-align: start;
+}
+
+.horizontalPanel.hCenter {
+	-webkit-box-pack: center;
+
+	-ms-flex-pack: center;
+}
+
+.verticalPanel {
+	display: \-webkit-box;
+	\-webkit-box-orient: vertical;
+
+	display: -ms-flexbox;
+	-ms-flex-direction: column;
+}

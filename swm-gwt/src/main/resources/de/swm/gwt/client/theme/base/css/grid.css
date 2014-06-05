@@ -1,0 +1,19 @@
+/**
+* Zur Klasse ICssResource.java passende StyleSheet-Datei.
+* Ermoeglicht weitergehende Definitionen als Standard-CSS, z.B. Bedingungen oder Konstanten.
+* Siehe http://www.gwtproject.org/doc/latest/DevGuideClientBundle.html
+*/
+@if swmgwt.css pretty {
+	@external defaultDataGrid, defaultSimplePager;
+}
+
+.defaultDataGrid {
+    width:100%;
+    height:300px;
+    border: 1px solid;
+}
+
+.defaultSimplePager {
+      width:100%;
+      height:25px;
+}

@@ -1,0 +1,21 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui"
+    xmlns:m="urn:import:de.swm.commons.mobile.client.widgets"
+	xmlns:t="urn:import:de.swm.commons.mobile.client.widgets.tree">
+
+	<ui:style type='de.swm.mobile.kitchensink.client.panel.WideTreePanelPage.ItemStyle'>
+		.specialItem {
+			background-image: literal('-webkit-gradient(linear, left top, left bottom, color-stop(0%,#a90329), color-stop(44%,#8f0222), color-stop(100%,#6d0019))') !important;
+
+			background-image: literal('linear-gradient(to bottom, #a90329 0%,#8f0222 44%,#6d0019 100%)') !important;
+		}	
+	</ui:style>
+
+	<g:HTMLPanel ui:field="content">
+		<m:SimpleHeaderPanel ui:field="header" leftButton="Back">
+			<g:Label>Wide Tree Panel</g:Label>
+		</m:SimpleHeaderPanel>
+		<t:WideTreePanel ui:field="treePanel" hasBreadcrumb="false" />
+	</g:HTMLPanel>
+</ui:UiBinder> 

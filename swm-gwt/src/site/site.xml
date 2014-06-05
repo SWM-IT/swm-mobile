@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+	<bannerRight>
+		<name>SWM Logo</name>
+		<src>images/swmlogo.jpg</src>
+	</bannerRight>
+	<skin>
+		<groupId>de.swm.commons</groupId>
+		<artifactId>swm-skin</artifactId>
+		<version>1.0</version>
+	</skin>
+
+	<body>
+		<breadcrumbs>
+			<item name="SWM Commons" href="../index.html" />
+		</breadcrumbs>
+		<menu name="Überblick">
+			<item name="Hauptseite" href="index.html" />
+			<item name="Ansprechpartner" href="team-list.html" />
+			<item name="Subversion" href="source-repository.html" />
+			<item name="Continuous Integration" href="integration.html" />
+			
+			<!--
+				Hier den Pfad zur JAR, die vom Continous Integration Server gebaut
+				wird, hinterlegen.
+			-->
+			<item name="Download" href="../../../swm-repo-snap/de/swm/commons/${artifactId}/${version}/${artifactId}-${version}.jar" />
+			<item name="Javadoc" href="apidocs/index.html" />
+			<item name="Sourcecode" href="xref/index.html" />
+		</menu>
+		<menu name="Qualitätssicherung">
+			<item name="Testabdeckung" href="cobertura/index.html" />
+			<item name="Abhängigkeiten" href="dependencies.html" />
+			<item name="Junit Test report" href="surefire-report.html" />
+		</menu>
+
+		<menu ref="reports" />
+	</body>
+</project>

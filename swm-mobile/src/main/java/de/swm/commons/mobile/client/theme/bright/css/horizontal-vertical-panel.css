@@ -1,0 +1,34 @@
+@if swmmobile.css pretty {
+	@external horizontalPanel, alignTop, verticalPanel, gwt-Label, disabled;
+}
+
+@external horizontalPanel, alignTop, verticalPanel, gwt-Label, disabled;
+
+.horizontalPanel {
+	display: \-webkit-box;
+	\-webkit-box-orient: horizontal;
+	\-webkit-box-align: center;
+}
+
+.horizontalPanel.alignTop {
+	\-webkit-box-align: start;
+}
+
+.verticalPanel {
+	display: \-webkit-box;
+	\-webkit-box-orient: vertical;
+}
+
+.horizontalPanel.hCenter {
+	-webkit-box-pack: center;
+
+	-ms-flex-pack: center;
+}
+
+.horizontalPanel .gwt-Label {
+    color: black;
+}
+
+.verticalPanel .gwt-Label {
+    color: black;
+}

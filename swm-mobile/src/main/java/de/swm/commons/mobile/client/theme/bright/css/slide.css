@@ -1,0 +1,16 @@
+@if swmmobile.css pretty {
+	@external slidePanel, slide;
+}
+
+.slidePanel {
+	\-webkit-box-flex: 1;
+	position: relative;
+	margin: .5em;
+}
+
+.slide {
+	position:absolute;
+	display: \-webkit-box;
+	height: 100%;
+	width: 100%;
+}

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module>
+	<inherits name='com.google.gwt.user.User' />
+	<inherits name='de.swm.gwt.SwmGwtClient' />
+    <inherits name='com.google.gwt.logging.Logging'/>
+	<!-- OpenLayers -->
+	<inherits name='org.gwtopenmaps.openlayers.OpenLayers' />
+
+	<define-configuration-property name="swmmobile.css"
+		is-multi-valued="false" />
+	<set-configuration-property name="swmmobile.css"
+		value="obf" />
+
+	<!-- suppress error message when compile time user agent does not match
+	     runtime user agent (in case user agent is restricted by set-property name="user-agent");
+	     SWMMobile.redirectIfSupported should be used for the check to display a useful error page -->
+    <set-configuration-property name="user.agent.runtimeWarning" value="false"/>
+
+	<define-property name="swmmobile.user.agent" values="mobilesafari, none" />
+	<property-provider name="swmmobile.user.agent"><![CDATA[
+  		{
+    	var ua = window.navigator.userAgent.toLowerCase();
+    	if (ua.indexOf("webkit") != -1 && ua.indexOf("mobile") != -1){ return "mobilesafari"; }
+    	if (ua.indexOf('android') != -1) { return 'mobilesafari'; }
+    	if (ua.indexOf('iphone') != -1) { return 'mobilesafari'; }
+     	if (ua.indexOf('ipad') != -1) { return 'mobilesafari'; }
+    	return 'none';
+  		}]]>
+	</property-provider>
+	<!-- create mgwt eventhandler first -->
+	<replace-with class="de.swm.commons.mobile.client.widgets.mgwt.base.TouchWidgetDesktopImpl">
+		<when-type-is class="de.swm.commons.mobile.client.widgets.mgwt.base.TouchWidgetImpl" />
+		<all>
+			<when-property-is name="swmmobile.user.agent" value="none" />
+		</all>
+	</replace-with>
+	<replace-with class="de.swm.commons.mobile.client.widgets.mgwt.base.TouchWidgetMobileImpl">
+		<when-type-is class="de.swm.commons.mobile.client.widgets.mgwt.base.TouchWidgetImpl" />
+		<all>
+			<when-property-is name="swmmobile.user.agent" value="mobilesafari" />
+		</all>
+	</replace-with>
+
+	<!-- webkit devices like Android, iOS -->
+	<replace-with class="de.swm.commons.mobile.client.event.DragControllerMobile">
+		<when-type-is class="de.swm.commons.mobile.client.event.DragController" />
+		<all>
+			<when-property-is name="swmmobile.user.agent" value="mobilesafari" />
+		</all>
+	</replace-with>
+
+	<!-- all other browses -->
+	<replace-with
+		class="de.swm.commons.mobile.client.event.DragControllerDesktop">
+		<when-type-is class="de.swm.commons.mobile.client.event.DragController" />
+		<any>
+			<when-property-is name="swmmobile.user.agent" value="none" />
+		</any>
+	</replace-with>
+
+	<!-- new event model (from mgwt) -->
+	<replace-with class="com.google.gwt.user.client.impl.DOMImplMobileSafari">
+		<when-type-is class="com.google.gwt.user.client.impl.DOMImpl" />
+		<all>
+			<when-property-is name="swmmobile.user.agent" value="mobilesafari" />
+		</all>
+	</replace-with>
+
+	<replace-with
+		class="com.google.gwt.user.client.impl.DOMImplSafariWithTransistion">
+		<when-type-is class="com.google.gwt.user.client.impl.DOMImpl" />
+		<all>
+			<when-property-is name="swmmobile.user.agent" value="none" />
+		</all>
+	</replace-with>
+
+</module>

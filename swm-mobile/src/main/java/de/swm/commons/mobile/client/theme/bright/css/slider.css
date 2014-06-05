@@ -1,0 +1,60 @@
+@if swmmobile.css pretty {
+	@external slider, hide;
+}
+
+.slider {
+	display: \-webkit-box;
+	\-webkit-box-orient: horizontal;
+}
+
+.slider > div:first-child {		/* label */
+	min-width: 2em;
+	display: \-webkit-box;
+	\-webkit-box-align: center;
+}
+
+.slider > div:first-child.hide {
+	display: none;
+}
+
+.slider > div:last-child {		/* slider */
+	position: relative;
+	height: 1.8em;
+	min-width: 10em;
+	margin: 0 .5em 0 .5em;	
+	display: -webkit-box;
+	-webkit-box-flex: 1;
+}
+
+.slider > div:last-child > div {
+	border: 1px solid #333;
+	height: 1em;
+	-webkit-background-clip: content !important;
+}
+
+.slider > div:last-child > div:first-child {
+	position: absolute;
+	top: .4em;
+	width: 100%;
+	border-radius: .3em;
+	background: literal('-webkit-gradient(linear, 0% 0%, 0% 100%, from(gray), to(white))');
+}
+
+.slider > div:last-child > div:nth-child\(2\) {
+	position: relative;
+	top: .4em;
+	border-top-left-radius: .3em;
+	border-bottom-left-radius: .3em;
+	background: literal('-webkit-gradient(linear, 0% 0%, 0% 100%, from(#53a9e8), to(#2e76cd))');
+}
+
+
+.slider > div:last-child > div:last-child {
+	position: relative;
+	margin-left: -.5em;
+	width: 1em;
+	height: 1.8em;
+	border-radius: .2em;
+	\-webkit-box-shadow: black 0 0 .1em;
+	background: literal('-webkit-gradient(linear, 0% 0%, 0% 100%, from(#A1A1A1), to(white))');
+}

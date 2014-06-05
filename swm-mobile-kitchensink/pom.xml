@@ -1,0 +1,239 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>de.swm.commons.mobile.client</groupId>
+	<artifactId>swm-mobile-kitchensink</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<packaging>war</packaging>
+	<name>Kitchen-Sink for swm-mobile</name>
+
+	<properties>
+		<webappDirectory>${project.build.directory}/${project.build.finalName}</webappDirectory>
+		<gwt.plugin.version>2.6.0</gwt.plugin.version>
+		<gwt.version>2.6.1</gwt.version>
+		<guice.version>3.0</guice.version>
+		<gin.version>1.5.0</gin.version>
+		<maven.compiler.source>1.6</maven.compiler.source>
+		<maven.compiler.target>1.6</maven.compiler.target>
+        <gwtBootstrap3.version>0.8-SNAPSHOT</gwtBootstrap3.version>
+        <appengine.target.version>1.9.1</appengine.target.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.google.gwt</groupId>
+			<artifactId>gwt-servlet</artifactId>
+			<version>${gwt.version}</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.google.gwt</groupId>
+			<artifactId>gwt-user</artifactId>
+			<version>${gwt.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>de.swm.commons.mobile.client</groupId>
+			<artifactId>swm-mobile</artifactId>
+			<version>1.8-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.validation</groupId>
+			<artifactId>validation-api</artifactId>
+			<version>1.0.0.GA</version>
+		</dependency>
+        <!-- Bootstrap 3 integration -->
+        <dependency>
+            <groupId>org.gwtbootstrap3</groupId>
+            <artifactId>gwtbootstrap3</artifactId>
+            <version>${gwtBootstrap3.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.gwtbootstrap3</groupId>
+            <artifactId>gwtbootstrap3-extras</artifactId>
+            <version>${gwtBootstrap3.version}</version>
+            <scope>provided</scope>
+        </dependency>
+       <!-- Deployment app engine -->
+        <dependency>
+            <groupId>com.google.appengine</groupId>
+            <artifactId>appengine-api-1.0-sdk</artifactId>
+            <version>${appengine.target.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.appengine</groupId>
+            <artifactId>appengine-tools-sdk</artifactId>
+            <version>${appengine.target.version}</version>
+            <scope>test</scope>
+        </dependency>
+		
+		<!--  Guice used by swm-mobile -->
+		<dependency>
+			<groupId>com.google.inject</groupId>
+			<artifactId>guice</artifactId>
+			<version>${guice.version}</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.google.gwt.inject</groupId>
+			<artifactId>gin</artifactId>
+			<version>${gin.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.inject</groupId>
+			<artifactId>javax.inject</artifactId>
+			<version>1</version>
+			<scope>provided</scope>
+		</dependency>
+		
+		<!-- Piriti for GWT-JSON-Mapping http://code.google.com/p/piriti/ -->
+		<dependency>
+			<groupId>name.pehl.piriti</groupId>
+			<artifactId>piriti-core</artifactId>
+			<version>0.7b3</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>name.pehl</groupId>
+			<artifactId>totoe</artifactId>
+			<version>0.2.4</version>
+			<scope>provided</scope>
+		</dependency>
+		
+		<!-- Test -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.9</version>
+			<type>jar</type>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<!-- Start -->
+		<outputDirectory>${webappDirectory}/WEB-INF/classes</outputDirectory>
+		<finalName>kitchensink</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.1.1</version>
+				<executions>
+					<execution>
+						<phase>compile</phase>
+						<goals>
+							<goal>exploded</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<webappDirectory>${webappDirectory}</webappDirectory>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>gwt-maven-plugin</artifactId>
+				<version>${gwt.plugin.version}</version>
+				<dependencies>
+					<dependency>
+						<groupId>com.google.gwt</groupId>
+						<artifactId>gwt-user</artifactId>
+						<version>${gwt.version}</version>
+					</dependency>
+				</dependencies>
+				<configuration>
+					<module>de.swm.mobile.kitchensink.kitchensink</module>
+					<runTarget>index.html</runTarget>
+<!-- 					<bindAddress>192.168.178.26</bindAddress> -->
+					<port>8888</port>
+					<style>PRETTY</style>
+				</configuration>
+				<executions>
+					<execution>
+						<configuration>
+							<compileReport>false</compileReport>
+						</configuration>
+						<goals>
+							<goal>compile</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<!-- ENDe - -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version>
+                <configuration>
+                    <encoding>UTF-8</encoding>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                </configuration>
+            </plugin>
+			<plugin>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>2.4</version>
+				<configuration>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+            <plugin>
+                <groupId>com.google.appengine</groupId>
+                <artifactId>appengine-maven-plugin</artifactId>
+                <version>${appengine.target.version}</version>
+                <configuration>
+                    <address>127.0.0.1</address>
+                    <port>8080</port>
+                    <oauth2>false</oauth2>
+                    <email>wiesed.swm@gmail.com</email>
+                    <jvmFlags>
+                        <!--<jvmFlag>-Xdebug</jvmFlag>-->
+                        <!--<jvmFlag>-Xrunjdwp:transport=dt_socket,address=8000,server=y,suspend=y</jvmFlag>-->
+                        <jvmFlag>-Xmx512m</jvmFlag>
+
+                    </jvmFlags>
+                    <disableUpdateCheck>false</disableUpdateCheck>
+                </configuration>
+            </plugin>
+			
+			<!-- Execution of finished product in Jetty -->
+			<plugin>
+				<groupId>org.mortbay.jetty</groupId>
+				<artifactId>maven-jetty-plugin</artifactId>
+				<version>6.1.10</version>
+				<configuration>
+					<webAppSourceDirectory>${webappDirectory}</webAppSourceDirectory>
+					<systemProperties>
+<!--             			<systemProperty> -->
+<!--               				<name>DEBUG</name> -->
+<!--                				<value>true</value> -->
+<!--             			</systemProperty> -->
+         			</systemProperties>
+                    <stopKey/>
+                    <stopPort/>
+                </configuration>
+			</plugin>
+			
+		</plugins>
+	</build>
+	
+	<!-- SWM Distribution -->
+	<distributionManagement>
+		<repository>
+			<id>SWMRepository</id>
+			<name>SWM-Main-Repository</name>
+			<url>http://ci.intra.swm.de/nexus/content/repositories/SWM-S-IP-AN-Repository</url>
+		</repository>
+		<snapshotRepository>
+			<id>SWMSnapshotRepository</id>
+			<name>SWM-Main-Repository-Snapshot</name>
+			<url>http://ci.intra.swm.de/nexus/content/repositories/SWM-S-IP-AN-Snapshot-Repository</url>
+			<uniqueVersion>false</uniqueVersion>
+		</snapshotRepository>
+	</distributionManagement>
+</project>

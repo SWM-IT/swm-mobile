@@ -1,0 +1,7 @@
+<module>
+    <inherits name='com.google.gwt.user.User'/>
+       
+    <define-linker name="permutationmaplinker" class="de.swm.gwt.linker.PermutationMapLinker" />
+    <define-configuration-property name="html5manifestlinker_files" is-multi-valued="true" />
+    
+</module>

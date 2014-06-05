@@ -1,0 +1,25 @@
+@if swmmobile.css pretty {
+	@external decoratedListItemHPanel, decoratedListItemVPanel, decoratedListItemTimePanel, decoratedListItemTitle, decoratedListItemSubtitle;
+}
+@external gwt-Label;
+
+.decoratedListItemHPanel {
+	\-webkit-box-flex: 1;	
+}
+
+.decoratedListItemVPanel {
+	padding-left: .4em;
+	\-webkit-box-flex: 1;	
+}
+
+.decoratedListItemTitle {
+	font-weight: bold;
+	color: black;
+}
+
+div.decoratedListItemSubtitle {
+	color: #868a8d !important;
+	font-size: medium;
+	font-style: italic;
+	font-weight: bold;
+}

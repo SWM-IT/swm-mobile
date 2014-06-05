@@ -1,0 +1,53 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui"
+	xmlns:m="urn:import:de.swm.commons.mobile.client.widgets">
+	<ui:style>
+	</ui:style>
+	
+	<ui:with field='icon' type='de.swm.mobile.kitchensink.client.icon.IconResources'/>
+	
+	<g:HTMLPanel>
+		<m:SimpleHeaderPanel ui:field="header" leftButton="Back">
+			<g:Label>Command Panel</g:Label>			
+		</m:SimpleHeaderPanel>
+		<m:CommandPanel>
+				<m:CommandItem ui:field='command1' headerText='Home' normalIcon='{icon.home}' highlightIcon='{icon.home_selected}' />
+				<m:CommandItem ui:field='command2' headerText='Download' normalIcon='{icon.download}' highlightIcon='{icon.download_selected}' />
+				<m:CommandDropDown ui:field='commandDropDown' headerText='Options' normalIcon='{icon.information}' highlightIcon='{icon.information_selected}' >
+					<m:DropDownItem key="1" text="Option 1"/>
+					<m:DropDownItem key="2" text="Option 2"/>
+					<m:DropDownItem key="3" text="Option 3"/>
+				</m:CommandDropDown>
+		</m:CommandPanel>
+		<m:ScrollPanel>
+			<m:ListPanel showArrow="false">
+				<g:Label>Scroll Me 01</g:Label>
+				<g:Label>Scroll Me 02</g:Label>
+				<g:Label>Scroll Me 03</g:Label>
+				<g:Label>Scroll Me 04</g:Label>
+				<g:Label>Scroll Me 05</g:Label>
+				<g:Label>Scroll Me 06</g:Label>
+				<g:Label>Scroll Me 07</g:Label>
+				<g:Label>Scroll Me 08</g:Label>
+				<g:Label>Scroll Me 09</g:Label>
+				<g:Label>Scroll Me 10</g:Label>
+				<g:Label>Scroll Me 11</g:Label>
+				<g:Label>Scroll Me 12</g:Label>
+				<g:Label>Scroll Me 13</g:Label>
+				<g:Label>Scroll Me 14</g:Label>
+				<g:Label>Scroll Me 15</g:Label>
+				<g:Label>Scroll Me 16</g:Label>
+				<g:Label>Scroll Me 17</g:Label>
+				<g:Label>Scroll Me 18</g:Label>
+				<g:Label>Scroll Me 19</g:Label>
+				<g:Label>Scroll Me 20</g:Label>
+			</m:ListPanel>
+		</m:ScrollPanel>
+		<m:CommandPanel>
+				<m:CommandItem ui:field='command21' headerText='' normalIcon='{icon.home}' highlightIcon='{icon.home_selected}' />
+				<m:CommandItem ui:field='command22' headerText='' normalIcon='{icon.download}' highlightIcon='{icon.download_selected}' />
+				<m:CommandItem ui:field='command23' headerText='' normalIcon='{icon.information}' highlightIcon='{icon.information_selected}' />
+		</m:CommandPanel>
+	</g:HTMLPanel>	
+</ui:UiBinder> 

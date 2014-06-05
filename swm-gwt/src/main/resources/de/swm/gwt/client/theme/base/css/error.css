@@ -1,0 +1,50 @@
+@if swmgwt.css pretty {
+	@external errortext, invalidField, errorField, gwt-PopupPanelGlass,  gwt-DialogBox, Caption, dialogContent, gwt-Button, dialogContent;
+}
+@external invalidField, errorField, gwt-PopupPanelGlass, gwt-DialogBox, Caption, dialogContent, gwt-Button, dialogContent;
+.errortext {
+    color: #F9291F;
+    white-space: pre;
+    font-size: small;
+}
+
+.invalidField {
+    border-color: red !important;
+}
+
+.errorField {
+    color: red;
+    text-align: right
+}
+
+.gwt-PopupPanelGlass {
+    background-color: #262626;
+    opacity: 0.2;
+    filter: literal("alpha(opacity=30)");
+    z-index: 2;
+}
+
+.gwt-DialogBox {
+    background-color: white;
+    border: 1px solid #666;
+    z-index: 2;
+    text-align: center;
+}
+
+.dialogContent{
+    padding: 0.3em;
+}
+.gwt-DialogBox .Caption {
+    background: #d3d6dd url(gradient_bg_th.png) repeat-x bottom left;
+    font-weight: bold;
+    text-shadow: #fff 0 2px 2px;
+    cursor: default;
+    padding: 5px 10px;
+    border-bottom: 1px solid #999;
+    text-align: left;
+}
+.gwt-DialogBox .dialogContent {
+}
+.gwt-DialogBox .gwt-Button {
+    margin: 10px;
+}

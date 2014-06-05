@@ -1,0 +1,17 @@
+# Java #
+*.class
+target
+
+#intelij
+workspace.xml
+
+# Package Files #
+*.war
+*.ear
+
+#ios development
+pods
+.DS_Store
+*.xcuserstate
+bin
+gen

@@ -1,0 +1,102 @@
+@if swmmobile.css pretty {
+	@external listPanel, pressed, disabled, iOS, chevron, gwt-Label, .gwt-InlineLabel, .gwt-DateLabel;
+}
+
+/** PRUEFEN: War noetig um es kompilliert zu bekommen. **/
+@external gwt-Label, .gwt-InlineLabel, .gwt-DateLabel;
+
+.listPanel {
+	position:relative;
+	display: \-webkit-box;
+	\-webkit-box-orient: vertical; 
+}
+
+.listPanel > div {
+	border-bottom:1px solid #AAAAAA;
+	padding: 0.5em 0.5em 0.5em 0.5em;
+	margin-right: 10px;
+	margin-left: 10px;
+    width: 95%;
+	vertical-align:middle !important;
+	display: \-webkit-box;
+	\-webkit-box-orient: horizontal;
+	\-webkit-box-pack: justify;
+	\-webkit-box-align: center;
+	background: white;
+} 
+
+.listPanel > div:first-child {
+	border-top:0px;
+	margin-top: 10px;
+	border-top-left-radius: 0.7em 0.7em;
+	border-top-right-radius: 0.7em 0.7em;
+	webkit-box-shadow: none;
+} 
+
+.listPanel > div:last-child {
+	border-bottom:0px;
+	border-bottom-left-radius: 0.7em 0.7em;
+	border-bottom-right-radius: 0.7em 0.7em;
+	webkit-box-shadow: none;
+} 
+
+.listPanel > div:only-child {
+	webkit-box-shadow: none;
+}
+
+.listPanel > div.pressed {
+	color: white;
+	background: #2E76CD !important;
+}
+
+.listPanel > div > span {
+    color: black;
+}
+
+.listPanel > div.disabled {
+	color: silver;
+}
+
+.listPanel > div .gwt-Label {
+    color: black;
+}
+
+.listPanel > div.disabled .gwt-Label {
+    color: silver;
+}
+
+.gwt-InlineLabel {
+    color: black;
+}
+
+.gwt-DateLabel {
+    color: black;
+}
+
+.chevron {
+	position: relative;
+	margin-right: 0.5em;
+	padding-left: 0.5em;
+	top: -0.6em;	
+}
+
+.chevron > span {
+	position: absolute;
+	width: 0.3em;
+	height: 0.8em;
+	background: gray;
+}
+
+.chevron > span:first-child {
+	\-webkit-transform: rotate(-45deg);
+}
+
+.chevron > span:last-child {
+	\-webkit-transform: rotate(45deg);
+	top: 0.4em;	
+}
+
+/* anti-flickering */
+.iOS .scrollPanel > .listPanel > div {
+    -webkit-transform: translate3d(0px, 0px, 0px);
+}

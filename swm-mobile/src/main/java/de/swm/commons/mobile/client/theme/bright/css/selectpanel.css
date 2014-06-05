@@ -1,0 +1,47 @@
+@if swmmobile.css pretty {
+	@external selectPanel, pressed, disabled;	
+}
+
+.selectPanel {
+	position:relative;
+	display: \-webkit-box;
+	\-webkit-box-orient: vertical; 
+}
+
+.selectPanel > div {
+	border-bottom:1px solid #333333;
+	border-top:1px solid #666666;
+	padding: 0.3em 0.3em 0.3em 0.3em;
+	display: \-webkit-box;
+	\-webkit-box-orient: horizontal;
+	\-webkit-box-pack: justify;
+	\-webkit-box-align: center;
+	/* background-image: literal('-webkit-gradient(linear, 0% 0%, 0% 100%, from(#4c4d4e), to(#404142))'); */
+	background-color: white;
+} 
+
+.selectPanel > div:first-child {
+	border-top:0px;
+} 
+
+.selectPanel > div:last-child {
+	border-bottom:0px;
+} 
+
+.selectPanel > div.pressed {
+	text-shadow: grey 0 -0.1em 0.1em;
+	background: literal('-webkit-radial-gradient(circle, #53a9e8, white)');
+}
+
+.selectPanel > div.disabled {
+	color: gray;
+}
+
+.selectPanel > div > div {
+	white-space: nowrap;
+	-webkit-user-select: none;
+}
+
+.selectPanel > div > img {
+	margin-left: 0.5em;
+}

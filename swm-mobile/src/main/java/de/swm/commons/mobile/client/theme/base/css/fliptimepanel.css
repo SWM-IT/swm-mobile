@@ -1,0 +1,40 @@
+@if swmmobile.css pretty {
+	@external flip-number, flip-hours, flip-minutes, flip-number-cover, flip-number-content;
+}
+.flip-number {
+	width: 1.7em;
+	height: 1.4em;
+	position: relative;
+	background-image: literal('-webkit-gradient(linear, left bottom, left top, color-stop(0.48, #545452), color-stop(0.49, #1F1F1F))');
+	\-webkit-box-shadow: 0 -1px 1px rgba(255, 255, 255, 0.2) inset, 0 1px 5px #000000;
+}
+
+.flip-number.flip-hours {
+	border-radius: 0.3em 0em 0em 0.3em;
+}
+
+.flip-number.flip-minutes {
+	border-radius: 0em 0.3em 0.3em 0em;
+}
+
+.flip-number-cover {
+	border-bottom: 1px solid black;
+	display: block;
+	height: 50%;
+	width: 100%;
+	position: absolute;
+	z-index: 1;
+}
+
+.flip-number-content {
+	color: #D2D2D2;
+	font-family: helvetica, arial, san-serif;
+	font-weight: bold;
+	letter-spacing: -0.03em;
+	margin: 0;
+	padding: 0;
+	top: 0.2em;
+	left: 0.3em;
+	position: absolute;
+	width: 100%;
+}

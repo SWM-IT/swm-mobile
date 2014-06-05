@@ -1,0 +1,158 @@
+@if swmmobile.css pretty {
+	@external button, bigbutton, pressed, buttonLightLeftText, backButton, pointer, hidden, nextButton, disabled, imageButton;
+}
+
+.button {
+	color: white;
+	text-decoration: none;
+	font-weight: bold;
+	display: block;
+	padding: 0.6em 0.7em 0.7em 0.7em;
+	\-webkit-border-radius: 0.3em;
+	background-image: literal('-webkit-gradient(linear, left top, left bottom, color-stop(0, rgb(142,194,242)), color-stop(0.49, rgb(89,132,212)), color-stop(0.51, rgb(34,100,198)), color-stop(1, rgb(0,163,233)));');
+	border: solid 1px white;
+	height:1em;	
+	text-align: center;
+	\-webkit-box-shadow: rgba(60, 160, 255, 0.5) 0.15em 0.15em 0.15em;
+}
+
+.bigbutton {
+	color: white;
+	text-decoration: none;
+	display: block;
+	padding: 0.3em 0.5em 0.5em 0.5em;
+	\-webkit-border-radius: 0.3em;
+	background-image: literal('-webkit-gradient(linear, 0% 0%, 0% 100%, from(#53A9E8), to(#2E76CD))');
+	border: solid 0px rgba(79, 79, 79, 0.75);
+	height:2em;
+	text-align: center;
+	\-webkit-box-shadow: rgba(0, 0, 0, 0.4) 0.1em 0.1em 0.1em;
+}
+
+.buttonLightLeftText {
+	color: white;
+	text-decoration: none;
+	display: block;
+	padding: 0.3em 0.5em 0.5em 0.5em;
+	\-webkit-border-radius: 0.3em;
+	background-image: literal('-webkit-linear-gradient(top, #909195, #717277)');
+	border: solid 0px rgba(79, 79, 79, 0.75);
+	height:1em;
+	text-align: left;
+	\-webkit-box-shadow: rgba(0, 0, 0, 0.4) 0.1em 0.1em 0.1em;
+}
+
+.buttonLightLeftText.pressed {
+	background: literal('-webkit-linear-gradient(top, #676a6d, #57585c)');
+}
+
+.bigbutton.pressed {
+	background: literal('-webkit-linear-gradient(top, #676a6d, #57585c)');
+}
+
+.button.pressed, .backButton.pressed > span.button, .nextButton.pressed > span.button {
+	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, rgb(140,160,203)),color-stop(0.49, rgb(54,98,168)),color-stop(0.51, rgb(26,78,156)),color-stop(1, rgb(0,118,196)));
+}
+
+
+.backButton {
+	position: relative;
+	margin-left: 0.8em;
+}
+
+.backButton > span.button {
+	padding-left: 0;
+	\-webkit-border-top-left-radius: 0;
+	\-webkit-border-bottom-left-radius: 0;
+	border-left: 0 !important;
+}
+
+.backButton > span.pointer {
+	position: absolute;
+	display: block;
+	height: 1.693em;
+	width: 1.692em;
+	left: -0.83em;
+	top: 0.25em;
+	border-top: 0;
+	border-right: 0;
+	background-image: literal('-webkit-gradient(linear, left top, right bottom, from(#909195), to(#717277))');
+	\-webkit-transform: rotate(45deg);
+	\-webkit-box-shadow: rgba(0, 0, 0, 0.4) 0.1em 0.1em 0.1em;
+	z-index: -1;
+}
+
+.backButton.pressed > span.pointer {
+	background: literal('-webkit-linear-gradient(top, #676a6d, #57585c)');
+}
+
+.backButton.hidden {
+	display: none;
+}
+
+
+.nextButton {
+	position: relative;
+	margin-right: 0.8em;
+}
+
+.nextButton > span.button {
+	padding-right: 0;
+	\-webkit-border-top-right-radius: 0;
+	\-webkit-border-bottom-right-radius: 0;
+	border-right: 0 !important;
+	\-webkit-box-shadow: rgba(0, 0, 0, 0.4) -0.1em 0.1em 0.1em;
+}
+
+.nextButton > span.pointer {
+	position: absolute;
+	display: block;
+	height: 1.3em;
+	width: 1.3em;
+	right: -0.65em;
+	top: 0.25em;
+	border-top: 0;
+	border-left: 0;
+	background-image: literal('-webkit-gradient(linear, left top, right bottom, from(#838383), color-stop(0.5, #444), color-stop(0.5, #303030), to(#333))');
+	\-webkit-transform: rotate(45deg);
+	\-webkit-box-shadow: rgba(0, 0, 0, 0.4) 0.1em 0.1em 0.1em;
+	z-index: -1;
+}
+
+.nextButton.pressed > span.pointer {
+	background: literal('-webkit-gradient(linear, left top, right bottom, from(lightgreen), color-stop(0.5, #298C08), color-stop(0.5, darkgreen), to(darkgreen))');
+}
+
+.button.disabled {
+	color: black;
+}
+
+.imageButton {
+	text-decoration: none;
+	display: block;
+	padding: 0.1em 0.3em 0.0em 0.3em;
+	\-webkit-border-radius: 0.3em;
+	background-image: literal('-webkit-linear-gradient(top, #909195, #717277)');
+	border: solid 0px rgba(79, 79, 79, 0.75);
+	\-webkit-box-shadow: rgba(0, 0, 0, 0.4) 0.1em 0.1em 0.1em;
+	\-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	display: -webkit-box;
+	\-webkit-box-align: center;
+	\-webkit-box-pack: center;
+}
+
+.imageButton.pressed {
+	background: literal('-webkit-linear-gradient(top, #676a6d, #57585c)');
+}
+
+.imageButton > img {
+	\-webkit-user-select: none;
+	border-style: none;
+	outline: none;
+}
+
+.imageButton > div {
+	color: white;
+	\-webkit-box-align: center;
+	padding-left: 0.3em;
+}

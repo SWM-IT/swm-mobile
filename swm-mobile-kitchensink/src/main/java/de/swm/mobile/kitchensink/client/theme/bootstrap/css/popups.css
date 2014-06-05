@@ -1,0 +1,169 @@
+@if swmmobile.css pretty {
+	@external loadingIndicatorPopup, loadingIndicatorGlassPanel, commandPopup, commandGlassPanel, datePopup, dateGlassPanel, dateValueLabel, dateCommandPanel, dateOkButton, dateCancelButton, dateRelativeTimeChooserPanel, dateSpinnerPanel, dateInputPanel, simplePopup, simplePopupGlass, selectPopup, slidePopup;	
+}
+
+.loadingIndicatorPopup {
+	background: #333;
+	padding: 10px;
+	border-radius: 6px;	
+}
+
+.loadingIndicatorGlassPanel {
+	background: black;
+	opacity: 0.7;
+}
+
+.loadingIndicatorHeader {
+	display: block;
+	width: 220px;
+}
+
+.loadingIndicatorSubheader {
+	display: block;
+	width: 260px;
+}
+
+/********** Command Popup **********/
+
+.commandPopup {
+	background: #F1F0F0;
+	padding: 10px;
+	border-radius: 6px;
+	border-color: black;
+	border-width: 1px;
+	border-style: solid;
+	\-webkit-user-select: none;
+	\-webkit-box-shadow: 0px 4px 6px #666666, 0 0 50px rgba(255, 255, 255, 1);
+	
+	box-shadow: 0px 4px 6px #666666, 0 0 50px rgba(255, 255, 255, 1);
+}
+
+/* header */
+.commandPopup > div > div > div:first-child {
+	margin-top: 0px;
+	margin-bottom: 12px;
+	font-weight: bold;
+}
+
+/* content */
+.commandPopup > div > div > div { 
+	margin-top: 6px;
+}
+
+.commandGlassPanel {
+	background: black;
+	opacity: 0.7;
+}
+
+/********** Date Popup **********/
+
+.datePopup {
+    \-webkit-user-select: none;
+	background: #F1F0F0;
+	padding: 10px;
+	border-radius: 6px;
+	border-color: black;
+	border-width: 1px;
+	border-style: solid;
+}
+
+.dateGlassPanel {
+    \-webkit-user-select: none;
+	background: black;
+	opacity: 0.7;
+}
+
+.dateValueLabel {
+	background: white;
+	color: black;
+	padding: .4em;
+	border: 1px solid black;
+	text-align: right;
+}
+
+.dateCommandPanel {
+	padding-top: 24px;
+	\-webkit-box-pack: end;
+	
+	-ms-flex-pack: end;
+}
+
+.dateRelativeTimeChooserPanel {
+
+}
+
+.dateSpinnerPanel {
+}
+
+.dateInputPanel {
+}
+
+.dateOkButton {
+	margin-right: 6px;
+	min-width: 3em;
+}
+
+.dateCancelButton {
+	margin-right: 6px;
+	min-width: 3em;
+}
+
+/********** Simple Popup **********/
+
+.simplePopup {
+	background: #333;
+	padding: 10px;
+	border-radius: 6px;
+	border-color: black;
+	border-width: 1px;
+	border-style: solid;
+	\-webkit-box-shadow: 0px 4px 6px #666666, 0 0 50px rgba(255, 255, 255, 1);
+	
+	box-shadow: 0px 4px 6px #666666, 0 0 50px rgba(255, 255, 255, 1);
+}
+
+/* header */
+.simplePopup > div > div > div:first-child {
+	margin-top: 0px;
+	margin-bottom: 12px;
+	font-weight: bold;
+}
+
+/* content */
+.simplePopup > div > div > div { 
+	margin-top: 6px;
+}
+
+.simplePopupGlass {
+	background: black;
+	opacity: 0.7;
+}
+
+/********** Select Popup **********/
+
+.selectPopup {
+	background: white;
+	color: black;
+	padding: 0.3em;
+	border-radius: 6px;
+	border-color: black;
+	border-width: 1px;
+	border-style: solid;
+	\-webkit-box-shadow: none;
+	
+	box-shadow: none;
+}
+
+/********** Slide Popup **********/
+
+.slidePopup {
+	padding: 10px;
+	background: #999;
+	border-color: black;
+	border-top-width: 1px;
+	border-top-style: solid;
+	border-top-right-radius: 6px;
+	border-top-left-radius: 6px;
+	-webkit-box-shadow: 0 -0.3em .3em black;
+	box-shadow: 0 -0.3em .3em black;
+}

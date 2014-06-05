@@ -1,0 +1,76 @@
+@if swmmobile.css pretty {
+	@external commandPanel, pressed, disabled, gwt-Label, commandDropDown, hidden;
+}
+
+@external gwt-Label;
+
+.commandPanel {
+	display: \-webkit-box;
+	\-webkit-box-orient: horizontal;
+	\-webkit-box-shadow: 0px 4px 6px #666666, 0 0 20px rgba(255, 255, 255, 1);
+	background: literal('-webkit-radial-gradient(circle, white, white)');
+	position: relative;
+	z-index: 1;
+}
+
+/** CommandItem **/
+.commandPanel > div {
+	font-size: 0.8em;
+	padding: 4px;
+	\-webkit-box-flex: 1;
+	display: -webkit-box;
+	border-left: 1px solid grey;
+	border-right: 1px solid grey;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	\-webkit-box-orient: vertical;
+	\-webkit-box-align: center;
+	\-webkit-box-pack: center;
+}
+
+/** CommandItem wenn es gedrückt wird **/
+.commandPanel > div.pressed {
+	text-shadow: grey 0 -0.1em 0.1em;
+	background: literal('-webkit-radial-gradient(circle, #53a9e8, white)');
+}
+
+/** Deaktiviertes CommandItem **/
+.commandPanel > div.disabled {
+	color: gray;
+}
+
+/** Deaktiviertes CommandItem **/
+.commandPanel > div.disabled {
+	background: literal('-webkit-radial-gradient(circle, #E6E6E6, #E6E6E6)');
+}
+
+/** Deaktiviertes CommandItem **/
+.commandPanel > div.disabled .gwt-Label {
+	color: grey;
+}
+
+.commandPanel > div .gwt-Label {
+    color: black;
+}
+
+.commandDropDown {
+	display: -webkit-box;
+	\-webkit-box-flex: 1;
+}
+
+.commandDropDown > select {
+	\-webkit-appearance: none;
+	background-color: rgba(255, 255, 255, 0);
+	background-position: top;
+	background-repeat: no-repeat;
+	font-size: 1.7em;
+}
+
+.commandDropDown > select.hidden {
+	color: rgba(255, 255, 255, 0);
+}
+
+.commandDropDown > select:focus {
+	outline: 0;
+	outline: none;
+}

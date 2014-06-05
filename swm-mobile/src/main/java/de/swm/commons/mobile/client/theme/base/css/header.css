@@ -1,0 +1,72 @@
+@if swmmobile.css pretty {
+	@external header-Panel, gwt-Label;	
+}
+
+@external gwt-Label;
+
+.header-Panel {
+	position: relative;
+	display: \-webkit-box;
+	\-webkit-box-orient: horizontal;
+	\-webkit-box-align: center;
+	\-webkit-box-pack: justify;
+	\-webkit-user-select: none;
+	padding: 0.3em 0.3em;
+	background-image: literal('-webkit-gradient(linear, 0% 0%, 0% 100%, from(#1e1f21), color-stop(0.98, #272729), color-stop(0.98, black), to(black))');
+	\-webkit-box-shadow: 0 0 .6em black;
+	text-shadow: black 0.1em 0.1em 0.1em;
+	z-index: 1;
+		
+	display: -ms-flexbox;
+	-ms-flex-align: center;
+	-ms-flex-pack: justify;
+	background-image: literal('linear-gradient(to bottom, #1e1f21 0%, #272729 98%, black 98%, black 100%)');
+	box-shadow: 0 0 .6em black;
+}
+
+/* needed this to get around the android browser bug when scroll, causing controls to disapear.*/
+.header-Panel * {
+	z-index: 1;
+}
+
+.header-Panel > div > div.gwt-Label {
+	font-weight: bold;
+}
+
+.header-Panel > div:first-child, .header-Panel > div:last-child {
+	min-width:3em;
+}
+
+.header-Panel > div:nth-child\(2\) {
+	display: \-webkit-box;
+	\-webkit-box-flex: 1;
+	\-webkit-box-pack: center;
+	\-webkit-box-align: center;
+	
+	display: -ms-flexbox;
+	-ms-flex: 1;
+	-ms-flex-align: center;
+	-ms-flex-pack: center;
+}
+
+
+/* Fix um Unterschiedliche Buttons im header zu haben. */
+.header-Panel > div > div.button {
+
+}
+
+.header-Panel > div > div.pressed {
+
+}
+
+.header-Panel > div > div.nextButton {
+
+}
+
+.header-Panel > div > div.backButton {
+
+}
+
+.header-Panel > div > span.pointer {
+
+}

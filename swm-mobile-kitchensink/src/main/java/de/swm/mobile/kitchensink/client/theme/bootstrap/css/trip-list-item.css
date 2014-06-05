@@ -1,0 +1,83 @@
+@if swmmobile.css pretty {
+	@external trip-transport-image, trip-list-item-title, trip-list-item-subtitle, trip-list-item-time, trip-punctual, trip-early, trip-late, trip-list-main-panel, trip-list-hpanel, trip-list-vpanel, trip-list-title-panel, trip-list-time-panel, trip-list-time-label;
+}
+
+.trip-transport-image {
+	padding: 0.3em;
+	margin-left: 0.3em;	
+}
+
+.trip-list-item-title {
+	font-weight: 400;
+	font-size: medium;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.trip-list-item-subtitle {
+	font-style: italic;
+	font-size: small;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.trip-list-item-sub-subtitle {
+	font-weight: 400;
+	font-size: medium;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.trip-list-item-time {
+	font-style: italic;
+	font-size: 0.7em;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.trip-punctual {
+	color: #298C08;
+}
+
+.trip-early {
+	color: #E81E2F;
+}
+
+.trip-late {
+	color: #F38C08;
+}
+
+.trip-list-main-panel {
+	padding-top: 0px !important;
+	padding-bottom: 0px !important;
+	padding-left: 0px !important;
+}
+
+.trip-list-hpanel {
+	-webkit-box-flex: 1;	
+}
+
+.trip-list-vpanel {
+	-webkit-box-flex: 1;
+	padding-left: 0.4em;	
+}
+
+.trip-list-title-panel {
+	-webkit-box-flex: 1;	
+}
+
+.trip-list-time-panel {
+	-webkit-box-pack: end;
+	-webkit-box-flex: 1;	
+}
+
+.trip-list-time-label {
+	font-style: italic;
+	font-size: 0.7em;
+	white-space: nowrap;
+	overflow: hidden;
+	z-index: 1;
+}

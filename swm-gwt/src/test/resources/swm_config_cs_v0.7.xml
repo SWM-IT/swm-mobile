@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!--
+		This configuration file was written by the eclipse-cs plugin
+		configuration editor
+	-->
+	<!--
+		Checkstyle-Configuration: SWM Coding Standards Description: none
+	-->
+<!DOCTYPE module PUBLIC "-//Puppy Crawl//DTD Check Configuration 1.2//EN" "http://www.puppycrawl.com/dtds/configuration_1_2.dtd">
+<module name="Checker">
+	<property name="severity" value="warning" />
+	<module name="TreeWalker">
+		<module name="JavadocMethod">
+			<metadata name="com.atlassw.tools.eclipse.checkstyle.comment"
+				value="Stellt sicher, dass Methoden (inkl. Konstruktoren) JavaDoc-Kommentare inkl. @param, @return und ggf. @throws-Tag besitzen." />
+			<property name="allowMissingPropertyJavadoc" value="true" />
+			<property name="logLoadErrors" value="true" />
+			<property name="suppressLoadErrors" value="true" />
+		</module>
+		<module name="JavadocType">
+			<metadata name="com.atlassw.tools.eclipse.checkstyle.comment"
+				value="Erzwingt JavaDoc-Kommentare für Klassen und Interfaces." />
+			<!-- <property name="allowUnknownTags" value="true" />-->
+		</module>
+		<module name="JavadocVariable">
+			<metadata name="com.atlassw.tools.eclipse.checkstyle.comment"
+				value="Erzwingt JavaDoc-Kommentare für Instanz- und Klassenvariablen, die public sind" />
+			<property name="scope" value="public" />
+		</module>
+		<module name="ConstantName">
+			<metadata name="com.atlassw.tools.eclipse.checkstyle.customMessage"
+				value="Name der Konstanten entspricht nicht  den Namenskonventionen." />
+			<property name="format" value="^[A-Z][A-Z0-9_]*$" />
+		</module>
+		<module name="LocalFinalVariableName">
+			<metadata name="com.atlassw.tools.eclipse.checkstyle.customMessage"
+				value="Variablenname entspricht nicht  den Namenskonventionen." />
+			<property name="format" value="^[a-z][a-zA-Z0-9_]*$" />
+		</module>
+		<module name="LocalVariableName">
+			<metadata name="com.atlassw.tools.eclipse.checkstyle.customMessage"
+				value="Variablenname entspricht nicht  den Namenskonventionen." />
+			<property name="format" value="^[a-z][a-zA-Z0-9_]*$" />
+		</module>
+		<module name="MemberName">
+			<metadata name="com.atlassw.tools.eclipse.checkstyle.customMessage"
+				value="Name der Instanzvariable entspricht nicht den Namenskonventionen" />
+			<property name="format" value="^[a-z][a-zA-Z0-9_]*$" />
+		</module>
+		<module name="MethodName">
+			<metadata name="com.atlassw.tools.eclipse.checkstyle.customMessage"
+				value="Methodennamen entspricht nicht  den Namenskonventionen." />
+			<property name="format" value="^[a-z][a-zA-Z0-9_]*$" />
+		</module>
+		<module name="PackageName">
+			<metadata name="com.atlassw.tools.eclipse.checkstyle.customMessage"
+				value="Package-Name entspricht nicht der Vorgabe de.swm.&lt;ANWENDUNGSNAME&gt;." />
+			<property name="format" value="^de.swm.[a-z]+(\.[a-zA-Z_][a-zA-Z0-9_]*)*$" />
+		</module>
+		<module name="ParameterName">
+			<metadata name="com.atlassw.tools.eclipse.checkstyle.customMessage"
+				value="Parametername entspricht nicht  den Namenskonventionen." />
+			<property name="format" value="^[a-z][a-zA-Z0-9_]*$" />
+		</module>
+		<module name="StaticVariableName">
+			<metadata name="com.atlassw.tools.eclipse.checkstyle.customMessage"
+				value="Klassenvariablenname entspricht nicht den Namenskonventionen." />
+			<property name="format" value="^[a-z][a-zA-Z0-9_]*$" />
+		</module>
+		<!--  Zeilenlänge auf 1000 erhöht, wegen Codegenerierung -->
+		<module name="LineLength">
+			<metadata name="com.atlassw.tools.eclipse.checkstyle.comment"
+				value="Legt maximale Zeilenlänge auf 1000 Zeichen fest." />
+			<property name="max" value="1000" />
+			<property name="tabWidth" value="4" />
+		</module>
+		<module name="MethodParamPad">
+			<metadata name="com.atlassw.tools.eclipse.checkstyle.comment"
+				value="Erzwingt, dass '(' nach Methodenaufrauf und -deklaration ohne trennendes Leerzeichen verwendet wird." />
+		</module>
+		<module name="NoWhitespaceAfter">
+			<metadata name="com.atlassw.tools.eclipse.checkstyle.comment"
+				value="Verhindert Leerzeichen nach unären Operatoren u.a." />
+		</module>
+		<module name="NoWhitespaceBefore">
+			<metadata name="com.atlassw.tools.eclipse.checkstyle.comment"
+				value="Verhindert Leerzeichen vor ; --, ++" />
+			<property name="allowLineBreaks" value="true" />
+			<property name="tokens" value="SEMI,DOT,POST_DEC,POST_INC" />
+		</module>
+		<module name="ParenPad">
+			<metadata name="com.atlassw.tools.eclipse.checkstyle.comment"
+				value="Verhindert Leerzeichen nach '(' und vor ')' sowie nach einem Methodenaufruf" />
+			<property name="tokens" value="LPAREN,RPAREN" />
+		</module>
+		<module name="WhitespaceAround">
+			<metadata name="com.atlassw.tools.eclipse.checkstyle.comment"
+				value="Erzwingt Leerzeichen um binäre und ternäre Operatoren (sowie zusätzlich um einige Schlüsselwörter)" />
+			<property name="tokens"
+				value="ASSIGN,BAND,BAND_ASSIGN,BOR,BOR_ASSIGN,BSR,BSR_ASSIGN,BXOR,BXOR_ASSIGN,COLON,DIV,DIV_ASSIGN,EQUAL,GE,GT,LAND,LCURLY,LE,LITERAL_ASSERT,LITERAL_CATCH,LITERAL_DO,LITERAL_ELSE,LITERAL_FINALLY,LITERAL_FOR,LITERAL_IF,LITERAL_RETURN,LITERAL_SYNCHRONIZED,LITERAL_TRY,LITERAL_WHILE,LOR,LT,MINUS,MINUS_ASSIGN,MOD,MOD_ASSIGN,NOT_EQUAL,PLUS,PLUS_ASSIGN,QUESTION,RCURLY,SL,SLIST,SL_ASSIGN,SR,SR_ASSIGN,STAR,STAR_ASSIGN,LITERAL_ASSERT,TYPE_EXTENSION_AND,WILDCARD_TYPE" />
+		</module>
+		<module name="LeftCurly">
+			<metadata name="com.atlassw.tools.eclipse.checkstyle.comment"
+				value="Erzwingt, dass linke geschweifte Klammer stets in derselben Linie wie auslösende(s) Schlüsselwort / Deklaration steht" />
+			<property name="maxLineLength" value="100" />
+		</module>
+		<module name="NeedBraces">
+			<metadata name="com.atlassw.tools.eclipse.checkstyle.comment"
+				value="Erzwingt geschweifte Klammern für do-, else-, if-, for- und while-Schlüsselwort" />
+		</module>
+		<module name="EmptyStatement" />
+		<module name="MagicNumber">
+			<metadata name="com.atlassw.tools.eclipse.checkstyle.comment"
+				value="Verhindert feste Konstanten im Code." />
+		</module>
+		<module name="VisibilityModifier">
+			<metadata name="com.atlassw.tools.eclipse.checkstyle.comment"
+				value="Erzwingt, dass Instanzvariablen private sind." />
+		</module>
+		<module name="InterfaceIsType">
+			<metadata name="com.atlassw.tools.eclipse.checkstyle.comment"
+				value="Erlaubt keine Interfaces, die nur Konstanten und keine Methoden enthalten und somit keine Schnittstelle darstellen. (Marker-Interfaces sind zugelassen)." />
+			<property name="severity" value="ignore" />
+		</module>
+		<module name="TypeName">
+			<metadata name="com.atlassw.tools.eclipse.checkstyle.customMessage"
+				value="Klassenname entspricht nicht den Namenskonventionen." />
+			<property name="format" value="^[A-Z][a-zA-Z0-9_]*$" />
+			<property name="tokens" value="CLASS_DEF" />
+		</module>
+		<module name="JavadocStyle">
+			<metadata name="com.atlassw.tools.eclipse.checkstyle.comment"
+				value="Überprüft JavaDoc-Kommentare auf Korrektheit." />
+			<property name="checkEmptyJavadoc" value="true" />
+		</module>
+		<module name="WriteTag">
+			<metadata name="com.atlassw.tools.eclipse.checkstyle.comment"
+				value="Erzwingt @author-Tag für Klassen und Interfaces" />
+			<property name="tag" value="author" />
+			<property name="tagFormat" value=".*" />
+			<property name="tagSeverity" value="ignore" />
+		</module>
+		<module name="WriteTag">
+			<metadata name="com.atlassw.tools.eclipse.checkstyle.comment"
+				value="Erzwingt @copyright-Tag für Klassen und Interfaces" />
+			<property name="tag" value="copyright" />
+			<property name="tagFormat" value=".*" />
+			<property name="tagSeverity" value="ignore" />
+		</module>
+		<module name="RightCurly">
+			<metadata name="com.atlassw.tools.eclipse.checkstyle.comment"
+				value="Erwzingt, dass nach  '}' für try-, catch-, finally-, if- und else- Schlüsselwort das nächste Statement in derselben Linie steht." />
+			<property name="severity" value="ignore" />
+		</module>
+		<module name="Indentation">
+			<metadata name="com.atlassw.tools.eclipse.checkstyle.comment"
+				value="Überprüft korrekte Einrückung." />
+			<metadata name="com.atlassw.tools.eclipse.checkstyle.customMessage"
+				value="Einrückung inkorrekt." />
+			<property name="basicOffset" value="8" />
+			<property name="caseIndent" value="8" />
+		</module>
+		<module name="PackageDeclaration">
+			<metadata name="com.atlassw.tools.eclipse.checkstyle.comment"
+				value="Erwzwingt Verwendung eines eigenen Packages." />
+		</module>
+		<module name="TypeName">
+			<metadata name="com.atlassw.tools.eclipse.checkstyle.customMessage"
+				value="Name des Interface entspricht nicht den Namenskonventionen." />
+			<property name="format" value="^[A-Z][a-zA-Z0-9_]*$" />
+			<property name="tokens" value="INTERFACE_DEF" />
+		</module>
+		<module name="ModifierOrder">
+			<metadata name="com.atlassw.tools.eclipse.checkstyle.comment"
+				value="Stellt sicher, dass Modifier in richtiger Ordnung verwendet werden." />
+		</module>
+		<!-- Checkstyle schmiert ab:
+		<module name="GenericIllegalRegexp">
+            <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="LÃ¤sst die Verwendung der Standardausgabe nicht zu."/>
+            <property name="format" value="System.out|System.err"/>
+            <property name="ignoreComments" value="true"/>
+            <property name="message" value="Standardausgabe statt Logger verwendet."/>
+        </module>
+        -->
+        <module name="ModifierOrder">
+            <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="Stellt sicher, dass Modifier in richtiger Ordnung verwendet werden."/>
+        </module>
+        <!-- heckstyle schmiert ab: <module name="OneStatementPerLine"/>-->
+	</module>
+</module>

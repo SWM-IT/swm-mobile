@@ -1,0 +1,182 @@
+@url checkBoxImage checkBox;
+
+@if swmmobile.css pretty {
+	@external checkBoxGroup, radioButtonGroup, radioButton, checkBoxIndicator, horizontal, vertical, selected, pressed, gwt-CheckBox;
+}
+
+@external gwt-CheckBox;
+
+.gwt-CheckBox input[type="checkbox"] {
+	background-image: checkBoxImage;
+	background-repeat: no-repeat;
+    background-position: right top;
+    -webkit-background-size: 3em 1.5em;
+    font-size: 1.5em;
+    -webkit-appearance: none;
+    width: 1.5em;
+    height: 1.5em;
+    border: 1px solid #B1B1B1;
+    margin: 0 0.3em 0 0;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+}
+
+.gwt-CheckBox input[type="checkbox"]:checked {
+	background-position: left top;
+}
+
+.checkBoxGroup, .radioButtonGroup {
+	display: \-webkit-box;
+	\-webkit-box-orient: horizontal;
+}
+
+.checkBoxGroup > span, .radioButtonGroup > span {
+	\-webkit-box-flex: 1;
+	display: \-webkit-box;
+	\-webkit-box-align: center;
+	\-webkit-box-pack: center;
+	border-radius: 0.4em 0.4em;
+	padding: .8em .8em;
+	color: black;
+	background-image: literal('-webkit-gradient(linear, 0% 0%, 0% 100%, from(#F0F2F1), to(#D5D9E0), color-stop(.6,#F0F2F1))');
+}
+
+.checkBoxGroup.horizontal > span.selected,
+.radioButtonGroup.horizontal > span.selected {
+	background-image: literal('-webkit-gradient(linear, 0% 0%, 0% 100%, from(#53a9e8), to(#2e76cd))');
+	color: white;
+}
+
+.checkBoxGroup.horizontal > span > input, 
+.checkBoxGroup.horizontal > span > div,
+.radioButtonGroup.horizontal > span > input, 
+.radioButtonGroup.horizontal > span > div {
+	display: none;
+}
+
+.checkBoxGroup.vertical > span > input,
+.checkBoxGroup.vertical > span > div,
+.radioButtonGroup.vertical > span > input,
+.radioButtonGroup.vertical > span > div {
+    display: none;
+}
+
+.checkBoxGroup.vertical,
+.radioButtonGroup.vertical {
+	\-webkit-box-orient: vertical;
+}
+
+.checkBoxGroup.vertical > span,
+.radioButtonGroup.vertical > span {
+	\-webkit-box-pack: start;
+	border: 0;
+}
+
+.checkBoxGroup.vertical > span.pressed,
+.radioButtonGroup.vertical > span.pressed {
+	background-image: literal('-webkit-gradient(linear, 0% 0%, 0% 100%, from(#53a9e8), to(#2e76cd))');
+	color: white;
+}
+
+.checkBoxGroup.vertical > span.selected,
+.radioButtonGroup.vertical > span.selected {
+    background-image: literal('-webkit-gradient(linear, 0% 0%, 0% 100%, from(#53a9e8), to(#2e76cd))');
+    color: white;
+}
+
+.checkBoxGroup.vertical > span:first-child,
+.radioButtonGroup.vertical > span:first-child {
+	border-bottom-left-radius: 0;
+	border-top-right-radius: 0.4em 0.4em;
+}
+
+.checkBoxGroup.vertical > span:last-child,
+.radioButtonGroup.vertical > span:last-child {
+	border-bottom-left-radius: 0.4em 0.4em;
+	border-top-right-radius: 0;
+}
+
+/* android radius antialias workaround */
+.android .checkBoxGroup > span,
+.android .radioButtonGroup > span {
+	\-webkit-box-shadow: 0 0 1px #666;	
+}
+
+/* Android native check box and radio button are too small in WVGA resolution */
+.WVGA .checkBoxGroup > span > input,
+.WVGA .radioButton > input {
+	display: none;
+}
+
+.WVGA .radioButton > div {
+	width: 1.2em;
+	height: 1.2em;
+	margin: 0 .4em 0 .4em;
+	background-image: literal('-webkit-gradient(radial, 50% 50%, 0, 50% 50%, 16, from(white), to(gray))');
+	\-webkit-border-radius: .6em;
+	border: 1px solid #444;
+	\-webkit-box-shadow:0 0 .1em #444;
+}
+
+.WVGA .radioButton.selected > div {
+	background-image: literal('-webkit-gradient(radial, 50% 50%, 0, 50% 50%, 16, from(lightgreen), to(green))');
+	\-webkit-box-shadow:0 0 .1em darkgreen;
+}
+	
+.WVGA .checkBoxIndicator {
+	position: relative;
+	margin: 0 .4em 0 .4em;
+}
+
+.WVGA .checkBoxIndicator > div:first-child {
+	width: .8em;
+	height: .8em;
+	padding: .1em;	
+	background: literal('-webkit-gradient(linear, 0% 0%, 0% 100%, from(#555), to(#777))');
+	\-webkit-background-clip: padding;
+	border: .1em solid #333;
+	border-radius: .2em;
+}
+
+.WVGA .checkBoxIndicator > div:first-child > div {
+	width: .65em;
+	height: .65em;
+	background: literal('-webkit-gradient(linear, 0% 0%, 0% 100%, from(white), to(gray))');
+	border: .1em solid #333;
+}
+
+.WVGA .selected .checkBoxIndicator > div:nth-child\(2\),
+.WVGA .selected .checkBoxIndicator > div:nth-child\(3\),
+.WVGA .selected .checkBoxIndicator > div:nth-child\(4\) {
+	position: absolute;
+	background: #00CC00;
+	border: .1em solid #111;
+}
+	
+.WVGA .selected .checkBoxIndicator > div:nth-child\(2\) {
+	width: .2em;
+	height: .3em;
+	top: .35em;
+	left: .2em;
+	\-webkit-transform: rotate\(-45deg\);
+	border-bottom: 0;
+}
+
+.WVGA .selected .checkBoxIndicator > div:nth-child\(3\) {
+	width: .2em;
+	height: 1em;
+	top: -.1em;
+	left: .7em;
+	\-webkit-transform: rotate\(45deg\);
+	border-bottom: 0;
+}
+
+.WVGA .selected .checkBoxIndicator > div:nth-child\(4\) {
+	width: .2em;
+	height: .4em;
+	top: .5em;
+	left: .4em;
+	\-webkit-transform: rotate\(-45deg\);
+	border-right: 0;
+	border-top: 0;
+}

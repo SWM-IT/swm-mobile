@@ -1,0 +1,99 @@
+@if swmmobile.css pretty {
+	@external tabPanel, selected, android, gwt-Label;
+}
+@external gwt-Image, gwt-Label;
+
+.tabPanel {
+	width:100%;
+	\-webkit-box-flex: 1;
+	display: -webkit-box;
+	\-webkit-box-orient: vertical;
+}
+
+/*tab header panel*/
+.tabPanel > div:first-child {
+	display: \-webkit-box;
+	\-webkit-box-orient: horizontal;
+	border-bottom: 0.2em solid #D4D9D5;
+	/*\-webkit-box-shadow: rgba(0, 0, 0, 1) 0 0 1em;*/
+	background-image: literal('-webkit-gradient(linear, 0% 0%, 0% 100%, from(#2E76CD), to(#20528F))');
+	/*background: #2E76CD;*/
+	padding-top: 0.4em;
+	font-size: 1.1em;
+	position: relative;
+	z-index: 1;
+}
+
+/* tab header */
+.tabPanel > div:first-child > div {
+	\-webkit-box-flex: 1;
+	display: \-webkit-box;
+	\-webkit-box-align: center;
+	\-webkit-box-pack: center;
+	min-height: 2em;
+	border-left: 1px solid #666666;
+	border-top: 1px solid #666666;
+	border-bottom: 1px solid #333333;
+	margin: 0 0.2em 0 0.2em;
+	color: grey;
+	background-image: literal('-webkit-gradient(linear, 0% 0%, 0% 100%, from(grey), to(#404142))');
+	border-top-left-radius: 0.3em 0.3em;
+	border-top-right-radius: 0.3em 0.3em;
+}
+
+/* Label in the tab header */
+.tabPanel > div:first-child > div > .gwt-Label {
+  	color: white;
+ }
+
+/* Label in the selected tab header */
+.tabPanel > div:first-child > div.selected > .gwt-Label {
+	font-weight: bold;
+	text-shadow: none;
+ 	color: black;
+}
+
+/* currently selected tab */
+.tabPanel > div:first-child > div.selected {
+	color:black;
+	text-shadow: white 0 .1em .1em;
+	border-left: 1px solid white;
+	border-top: 1px solid white;
+	border-bottom: 1px solid #BDBDBD;
+	background-image: literal('-webkit-gradient(linear, 0% 0%, 0% 100%, from(white), to(#D4D9D5))');
+}
+
+.tabPanel > div:first-child > div.selected .gwt-Image {
+	opacity: 1;
+}
+
+.tabPanel > div:first-child > div .gwt-Image {
+	opacity: 0.5;
+}
+
+/*tab content panel*/
+.tabPanel > div:last-child {
+	position: relative;
+	height: 100%;
+	width: 100%;
+	\-webkit-box-flex: 1;
+}
+
+/*tab content*/
+.tabPanel > div:last-child > div {
+	position:absolute;
+	display: \-webkit-box;
+	height: 100%;
+	width: 100%;
+}
+
+/*tab content*/
+.tabPanel > div:last-child > div > div {
+	height: 100%;
+	width: 100%;
+}
+
+/*tab header antialias workaround*/
+.android .tabPanel > div:first-child > div {
+	-webkit-box-shadow: #BDBDBD 0 0 .1em;
+}

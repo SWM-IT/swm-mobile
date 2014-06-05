@@ -1,0 +1,30 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+             xmlns:g="urn:import:com.google.gwt.user.client.ui"
+             xmlns:m="urn:import:de.swm.commons.mobile.client.widgets"
+             xmlns:b="urn:import:org.gwtbootstrap3.client.ui">
+
+    <ui:with field='res' type='de.swm.mobile.kitchensink.client.components.TestResources'/>
+
+    <g:HTMLPanel>
+        <m:SimpleHeaderPanel ui:field="header" leftButton="Back">
+            <g:Label>About</g:Label>
+        </m:SimpleHeaderPanel>
+        <div style="margin-left:10px;margin-top:10px;">Kitchensink demo for swm-mobile framework</div>
+        <div style="margin-left:10px;min-height:30px;">See
+            <a href="http://code.google.com/p/swm-mobile/" style="color:grey;">http://code.google.com/p/swm-mobile/</a>
+        </div>
+        <div style="margin-left:10px;min-height:100px;"/>
+
+        <div style="margin-left:10px;min-height:100px;">
+            <a href="http://www.swm.de/privatkunden/info/impressum.html" style="color:grey;">Impressum</a>
+        </div>
+
+        <b:ButtonGroup justified="true" dataToggle="BUTTONS">
+            <b:CheckBoxButton active="true">Option 1</b:CheckBoxButton>
+            <b:CheckBoxButton>Option 2</b:CheckBoxButton>
+            <b:CheckBoxButton>Option 3</b:CheckBoxButton>
+            <b:CheckBoxButton enabled="false">Option 4</b:CheckBoxButton>
+        </b:ButtonGroup>
+    </g:HTMLPanel>
+</ui:UiBinder> 

@@ -1,0 +1,89 @@
+@if swmmobile.css pretty {
+	@external toolbarPanel, selected, badge;
+}
+@external gwt-Image, gwt-Label;
+
+.toolbarPanel {
+	width:100%;
+	\-webkit-box-flex: 1;
+	display: \-webkit-box;
+	\-webkit-box-orient: vertical;
+	\-webkit-box-orient: vertical;
+}
+
+/*toolbar header panel*/
+.toolbarPanel > div:last-child {
+	display: \-webkit-box;
+	\-webkit-box-orient: horizontal;
+	\-webkit-box-shadow: rgba(0, 0, 0, 1) 0 0 1em;
+	background: #333;
+	position: relative;
+	z-index: 1;
+}
+
+/*tab header*/
+.toolbarPanel > div:last-child > div {
+	\-webkit-box-flex: 1;
+	display: \-webkit-box;
+	\-webkit-box-orient: vertical;
+	\-webkit-box-align: center;
+	\-webkit-box-pack: center;
+	min-height: 2em;
+	font-size: 0.8em;
+	color: gray;
+	padding-bottom: 2px;
+	padding-top: 2px;
+ 	background-image: literal('-webkit-gradient(linear, 0% 0%, 0% 100%, from(#434343), color-stop(0.01, #434343), color-stop(0.01, #2e2e2e), color-stop(0.5, #151515), color-stop(0.5, #000), to(#000))');
+}
+
+.toolbarPanel > div:last-child > div.selected {
+	background-image: literal('-webkit-gradient(linear, 0% 0%, 0% 100%, from(#494949), color-stop(0.5, #363636), color-stop(0.5, #252525), to(#252525))');
+	border-radius: 10px;
+	color: white;
+}
+
+.toolbarPanel > div:last-child > div.selected .gwt-Image {
+	opacity: 1;
+}
+
+.toolbarPanel > div:last-child > div .gwt-Image {
+	opacity: 0.5;
+}
+
+.toolbarPanel > div:last-child > div > div.gwt-Label {
+    color:white;
+}
+
+/*tab content panel*/
+.toolbarPanel > div:first-child {
+	position: relative;
+	\-webkit-box-flex: 1;
+}
+
+/*tab content*/
+.toolbarPanel > div:first-child > div {
+	position:absolute;
+	display: \-webkit-box;
+	height: 100%;
+	width: 100%;
+}
+
+.badge {
+	padding-left: 5px;
+	padding-right: 5px;
+	
+	text-align: center;
+	background: -webkit-linear-gradient(top,#FF444D,#BC0003);
+
+	position: absolute;
+	top:2px;
+
+	margin-left: 20px;
+	border: 2px solid #FFFFFF;
+	color:#FFFFFF;
+	font: bold 16px Helvetica;
+	border-radius: 18px;
+	box-shadow: 0px 4px 3px #000;
+	line-height: 18px;
+	z-index: 1000;
+}

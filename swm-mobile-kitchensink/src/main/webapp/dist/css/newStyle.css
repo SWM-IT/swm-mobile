@@ -1,0 +1,55 @@
+.logoImageWrapper {
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.logoImageContainer {
+    height: 55px;
+    width: 112px;
+
+}
+
+.grayBackground {
+    background: rgb(243, 243, 243);
+}
+
+.logoImageContainerZeit {
+    background: url("/img/media/dw-logo.jpg") center center no-repeat;
+    background-size: contain !important;
+}
+
+.logoImageContainer1 {
+    background: url("/img/media/Unknown.jpeg") center center no-repeat;
+    background-size: contain !important;
+}
+
+.logoImageContainer2 {
+    background: url("/img/media/fox-news-logo.jpg") center center no-repeat;
+    background-size: contain !important;
+}
+
+.logoImageContainer3 {
+    background: url("/img/media/pc_mag.png") center center no-repeat;
+    background-size: contain !important;
+}
+
+.logoImageContainer4 {
+    background: url("/img/media/old-usa-today-logo.jpg") center center no-repeat;
+    background-size: contain !important;
+}
+
+.logoImageContainer5 {
+    background: url("/img/media/tc_transparent.png") center center no-repeat;
+    background-size: 80% !important;
+}
+
+.logoImageContainer6 {
+    background: url("/img/media/Mashable-Logo.png") center center no-repeat;
+
+    background-size: contain !important;
+}
+
+.logoImageContainer7 {
+    background: url("/img/media/CNN-transparent.png") center center no-repeat;
+    background-size: 80% !important;
+}

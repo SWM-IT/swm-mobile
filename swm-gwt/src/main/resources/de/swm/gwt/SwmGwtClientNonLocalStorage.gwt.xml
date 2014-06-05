@@ -1,0 +1,16 @@
+<!-- SwmGwtClient without local storage support. In particular, does not require Piriti for
+     JSON (de-)serialization -->
+<module>
+	<inherits name='com.google.gwt.inject.Inject'/>
+    <inherits name='com.google.web.bindery.event.EventBinder'/>
+    <!-- durch das Include wurden andere Projekte (klassische GWT Projekte) nicht compile faehig -->
+	<!--<inherits name='name.pehl.piriti.json.JSON'/>-->
+    <source path="client">
+    	<exclude name="mobile/keystore/**" />
+    	<exclude name="mobile/network/AbstractVersionControlMonitor.java" />
+    	<exclude name="logging/LocalStorageLogHandler.java"/>
+    	<!-- 
+    	<exclude name="asyncjs/**" />
+    	-->
+    </source>
+</module>

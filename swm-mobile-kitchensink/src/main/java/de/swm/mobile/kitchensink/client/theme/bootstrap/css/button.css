@@ -1,0 +1,181 @@
+@if swmmobile.css pretty {
+	@external button, bigbutton, pressed, buttonLightLeftText, backButton, pointer, hidden, nextButton, disabled, imageButton;
+}
+
+.button, .imageButton {
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: 400;
+    text-align: center !important;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    white-space: nowrap;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    border-radius: 4px;
+    \-webkit-user-select: none;
+    \-moz-user-select: none;
+    \-ms-user-select: none;
+    user-select: none;
+
+    color: #333;
+    background-color: #fff;
+    border: 1px solid #ccc;
+}
+
+.bigbutton {
+    color: #ffffff;
+    border: 1px solid #9E9E9E;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    display: block;
+    font-size: 20px;
+    font-weight: 400;
+    padding: 0.7em 0.7em 0.7em 0.7em;
+    \-webkit-border-radius: 0.3em;
+    height:3em;
+    text-align: center;
+    background-image: literal('linear-gradient(to bottom, #26EC00 0%, #017C01 100%)');
+    border-radius: 0.3em;
+}
+
+
+.buttonLightLeftText {
+	text-align: left;
+    font-family: inherit;
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: 400;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    white-space: nowrap;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    border-radius: 4px !important;
+    \-webkit-user-select: none;
+    \-moz-user-select: none;
+    \-ms-user-select: none;
+    user-select: none;
+
+    color: #333;
+    background-color: #fff;
+    border: 1px solid #ccc;
+}
+
+.buttonLightLeftText.pressed {
+	background: literal('-webkit-gradient(linear, 0% 0%, 0% 100%, from(#D5D5D5), to(#A09D9D))');
+}
+
+.bigbutton.pressed {
+    background: literal('-webkit-gradient(linear, 0% 0%, 0% 100%, from(#D5D5D5), to(#A09D9D))');
+}
+
+.button.pressed, .backButton.pressed > span.button, .nextButton.pressed > span.button {
+    background: literal('-webkit-gradient(linear, 0% 0%, 0% 100%, from(#D5D5D5), to(#A09D9D))');
+}
+
+
+.backButton>.button {
+    border: 0px solid #fff !important;
+    background-color: transparent !important;
+    margin-bottom: 1px;
+    font-size: 20px !important;
+    font-family: inherit !important;
+    font-weight: 400 !important;
+    line-height: 1.1 !important;
+    color: #197A00 !important;
+}
+
+.backButton{
+
+}
+
+.backButton:before {
+    content: "<";
+    vertical-align: sub;
+    font-size: 25px;
+    font-family: inherit;
+    font-weight: 400;
+    line-height: 1.1;
+    color: #197A00;
+}
+
+.backButton > span.button {
+}
+
+.backButton > span.pointer {
+}
+
+
+.backButton.pressed > span.pointer {
+
+}
+
+.backButton.hidden {
+	display: none;
+}
+
+
+.nextButton {
+	position: relative;
+}
+
+.nextButton>.button {
+    border: 0px solid #fff !important;
+    background-color: transparent !important;
+
+    font-size: 20px !important;
+    font-family: inherit !important;
+    font-weight: 400 !important;
+    line-height: 1.1 !important;
+    color: #197A00 !important;
+}
+
+.nextButton:after {
+    content: ">";
+    vertical-align: sub;
+    font-size: 25px;
+    font-family: inherit;
+    font-weight: 400;
+    line-height: 1.1;
+    color: #197A00;
+}
+
+.nextButton > span.button {
+
+}
+
+.nextButton > span.pointer {
+
+}
+
+.nextButton.pressed > span.pointer {
+
+}
+
+.button.disabled {
+	color: gray;
+}
+
+
+.imageButton.pressed {
+	background: literal('-webkit-gradient(linear, 0% 0%, 0% 100%, from(lightgreen), color-stop(0.5, #298C08), color-stop(0.5, darkgreen), to(darkgreen))');
+	background: literal('linear-gradient(to bottom, lightgreen 0%, #298C08 50%, darkgreen 50%, darkgreen 100%)');
+}
+
+.imageButton > img {
+    \-webkit-user-select: none;
+	border-style: none;
+	outline: none;
+}
+
+.imageButton > div {
+	-webkit-box-align: center;
+	padding-left: 0.3em;
+	-ms-flex-align: center;
+}

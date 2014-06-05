@@ -1,0 +1,13 @@
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui"
+	xmlns:m="urn:import:de.swm.commons.mobile.client.widgets"
+	xmlns:t="urn:import:de.swm.commons.mobile.client.widgets.tree">
+	
+	<g:HTMLPanel ui:field="content">
+		<m:SimpleHeaderPanel ui:field="header" leftButton="Back">
+			<g:Label>Tree Panel</g:Label>			
+		</m:SimpleHeaderPanel>
+		<t:TreePanel ui:field="treePanel" hasBreadcrumb="false" />		
+	</g:HTMLPanel>	
+</ui:UiBinder> 
