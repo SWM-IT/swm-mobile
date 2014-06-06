@@ -62,16 +62,14 @@ public class Application implements EntryPoint {
 		settings.setIconUrl("images/apple-touch-icon.png");
 		settings.setStartUrl("images/startup.png");
 
-		/**
+
 		ViewPort viewPort = new ViewPort();
-		viewPort.setTargetDensity(Density.DEVICE);
+		viewPort.setWidthToDeviceWidth();
 		viewPort.setInitialScale(1);
 		viewPort.setMaximumScale(1);
-		viewPort.setMinimumScale(1);
 		viewPort.setUserScaleAble(false);
 		settings.setViewPort(viewPort);
 
-		 **/
 		SWMMobile.applySettings(settings);
 
 		Scheduler.get().scheduleDeferred(new ScheduledCommand() {
