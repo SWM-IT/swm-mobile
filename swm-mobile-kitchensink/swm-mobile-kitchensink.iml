@@ -47,8 +47,8 @@
     <orderEntry type="library" name="Maven: javax.validation:validation-api:1.0.0.GA" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: javax.validation:validation-api:sources:1.0.0.GA" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.json:json:20090211" level="project" />
-    <orderEntry type="module" module-name="swm-mobile" />
-    <orderEntry type="module" module-name="swm-gwt-client" />
+    <orderEntry type="library" name="Maven: de.swm.commons.mobile.client:swm-mobile:1.8-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: de.swm.commons:swm-gwt-client:1.23-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: com.google.gwt.eventbinder:eventbinder:1.0.2" level="project" />
     <orderEntry type="library" name="Maven: org.gwtopenmaps.openlayers:gwt-openlayers-client:0.8" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.gwtbootstrap3:gwtbootstrap3:0.8-SNAPSHOT" level="project" />
