@@ -22,6 +22,23 @@
         <developerConnection>scm:git:https://github.com/SWM-IT/swm-mobile.git</developerConnection>
         <url>https://github.com/SWM-IT/swm-mobile.git</url>
     </scm>
+    <organization>
+        <name>SWM</name>
+        <url>http://www.swm.de</url>
+    </organization>
+    <developers>
+        <developer>
+            <id>wiese.daniel</id>
+            <name>Daniel Wiese</name>
+            <email>wiese.daniel@swm.de</email>
+            <organization>SWM</organization>
+            <organizationUrl>http://www.swm.de</organizationUrl>
+            <roles>
+                <role>architect</role>
+                <role>developer</role>
+            </roles>
+        </developer>
+    </developers>
     <dependencies>
         <dependency>
             <groupId>de.swm</groupId>
@@ -90,6 +107,59 @@
 
     <build>
         <plugins>
+            <!-- START: Plugins for maven central distribution -->
+            <plugin>
+                <groupId>org.sonatype.plugins</groupId>
+                <artifactId>nexus-staging-maven-plugin</artifactId>
+                <version>1.6.1</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <serverId>ossrh</serverId>
+                    <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+                    <autoReleaseAfterClose>true</autoReleaseAfterClose>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>2.2.1</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.9.1</version>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <version>1.5</version>
+                <executions>
+                    <execution>
+                        <id>sign-artifacts</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>sign</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <!-- END: Plugins for maven central distribution -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -160,18 +230,15 @@
             </resource>
         </resources>
     </build>
-    <!-- SWM Distribution -->
+    <!-- Central Distribution -->
     <distributionManagement>
-        <repository>
-            <id>SWMRepository</id>
-            <name>SWM-Main-Repository</name>
-            <url>file:///Users/wiesed/Development/repository</url>
-            <!--<url>http://ci.intra.swm.de/nexus/content/repositories/SWM-S-IP-AN-Repository</url>-->
-        </repository>
         <snapshotRepository>
-            <id>SWMSnapshots</id>
-            <name>SWM Snapshots</name>
-            <url>http://nexus.intra.swm.de/nexus/content/repositories/swm-snapshot-repo/</url>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
         </snapshotRepository>
+        <repository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
     </distributionManagement>
 </project>
