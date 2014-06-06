@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>de.swm.commons.mobile.client</groupId>
+    <groupId>de.swm</groupId>
     <artifactId>swm-mobile</artifactId>
     <packaging>jar</packaging>
     <version>1.8-SNAPSHOT</version>
@@ -9,7 +9,7 @@
     <description>GWT Bibliothek fuer Mobile Plattformen der SWM</description>
     <inceptionYear>2011</inceptionYear>
     <properties>
-        <gwt.version>2.5.0</gwt.version>
+        <gwt.version>2.6.1</gwt.version>
         <swm.gwtclient.version>1.23-SNAPSHOT</swm.gwtclient.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <guice.version>3.0</guice.version>
@@ -18,13 +18,13 @@
         <maven.javadoc.skip>true</maven.javadoc.skip>
     </properties>
     <scm>
-        <connection>scm:svn:https://swm-mobile.googlecode.com/svn/trunk</connection>
-        <developerConnection>scm:svn:https://swm-mobile.googlecode.com/svn/trunk</developerConnection>
-        <url>https://swm-mobile.googlecode.com/svn/trunk</url>
+        <connection>scm:git:https://github.com/SWM-IT/swm-mobile.git</connection>
+        <developerConnection>scm:git:https://github.com/SWM-IT/swm-mobile.git</developerConnection>
+        <url>https://github.com/SWM-IT/swm-mobile.git</url>
     </scm>
     <dependencies>
         <dependency>
-            <groupId>de.swm.commons</groupId>
+            <groupId>de.swm</groupId>
             <artifactId>swm-gwt-client</artifactId>
             <version>${swm.gwtclient.version}</version>
         </dependency>
