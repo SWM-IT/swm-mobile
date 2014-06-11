@@ -11,6 +11,7 @@ import de.swm.commons.mobile.client.widgets.HorizontalPanel;
 import de.swm.commons.mobile.client.widgets.ListItem;
 import de.swm.commons.mobile.client.widgets.VerticalPanel;
 
+import java.util.Date;
 
 
 /**
@@ -26,6 +27,9 @@ public class TripListItem extends ListItem {
 	private Image categoryImage;
 	private Label titleLabel;
 	private Label subtitleLabel;
+	private Date departureTime;
+	private Date arrivalTime;
+
 
 
 
@@ -77,4 +81,19 @@ public class TripListItem extends ListItem {
 		subtitleLabel.setText(subtitle);
 	}
 
+	public Date getDepartureTime() {
+		return departureTime;
+	}
+
+	public void setDepartureTime(Date departureTime) {
+		this.departureTime = departureTime;
+	}
+
+	public Date getArrivalTime() {
+		return arrivalTime;
+	}
+
+	public void setArrivalTime(Date arrivalTime) {
+		this.arrivalTime = arrivalTime;
+	}
 }
