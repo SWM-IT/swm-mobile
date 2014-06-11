@@ -19,12 +19,12 @@ import com.google.gwt.dom.client.Style.Unit;
 import com.google.gwt.resources.client.ImageResource;
 import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.user.client.ui.Label;
-
 import de.swm.commons.mobile.client.SWMMobile;
+
+import java.util.Date;
 
 /**
  * ListItem which represents an individual component of a trip.
- * 
  */
 public class TripListItem extends ListItem {
 
@@ -34,68 +34,54 @@ public class TripListItem extends ListItem {
 	private Label subtitleLabel;
 	private Label subSubtitleLabel;
 	private Label timeLabel;
+	private Date departureTime;
+	private Date arrivalTime;
+
 
 	/**
 	 * Default constructor.
-	 * 
-	 * @param progress
-	 *            .
-	 * @param category
-	 *            .
-	 * @param title
-	 *            .
-	 * @param subtitle
-	 *            .
-	 * @param dalay
-	 *            .
+	 *
+	 * @param progress .
+	 * @param category .
+	 * @param title    .
+	 * @param subtitle .
+	 * @param dalay    .
 	 */
 	public TripListItem(ImageResource progress, ImageResource category,
-			String title, String subtitle, String dalay) {
+						String title, String subtitle, String dalay) {
 		this(progress, category, title, subtitle, "", dalay, "", "");
 
 	}
 
 	/**
 	 * Default constructor.
-	 * 
-	 * @param progress
-	 *            .
-	 * @param category
-	 *            .
-	 * @param title
-	 *            .
-	 * @param subtitle
-	 *            .
+	 *
+	 * @param progress .
+	 * @param category .
+	 * @param title    .
+	 * @param subtitle .
 	 */
 	public TripListItem(ImageResource progress, ImageResource category,
-			String title, String subtitle, String subSubTitle, String dalay) {
+						String title, String subtitle, String subSubTitle, String dalay) {
 		this(progress, category, title, subtitle, subSubTitle, dalay, "", "");
 
 	}
 
 	/**
 	 * Default constructor.
-	 * 
-	 * @param progress
-	 *            .
-	 * @param category
-	 *            .
-	 * @param title
-	 *            .
-	 * @param subtitle
-	 *            .
-	 * @param subSubTitle
-	 *            .
-	 * @param dalay
-	 *            .
-	 * @param departurePlatform
-	 *            .
-	 * @param arrivalPlatform
-	 *            .
+	 *
+	 * @param progress          .
+	 * @param category          .
+	 * @param title             .
+	 * @param subtitle          .
+	 * @param subSubTitle       .
+	 * @param dalay             .
+	 * @param departurePlatform .
+	 * @param arrivalPlatform   .
 	 */
 	public TripListItem(ImageResource progress, ImageResource category,
-			String title, String subtitle, String subSubTitle, String dalay,
-			String departurePlatform, String arrivalPlatform) {
+						String title, String subtitle, String subSubTitle, String dalay,
+						String departurePlatform, String arrivalPlatform) {
 		addStyleName(SWMMobile.getTheme().getMGWTCssBundle()
 				.getTripListItemCss().tripListMainPanel());
 		HorizontalPanel panel = new HorizontalPanel();
@@ -119,7 +105,7 @@ public class TripListItem extends ListItem {
 		HorizontalPanel titlePanel = new HorizontalPanel();
 		titlePanel.addStyleName(SWMMobile.getTheme().getMGWTCssBundle()
 				.getTripListItemCss().tripListTitlePanel());
-		
+
 		titleLabel = new Label(title);
 		titleLabel.addStyleName(SWMMobile.getTheme().getMGWTCssBundle()
 				.getTripListItemCss().tripListItemTitle());
@@ -156,17 +142,17 @@ public class TripListItem extends ListItem {
 		subSubtitleLabel.addStyleName(SWMMobile.getTheme().getMGWTCssBundle()
 				.getTripListItemCss().tripListItemSubSubtitle());
 		subsubTitlePanel.add(subSubtitleLabel);
-		
+
 		HorizontalPanel arrivalPlatformPanel = new HorizontalPanel();
 		arrivalPlatformPanel.addStyleName(SWMMobile.getTheme()
 				.getMGWTCssBundle().getTripListItemCss().tripListTimePanel());
-		
+
 		final Label arrivalPlatformLabel = new Label(arrivalPlatform);
 		arrivalPlatformLabel.addStyleName(SWMMobile.getTheme().getMGWTCssBundle()
 				.getTripListItemCss().tripListTimeLabel());
 		arrivalPlatformLabel.addStyleName(SWMMobile.getTheme().getMGWTCssBundle()
 				.getTripListItemCss().tripPunctual());
-		
+
 		arrivalPlatformPanel.add(arrivalPlatformLabel);
 		subsubTitlePanel.add(arrivalPlatformPanel);
 		vPanel.add(subsubTitlePanel);
@@ -177,9 +163,8 @@ public class TripListItem extends ListItem {
 
 	/**
 	 * Image for the progress bar.
-	 * 
-	 * @param image
-	 *            the image
+	 *
+	 * @param image the image
 	 */
 	public void setProgressImage(ImageResource image) {
 		progressImage.setResource(image);
@@ -187,9 +172,8 @@ public class TripListItem extends ListItem {
 
 	/**
 	 * The image for the trip category.
-	 * 
-	 * @param categoryImage
-	 *            the category image
+	 *
+	 * @param categoryImage the category image
 	 */
 	public void setCategoryImage(Image categoryImage) {
 		this.categoryImage = categoryImage;
@@ -197,9 +181,8 @@ public class TripListItem extends ListItem {
 
 	/**
 	 * Sets the title.
-	 * 
-	 * @param title
-	 *            the title
+	 *
+	 * @param title the title
 	 */
 	public void setTitle(String title) {
 		titleLabel.setText(title);
@@ -207,9 +190,8 @@ public class TripListItem extends ListItem {
 
 	/**
 	 * Sets the subtitle.
-	 * 
-	 * @param subtitle
-	 *            the subtitle.
+	 *
+	 * @param subtitle the subtitle.
 	 */
 	public void setSubtitle(String subtitle) {
 		subtitleLabel.setText(subtitle);
@@ -217,19 +199,34 @@ public class TripListItem extends ListItem {
 
 	/**
 	 * Sets the departure time.
-	 * 
-	 * @param time
-	 *            the time
+	 *
+	 * @param time the time
 	 */
 	public void setTime(String time) {
 		timeLabel.setText(time);
 	}
 
+
+	public Date getArrivalTime() {
+		return arrivalTime;
+	}
+
+	public void setArrivalTime(Date arrivalTime) {
+		this.arrivalTime = arrivalTime;
+	}
+
+	public Date getDepartureTime() {
+		return departureTime;
+	}
+
+	public void setDepartureTime(Date departureTime) {
+		this.departureTime = departureTime;
+	}
+
 	/**
 	 * The delay in minutes (if to late or to early).
-	 * 
-	 * @param delay
-	 *            the delay
+	 *
+	 * @param delay the delay
 	 */
 	public void setDelay(long delay) {
 		if (delay == 0) {
@@ -243,5 +240,4 @@ public class TripListItem extends ListItem {
 					.getTripListItemCss().tripLate());
 		}
 	}
-
 }
