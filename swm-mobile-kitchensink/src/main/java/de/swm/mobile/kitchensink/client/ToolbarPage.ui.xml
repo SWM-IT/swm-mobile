@@ -7,7 +7,7 @@
 	<ui:with field='icon' type='de.swm.mobile.kitchensink.client.icon.IconResources'/>
 
 	<g:HTMLPanel>
-		<m:ToolbarPanel indexToSelectOnInit="2" ui:field="toolbar">
+		<m:ToolbarPanel indexToSelectOnInit="0" ui:field="toolbar">
 			<m:ToolbarElement>
 				<m:ToolbarHeader headerText='TextBox' headerImage='{icon.tab0}' highlightImage='{icon.tab0selected}' />
 				<m:ToolbarContent />

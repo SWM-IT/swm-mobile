@@ -5,22 +5,24 @@ import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.HasWidgets;
 import com.google.gwt.user.client.ui.Widget;
-
 import de.swm.commons.mobile.client.page.SimplePage;
 import de.swm.commons.mobile.client.widgets.ToolbarElement;
 import de.swm.commons.mobile.client.widgets.ToolbarPanel;
 import de.swm.commons.mobile.client.widgets.ToolbarPanel.ToolbarSelectionHandler;
-import de.swm.mobile.kitchensink.client.components.*;
+import de.swm.mobile.kitchensink.client.components.AboutPage;
+import de.swm.mobile.kitchensink.client.components.EditorPage;
+import de.swm.mobile.kitchensink.client.components.TestPage;
+import de.swm.mobile.kitchensink.client.components.TestResources;
 import de.swm.mobile.kitchensink.client.panel.PanelsPage;
+import de.swm.mobile.kitchensink.client.showcase.WidgetsPage;
 import de.swm.mobile.kitchensink.client.widget.TextBoxPage;
-import de.swm.mobile.kitchensink.client.widget.WidgetsPage;
 
 
 /**
  * Main entry page.
- * @author wiese.daniel
- * <br>copyright (C) 2011, SWM Services GmbH
  *
+ * @author wiese.daniel
+ *         <br>copyright (C) 2011, SWM Services GmbH
  */
 public class ToolbarPage extends SimplePage {
 
@@ -32,18 +34,22 @@ public class ToolbarPage extends SimplePage {
 	interface MainPage2UiBinder extends UiBinder<Widget, ToolbarPage> {
 	}
 
-	private TestPage testPage;
+
+	///NEU
 	private WidgetsPage widgetsPage;
+	//NEU ENDE
+
+	private TestPage testPage;
 	private PanelsPage panelsPage;
 	private TextBoxPage textboxPage;
 	private EditorPage editorPage;
 	private AboutPage aboutPage;
 
 
-
 	public ToolbarPage() {
 		initWidget(uiBinder.createAndBindUi(this));
-
+		TestResources res = GWT.create(TestResources.class);
+		widgetsPage = new WidgetsPage(res, toolbar.getContentArea(), 0);
 		toolbar.addSelectionHandler(new ToolbarSelectionHandler() {
 
 			@Override
@@ -52,45 +58,20 @@ public class ToolbarPage extends SimplePage {
 				if (content != null) {
 					switch (index) {
 						case 0:
-							if (textboxPage == null) {
-								TestResources res = GWT.create(TestResources.class);
-								textboxPage = new TextBoxPage(res);
-								textboxPage.setParent(toolbar.getContentArea());
-							}
-							content.clear();
-							content.add(textboxPage);
-							break;
-						case 1:
-							if (widgetsPage == null) {
-								widgetsPage = new WidgetsPage();
-								widgetsPage.setParent(toolbar.getContentArea());
-							}
 							content.clear();
 							content.add(widgetsPage);
 							break;
+						case 1:
+
+							break;
 						case 2:
-							if (panelsPage == null) {
-								panelsPage = new PanelsPage();
-								panelsPage.setParent(toolbar.getContentArea());
-							}
-							content.clear();
-							content.add(panelsPage);
+
 							break;
 						case 3:
-							if (testPage == null) {
-								testPage = new TestPage();
-								testPage.setParent(toolbar.getContentArea());
-							}
-							content.clear();
-							content.add(testPage);
+
 							break;
 						case 4:
-							if (editorPage == null) {
-								editorPage = new EditorPage();
-								editorPage.setParent(toolbar.getContentArea());
-							}
-							content.clear();
-							content.add(editorPage);
+
 							break;
 						case 5:
 							if (aboutPage == null) {
@@ -106,12 +87,12 @@ public class ToolbarPage extends SimplePage {
 				}
 			}
 		});
-		
+
 		toolbar.setBadgeValue(3, "2");
 
 	}
 
-	public void selectToolbar(int index){
+	public void selectToolbar(int index) {
 		toolbar.selectTool(index, true);
 	}
 

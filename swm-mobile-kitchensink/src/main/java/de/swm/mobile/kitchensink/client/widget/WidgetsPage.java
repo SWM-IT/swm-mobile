@@ -12,6 +12,7 @@ import de.swm.commons.mobile.client.widgets.ListPanel;
 import de.swm.commons.mobile.client.widgets.SimpleHeaderPanel;
 import de.swm.gwt.client.mobile.Direction;
 import de.swm.mobile.kitchensink.client.Application;
+import de.swm.mobile.kitchensink.client.showcase.widgets.ButtonPage;
 
 public class WidgetsPage extends SimplePage {
 

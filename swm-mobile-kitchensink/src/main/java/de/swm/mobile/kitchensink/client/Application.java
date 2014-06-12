@@ -94,7 +94,7 @@ public class Application implements EntryPoint {
 
 			@Override
 			public void onClick(ClickEvent event) {
-				Application.getStartPage().selectToolbar(2);
+				Application.getStartPage().selectToolbar(1);
 			}
 		});
 	}

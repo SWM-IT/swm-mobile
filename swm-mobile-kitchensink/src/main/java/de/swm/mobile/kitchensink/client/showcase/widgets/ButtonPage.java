@@ -1,4 +1,4 @@
-package de.swm.mobile.kitchensink.client.widget;
+package de.swm.mobile.kitchensink.client.showcase.widgets;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -11,15 +11,16 @@ import com.google.gwt.user.client.ui.Widget;
 import de.swm.commons.mobile.client.page.SimplePage;
 import de.swm.commons.mobile.client.widgets.SimpleHeaderPanel;
 import de.swm.mobile.kitchensink.client.Application;
+import de.swm.mobile.kitchensink.client.base.ShowcaseDetailPage;
 
 
-
-public class ButtonPage extends SimplePage {
+public class ButtonPage extends ShowcaseDetailPage {
 
 	private static ButtonPageUiBinder uiBinder = GWT.create(ButtonPageUiBinder.class);
 
 	@UiField SimpleHeaderPanel header;
-	
+
+
 	interface ButtonPageUiBinder extends UiBinder<Widget, ButtonPage> {
 	}
 
@@ -30,6 +31,10 @@ public class ButtonPage extends SimplePage {
 		Application.addDefaultBackButtonHanlder(header);
 	}
 
+	@Override
+	public SimpleHeaderPanel getHeaderPanel() {
+		return header;
+	}
 
 
 	@UiHandler("ok1")
@@ -81,6 +86,6 @@ public class ButtonPage extends SimplePage {
 
 	@Override
 	public String getName() {
-		return ButtonPage.class.getName();
+		return "Buttons";
 	}
 }

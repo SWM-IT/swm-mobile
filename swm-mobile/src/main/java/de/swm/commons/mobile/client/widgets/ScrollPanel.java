@@ -306,7 +306,7 @@ public class ScrollPanel extends PanelBase implements HasWidgets, DragEventsHand
 
 	@Override
 	public void add(Widget w) {
-		assert myFlowPanel.getWidgetCount() == 0 : "Can only add one widget to ScrollPanel.";
+		//assert myFlowPanel.getWidgetCount() == 0 : "Can only add one widget to ScrollPanel.";
 		super.add(w);
 		if (SWMMobile.getOsDetection().isIOs()) {
 			Utils.setTranslateY(w.getElement(), 0); // anti-flickering on iOS.
