@@ -11,6 +11,7 @@ import com.google.gwt.user.client.ui.Widget;
 import de.swm.commons.mobile.client.page.SimplePage;
 import de.swm.commons.mobile.client.widgets.SimpleHeaderPanel;
 import de.swm.mobile.kitchensink.client.Application;
+import de.swm.mobile.kitchensink.client.ShowcaseAnnotations;
 import de.swm.mobile.kitchensink.client.base.ShowcaseDetailPage;
 
 
@@ -31,6 +32,7 @@ public class ButtonPage extends ShowcaseDetailPage {
 		Application.addDefaultBackButtonHanlder(header);
 	}
 
+	@ShowcaseAnnotations.ShowcaseSource
 	@Override
 	public SimpleHeaderPanel getHeaderPanel() {
 		return header;
