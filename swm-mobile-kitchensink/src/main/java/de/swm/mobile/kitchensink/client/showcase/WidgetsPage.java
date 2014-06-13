@@ -9,9 +9,7 @@ import de.swm.commons.mobile.client.widgets.SimpleHeaderPanel;
 import de.swm.mobile.kitchensink.client.Application;
 import de.swm.mobile.kitchensink.client.base.ShowcaseOverviewPage;
 import de.swm.mobile.kitchensink.client.components.TestResources;
-import de.swm.mobile.kitchensink.client.showcase.widgets.ButtonPage;
-import de.swm.mobile.kitchensink.client.showcase.widgets.CheckBoxPage;
-import de.swm.mobile.kitchensink.client.showcase.widgets.DropDownListPage;
+import de.swm.mobile.kitchensink.client.showcase.widgets.*;
 
 
 public class WidgetsPage extends ShowcaseOverviewPage {
@@ -24,6 +22,10 @@ public class WidgetsPage extends ShowcaseOverviewPage {
 		addPage(new ButtonPage());
 		addPage(new CheckBoxPage());
 		addPage(new DropDownListPage());
+		addPage(new FlipSwitchPage());
+		addPage(new RadioButtonPage());
+		addPage(new SliderPage());
+		addPage(new TextBoxPage());
 	}
 
 

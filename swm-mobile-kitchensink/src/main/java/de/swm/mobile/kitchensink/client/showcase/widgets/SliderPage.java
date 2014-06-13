@@ -1,4 +1,4 @@
-package de.swm.mobile.kitchensink.client.widget;
+package de.swm.mobile.kitchensink.client.showcase.widgets;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.logical.shared.ValueChangeEvent;
@@ -11,10 +11,15 @@ import com.google.gwt.user.client.ui.Widget;
 import de.swm.commons.mobile.client.page.SimplePage;
 import de.swm.commons.mobile.client.widgets.SimpleHeaderPanel;
 import de.swm.mobile.kitchensink.client.Application;
+import de.swm.mobile.kitchensink.client.base.ShowcaseDetailPage;
 
 
+import static de.swm.mobile.kitchensink.client.ShowcaseAnnotations.ShowcaseSource;
+import static de.swm.mobile.kitchensink.client.ShowcaseAnnotations.ShowcaseUiXML;
 
-public class SliderPage extends SimplePage {
+@ShowcaseSource
+@ShowcaseUiXML({"SliderPage.ui.xml"})
+public class SliderPage extends ShowcaseDetailPage {
 
 	@UiField
 	Label value1;
@@ -22,14 +27,19 @@ public class SliderPage extends SimplePage {
 
 	private static FlipSwitchPageUiBinder uiBinder = GWT.create(FlipSwitchPageUiBinder.class);
 
+	@Override
+	public SimpleHeaderPanel getHeaderPanel() {
+		return header;
+	}
+
 	interface FlipSwitchPageUiBinder extends UiBinder<Widget, SliderPage> {
 	}
 
 
 
 	public SliderPage() {
+		super(SliderPage.class);
 		initWidget(uiBinder.createAndBindUi(this));
-		Application.addDefaultBackButtonHanlder(header);
 	}
 
 
@@ -43,6 +53,6 @@ public class SliderPage extends SimplePage {
 
 	@Override
 	public String getName() {
-		return SliderPage.class.getName();
+		return "Slider page";
 	}
 }

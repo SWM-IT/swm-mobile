@@ -23,7 +23,7 @@ import static de.swm.mobile.kitchensink.client.ShowcaseAnnotations.ShowcaseSourc
 import static de.swm.mobile.kitchensink.client.ShowcaseAnnotations.ShowcaseUiXML;
 
 @ShowcaseSource
-@ShowcaseUiXML({"CheckBoxPage.ui.xml"})
+@ShowcaseUiXML({"DropDownListPage.ui.xml"})
 public class DropDownListPage extends ShowcaseDetailPage {
 
 

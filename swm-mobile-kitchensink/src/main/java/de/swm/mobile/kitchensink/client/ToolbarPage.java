@@ -15,7 +15,7 @@ import de.swm.mobile.kitchensink.client.components.TestPage;
 import de.swm.mobile.kitchensink.client.components.TestResources;
 import de.swm.mobile.kitchensink.client.panel.PanelsPage;
 import de.swm.mobile.kitchensink.client.showcase.WidgetsPage;
-import de.swm.mobile.kitchensink.client.widget.TextBoxPage;
+import de.swm.mobile.kitchensink.client.showcase.widgets.TextBoxPage;
 
 
 /**

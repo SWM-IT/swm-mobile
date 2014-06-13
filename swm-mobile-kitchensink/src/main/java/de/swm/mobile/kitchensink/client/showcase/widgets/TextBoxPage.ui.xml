@@ -5,7 +5,7 @@
              xmlns:bhtml="urn:import:org.gwtbootstrap3.client.ui.html"
              xmlns:m="urn:import:de.swm.commons.mobile.client.widgets">
     <g:HTMLPanel>
-        <m:SimpleHeaderPanel ui:field="header">
+        <m:SimpleHeaderPanel ui:field="header" leftButton="Back">
             <g:Label>Text Box</g:Label>
         </m:SimpleHeaderPanel>
         <div class="row">
