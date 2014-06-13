@@ -7,6 +7,7 @@ import com.google.gwt.core.ext.TreeLogger;
 import com.google.gwt.core.ext.UnableToCompleteException;
 import com.google.gwt.core.ext.typeinfo.JClassType;
 import com.google.gwt.core.ext.typeinfo.NotFoundException;
+import de.swm.mobile.kitchensink.client.ShowcaseAnnotations;
 import de.swm.mobile.kitchensink.client.ShowcaseConstants;
 import de.swm.mobile.kitchensink.client.base.ShowcaseDetailPage;
 
@@ -21,15 +22,6 @@ import static de.swm.mobile.kitchensink.client.ShowcaseAnnotations.ShowcaseSourc
  * examples.
  */
 public class ShowcaseGenerator extends Generator {
-	/**
-	 * The paths to the CSS style sheets used in Showcase. The paths are relative
-	 * to the root path of the {@link ClassLoader}. The variable $THEME will be
-	 * replaced by the current theme. The variable $RTL will be replaced by "_rtl"
-	 * for RTL locales.
-	 */
-	private static final String[] SRC_CSS = {
-			"com/google/gwt/user/theme/$THEME/public/gwt/$THEME/$THEME$RTL.css",
-			"com/google/gwt/sample/showcase/client/Showcase.css"};
 
 	/**
 	 * The class loader used to get resources.
@@ -78,6 +70,7 @@ public class ShowcaseGenerator extends Generator {
 
 		// Generate the source and raw source files
 		for (JClassType type : types) {
+			generateRawFiles(type);
 			generateSourceFiles(type);
 		}
 
@@ -107,6 +100,46 @@ public class ShowcaseGenerator extends Generator {
 		} catch (IOException e) {
 			logger.log(TreeLogger.ERROR, "Error writing file: " + partialPath, e);
 			throw new UnableToCompleteException();
+		}
+	}
+
+	/**
+	 * Erzeugt die UI.xml dateien.
+	 *
+	 */
+	private void generateRawFiles(JClassType type)
+			throws UnableToCompleteException {
+		// Look for annotation
+		if (!type.isAnnotationPresent(ShowcaseAnnotations.ShowcaseRaw.class)) {
+			return;
+		}
+
+		// Get the package info
+		String pkgName = type.getPackage().getName();
+		String pkgPath = pkgName.replace('.', '/') + "/";
+
+		// Generate each raw source file
+		String[] filenames = type.getAnnotation(ShowcaseAnnotations.ShowcaseRaw.class).value();
+		for (String filename : filenames) {
+			// Check if the file has already been generated.
+			String path = pkgName + filename;
+			if (rawFiles.contains(path)) {
+				continue;
+			}
+			rawFiles.add(path);
+
+			// Get the file contents
+			String fileContents = getResourceContents(pkgPath + filename);
+
+			// Make the source pretty
+			fileContents = fileContents.replace("<", "&lt;");
+			fileContents = fileContents.replace(">", "&gt;");
+			fileContents = fileContents.replace("* \n   */\n", "*/\n");
+			fileContents = "<pre>" + fileContents + "</pre>";
+
+			// Save the raw source in the public directory
+			String dstPath = ShowcaseConstants.DST_SOURCE_RAW + filename + ".html";
+			createPublicResource(dstPath, fileContents);
 		}
 	}
 
@@ -183,28 +216,6 @@ public class ShowcaseGenerator extends Generator {
 		return fileContentsBuf.toString();
 	}
 
-	/**
-	 * Load the contents of all CSS files used in the Showcase for a given
-	 * theme/RTL mode, concatenated into one string.
-	 *
-	 * @param theme the style theme
-	 * @param isRTL true if RTL mode
-	 * @return the concatenated styles
-	 */
-	private String getStyleDefinitions(String theme, boolean isRTL)
-			throws UnableToCompleteException {
-		String cssContents = "";
-		for (String path : SRC_CSS) {
-			path = path.replace("$THEME", theme);
-			if (isRTL) {
-				path = path.replace("$RTL", "_rtl");
-			} else {
-				path = path.replace("$RTL", "");
-			}
-			cssContents += getResourceContents(path) + "\n\n";
-		}
-		return cssContents;
-	}
 
 	/**
 	 * Ensure that we only generate files once by creating a placeholder file,
