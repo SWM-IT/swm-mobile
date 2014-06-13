@@ -1,5 +1,6 @@
 package de.swm.mobile.kitchensink.client.base;
 
+import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.Window;
@@ -37,14 +38,14 @@ public abstract class ShowcaseDetailPage extends SimplePage {
 			menu.add(new Button("Source", new ClickHandler() {
 				@Override
 				public void onClick(ClickEvent clickEvent) {
-					String path = ShowcaseConstants.DST_SOURCE_EXAMPLE + shortClassName + ".html";
+					String path = GWT.getModuleBaseURL() + ShowcaseConstants.DST_SOURCE_EXAMPLE + shortClassName + ".html";
 					Window.open(path, "_blank", null);
 				}
 			}));
 			menu.add(new Button("UI.xml", new ClickHandler() {
 				@Override
 				public void onClick(ClickEvent clickEvent) {
-					String path = ShowcaseConstants.DST_SOURCE_UIXML + shortClassName + ".ui.xml.html";
+					String path = GWT.getModuleBaseURL() + ShowcaseConstants.DST_SOURCE_UIXML + shortClassName + ".ui.xml.html";
 					Window.open(path, "_blank", null);
 				}
 			}));
