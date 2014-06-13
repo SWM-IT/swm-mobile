@@ -18,7 +18,7 @@ import java.util.Set;
 import static de.swm.mobile.kitchensink.client.ShowcaseAnnotations.ShowcaseSource;
 
 /**
- * Generate the source code, css styles, and raw source used in the Showcase
+ * Generate the source code, ui.xml source used in the Showcase
  * examples.
  */
 public class ShowcaseGenerator extends Generator {
@@ -48,7 +48,6 @@ public class ShowcaseGenerator extends Generator {
 	public String generate(
 			TreeLogger logger, GeneratorContext context, String typeName)
 			throws UnableToCompleteException {
-		logger.log(TreeLogger.Type.INFO, "Generaaating....");
 		this.logger = logger;
 		this.context = context;
 		this.classLoader = Thread.currentThread().getContextClassLoader();
@@ -70,7 +69,7 @@ public class ShowcaseGenerator extends Generator {
 
 		// Generate the source and raw source files
 		for (JClassType type : types) {
-			generateRawFiles(type);
+			generateUiXMLFiles(type);
 			generateSourceFiles(type);
 		}
 
@@ -107,10 +106,10 @@ public class ShowcaseGenerator extends Generator {
 	 * Erzeugt die UI.xml dateien.
 	 *
 	 */
-	private void generateRawFiles(JClassType type)
+	private void generateUiXMLFiles(JClassType type)
 			throws UnableToCompleteException {
 		// Look for annotation
-		if (!type.isAnnotationPresent(ShowcaseAnnotations.ShowcaseRaw.class)) {
+		if (!type.isAnnotationPresent(ShowcaseAnnotations.ShowcaseUiXML.class)) {
 			return;
 		}
 
@@ -119,7 +118,7 @@ public class ShowcaseGenerator extends Generator {
 		String pkgPath = pkgName.replace('.', '/') + "/";
 
 		// Generate each raw source file
-		String[] filenames = type.getAnnotation(ShowcaseAnnotations.ShowcaseRaw.class).value();
+		String[] filenames = type.getAnnotation(ShowcaseAnnotations.ShowcaseUiXML.class).value();
 		for (String filename : filenames) {
 			// Check if the file has already been generated.
 			String path = pkgName + filename;

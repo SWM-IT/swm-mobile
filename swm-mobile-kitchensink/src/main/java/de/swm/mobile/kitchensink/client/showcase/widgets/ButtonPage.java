@@ -11,11 +11,11 @@ import de.swm.commons.mobile.client.widgets.SimpleHeaderPanel;
 import de.swm.mobile.kitchensink.client.Application;
 import de.swm.mobile.kitchensink.client.base.ShowcaseDetailPage;
 
-import static de.swm.mobile.kitchensink.client.ShowcaseAnnotations.ShowcaseRaw;
 import static de.swm.mobile.kitchensink.client.ShowcaseAnnotations.ShowcaseSource;
+import static de.swm.mobile.kitchensink.client.ShowcaseAnnotations.ShowcaseUiXML;
 
 @ShowcaseSource
-@ShowcaseRaw({"ButtonPage.ui.xml"})
+@ShowcaseUiXML({"ButtonPage.ui.xml"})
 public class ButtonPage extends ShowcaseDetailPage {
 
 	private static ButtonPageUiBinder uiBinder = GWT.create(ButtonPageUiBinder.class);
