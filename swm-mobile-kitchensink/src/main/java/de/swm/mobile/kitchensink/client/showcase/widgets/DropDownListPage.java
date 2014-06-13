@@ -1,4 +1,4 @@
-package de.swm.mobile.kitchensink.client.widget;
+package de.swm.mobile.kitchensink.client.showcase.widgets;
 
 import java.io.IOException;
 
@@ -17,10 +17,15 @@ import de.swm.commons.mobile.client.widgets.DropDownList;
 import de.swm.commons.mobile.client.widgets.SimpleHeaderPanel;
 import de.swm.commons.mobile.client.widgets.itf.IProvidesKeyAndValue;
 import de.swm.mobile.kitchensink.client.Application;
+import de.swm.mobile.kitchensink.client.base.ShowcaseDetailPage;
 
+import static de.swm.mobile.kitchensink.client.ShowcaseAnnotations.ShowcaseSource;
+import static de.swm.mobile.kitchensink.client.ShowcaseAnnotations.ShowcaseUiXML;
 
+@ShowcaseSource
+@ShowcaseUiXML({"CheckBoxPage.ui.xml"})
+public class DropDownListPage extends ShowcaseDetailPage {
 
-public class DropDownListPage extends SimplePage {
 
 	@UiField
 	DropDownList<String> cars;
@@ -28,12 +33,18 @@ public class DropDownListPage extends SimplePage {
 
 	private static DropDownListPageUiBinder uiBinder = GWT.create(DropDownListPageUiBinder.class);
 
+	@Override
+	public SimpleHeaderPanel getHeaderPanel() {
+		return header;
+	}
+
 	interface DropDownListPageUiBinder extends UiBinder<Widget, DropDownListPage> {
 	}
 
 
 
 	public DropDownListPage() {
+		super(DropDownListPage.class);
 		initWidget(uiBinder.createAndBindUi(this));
 		Application.addDefaultBackButtonHanlder(header);
 		cars.setKeyValueProvider(new IProvidesKeyAndValue<String>() {
@@ -84,7 +95,7 @@ public class DropDownListPage extends SimplePage {
 
 	@Override
 	public String getName() {
-		return DropDownListPage.class.getName();
+		return "Drop down example";
 	}
 
 }

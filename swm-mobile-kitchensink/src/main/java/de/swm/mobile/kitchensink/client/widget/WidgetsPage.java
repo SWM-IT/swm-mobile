@@ -13,6 +13,8 @@ import de.swm.commons.mobile.client.widgets.SimpleHeaderPanel;
 import de.swm.gwt.client.mobile.Direction;
 import de.swm.mobile.kitchensink.client.Application;
 import de.swm.mobile.kitchensink.client.showcase.widgets.ButtonPage;
+import de.swm.mobile.kitchensink.client.showcase.widgets.CheckBoxPage;
+import de.swm.mobile.kitchensink.client.showcase.widgets.DropDownListPage;
 
 public class WidgetsPage extends SimplePage {
 

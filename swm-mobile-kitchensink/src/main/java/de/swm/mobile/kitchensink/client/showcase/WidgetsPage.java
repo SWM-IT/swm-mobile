@@ -10,6 +10,8 @@ import de.swm.mobile.kitchensink.client.Application;
 import de.swm.mobile.kitchensink.client.base.ShowcaseOverviewPage;
 import de.swm.mobile.kitchensink.client.components.TestResources;
 import de.swm.mobile.kitchensink.client.showcase.widgets.ButtonPage;
+import de.swm.mobile.kitchensink.client.showcase.widgets.CheckBoxPage;
+import de.swm.mobile.kitchensink.client.showcase.widgets.DropDownListPage;
 
 
 public class WidgetsPage extends ShowcaseOverviewPage {
@@ -20,6 +22,8 @@ public class WidgetsPage extends ShowcaseOverviewPage {
 		super(resources, toolbarContentArea, toolbarIndex);
 		//Die showcase komponenten
 		addPage(new ButtonPage());
+		addPage(new CheckBoxPage());
+		addPage(new DropDownListPage());
 	}
 
 
