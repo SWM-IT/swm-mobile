@@ -29,8 +29,8 @@ public class ButtonPage extends ShowcaseDetailPage {
 
 
 	public ButtonPage() {
+		super(ButtonPage.class);
 		initWidget(uiBinder.createAndBindUi(this));
-		Application.addDefaultBackButtonHanlder(header);
 	}
 
 	/**

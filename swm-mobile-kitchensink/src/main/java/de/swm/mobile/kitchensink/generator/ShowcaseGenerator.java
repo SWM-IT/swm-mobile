@@ -137,7 +137,7 @@ public class ShowcaseGenerator extends Generator {
 			fileContents = "<pre>" + fileContents + "</pre>";
 
 			// Save the raw source in the public directory
-			String dstPath = ShowcaseConstants.DST_SOURCE_RAW + filename + ".html";
+			String dstPath = ShowcaseConstants.DST_SOURCE_UIXML + filename + ".html";
 			createPublicResource(dstPath, fileContents);
 		}
 	}

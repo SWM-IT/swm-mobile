@@ -21,7 +21,7 @@ public interface ShowcaseConstants {
 	/**
 	 * The destination folder for ui xml files that are included in entirety.
 	 */
-	String DST_SOURCE_RAW = DST_SOURCE + "uixml/";
+	String DST_SOURCE_UIXML = DST_SOURCE + "uixml/";
 
 }
 
