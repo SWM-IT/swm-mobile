@@ -32,10 +32,19 @@ public class Application implements EntryPoint {
 
 	public static ToolbarPage mainPage;
 
+	/**
+	 * The type passed into the
+	 * {@link de.swm.mobile.kitchensink.generator.ShowcaseGenerator}.
+	 */
+	private static final class GeneratorInfo {
+	}
 
 
 	@Override
 	public void onModuleLoad() {
+		// Generate the source code and css for the examples
+		GWT.create(GeneratorInfo.class);
+
 		SWMMobile.setTheme(new BootsrapSWMMobileTheme());
 
 		GWT.setUncaughtExceptionHandler(new GWT.UncaughtExceptionHandler() {

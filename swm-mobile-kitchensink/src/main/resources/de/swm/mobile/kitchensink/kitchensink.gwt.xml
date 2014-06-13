@@ -49,7 +49,7 @@
 
     <!-- Use a generator to create the source code -->
     <generate-with class="de.swm.mobile.kitchensink.generator.ShowcaseGenerator">
-        <when-type-assignable class="de.swm.mobile.kitchensink.client.base.ShowcaseDetailPage" />
+        <when-type-assignable class="de.swm.mobile.kitchensink.client.Application.GeneratorInfo" />
     </generate-with>
     
 	<entry-point class="de.swm.mobile.kitchensink.client.Application" />

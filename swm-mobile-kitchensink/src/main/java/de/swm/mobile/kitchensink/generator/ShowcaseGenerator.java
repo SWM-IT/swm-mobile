@@ -6,13 +6,14 @@ import com.google.gwt.core.ext.GeneratorContext;
 import com.google.gwt.core.ext.TreeLogger;
 import com.google.gwt.core.ext.UnableToCompleteException;
 import com.google.gwt.core.ext.typeinfo.JClassType;
+import com.google.gwt.core.ext.typeinfo.NotFoundException;
 import de.swm.mobile.kitchensink.client.ShowcaseConstants;
+import de.swm.mobile.kitchensink.client.base.ShowcaseDetailPage;
 
 import java.io.*;
 import java.util.HashSet;
 import java.util.Set;
 
-import static de.swm.mobile.kitchensink.client.ShowcaseAnnotations.ShowcaseData;
 import static de.swm.mobile.kitchensink.client.ShowcaseAnnotations.ShowcaseSource;
 
 /**
@@ -67,6 +68,12 @@ public class ShowcaseGenerator extends Generator {
 
 		// Get the Showcase ContentWidget subtypes to examine
 		JClassType cwType = null;
+		try {
+			cwType = context.getTypeOracle().getType(ShowcaseDetailPage.class.getName());
+		} catch (NotFoundException e) {
+			logger.log(TreeLogger.ERROR, "Cannot find ContentWidget class", e);
+			throw new UnableToCompleteException();
+		}
 		JClassType[] types = cwType.getSubtypes();
 
 		// Generate the source and raw source files
@@ -116,41 +123,13 @@ public class ShowcaseGenerator extends Generator {
 
 		// Get each data code block
 		String formattedSource = "";
-		String dataTag = "@" + ShowcaseData.class.getSimpleName();
 		String sourceTag = "@" + ShowcaseSource.class.getSimpleName();
-		int dataTagIndex = fileContents.indexOf(dataTag);
 		int srcTagIndex = fileContents.indexOf(sourceTag);
-		while (dataTagIndex >= 0 || srcTagIndex >= 0) {
-			if (dataTagIndex >= 0
-					&& (dataTagIndex < srcTagIndex || srcTagIndex < 0)) {
-				// Get the boundaries of a DATA tag
-				int beginIndex = fileContents.lastIndexOf("  /*", dataTagIndex);
-				int beginTagIndex = fileContents.lastIndexOf("\n", dataTagIndex) + 1;
-				int endTagIndex = fileContents.indexOf("\n", dataTagIndex) + 1;
-				int endIndex = fileContents.indexOf(";", beginIndex) + 1;
+		if (srcTagIndex >= 0) {
+			// Add to the formatted source
+			String srcCode = fileContents;
+			formattedSource += srcCode + "\n\n";
 
-				// Add to the formatted source
-				String srcData = fileContents.substring(beginIndex, beginTagIndex)
-						+ fileContents.substring(endTagIndex, endIndex);
-				formattedSource += srcData + "\n\n";
-
-				// Get next tag
-				dataTagIndex = fileContents.indexOf(dataTag, endIndex + 1);
-			} else {
-				// Get the boundaries of a SRC tag
-				int beginIndex = fileContents.lastIndexOf("/*", srcTagIndex) - 2;
-				int beginTagIndex = fileContents.lastIndexOf("\n", srcTagIndex) + 1;
-				int endTagIndex = fileContents.indexOf("\n", srcTagIndex) + 1;
-				int endIndex = fileContents.indexOf("\n  }", beginIndex) + 4;
-
-				// Add to the formatted source
-				String srcCode = fileContents.substring(beginIndex, beginTagIndex)
-						+ fileContents.substring(endTagIndex, endIndex);
-				formattedSource += srcCode + "\n\n";
-
-				// Get the next tag
-				srcTagIndex = fileContents.indexOf(sourceTag, endIndex + 1);
-			}
 		}
 
 		// Make the source pretty
