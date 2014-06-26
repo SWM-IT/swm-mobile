@@ -25,7 +25,7 @@
     </content>
     <orderEntry type="jdk" jdkName="1.7" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="swm-gwt-client" />
+    <orderEntry type="library" name="Maven: de.swm:swm-gwt-client:1.23-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: com.google.gwt.eventbinder:eventbinder:1.0.2" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: com.google.gwt:gwt-user:2.6.0" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: javax.validation:validation-api:1.0.0.GA" level="project" />
