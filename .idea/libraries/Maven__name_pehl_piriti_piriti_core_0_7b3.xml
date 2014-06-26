@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: name.pehl.piriti:piriti-core:0.7b3">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/name/pehl/piriti/piriti-core/0.7b3/piriti-core-0.7b3.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/name/pehl/piriti/piriti-core/0.7b3/piriti-core-0.7b3-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/name/pehl/piriti/piriti-core/0.7b3/piriti-core-0.7b3-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

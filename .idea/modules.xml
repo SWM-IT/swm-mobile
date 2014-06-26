@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/swm-gwt/swm-gwt-client.iml" filepath="$PROJECT_DIR$/swm-gwt/swm-gwt-client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/swm-mobile/swm-mobile.iml" filepath="$PROJECT_DIR$/swm-mobile/swm-mobile.iml" />
+      <module fileurl="file://$PROJECT_DIR$/swm-mobile-base.iml" filepath="$PROJECT_DIR$/swm-mobile-base.iml" />
+      <module fileurl="file://$PROJECT_DIR$/swm-mobile-kitchensink/swm-mobile-kitchensink.iml" filepath="$PROJECT_DIR$/swm-mobile-kitchensink/swm-mobile-kitchensink.iml" />
+    </modules>
+  </component>
+</project>
+
