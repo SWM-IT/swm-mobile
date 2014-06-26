@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="swm-mobile-kitchensink:war">
+    <output-path>$PROJECT_DIR$/swm-mobile-kitchensink/target</output-path>
+    <root id="archive" name="kitchensink.war">
+      <element id="artifact" artifact-name="swm-mobile-kitchensink:war exploded" />
+    </root>
+  </artifact>
+</component>
