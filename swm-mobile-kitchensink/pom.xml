@@ -1,22 +1,21 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>de.swm.commons.mobile.client</groupId>
+	<parent>
+        <groupId>de.swm</groupId>
+        <artifactId>swm-mobile-base</artifactId>
+        <version>2.0-SNAPSHOT</version>
+    </parent>
+	<groupId>de.swm</groupId>
 	<artifactId>swm-mobile-kitchensink</artifactId>
-	<version>1.0-SNAPSHOT</version>
+	<version>2.0-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<name>Kitchen-Sink for swm-mobile</name>
 
 	<properties>
 		<webappDirectory>${project.build.directory}/${project.build.finalName}</webappDirectory>
-		<gwt.plugin.version>2.6.0</gwt.plugin.version>
-		<gwt.version>2.6.1</gwt.version>
-		<guice.version>3.0</guice.version>
-		<gin.version>1.5.0</gin.version>
-		<maven.compiler.source>1.6</maven.compiler.source>
-		<maven.compiler.target>1.6</maven.compiler.target>
-        <gwtBootstrap3.version>0.8-SNAPSHOT</gwtBootstrap3.version>
+        <!--<gwtBootstrap3.version>0.8-SNAPSHOT</gwtBootstrap3.version> -->
+        <gwtBootstrap3.version>0.7</gwtBootstrap3.version>
         <appengine.target.version>1.9.1</appengine.target.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
@@ -25,26 +24,22 @@
 		<dependency>
 			<groupId>com.google.gwt</groupId>
 			<artifactId>gwt-servlet</artifactId>
-			<version>${gwt.version}</version>
 			<scope>compile</scope>
 		</dependency>
 		<dependency>
 			<groupId>com.google.gwt</groupId>
 			<artifactId>gwt-user</artifactId>
-			<version>${gwt.version}</version>
 			<scope>provided</scope>
 		</dependency>
         <dependency>
             <groupId>com.google.gwt</groupId>
             <artifactId>gwt-dev</artifactId>
-            <version>${gwt.version}</version>
             <scope>provided</scope>
         </dependency>
 		<dependency>
 <!-- 			<groupId>de.swm.commons.mobile.client</groupId> -->
 			<groupId>de.swm</groupId>
 			<artifactId>swm-mobile</artifactId>
-			<version>1.8-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>javax.validation</groupId>
@@ -81,19 +76,16 @@
 		<dependency>
 			<groupId>com.google.inject</groupId>
 			<artifactId>guice</artifactId>
-			<version>${guice.version}</version>
 			<scope>compile</scope>
 		</dependency>
 		<dependency>
 			<groupId>com.google.gwt.inject</groupId>
 			<artifactId>gin</artifactId>
-			<version>${gin.version}</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>javax.inject</groupId>
 			<artifactId>javax.inject</artifactId>
-			<version>1</version>
 			<scope>provided</scope>
 		</dependency>
 		
@@ -101,13 +93,11 @@
 		<dependency>
 			<groupId>name.pehl.piriti</groupId>
 			<artifactId>piriti-core</artifactId>
-			<version>0.7b3</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>name.pehl</groupId>
 			<artifactId>totoe</artifactId>
-			<version>0.2.4</version>
 			<scope>provided</scope>
 		</dependency>
 		
@@ -115,8 +105,6 @@
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.9</version>
-			<type>jar</type>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
@@ -175,7 +163,6 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.1</version>
                 <configuration>
                     <encoding>UTF-8</encoding>
                     <source>1.7</source>
@@ -184,7 +171,6 @@
             </plugin>
 			<plugin>
 				<artifactId>maven-resources-plugin</artifactId>
-				<version>2.4</version>
 				<configuration>
 					<encoding>UTF-8</encoding>
 				</configuration>
@@ -229,18 +215,4 @@
 		</plugins>
 	</build>
 	
-	<!-- SWM Distribution -->
-	<distributionManagement>
-		<repository>
-			<id>SWMRepository</id>
-			<name>SWM-Main-Repository</name>
-			<url>http://ci.intra.swm.de/nexus/content/repositories/SWM-S-IP-AN-Repository</url>
-		</repository>
-		<snapshotRepository>
-			<id>SWMSnapshotRepository</id>
-			<name>SWM-Main-Repository-Snapshot</name>
-			<url>http://ci.intra.swm.de/nexus/content/repositories/SWM-S-IP-AN-Snapshot-Repository</url>
-			<uniqueVersion>false</uniqueVersion>
-		</snapshotRepository>
-	</distributionManagement>
 </project>
