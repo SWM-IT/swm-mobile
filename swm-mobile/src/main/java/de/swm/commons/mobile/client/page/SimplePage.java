@@ -262,8 +262,7 @@ public abstract class SimplePage extends SWMMobileWidgetBase implements IPage {
 	}
 
 
-
-	/**
+    /**
 	 * Will sets the CSS Styles matching the current resolution.
 	 */
 	private static void setPageResolution() {

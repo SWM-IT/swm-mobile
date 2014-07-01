@@ -14,6 +14,7 @@ import de.swm.mobile.kitchensink.client.components.EditorPage;
 import de.swm.mobile.kitchensink.client.components.TestPage;
 import de.swm.mobile.kitchensink.client.components.TestResources;
 import de.swm.mobile.kitchensink.client.panel.PanelsPage;
+import de.swm.mobile.kitchensink.client.showcase.AnimationsPage;
 import de.swm.mobile.kitchensink.client.showcase.WidgetsPage;
 import de.swm.mobile.kitchensink.client.showcase.widgets.TextBoxPage;
 
@@ -37,6 +38,7 @@ public class ToolbarPage extends SimplePage {
 
 	///NEU
 	private WidgetsPage widgetsPage;
+	private AnimationsPage animationsPage;
 	//NEU ENDE
 
 	private TestPage testPage;
@@ -50,6 +52,7 @@ public class ToolbarPage extends SimplePage {
 		initWidget(uiBinder.createAndBindUi(this));
 		TestResources res = GWT.create(TestResources.class);
 		widgetsPage = new WidgetsPage(res, toolbar.getContentArea(), 0);
+		animationsPage = new AnimationsPage(res, toolbar.getContentArea(), 1);
 		toolbar.addSelectionHandler(new ToolbarSelectionHandler() {
 
 			@Override
@@ -62,7 +65,8 @@ public class ToolbarPage extends SimplePage {
 							content.add(widgetsPage);
 							break;
 						case 1:
-
+                            content.clear();
+                            content.add(animationsPage);
 							break;
 						case 2:
 

@@ -2,8 +2,6 @@
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
 	xmlns:g="urn:import:com.google.gwt.user.client.ui"
 	xmlns:m="urn:import:de.swm.commons.mobile.client.widgets">
-	<ui:style>
-	</ui:style>
 	<g:HTMLPanel>
 		<m:SimpleHeaderPanel leftButton="Back" ui:field="header">
 			<g:Label>Transition</g:Label>			

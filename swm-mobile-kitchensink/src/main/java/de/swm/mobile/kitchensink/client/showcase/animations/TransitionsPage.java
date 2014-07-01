@@ -1,4 +1,4 @@
-package de.swm.mobile.kitchensink.client.transition;
+package de.swm.mobile.kitchensink.client.showcase.animations;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.uibinder.client.UiBinder;
@@ -7,27 +7,39 @@ import com.google.gwt.uibinder.client.UiHandler;
 import com.google.gwt.user.client.ui.Widget;
 
 import de.swm.commons.mobile.client.event.SelectionChangedEvent;
-import de.swm.commons.mobile.client.page.SimplePage;
 import de.swm.commons.mobile.client.page.Transition;
 import de.swm.commons.mobile.client.widgets.ListPanel;
+import de.swm.commons.mobile.client.widgets.SimpleHeaderPanel;
 import de.swm.gwt.client.mobile.Direction;
+import de.swm.mobile.kitchensink.client.base.ShowcaseDetailPage;
+import de.swm.mobile.kitchensink.client.showcase.animations.util.TransitionDemoPage;
 
+import static de.swm.mobile.kitchensink.client.ShowcaseAnnotations.ShowcaseSource;
+import static de.swm.mobile.kitchensink.client.ShowcaseAnnotations.ShowcaseUiXML;
 
+@ShowcaseSource
+@ShowcaseUiXML({"TransitionsPage.ui.xml"})
+public class TransitionsPage extends ShowcaseDetailPage {
 
-public class TransitionsPage extends SimplePage {
+    @UiField
+    SimpleHeaderPanel header;
 
 	@UiField
 	ListPanel list;
-	TransitionDemoPage demo = new TransitionDemoPage();
+
+
+	private final TransitionDemoPage demo = new TransitionDemoPage();
 
 	private static TransitionPageUiBinder uiBinder = GWT.create(TransitionPageUiBinder.class);
 
-	interface TransitionPageUiBinder extends UiBinder<Widget, TransitionsPage> {
+
+    interface TransitionPageUiBinder extends UiBinder<Widget, TransitionsPage> {
 	}
 
 
 
 	public TransitionsPage() {
+        super(TransitionsPage.class);
 		initWidget(uiBinder.createAndBindUi(this));
 	}
 
@@ -37,37 +49,33 @@ public class TransitionsPage extends SimplePage {
 	void onListSelectionChanged(SelectionChangedEvent e) {
 		switch (e.getSelection()) {
 			case 0:
-				demo.header.setCaption("Slide");
 				this.goTo(demo, Transition.SLIDE, Direction.RIGHT, null);
+                demo.setParentPage(this);
 				break;
 			case 1:
-				demo.header.setCaption("Slide Up");
 				this.goTo(demo, Transition.SLIDEUP, Direction.RIGHT, null);
+                demo.setParentPage(this);
 				break;
 			case 2:
-				demo.header.setCaption("Slide Down");
 				this.goTo(demo, Transition.SLIDEDOWN, Direction.RIGHT, null);
+                demo.setParentPage(this);
 				break;
 			case 3:
-				demo.header.setCaption("Fade");
 				this.goTo(demo, Transition.FADE, Direction.RIGHT, null);
+                demo.setParentPage(this);
 				break;
 			case 4:
-				demo.header.setCaption("Pop");
 				this.goTo(demo, Transition.POP, Direction.RIGHT, null);
+                demo.setParentPage(this);
 				break;
 			case 5:
-				demo.header.setCaption("Swap");
 				this.goTo(demo, Transition.SWAP, Direction.RIGHT, null);
+                demo.setParentPage(this);
 				break;
 			case 6:
-				demo.header.setCaption("Flip");
+                demo.setParentPage(this);
 				this.goTo(demo, Transition.FLIP, Direction.RIGHT, null);
 				break;
-			// case 7:
-			// demo.header.setCaption("Cube");
-			// this.goTo(demo, Transition.CUBE);
-			// break;
 		}
 	}
 
@@ -75,7 +83,11 @@ public class TransitionsPage extends SimplePage {
 
 	@Override
 	public String getName() {
-		return "TransitionPage";
+		return "Transitions";
 	}
 
+    @Override
+    public SimpleHeaderPanel getHeaderPanel() {
+        return header;
+    }
 }

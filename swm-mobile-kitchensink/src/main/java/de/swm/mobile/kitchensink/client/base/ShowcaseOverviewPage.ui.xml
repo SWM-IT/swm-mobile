@@ -9,6 +9,5 @@
         <m:ScrollPanel>
             <m:ListPanel ui:field="components" showArrow="false"/>
         </m:ScrollPanel>
-
     </g:HTMLPanel>
 </ui:UiBinder> 

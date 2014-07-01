@@ -9,11 +9,11 @@
 	<g:HTMLPanel>
 		<m:ToolbarPanel indexToSelectOnInit="0" ui:field="toolbar">
 			<m:ToolbarElement>
-				<m:ToolbarHeader headerText='TextBox' headerImage='{icon.tab0}' highlightImage='{icon.tab0selected}' />
+				<m:ToolbarHeader headerText='Widgets' headerImage='{icon.tab0}' highlightImage='{icon.tab0selected}' />
 				<m:ToolbarContent />
 			</m:ToolbarElement>
 			<m:ToolbarElement>
-				<m:ToolbarHeader headerText='Widgets' headerImage='{icon.tab1}' highlightImage='{icon.tab1selected}' />
+				<m:ToolbarHeader headerText='Animations' headerImage='{icon.tab1}' highlightImage='{icon.tab1selected}' />
 				<m:ToolbarContent />
 			</m:ToolbarElement>
 			<m:ToolbarElement>

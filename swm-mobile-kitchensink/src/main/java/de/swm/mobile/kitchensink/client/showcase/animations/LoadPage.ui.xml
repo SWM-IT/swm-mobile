@@ -2,11 +2,11 @@
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
 	xmlns:g="urn:import:com.google.gwt.user.client.ui"
 	xmlns:m="urn:import:de.swm.commons.mobile.client.widgets">
-		
+
 	<g:HTMLPanel>
-		<m:SimpleHeaderPanel leftButton="Back">
-			<g:Label>Load</g:Label>			
-		</m:SimpleHeaderPanel>
+        <m:SimpleHeaderPanel ui:field="header" leftButton="Back">
+            <g:Label>Load page</g:Label>
+        </m:SimpleHeaderPanel>
 		<m:ScrollPanel>
 			<m:PagingListPanel ui:field="list" />
 		</m:ScrollPanel>		

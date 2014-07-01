@@ -4,6 +4,7 @@ import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.Window;
+import com.google.gwt.user.client.ui.HasWidgets;
 import de.swm.commons.mobile.client.page.SimplePage;
 import de.swm.commons.mobile.client.widgets.Button;
 import de.swm.commons.mobile.client.widgets.HorizontalPanel;
@@ -21,9 +22,10 @@ public abstract class ShowcaseDetailPage extends SimplePage {
 
 	private final Class<? extends ShowcaseDetailPage> clazz;
 	boolean isInitialized = false;
+    private HasWidgets parentPage;
 
 
-	public abstract SimpleHeaderPanel getHeaderPanel();
+    public abstract SimpleHeaderPanel getHeaderPanel();
 
 	protected ShowcaseDetailPage(Class<? extends ShowcaseDetailPage> clazz) {
 		this.clazz = clazz;
@@ -55,10 +57,11 @@ public abstract class ShowcaseDetailPage extends SimplePage {
 
 
 	public void setParentPage(final ShowcaseOverviewPage overviewPage) {
-		if (!isInitialized) {
+        this.parentPage = overviewPage.getParentWidget();
+        if (!isInitialized) {
 			init();
 		}
-		this.setParent(overviewPage.getParentWidget());
+		this.setParent(this.parentPage);
 		getHeaderPanel().setLeftButtonClickHandler(new ClickHandler() {
 
 			@Override
@@ -67,4 +70,8 @@ public abstract class ShowcaseDetailPage extends SimplePage {
 			}
 		});
 	}
+
+    public HasWidgets getParentPage() {
+        return parentPage;
+    }
 }
