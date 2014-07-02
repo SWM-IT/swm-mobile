@@ -20,6 +20,7 @@ import org.gwtbootstrap3.client.ui.ButtonGroup;
 
 import java.util.Date;
 
+//TODO: Refactoring neue Struktur
 public class EditorFormPage extends SimplePage implements Editor<Person> {
 
 	@UiField @Path("name") 

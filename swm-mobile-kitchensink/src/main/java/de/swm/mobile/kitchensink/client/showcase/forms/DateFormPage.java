@@ -8,7 +8,7 @@ import com.google.gwt.user.client.ui.Widget;
 import de.swm.commons.mobile.client.page.SimplePage;
 import de.swm.commons.mobile.client.widgets.DateTextBox;
 
-
+//TODO: Refactoring neue Struktur
 public class DateFormPage extends SimplePage {
 	
 	private static SpinPageUiBinder uiBinder = GWT.create(SpinPageUiBinder.class);
