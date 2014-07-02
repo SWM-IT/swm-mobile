@@ -1,4 +1,4 @@
-package de.swm.mobile.kitchensink.client.panel;
+package de.swm.mobile.kitchensink.client.showcase.panels;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;

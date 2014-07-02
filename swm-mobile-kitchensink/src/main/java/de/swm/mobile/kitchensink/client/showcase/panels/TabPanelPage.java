@@ -1,4 +1,4 @@
-package de.swm.mobile.kitchensink.client.panel;
+package de.swm.mobile.kitchensink.client.showcase.panels;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.uibinder.client.UiBinder;
@@ -6,29 +6,29 @@ import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.Widget;
 
 import de.swm.commons.mobile.client.page.SimplePage;
-import de.swm.commons.mobile.client.widgets.AccordionPanel;
 import de.swm.commons.mobile.client.widgets.SimpleHeaderPanel;
+import de.swm.commons.mobile.client.widgets.TabPanel;
 import de.swm.mobile.kitchensink.client.Application;
 
-public class AccordionPanelPage extends SimplePage {
+public class TabPanelPage extends SimplePage {
 
 	@UiField SimpleHeaderPanel header;
-	@UiField AccordionPanel accordion;
+	@UiField TabPanel tab;
 	
-	private static AccordionPanelPageUiBinder uiBinder = GWT
-			.create(AccordionPanelPageUiBinder.class);
+	private static TabPanelPageUiBinder uiBinder = GWT
+			.create(TabPanelPageUiBinder.class);
 
-	interface AccordionPanelPageUiBinder extends UiBinder<Widget, AccordionPanelPage> {
+	interface TabPanelPageUiBinder extends UiBinder<Widget, TabPanelPage> {
 	}
 
-	public AccordionPanelPage() {
+	public TabPanelPage() {
 		initWidget(uiBinder.createAndBindUi(this));	
 		Application.addDefaultBackButtonHanlder(header);
 	}
 
 	@Override
 	public String getName() {
-		return "AccordionPanelPage";
+		return "TabPanel";
 	}
 
 }

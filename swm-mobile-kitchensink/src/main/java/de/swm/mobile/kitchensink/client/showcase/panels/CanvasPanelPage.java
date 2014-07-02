@@ -5,7 +5,7 @@
  * @copyright (C) 2011, SWM Services GmbH
  */
 
-package de.swm.mobile.kitchensink.client.panel;
+package de.swm.mobile.kitchensink.client.showcase.panels;
 
 import com.google.gwt.canvas.client.Canvas;
 import com.google.gwt.canvas.dom.client.Context2d;
@@ -20,7 +20,6 @@ import com.google.gwt.user.client.ui.Widget;
 
 import de.swm.commons.mobile.client.page.SimplePage;
 import de.swm.commons.mobile.client.widgets.SimpleHeaderPanel;
-import de.swm.gwt.client.utils.Utils;
 import de.swm.mobile.kitchensink.client.Application;
 
 public class CanvasPanelPage extends SimplePage {

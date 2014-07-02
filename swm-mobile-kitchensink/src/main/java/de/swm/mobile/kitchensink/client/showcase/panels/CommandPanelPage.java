@@ -1,4 +1,4 @@
-package de.swm.mobile.kitchensink.client.panel;
+package de.swm.mobile.kitchensink.client.showcase.panels;
 
 import java.util.Date;
 

@@ -4,7 +4,7 @@
     xmlns:m="urn:import:de.swm.commons.mobile.client.widgets"
 	xmlns:t="urn:import:de.swm.commons.mobile.client.widgets.tree">
 
-	<ui:style type='de.swm.mobile.kitchensink.client.panel.WideTreePanelPage.ItemStyle'>
+	<ui:style type='de.swm.mobile.kitchensink.client.showcase.panels.WideTreePanelPage.ItemStyle'>
 		.specialItem {
 			background-image: literal('-webkit-gradient(linear, left top, left bottom, color-stop(0%,#a90329), color-stop(44%,#8f0222), color-stop(100%,#6d0019))') !important;
 
