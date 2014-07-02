@@ -4,31 +4,44 @@ import com.google.gwt.core.client.GWT;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.Widget;
-
-import de.swm.commons.mobile.client.page.SimplePage;
 import de.swm.commons.mobile.client.widgets.SimpleHeaderPanel;
 import de.swm.commons.mobile.client.widgets.TabPanel;
 import de.swm.mobile.kitchensink.client.Application;
+import de.swm.mobile.kitchensink.client.base.ShowcaseDetailPage;
 
-public class TabPanelPage extends SimplePage {
+import static de.swm.mobile.kitchensink.client.ShowcaseAnnotations.ShowcaseSource;
+import static de.swm.mobile.kitchensink.client.ShowcaseAnnotations.ShowcaseUiXML;
 
-	@UiField SimpleHeaderPanel header;
-	@UiField TabPanel tab;
-	
-	private static TabPanelPageUiBinder uiBinder = GWT
-			.create(TabPanelPageUiBinder.class);
+@ShowcaseSource
+@ShowcaseUiXML({"TabPanelPage.ui.xml"})
+public class TabPanelPage extends ShowcaseDetailPage {
 
-	interface TabPanelPageUiBinder extends UiBinder<Widget, TabPanelPage> {
-	}
+    @UiField
+    SimpleHeaderPanel header;
+    @UiField
+    TabPanel tab;
 
-	public TabPanelPage() {
-		initWidget(uiBinder.createAndBindUi(this));	
-		Application.addDefaultBackButtonHanlder(header);
-	}
+    private static TabPanelPageUiBinder uiBinder = GWT
+            .create(TabPanelPageUiBinder.class);
 
-	@Override
-	public String getName() {
-		return "TabPanel";
-	}
+
+    interface TabPanelPageUiBinder extends UiBinder<Widget, TabPanelPage> {
+    }
+
+    public TabPanelPage() {
+        super(TabPanelPage.class);
+        initWidget(uiBinder.createAndBindUi(this));
+        Application.addDefaultBackButtonHanlder(header);
+    }
+
+    @Override
+    public SimpleHeaderPanel getHeaderPanel() {
+        return header;
+    }
+
+    @Override
+    public String getName() {
+        return "Tab panel";
+    }
 
 }

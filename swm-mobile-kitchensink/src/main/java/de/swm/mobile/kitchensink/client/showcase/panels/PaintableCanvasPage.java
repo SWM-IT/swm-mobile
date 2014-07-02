@@ -6,100 +6,107 @@ import com.google.gwt.event.dom.client.ChangeHandler;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.HTMLPanel;
-import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.ListBox;
 import com.google.gwt.user.client.ui.Widget;
-import de.swm.commons.mobile.client.page.SimplePage;
 import de.swm.commons.mobile.client.widgets.PaintableCanvas;
 import de.swm.commons.mobile.client.widgets.SimpleHeaderPanel;
 import de.swm.mobile.kitchensink.client.Application;
+import de.swm.mobile.kitchensink.client.base.ShowcaseDetailPage;
 import de.swm.mobile.kitchensink.client.icon.IconResources;
 
-public class PaintableCanvasPage extends SimplePage {
+import static de.swm.mobile.kitchensink.client.ShowcaseAnnotations.ShowcaseSource;
+import static de.swm.mobile.kitchensink.client.ShowcaseAnnotations.ShowcaseUiXML;
 
-	// canvas size, in px
-	static final int height = 400;
-	static final int width = 400;
+@ShowcaseSource
+@ShowcaseUiXML({"PaintableCanvasPage.ui.xml"})
+public class PaintableCanvasPage extends ShowcaseDetailPage {
 
-	@UiField
-	SimpleHeaderPanel header;
+    // canvas size, in px
+    static final int height = 400;
+    static final int width = 400;
 
-	@UiField
-	HTMLPanel htmlPanel;
+    @UiField
+    SimpleHeaderPanel header;
 
-	@UiField
-	HTMLPanel canvasHTML;
+    @UiField
+    HTMLPanel htmlPanel;
 
-	@UiField
-	ListBox dropdownColor;
+    @UiField
+    HTMLPanel canvasHTML;
 
-	@UiField
-	ListBox dropdownLineWidth;
+    @UiField
+    ListBox dropdownColor;
 
-	private PaintableCanvas canvas;
+    @UiField
+    ListBox dropdownLineWidth;
 
-	private static PaintableCanvasPageUiBinder uiBinder = GWT
-			.create(PaintableCanvasPageUiBinder.class);
+    private PaintableCanvas canvas;
 
-	interface PaintableCanvasPageUiBinder extends UiBinder<Widget, PaintableCanvasPage> {
-	}
-
-	public PaintableCanvasPage() {
-		initWidget(uiBinder.createAndBindUi(this));
-		Application.addDefaultBackButtonHanlder(header);
-		canvasHTML.add(initCanvas());
-
-		populateLineWidthDropDown();
-		populateColorDropDown();
-
-		IconResources resources = GWT.create(IconResources.class);
-		canvas.setImage(resources.bus());
-	}
-
-	private void populateLineWidthDropDown() {
-		for (int i = 1; i <= 20; i++) {
-			dropdownLineWidth.addItem("" + i);
-		}
-
-		dropdownLineWidth.setValue(PaintableCanvas.STANDARD_LINE_WIDTH, "" + PaintableCanvas.STANDARD_LINE_WIDTH);
-		dropdownLineWidth.addChangeHandler(new ChangeHandler() {
-			@Override
-			public void onChange(ChangeEvent event) {
-				canvas.setLineWidth(dropdownLineWidth.getSelectedIndex() + 1);
-			}
-		});
+    private static PaintableCanvasPageUiBinder uiBinder = GWT
+            .create(PaintableCanvasPageUiBinder.class);
 
 
-	}
+    interface PaintableCanvasPageUiBinder extends UiBinder<Widget, PaintableCanvasPage> {
+    }
 
-	private void populateColorDropDown() {
-		dropdownColor.addItem("black");
-		dropdownColor.addItem("green");
-		dropdownColor.addItem("yellow");
-		dropdownColor.addItem("blue");
-		dropdownColor.addItem("pink");
-		dropdownColor.addItem("red");
-		dropdownColor.addItem("white");
+    public PaintableCanvasPage() {
+        super(PaintableCanvasPage.class);
+        initWidget(uiBinder.createAndBindUi(this));
+        Application.addDefaultBackButtonHanlder(header);
+        canvasHTML.add(initCanvas());
 
-		dropdownColor.addChangeHandler(new ChangeHandler() {
-			@Override
-			public void onChange(ChangeEvent event) {
-				canvas.setColor(dropdownColor.getValue(dropdownColor.getSelectedIndex()));
-			}
-		});
-	}
+        populateLineWidthDropDown();
+        populateColorDropDown();
 
-	public Widget initCanvas() {
-		canvas = new PaintableCanvas(height, width);
-		if (canvas == null) {
-			return new Label("HTML5-Canvas durch Browser nicht unterstützt.");
-		}
+        IconResources resources = GWT.create(IconResources.class);
+        canvas.setImage(resources.bus());
+    }
 
-		return canvas;
-	}
+    private void populateLineWidthDropDown() {
+        for (int i = 1; i <= 20; i++) {
+            dropdownLineWidth.addItem("" + i);
+        }
 
-	@Override
-	public String getName() {
-		return "PaintableCanvasPage";
-	}
+        dropdownLineWidth.setValue(PaintableCanvas.STANDARD_LINE_WIDTH, "" + PaintableCanvas.STANDARD_LINE_WIDTH);
+        dropdownLineWidth.addChangeHandler(new ChangeHandler() {
+            @Override
+            public void onChange(ChangeEvent event) {
+                canvas.setLineWidth(dropdownLineWidth.getSelectedIndex() + 1);
+            }
+        });
+
+
+    }
+
+    private void populateColorDropDown() {
+        dropdownColor.addItem("black");
+        dropdownColor.addItem("green");
+        dropdownColor.addItem("yellow");
+        dropdownColor.addItem("blue");
+        dropdownColor.addItem("pink");
+        dropdownColor.addItem("red");
+        dropdownColor.addItem("white");
+
+        dropdownColor.addChangeHandler(new ChangeHandler() {
+            @Override
+            public void onChange(ChangeEvent event) {
+                canvas.setColor(dropdownColor.getValue(dropdownColor.getSelectedIndex()));
+            }
+        });
+    }
+
+    public Widget initCanvas() {
+        canvas = new PaintableCanvas(height, width);
+        return canvas;
+    }
+
+    @Override
+    public String getName() {
+        return "Paintable canvas page";
+    }
+
+    @Override
+    public SimpleHeaderPanel getHeaderPanel() {
+        return header;
+    }
 }

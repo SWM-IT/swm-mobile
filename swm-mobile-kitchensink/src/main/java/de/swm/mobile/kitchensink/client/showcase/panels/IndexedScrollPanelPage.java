@@ -1,51 +1,65 @@
 package de.swm.mobile.kitchensink.client.showcase.panels;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.HTMLPanel;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.Widget;
-
-import de.swm.commons.mobile.client.page.SimplePage;
 import de.swm.commons.mobile.client.widgets.IndexedScrollPanel;
 import de.swm.commons.mobile.client.widgets.ListItem;
 import de.swm.commons.mobile.client.widgets.SimpleHeaderPanel;
 import de.swm.mobile.kitchensink.client.Application;
+import de.swm.mobile.kitchensink.client.base.ShowcaseDetailPage;
 
-public class IndexedScrollPanelPage extends SimplePage {
+import java.util.ArrayList;
+import java.util.List;
 
-	private static String[] letters = {"A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"};
+import static de.swm.mobile.kitchensink.client.ShowcaseAnnotations.ShowcaseSource;
+import static de.swm.mobile.kitchensink.client.ShowcaseAnnotations.ShowcaseUiXML;
 
-	private static IndexedScrollPanelPageUiBinder uiBinder = GWT.create(IndexedScrollPanelPageUiBinder.class);
+@ShowcaseSource
+@ShowcaseUiXML({"IndexedScrollPanelPage.ui.xml"})
+public class IndexedScrollPanelPage extends ShowcaseDetailPage {
 
-	interface IndexedScrollPanelPageUiBinder extends UiBinder<Widget, IndexedScrollPanelPage> {}
+    private static String[] letters = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"};
 
-	@UiField HTMLPanel content;
-	@UiField SimpleHeaderPanel header;
-	@UiField IndexedScrollPanel list;
-	
-	public IndexedScrollPanelPage() {
-		initWidget(uiBinder.createAndBindUi(this));
-		Application.addDefaultBackButtonHanlder(header);
-		for (int i = 0; i < 26; i++) {
-			List<ListItem> items = new ArrayList<ListItem>();
-			for (int j = 0; j < 5; j++) {
-				ListItem item = new ListItem();
-				item.add(new Label(letters[i] + " List Item " + j));
-				items.add(item);
-			}
-			list.setIndexedItems(i, items);
-		}
-		list.updateIndex();
-	}
+    private static IndexedScrollPanelPageUiBinder uiBinder = GWT.create(IndexedScrollPanelPageUiBinder.class);
 
-	@Override
-	public String getName() {
-		return "IndexPanel";
-	}
+    interface IndexedScrollPanelPageUiBinder extends UiBinder<Widget, IndexedScrollPanelPage> {
+    }
 
+    @UiField
+    HTMLPanel content;
+    @UiField
+    SimpleHeaderPanel header;
+    @UiField
+    IndexedScrollPanel list;
+
+    public IndexedScrollPanelPage() {
+        super(IndexedScrollPanelPage.class);
+        initWidget(uiBinder.createAndBindUi(this));
+        Application.addDefaultBackButtonHanlder(header);
+        for (int i = 0; i < 26; i++) {
+            List<ListItem> items = new ArrayList<ListItem>();
+            for (int j = 0; j < 5; j++) {
+                ListItem item = new ListItem();
+                item.add(new Label(letters[i] + " List Item " + j));
+                items.add(item);
+            }
+            list.setIndexedItems(i, items);
+        }
+        list.updateIndex();
+    }
+
+    @Override
+    public String getName() {
+        return "Index panel";
+    }
+
+
+    @Override
+    public SimpleHeaderPanel getHeaderPanel() {
+        return header;
+    }
 }

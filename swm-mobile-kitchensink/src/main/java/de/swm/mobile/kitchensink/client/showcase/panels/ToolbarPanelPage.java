@@ -16,21 +16,29 @@ import de.swm.commons.mobile.client.widgets.ToolbarElement;
 import de.swm.commons.mobile.client.widgets.ToolbarPanel;
 import de.swm.commons.mobile.client.widgets.ToolbarPanel.ToolbarSelectionHandler;
 import de.swm.mobile.kitchensink.client.Application;
+import de.swm.mobile.kitchensink.client.base.ShowcaseDetailPage;
 
-public class ToolbarPanelPage extends SimplePage {
+import static de.swm.mobile.kitchensink.client.ShowcaseAnnotations.ShowcaseSource;
+import static de.swm.mobile.kitchensink.client.ShowcaseAnnotations.ShowcaseUiXML;
+
+@ShowcaseSource
+@ShowcaseUiXML({"ToolbarPanelPage.ui.xml"})
+public class ToolbarPanelPage extends ShowcaseDetailPage {
 
 	@UiField SimpleHeaderPanel header;
 	@UiField ToolbarPanel toolbar;
 	
 	private static ToolbarPanelPageUiBinder uiBinder = GWT.create(ToolbarPanelPageUiBinder.class);
 
-	interface ToolbarPanelPageUiBinder extends UiBinder<Widget, ToolbarPanelPage> {}
+
+    interface ToolbarPanelPageUiBinder extends UiBinder<Widget, ToolbarPanelPage> {}
 
 	public ToolbarPanelPage() {
+        super(ToolbarPanelPage.class);
 		initWidget(uiBinder.createAndBindUi(this));
 		Application.addDefaultBackButtonHanlder(header);
 		toolbar.addSelectionHandler(new ToolbarSelectionHandler() {
-			
+
 			@Override
 			public void toolSelected(int index, ToolbarElement te) {
 				ToolbarContent content = te.getContent();
@@ -45,15 +53,20 @@ public class ToolbarPanelPage extends SimplePage {
 						item.add(new Label("Item " + i));
 						list.add(item);
 					}
-				}				
+				}
 			}
 		});
-		
+
 	}
+
+    @Override
+    public SimpleHeaderPanel getHeaderPanel() {
+        return header;
+    }
 
 	@Override
 	public String getName() {
-		return "ToolbarPanle";
+		return "Toolbar panel";
 	}
 
 }

@@ -4,29 +4,41 @@ import com.google.gwt.core.client.GWT;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.Widget;
-
-import de.swm.commons.mobile.client.page.SimplePage;
 import de.swm.commons.mobile.client.widgets.SimpleHeaderPanel;
 import de.swm.mobile.kitchensink.client.Application;
+import de.swm.mobile.kitchensink.client.base.ShowcaseDetailPage;
 
-public class ScrollPanelPage extends SimplePage{
+import static de.swm.mobile.kitchensink.client.ShowcaseAnnotations.ShowcaseSource;
+import static de.swm.mobile.kitchensink.client.ShowcaseAnnotations.ShowcaseUiXML;
 
-	@UiField SimpleHeaderPanel header;
+@ShowcaseSource
+@ShowcaseUiXML({"ScrollPanelPage.ui.xml"})
+public class ScrollPanelPage extends ShowcaseDetailPage {
 
-	private static ScrollPanelPageUiBinder uiBinder = GWT
-			.create(ScrollPanelPageUiBinder.class);
+    @UiField
+    SimpleHeaderPanel header;
 
-	interface ScrollPanelPageUiBinder extends UiBinder<Widget, ScrollPanelPage> {
-	}
+    private static ScrollPanelPageUiBinder uiBinder = GWT
+            .create(ScrollPanelPageUiBinder.class);
 
-	public ScrollPanelPage() {
-		initWidget(uiBinder.createAndBindUi(this));
-		Application.addDefaultBackButtonHanlder(header);
-	}
 
-	@Override
-	public String getName() {
-		return "ScrollPannel";
-	}
+    interface ScrollPanelPageUiBinder extends UiBinder<Widget, ScrollPanelPage> {
+    }
+
+    public ScrollPanelPage() {
+        super(ScrollPanelPage.class);
+        initWidget(uiBinder.createAndBindUi(this));
+        Application.addDefaultBackButtonHanlder(header);
+    }
+
+    @Override
+    public String getName() {
+        return "Scroll pannel";
+    }
+
+    @Override
+    public SimpleHeaderPanel getHeaderPanel() {
+        return header;
+    }
 
 }

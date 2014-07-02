@@ -21,13 +21,18 @@ import de.swm.commons.mobile.client.widgets.tree.TreeChangedEvent;
 import de.swm.commons.mobile.client.widgets.tree.TreeChangedHandler;
 import de.swm.commons.mobile.client.widgets.tree.WideTreePanel;
 import de.swm.mobile.kitchensink.client.Application;
+import de.swm.mobile.kitchensink.client.base.ShowcaseDetailPage;
 import de.swm.mobile.kitchensink.client.icon.IconResources;
+import static de.swm.mobile.kitchensink.client.ShowcaseAnnotations.ShowcaseSource;
+import static de.swm.mobile.kitchensink.client.ShowcaseAnnotations.ShowcaseUiXML;
 
-public class WideTreePanelPage extends SimplePage {
+@ShowcaseSource
+@ShowcaseUiXML({"WideTreePanelPage.ui.xml"})
+public class WideTreePanelPage extends ShowcaseDetailPage {
 
 	private static WideTreePanelPageUiBinder uiBinder = GWT.create(WideTreePanelPageUiBinder.class);
 
-	interface WideTreePanelPageUiBinder extends UiBinder<Widget, WideTreePanelPage> {
+    interface WideTreePanelPageUiBinder extends UiBinder<Widget, WideTreePanelPage> {
 	}
 
 	@UiField
@@ -47,11 +52,12 @@ public class WideTreePanelPage extends SimplePage {
 	private IconResources res;
 
 	public WideTreePanelPage() {
+        super(WideTreePanelPage.class);
 		initWidget(uiBinder.createAndBindUi(this));
 		Application.addDefaultBackButtonHanlder(header);
 		res = GWT.create(IconResources.class);
 		treePanel.addTreeChangedHandler(new TreeChangedHandler() {
-			
+
 			@Override
 			public void onTreeChanged(TreeChangedEvent e) {
 				String selectedTree = "Unknown";
@@ -79,9 +85,14 @@ public class WideTreePanelPage extends SimplePage {
 		treePanel.setTree(createTree());
 	}
 
+    @Override
+    public SimpleHeaderPanel getHeaderPanel() {
+        return header;
+    }
+
 	@Override
 	public String getName() {
-		return "WideTreePanel";
+		return "Wide tree panel";
 	}
 
 	private ITree createTree() {

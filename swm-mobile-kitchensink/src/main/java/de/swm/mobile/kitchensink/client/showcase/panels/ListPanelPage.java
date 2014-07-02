@@ -6,52 +6,58 @@ import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.uibinder.client.UiHandler;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Widget;
-
 import de.swm.commons.mobile.client.event.SelectionChangedEvent;
-import de.swm.commons.mobile.client.page.SimplePage;
 import de.swm.commons.mobile.client.widgets.ListPanel;
 import de.swm.commons.mobile.client.widgets.SimpleHeaderPanel;
 import de.swm.mobile.kitchensink.client.Application;
+import de.swm.mobile.kitchensink.client.base.ShowcaseDetailPage;
+
+import static de.swm.mobile.kitchensink.client.ShowcaseAnnotations.ShowcaseSource;
+import static de.swm.mobile.kitchensink.client.ShowcaseAnnotations.ShowcaseUiXML;
+
+@ShowcaseSource
+@ShowcaseUiXML({"ListPanelPage.ui.xml"})
+public class ListPanelPage extends ShowcaseDetailPage {
+
+    @UiField
+    ListPanel list1, list2;
+    @UiField
+    SimpleHeaderPanel header;
+
+    private static ListPanelPageUiBinder uiBinder = GWT.create(ListPanelPageUiBinder.class);
 
 
-
-public class ListPanelPage extends SimplePage {
-
-	@UiField
-	ListPanel list1, list2;
-	@UiField SimpleHeaderPanel header;
-
-	private static ListPanelPageUiBinder uiBinder = GWT.create(ListPanelPageUiBinder.class);
-
-	interface ListPanelPageUiBinder extends UiBinder<Widget, ListPanelPage> {
-	}
+    interface ListPanelPageUiBinder extends UiBinder<Widget, ListPanelPage> {
+    }
 
 
+    public ListPanelPage() {
+        super(ListPanelPage.class);
+        initWidget(uiBinder.createAndBindUi(this));
+        Application.addDefaultBackButtonHanlder(header);
+    }
 
-	public ListPanelPage() {
-		initWidget(uiBinder.createAndBindUi(this));
-		Application.addDefaultBackButtonHanlder(header);
-	}
-
-
-
-	@UiHandler("list1")
-	void onList1SelectionChanged(SelectionChangedEvent e) {
-		Window.alert("You select item " + e.getSelection() + " on list 1.");
-	}
+    @Override
+    public SimpleHeaderPanel getHeaderPanel() {
+        return header;
+    }
 
 
-
-	@UiHandler("list2")
-	void onList2SelectionChanged(SelectionChangedEvent e) {
-		Window.alert("You select item " + e.getSelection() + " on list 2.");
-	}
-
+    @UiHandler("list1")
+    void onList1SelectionChanged(SelectionChangedEvent e) {
+        Window.alert("You select item " + e.getSelection() + " on list 1.");
+    }
 
 
-	@Override
-	public String getName() {
-		return "ListPage";
-	}
+    @UiHandler("list2")
+    void onList2SelectionChanged(SelectionChangedEvent e) {
+        Window.alert("You select item " + e.getSelection() + " on list 2.");
+    }
+
+
+    @Override
+    public String getName() {
+        return "List page";
+    }
 
 }

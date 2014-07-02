@@ -5,9 +5,9 @@
 	<ui:style>
 	</ui:style>
 	<g:HTMLPanel ui:field="htmlPanel">
-		<m:SimpleHeaderPanel ui:field="header">
-			<g:Label>Paintable Canvas</g:Label>
-		</m:SimpleHeaderPanel>
+        <m:SimpleHeaderPanel ui:field="header" leftButton="Back">
+            <g:Label>Paintable Canvas</g:Label>
+        </m:SimpleHeaderPanel>
         <g:HTMLPanel ui:field="canvasHTML">
             <g:Label>Color:</g:Label>
             <g:ListBox ui:field="dropdownColor">
