@@ -1,4 +1,4 @@
-package de.swm.mobile.kitchensink.client.components;
+package de.swm.mobile.kitchensink.client.showcase.forms;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.uibinder.client.UiBinder;
@@ -9,15 +9,15 @@ import de.swm.commons.mobile.client.page.SimplePage;
 import de.swm.commons.mobile.client.widgets.DateTextBox;
 
 
-public class SpinPage extends SimplePage {
+public class DateFormPage extends SimplePage {
 	
 	private static SpinPageUiBinder uiBinder = GWT.create(SpinPageUiBinder.class);
 
-	interface SpinPageUiBinder extends UiBinder<Widget, SpinPage> {}
+	interface SpinPageUiBinder extends UiBinder<Widget, DateFormPage> {}
 	
 	@UiField DateTextBox dateBox;
 		
-	public SpinPage() {
+	public DateFormPage() {
 		initWidget(uiBinder.createAndBindUi(this));
 	}
 
