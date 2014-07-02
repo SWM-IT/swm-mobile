@@ -1,8 +1,5 @@
 package de.swm.mobile.kitchensink.client.showcase.animations;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
@@ -10,9 +7,7 @@ import com.google.gwt.uibinder.client.UiHandler;
 import com.google.gwt.user.client.Timer;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Widget;
-
 import de.swm.commons.mobile.client.event.SelectionChangedEvent;
-import de.swm.commons.mobile.client.page.SimplePage;
 import de.swm.commons.mobile.client.widgets.DecoratedListItem;
 import de.swm.commons.mobile.client.widgets.ListItem;
 import de.swm.commons.mobile.client.widgets.PagingListPanel;
@@ -20,7 +15,9 @@ import de.swm.commons.mobile.client.widgets.PagingListPanel.ListItemProvider;
 import de.swm.commons.mobile.client.widgets.SimpleHeaderPanel;
 import de.swm.mobile.kitchensink.client.base.ShowcaseDetailPage;
 import de.swm.mobile.kitchensink.client.components.TestResources;
-import de.swm.mobile.kitchensink.client.showcase.animations.util.TransitionDemoPage;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static de.swm.mobile.kitchensink.client.ShowcaseAnnotations.ShowcaseSource;
 import static de.swm.mobile.kitchensink.client.ShowcaseAnnotations.ShowcaseUiXML;
@@ -89,7 +86,7 @@ public class LoadPage extends ShowcaseDetailPage {
 
     @Override
     public String getName() {
-        return "async Loading";
+        return "Async loading";
     }
 
     @Override
