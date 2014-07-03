@@ -2,10 +2,9 @@ package de.swm.mobile.kitchensink.client.showcase;
 
 import com.google.gwt.user.client.ui.HasWidgets;
 import de.swm.mobile.kitchensink.client.base.ShowcaseOverviewPage;
-import de.swm.mobile.kitchensink.client.components.TestResources;
+import de.swm.mobile.kitchensink.client.theme.bootstrap.extention.TestResources;
 import de.swm.mobile.kitchensink.client.showcase.animations.LoadPage;
 import de.swm.mobile.kitchensink.client.showcase.animations.TransitionsPage;
-import de.swm.mobile.kitchensink.client.showcase.widgets.*;
 
 
 public class AnimationsPage extends ShowcaseOverviewPage {

@@ -1,7 +1,5 @@
 package de.swm.mobile.kitchensink.client.showcase.forms.utils;
 
-import de.swm.mobile.kitchensink.client.components.EnumRenderer;
-
 import java.util.Date;
 
 public class Person {

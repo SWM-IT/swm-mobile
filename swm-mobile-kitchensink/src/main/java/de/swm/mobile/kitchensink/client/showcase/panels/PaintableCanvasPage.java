@@ -12,7 +12,7 @@ import de.swm.commons.mobile.client.widgets.PaintableCanvas;
 import de.swm.commons.mobile.client.widgets.SimpleHeaderPanel;
 import de.swm.mobile.kitchensink.client.Application;
 import de.swm.mobile.kitchensink.client.base.ShowcaseDetailPage;
-import de.swm.mobile.kitchensink.client.icon.IconResources;
+import de.swm.mobile.kitchensink.client.theme.bootstrap.icon.IconResources;
 
 import static de.swm.mobile.kitchensink.client.ShowcaseAnnotations.ShowcaseSource;
 import static de.swm.mobile.kitchensink.client.ShowcaseAnnotations.ShowcaseUiXML;

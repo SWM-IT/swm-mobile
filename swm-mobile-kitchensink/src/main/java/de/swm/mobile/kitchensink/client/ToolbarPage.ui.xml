@@ -4,7 +4,7 @@
 	xmlns:m="urn:import:de.swm.commons.mobile.client.widgets">
 	<ui:style>
 	</ui:style>
-	<ui:with field='icon' type='de.swm.mobile.kitchensink.client.icon.IconResources'/>
+	<ui:with field='icon' type='de.swm.mobile.kitchensink.client.theme.bootstrap.icon.IconResources'/>
 
 	<g:HTMLPanel>
 		<m:ToolbarPanel indexToSelectOnInit="0" ui:field="toolbar">

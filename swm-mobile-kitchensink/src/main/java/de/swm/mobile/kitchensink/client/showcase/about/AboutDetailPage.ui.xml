@@ -4,7 +4,7 @@
              xmlns:m="urn:import:de.swm.commons.mobile.client.widgets"
              xmlns:b="urn:import:org.gwtbootstrap3.client.ui">
 
-    <ui:with field='res' type='de.swm.mobile.kitchensink.client.components.TestResources'/>
+    <ui:with field='res' type='de.swm.mobile.kitchensink.client.theme.bootstrap.extention.TestResources'/>
 
     <g:HTMLPanel>
         <m:SimpleHeaderPanel ui:field="header" leftButton="Back">

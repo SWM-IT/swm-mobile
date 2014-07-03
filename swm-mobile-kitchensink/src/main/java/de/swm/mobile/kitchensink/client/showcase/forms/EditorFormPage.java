@@ -14,7 +14,7 @@ import de.swm.commons.mobile.client.utils.Utils;
 import de.swm.commons.mobile.client.validation.IValidator;
 import de.swm.commons.mobile.client.widgets.*;
 import de.swm.mobile.kitchensink.client.base.ShowcaseDetailPage;
-import de.swm.mobile.kitchensink.client.components.EnumRenderer;
+import de.swm.mobile.kitchensink.client.showcase.forms.utils.EnumRenderer;
 import de.swm.mobile.kitchensink.client.showcase.forms.utils.Person;
 import org.gwtbootstrap3.client.ui.ButtonGroup;
 

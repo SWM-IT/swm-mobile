@@ -10,7 +10,6 @@ import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.HTMLPanel;
 import com.google.gwt.user.client.ui.Widget;
 
-import de.swm.commons.mobile.client.page.SimplePage;
 import de.swm.commons.mobile.client.utils.Utils;
 import de.swm.commons.mobile.client.widgets.SimpleHeaderPanel;
 import de.swm.commons.mobile.client.widgets.tree.DefaultTreeImpl;
@@ -22,7 +21,7 @@ import de.swm.commons.mobile.client.widgets.tree.TreeChangedHandler;
 import de.swm.commons.mobile.client.widgets.tree.WideTreePanel;
 import de.swm.mobile.kitchensink.client.Application;
 import de.swm.mobile.kitchensink.client.base.ShowcaseDetailPage;
-import de.swm.mobile.kitchensink.client.icon.IconResources;
+import de.swm.mobile.kitchensink.client.theme.bootstrap.icon.IconResources;
 import static de.swm.mobile.kitchensink.client.ShowcaseAnnotations.ShowcaseSource;
 import static de.swm.mobile.kitchensink.client.ShowcaseAnnotations.ShowcaseUiXML;
 
