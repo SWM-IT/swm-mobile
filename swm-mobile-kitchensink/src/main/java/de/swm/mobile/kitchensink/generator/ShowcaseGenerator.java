@@ -159,8 +159,7 @@ public class ShowcaseGenerator extends Generator {
 		int srcTagIndex = fileContents.indexOf(sourceTag);
 		if (srcTagIndex >= 0) {
 			// Add to the formatted source
-			String srcCode = fileContents;
-			formattedSource += srcCode + "\n\n";
+            formattedSource += fileContents + "\n\n";
 
 		}
 
@@ -191,7 +190,7 @@ public class ShowcaseGenerator extends Generator {
 			throw new UnableToCompleteException();
 		}
 
-		StringBuffer fileContentsBuf = new StringBuffer();
+		StringBuilder fileContentsBuf = new StringBuilder();
 		BufferedReader br = null;
 		try {
 			br = new BufferedReader(new InputStreamReader(in));
