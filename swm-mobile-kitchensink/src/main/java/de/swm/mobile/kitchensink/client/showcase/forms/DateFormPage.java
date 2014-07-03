@@ -4,25 +4,43 @@ import com.google.gwt.core.client.GWT;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.Widget;
-
-import de.swm.commons.mobile.client.page.SimplePage;
 import de.swm.commons.mobile.client.widgets.DateTextBox;
+import de.swm.commons.mobile.client.widgets.SimpleHeaderPanel;
+import de.swm.mobile.kitchensink.client.base.ShowcaseDetailPage;
+
+import static de.swm.mobile.kitchensink.client.ShowcaseAnnotations.ShowcaseSource;
+import static de.swm.mobile.kitchensink.client.ShowcaseAnnotations.ShowcaseUiXML;
 
 //TODO: Refactoring neue Struktur
-public class DateFormPage extends SimplePage {
-	
-	private static SpinPageUiBinder uiBinder = GWT.create(SpinPageUiBinder.class);
 
-	interface SpinPageUiBinder extends UiBinder<Widget, DateFormPage> {}
-	
-	@UiField DateTextBox dateBox;
-		
-	public DateFormPage() {
-		initWidget(uiBinder.createAndBindUi(this));
-	}
+@ShowcaseSource
+@ShowcaseUiXML({"DateFormPage.ui.xml"})
+public class DateFormPage extends ShowcaseDetailPage {
 
-	@Override
-	public String getName() {
-		return "SimplePage";
-	}        
+    private static SpinPageUiBinder uiBinder = GWT.create(SpinPageUiBinder.class);
+
+
+    interface SpinPageUiBinder extends UiBinder<Widget, DateFormPage> {
+    }
+
+    @UiField
+    DateTextBox dateBox;
+
+    @UiField
+    SimpleHeaderPanel header;
+
+    public DateFormPage() {
+        super(DateFormPage.class);
+        initWidget(uiBinder.createAndBindUi(this));
+    }
+
+    @Override
+    public SimpleHeaderPanel getHeaderPanel() {
+        return header;
+    }
+
+    @Override
+    public String getName() {
+        return "Date form page";
+    }
 }

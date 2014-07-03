@@ -33,7 +33,7 @@
     <ui:with field='res' type='de.swm.mobile.kitchensink.client.components.TestResources'/>
 		
 	<g:HTMLPanel>
-		<m:SimpleHeaderPanel leftButton="Back">
+		<m:SimpleHeaderPanel ui:field="header" leftButton="Back">
 			<g:Label>Editor</g:Label>			
 		</m:SimpleHeaderPanel>
 		<m:ScrollPanel>

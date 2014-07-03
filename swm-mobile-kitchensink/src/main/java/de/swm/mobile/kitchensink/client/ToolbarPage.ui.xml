@@ -13,25 +13,21 @@
 				<m:ToolbarContent />
 			</m:ToolbarElement>
 			<m:ToolbarElement>
-				<m:ToolbarHeader headerText='Animations' headerImage='{icon.tab1}' highlightImage='{icon.tab1selected}' />
+				<m:ToolbarHeader headerText='Animation' headerImage='{icon.tab1}' highlightImage='{icon.tab1selected}' />
 				<m:ToolbarContent />
 			</m:ToolbarElement>
 			<m:ToolbarElement>
-				<m:ToolbarHeader headerText='Panels' headerImage='{icon.tab2}' highlightImage='{icon.tab2selected}' />
+				<m:ToolbarHeader headerText='Panels' headerImage='{icon.tab3}' highlightImage='{icon.tab3selected}' />
 				<m:ToolbarContent />
 			</m:ToolbarElement>
 			<m:ToolbarElement>
-				<m:ToolbarHeader headerText='Test' headerImage='{icon.tab3}' highlightImage='{icon.tab3selected}' />
+				<m:ToolbarHeader headerText='Forms' headerImage='{icon.tab3}' highlightImage='{icon.tab3selected}' />
 				<m:ToolbarContent />
 			</m:ToolbarElement>
 			<m:ToolbarElement>
-				<m:ToolbarHeader headerText='Editor' headerImage='{icon.tab3}' highlightImage='{icon.tab3selected}' />
+				<m:ToolbarHeader headerText='About' headerImage='{icon.tab2}' highlightImage='{icon.tab2selected}' />
 				<m:ToolbarContent />
 			</m:ToolbarElement>
-            <m:ToolbarElement>
-                <m:ToolbarHeader headerText='About' headerImage='{icon.tab3}' highlightImage='{icon.tab3selected}' />
-                <m:ToolbarContent />
-            </m:ToolbarElement>
         </m:ToolbarPanel>
 	</g:HTMLPanel>	
 </ui:UiBinder> 

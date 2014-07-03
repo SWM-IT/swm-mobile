@@ -10,10 +10,7 @@ import de.swm.commons.mobile.client.widgets.ToolbarElement;
 import de.swm.commons.mobile.client.widgets.ToolbarPanel;
 import de.swm.commons.mobile.client.widgets.ToolbarPanel.ToolbarSelectionHandler;
 import de.swm.mobile.kitchensink.client.components.TestResources;
-import de.swm.mobile.kitchensink.client.showcase.AboutPage;
-import de.swm.mobile.kitchensink.client.showcase.AnimationsPage;
-import de.swm.mobile.kitchensink.client.showcase.PanelPage;
-import de.swm.mobile.kitchensink.client.showcase.WidgetsPage;
+import de.swm.mobile.kitchensink.client.showcase.*;
 import de.swm.mobile.kitchensink.client.showcase.about.AboutDetailPage;
 
 
@@ -38,6 +35,7 @@ public class ToolbarPage extends SimplePage {
     private WidgetsPage widgetsPage;
     private AnimationsPage animationsPage;
     private PanelPage panelsPage;
+    private FormsPage formsPage;
     private AboutPage aboutPage;
     //NEU ENDE
 
@@ -50,7 +48,8 @@ public class ToolbarPage extends SimplePage {
         widgetsPage = new WidgetsPage(res, toolbar.getContentArea(), 0);
         animationsPage = new AnimationsPage(res, toolbar.getContentArea(), 1);
         panelsPage = new PanelPage(res, toolbar.getContentArea(), 2);
-        aboutPage = new AboutPage(res, toolbar.getContentArea(), 3);
+        formsPage = new FormsPage(res, toolbar.getContentArea(), 3);
+        aboutPage = new AboutPage(res, toolbar.getContentArea(), 4);
 
         toolbar.addSelectionHandler(new ToolbarSelectionHandler() {
 
@@ -73,18 +72,11 @@ public class ToolbarPage extends SimplePage {
                             break;
                         case 3:
                             content.clear();
-                            content.add(aboutPage);
+                            content.add(formsPage);
                             break;
                         case 4:
-
-                            break;
-                        case 5:
-                            if (aboutDetailPage == null) {
-                                aboutDetailPage = new AboutDetailPage();
-                                aboutDetailPage.setParent(toolbar.getContentArea());
-                            }
                             content.clear();
-                            content.add(aboutDetailPage);
+                            content.add(aboutPage);
                             break;
                         default:
                             break;

@@ -10,18 +10,24 @@ import com.google.gwt.uibinder.client.UiHandler;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.HasValue;
 import com.google.gwt.user.client.ui.Widget;
-import de.swm.commons.mobile.client.page.SimplePage;
 import de.swm.commons.mobile.client.utils.Utils;
 import de.swm.commons.mobile.client.validation.IValidator;
 import de.swm.commons.mobile.client.widgets.*;
+import de.swm.mobile.kitchensink.client.base.ShowcaseDetailPage;
 import de.swm.mobile.kitchensink.client.components.EnumRenderer;
-import de.swm.mobile.kitchensink.client.components.Person;
+import de.swm.mobile.kitchensink.client.showcase.forms.utils.Person;
 import org.gwtbootstrap3.client.ui.ButtonGroup;
 
 import java.util.Date;
 
 //TODO: Refactoring neue Struktur
-public class EditorFormPage extends SimplePage implements Editor<Person> {
+
+import static de.swm.mobile.kitchensink.client.ShowcaseAnnotations.ShowcaseSource;
+import static de.swm.mobile.kitchensink.client.ShowcaseAnnotations.ShowcaseUiXML;
+
+@ShowcaseSource
+@ShowcaseUiXML({"EditorFormPage.ui.xml"})
+public class EditorFormPage extends ShowcaseDetailPage implements Editor<Person> {
 
 	@UiField @Path("name") 
 	TextBox nameTextBox;
@@ -45,18 +51,22 @@ public class EditorFormPage extends SimplePage implements Editor<Person> {
 	Button saveButton;
 	@UiField @Ignore
 	Button cancelButton;
+    @UiField @Ignore
+    SimpleHeaderPanel header;
 
 
-
-	private static EditorPageUiBinder uiBinder = GWT.create(EditorPageUiBinder.class);
+    private static EditorPageUiBinder uiBinder = GWT.create(EditorPageUiBinder.class);
 	private Driver driver = GWT.create(Driver.class);
 
-	interface EditorPageUiBinder extends UiBinder<Widget, EditorFormPage> {}
-	
+
+    interface EditorPageUiBinder extends UiBinder<Widget, EditorFormPage> {}
+
 	interface Driver extends SimpleBeanEditorDriver<Person, EditorFormPage> {}
-	
+
+
 	@SuppressWarnings("deprecation")
 	public EditorFormPage() {
+        super(EditorFormPage.class);
 		initWidget(uiBinder.createAndBindUi(this));
 		driver.initialize(this);
 		Person p = new Person();
@@ -102,7 +112,11 @@ public class EditorFormPage extends SimplePage implements Editor<Person> {
 
 	@Override
 	public String getName() {
-		return "EditorFormPage";
+		return "Editor form page";
 	}
 
+    @Override
+    public SimpleHeaderPanel getHeaderPanel() {
+        return header;
+    }
 }
