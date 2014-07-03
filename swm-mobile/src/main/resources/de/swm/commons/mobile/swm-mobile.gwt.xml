@@ -6,10 +6,8 @@
 	<!-- OpenLayers -->
 	<inherits name='org.gwtopenmaps.openlayers.OpenLayers' />
 
-	<define-configuration-property name="swmmobile.css"
-		is-multi-valued="false" />
-	<set-configuration-property name="swmmobile.css"
-		value="obf" />
+	<define-configuration-property name="swmmobile.css" is-multi-valued="false" />
+	<set-configuration-property name="swmmobile.css" value="obf" />
 
 	<!-- suppress error message when compile time user agent does not match
 	     runtime user agent (in case user agent is restricted by set-property name="user-agent");

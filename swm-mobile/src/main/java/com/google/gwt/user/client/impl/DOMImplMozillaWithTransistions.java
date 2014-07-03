@@ -11,10 +11,7 @@ public class DOMImplMozillaWithTransistions extends DOMImplMozilla{
 
 	}
 
-	
-	
-	
-	
+
 	
 	protected native int eventGetTypeInt0(String eventType)/*-{
 		switch (eventType) {
