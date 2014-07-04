@@ -33,6 +33,9 @@
 				<m:ListItem>
 					<m:SimpleImageButton ui:field="img" normalIcon='{icon.information}' headerText="Image Button Test" />
 				</m:ListItem>
+                <m:ListItem>
+                    <m:BigButton text="Big Button" />
+                </m:ListItem>
 			</m:ListPanel>			
 		</m:ScrollPanel>
 	</g:HTMLPanel>	

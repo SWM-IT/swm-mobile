@@ -136,9 +136,15 @@ public class ShowcaseGenerator extends Generator {
 			fileContents = fileContents.replace("* \n   */\n", "*/\n");
 			fileContents = "<pre>" + fileContents + "</pre>";
 
+            final StringBuilder sb = new StringBuilder();
+            sb.append(Templates.getPrefixXML());
+            sb.append(fileContents);
+            sb.append(Templates.getSuffix());
+
+
 			// Save the raw source in the public directory
 			String dstPath = ShowcaseConstants.DST_SOURCE_UIXML + filename + ".html";
-			createPublicResource(dstPath, fileContents);
+			createPublicResource(dstPath, sb.toString());
 		}
 	}
 
@@ -169,10 +175,15 @@ public class ShowcaseGenerator extends Generator {
 		formattedSource = formattedSource.replace("* \n   */\n", "*/\n");
 		formattedSource = "<pre>" + formattedSource + "</pre>";
 
+        final StringBuilder sb = new StringBuilder();
+        sb.append(Templates.getPrefixJava());
+        sb.append(formattedSource);
+        sb.append(Templates.getSuffix());
+
 		// Save the source code to a file
 		String dstPath = ShowcaseConstants.DST_SOURCE_EXAMPLE
 				+ type.getSimpleSourceName() + ".html";
-		createPublicResource(dstPath, formattedSource);
+		createPublicResource(dstPath, sb.toString());
 	}
 
 
