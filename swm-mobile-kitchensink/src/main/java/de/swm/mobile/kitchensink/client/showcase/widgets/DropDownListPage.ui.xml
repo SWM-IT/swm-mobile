@@ -15,7 +15,7 @@
 	</ui:style>
 	<g:HTMLPanel>
 		<m:SimpleHeaderPanel ui:field="header" leftButton="Back">
-			<g:Label>Drop Down List</g:Label>			
+			<m:OnlyDesktopLabel>Drop Down List</m:OnlyDesktopLabel>
 		</m:SimpleHeaderPanel>
 		<m:ScrollPanel>
 			<m:ListPanel selectable="false" secondaryStyle="{style.modify}">

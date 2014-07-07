@@ -8,7 +8,7 @@
 
     <g:HTMLPanel>
         <m:SimpleHeaderPanel ui:field="header" leftButton="Back">
-            <g:Label>About</g:Label>
+            <m:OnlyDesktopLabel>About</m:OnlyDesktopLabel>
         </m:SimpleHeaderPanel>
         <div style="margin-left:10px;margin-top:10px;">Kitchensink demo for swm-mobile framework</div>
         <div style="margin-left:10px;min-height:30px;">See

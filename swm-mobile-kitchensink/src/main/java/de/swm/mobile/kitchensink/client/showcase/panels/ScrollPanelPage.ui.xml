@@ -6,7 +6,7 @@
 	</ui:style>
 	<g:HTMLPanel>
 		<m:SimpleHeaderPanel ui:field="header" leftButton="Back">
-			<g:Label>Scroll Panel</g:Label>
+			<m:OnlyDesktopLabel>Scroll Panel</m:OnlyDesktopLabel>
 		</m:SimpleHeaderPanel>
 		<m:ScrollPanel>
 			<m:ListPanel ui:field="list" showArrow="false">

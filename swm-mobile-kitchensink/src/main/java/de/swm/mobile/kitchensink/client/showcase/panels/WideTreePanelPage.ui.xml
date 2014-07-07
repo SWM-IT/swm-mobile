@@ -14,7 +14,7 @@
 
 	<g:HTMLPanel ui:field="content">
 		<m:SimpleHeaderPanel ui:field="header" leftButton="Back">
-			<g:Label>Wide Tree Panel</g:Label>
+			<m:OnlyDesktopLabel>Wide Tree Panel</m:OnlyDesktopLabel>
 		</m:SimpleHeaderPanel>
 		<t:WideTreePanel ui:field="treePanel" hasBreadcrumb="false" />
 	</g:HTMLPanel>

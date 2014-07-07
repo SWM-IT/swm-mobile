@@ -6,7 +6,7 @@
              xmlns:m="urn:import:de.swm.commons.mobile.client.widgets">
     <g:HTMLPanel>
         <m:SimpleHeaderPanel ui:field="header" leftButton="Back">
-            <g:Label>Text Box</g:Label>
+            <m:OnlyDesktopLabel>Text Box</m:OnlyDesktopLabel>
         </m:SimpleHeaderPanel>
         <div class="row">
             <div class="col-md-10">

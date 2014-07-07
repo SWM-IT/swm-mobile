@@ -10,7 +10,7 @@
 	</ui:style>
 	<g:HTMLPanel>
 		<m:SimpleHeaderPanel ui:field="header" leftButton="Back">
-			<g:Label>Radio Button</g:Label>			
+			<m:OnlyDesktopLabel>Radio Button</m:OnlyDesktopLabel>
 		</m:SimpleHeaderPanel>
 		<m:ScrollPanel>
 			<m:ListPanel selectable="false">

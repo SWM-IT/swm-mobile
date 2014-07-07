@@ -5,7 +5,7 @@
 
 	<g:HTMLPanel>
         <m:SimpleHeaderPanel ui:field="header" leftButton="Back">
-            <g:Label>Load page</g:Label>
+            <m:OnlyDesktopLabel>Load page</m:OnlyDesktopLabel>
         </m:SimpleHeaderPanel>
 		<m:ScrollPanel>
 			<m:PagingListPanel ui:field="list" />

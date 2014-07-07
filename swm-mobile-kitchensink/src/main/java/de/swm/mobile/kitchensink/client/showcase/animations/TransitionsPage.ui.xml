@@ -4,7 +4,7 @@
              xmlns:m="urn:import:de.swm.commons.mobile.client.widgets">
     <g:HTMLPanel>
         <m:SimpleHeaderPanel ui:field="header" leftButton="Back">
-            <g:Label>Transitions</g:Label>
+            <m:OnlyDesktopLabel>Transitions</m:OnlyDesktopLabel>
         </m:SimpleHeaderPanel>
         <m:ScrollPanel>
             <m:ListPanel ui:field="list" showArrow="false">

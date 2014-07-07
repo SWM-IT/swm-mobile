@@ -6,7 +6,7 @@
 	
 	<g:HTMLPanel ui:field="content">
 		<m:SimpleHeaderPanel ui:field="header" leftButton="Back">
-			<g:Label>Tree Panel</g:Label>			
+			<m:OnlyDesktopLabel>Tree Panel</m:OnlyDesktopLabel>
 		</m:SimpleHeaderPanel>
 		<t:TreePanel ui:field="treePanel" hasBreadcrumb="false" />		
 	</g:HTMLPanel>	

@@ -34,7 +34,7 @@
 		
 	<g:HTMLPanel>
 		<m:SimpleHeaderPanel ui:field="header" leftButton="Back">
-			<g:Label>Editor</g:Label>			
+			<m:OnlyDesktopLabel>Editor</m:OnlyDesktopLabel>
 		</m:SimpleHeaderPanel>
 		<m:ScrollPanel>
             <g:HTMLPanel>

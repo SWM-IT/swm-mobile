@@ -13,7 +13,7 @@
 	</ui:style>
 	<g:HTMLPanel>
 		<m:SimpleHeaderPanel ui:field="header" leftButton="Back">
-			<g:Label>Slider</g:Label>			
+			<m:OnlyDesktopLabel>Slider</m:OnlyDesktopLabel>
 		</m:SimpleHeaderPanel>
 		<m:ScrollPanel>
 			<m:ListPanel selectable="false" secondaryStyle="{style.modify}">

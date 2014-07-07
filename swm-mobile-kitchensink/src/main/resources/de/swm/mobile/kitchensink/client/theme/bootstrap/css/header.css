@@ -12,7 +12,7 @@
 	\-webkit-box-pack: justify;
 	\-webkit-user-select: none;
 	background-image: literal('-webkit-gradient(linear, 0% 0%, 0% 100%, from(#D5D5D5), to(#f5f5f5))');
-	padding: 0.1em 0.1em 0.1em 0.1em;
+	padding: 1.2em 1.2em 1.2em 1.2em;
 
     z-index: 1;
 	box-shadow: 0 0 .6em black;
@@ -28,8 +28,6 @@
     font-weight: 500;
     line-height: 1.1;
     color: inherit;
-    margin-top: 20px;
-    margin-bottom: 20px;
     font-size: 24px;
 }
 

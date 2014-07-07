@@ -14,7 +14,7 @@
 	
 	<g:HTMLPanel>
 		<m:SimpleHeaderPanel ui:field="header" leftButton="Back">
-			<g:Label>Button</g:Label>			
+			<m:OnlyDesktopLabel>Button</m:OnlyDesktopLabel>
 		</m:SimpleHeaderPanel>
 		<m:ScrollPanel>
 			<m:ListPanel selectable="false" secondaryStyle="{style.modify}">

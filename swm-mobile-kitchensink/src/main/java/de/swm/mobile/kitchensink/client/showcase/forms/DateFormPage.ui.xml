@@ -23,7 +23,7 @@
 	
 	<g:HTMLPanel>
 		<m:SimpleHeaderPanel ui:field="header" leftButton="Back">
-			<g:Label>Date Spinner</g:Label>			
+			<m:OnlyDesktopLabel>Date Spinner</m:OnlyDesktopLabel>
 		</m:SimpleHeaderPanel>
 		<m:ScrollPanel hasTextBox="true">
 			<m:ListPanel selectable="false" styleName="ListPanel {style.flex}">

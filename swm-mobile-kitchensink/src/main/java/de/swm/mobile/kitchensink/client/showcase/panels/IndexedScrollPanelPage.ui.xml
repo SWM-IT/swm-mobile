@@ -10,7 +10,7 @@
 	
 	<g:HTMLPanel ui:field="content">
 		<m:SimpleHeaderPanel ui:field="header" leftButton="Back">
-			<g:Label>Indexed Scroll Panel</g:Label>			
+			<m:OnlyDesktopLabel>Indexed Scroll Panel</m:OnlyDesktopLabel>
 		</m:SimpleHeaderPanel>
 		<m:IndexedScrollPanel ui:field="list" />		
 	</g:HTMLPanel>	

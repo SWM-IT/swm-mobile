@@ -6,7 +6,7 @@
 	</ui:style>
 	<g:HTMLPanel>
 		<m:SimpleHeaderPanel ui:field="header" leftButton="Back">
-			<g:Label>Header Panel</g:Label>			
+			<m:OnlyDesktopLabel>Header Panel</m:OnlyDesktopLabel>
 		</m:SimpleHeaderPanel>
 		<m:SimpleHeaderPanel>
 			<g:Label>Panel Has No Button</g:Label>			

@@ -9,7 +9,7 @@
 	
 	<g:HTMLPanel>
 		<m:SimpleHeaderPanel ui:field="header" leftButton="Back">
-			<g:Label>Command Panel</g:Label>			
+			<m:OnlyDesktopLabel>Command Panel</m:OnlyDesktopLabel>
 		</m:SimpleHeaderPanel>
 		<m:CommandPanel>
 				<m:CommandItem ui:field='command1' headerText='Home' normalIcon='{icon.home}' highlightIcon='{icon.home_selected}' />

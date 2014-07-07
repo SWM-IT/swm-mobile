@@ -6,7 +6,7 @@
 	</ui:style>
 	<g:HTMLPanel ui:field="htmlPanel">
         <m:SimpleHeaderPanel ui:field="header" leftButton="Back">
-            <g:Label>Paintable Canvas</g:Label>
+            <m:OnlyDesktopLabel>Paintable Canvas</m:OnlyDesktopLabel>
         </m:SimpleHeaderPanel>
         <g:HTMLPanel ui:field="canvasHTML">
             <g:Label>Color:</g:Label>

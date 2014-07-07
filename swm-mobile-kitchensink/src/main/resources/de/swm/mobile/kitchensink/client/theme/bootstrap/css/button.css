@@ -1,5 +1,5 @@
 @if swmmobile.css pretty {
-	@external button, bigbutton, pressed, buttonLightLeftText, backButton, pointer, hidden, nextButton, disabled, imageButton;
+@external button, bigbutton, pressed, buttonLightLeftText, backButton, pointer, hidden, nextButton, disabled, imageButton;
 }
 
 .button, .imageButton {
@@ -36,15 +36,14 @@
     font-weight: 400;
     padding: 0.7em 0.7em 0.7em 0.7em;
     \-webkit-border-radius: 0.3em;
-    height:3em;
+    height: 3em;
     text-align: center;
     background-image: literal('linear-gradient(to bottom, #26EC00 0%, #017C01 100%)');
     border-radius: 0.3em;
 }
 
-
 .buttonLightLeftText {
-	text-align: left;
+    text-align: left;
     font-family: inherit;
     display: inline-block;
     margin-bottom: 0;
@@ -68,7 +67,7 @@
 }
 
 .buttonLightLeftText.pressed {
-	background: literal('-webkit-gradient(linear, 0% 0%, 0% 100%, from(#D5D5D5), to(#A09D9D))');
+    background: literal('-webkit-gradient(linear, 0% 0%, 0% 100%, from(#D5D5D5), to(#A09D9D))');
 }
 
 .bigbutton.pressed {
@@ -86,7 +85,6 @@
     bottom: 11px;
 }
 
-
 .backButton > .button,
 .backButton > .pointer {
 
@@ -101,7 +99,24 @@
     font-family: inherit;
 }
 
-.backButton > .pointer{display:block;position: absolute;left:0;top:-1px;}
+.nextButton > .button {
+    background: none;
+    border: none;
+    box-shadow: none;
+    font-size: 21px;
+    padding-left: 0.925em;
+    font-family: inherit;
+    position: relative;
+    top: -5px;
+}
+
+.backButton > .pointer {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: -2px;
+}
+
 .backButton > .pointer:before {
     content: "<";
     font-family: inherit;
@@ -114,24 +129,19 @@
 }
 
 .backButton.pressed > span.button,
-.nextButton.pressed > span.button {color: #FFFFFF;}
+.nextButton.pressed > span.button {
+    color: #FFFFFF;
+}
 
-.backButton.hidden {display: none;}
-
-
+.backButton.hidden {
+    display: none;
+}
 
 .nextButton {
-	position: relative;
+    position: relative;
 }
 
-.nextButton>.button {
-    background: none;
-    border: none;
-    box-shadow: none;
-    font-size: 21px;
-    padding-left: 0.925em;
-    font-family: inherit;
-}
+
 
 .nextButton:after {
     content: ">";
@@ -157,23 +167,22 @@
 }
 
 .button.disabled {
-	color: gray;
+    color: gray;
 }
 
-
 .imageButton.pressed {
-	background: literal('-webkit-gradient(linear, 0% 0%, 0% 100%, from(lightgreen), color-stop(0.5, #298C08), color-stop(0.5, darkgreen), to(darkgreen))');
-	background: literal('linear-gradient(to bottom, lightgreen 0%, #298C08 50%, darkgreen 50%, darkgreen 100%)');
+    background: literal('-webkit-gradient(linear, 0% 0%, 0% 100%, from(lightgreen), color-stop(0.5, #298C08), color-stop(0.5, darkgreen), to(darkgreen))');
+    background: literal('linear-gradient(to bottom, lightgreen 0%, #298C08 50%, darkgreen 50%, darkgreen 100%)');
 }
 
 .imageButton > img {
     \-webkit-user-select: none;
-	border-style: none;
-	outline: none;
+    border-style: none;
+    outline: none;
 }
 
 .imageButton > div {
-	-webkit-box-align: center;
-	padding-left: 0.3em;
-	-ms-flex-align: center;
+    -webkit-box-align: center;
+    padding-left: 0.3em;
+    -ms-flex-align: center;
 }
