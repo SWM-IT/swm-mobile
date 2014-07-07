@@ -499,7 +499,7 @@ public abstract class AbstractMobilePresenter implements IMobilePresenter {
 	 * @return the loading indicator.
 	 */
 	private LoadingIndicatorPopup startPopup(final ISpinnerStarted spinnerStarted) {
-		this.spinner.showCentered(true);
+		spinner.showCentered(true);
 		final Timer timer = new Timer() {
 
 			@Override
@@ -509,7 +509,7 @@ public abstract class AbstractMobilePresenter implements IMobilePresenter {
 			}
 		};
 		timer.schedule(50);
-		return this.spinner;
+		return spinner;
 	}
 
 	/**
@@ -518,7 +518,7 @@ public abstract class AbstractMobilePresenter implements IMobilePresenter {
 	private void stopSpinnerIfRunning() {
 		if (isSpinnerStarted) {
 			isSpinnerStarted = false;
-			this.spinner.setVisible(false);
+			spinner.setVisible(false);
 		}
 	}
 
