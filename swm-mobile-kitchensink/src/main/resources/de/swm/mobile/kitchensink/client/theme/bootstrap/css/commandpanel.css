@@ -1,0 +1,68 @@
+@if swmmobile.css pretty {
+	@external commandPanel, pressed, disabled, commandDropDown, hidden;	
+}
+
+.commandPanel {
+	display: \-webkit-box;
+	\-webkit-box-orient: horizontal;
+	\-webkit-box-shadow: 0px 4px 6px #666666, 0 0 20px rgba(255, 255, 255, 1);
+	background: #333;
+	position: relative;
+	z-index: 1;
+	
+	display: -ms-flexbox;
+	box-shadow: 0px 4px 6px #666666, 0 0 20px rgba(255, 255, 255, 1);
+}
+
+.commandPanel > div {
+	font-size: 0.5em;
+	padding: 4px;
+	\-webkit-box-flex: 1;
+	display: -webkit-box;
+	\-webkit-box-orient: vertical;
+	\-webkit-box-align: center;
+	\-webkit-box-pack: center;
+	
+	-ms-flex: 1;
+	display: -ms-flexbox;
+	-ms-flex-direction: column;
+	-ms-flex-align: center;
+	-ms-flex-pack: center;
+}
+
+.commandPanel > div.pressed {
+	text-shadow: darkgreen 0 -0.1em 0.1em;
+	background: literal('-webkit-gradient(linear, 0% 0%, 0% 100%, from(lightgreen), color-stop(0.5, #298C08), color-stop(0.5, darkgreen), to(darkgreen))');
+
+	background: literal('linear-gradient(to bottom, lightgreen 0%, #298C08 50%, darkgreen 50%, darkgreen 100%)');
+}
+
+/** Eventuell anpassen **/
+.commandPanel > div.disabled {
+	text-shadow: grey 0 -0.1em 0.1em;
+}
+
+.commandDropDown {
+	display: -webkit-box;
+	\-webkit-box-flex: 1;
+	
+	display: -ms-flexbox;
+	-ms-flex: 1;
+}
+
+.commandDropDown > select {
+	\-webkit-appearance: none;
+	background-color: rgba(255, 255, 255, 0);
+	background-position: top;
+	background-repeat: no-repeat;
+	font-size: 1.7em;
+}
+
+.commandDropDown > select.hidden {
+	color: rgba(255, 255, 255, 0);
+}
+
+.commandDropDown > select:focus {
+	outline: 0;
+	outline: none;
+}

@@ -78,19 +78,19 @@ public interface BootstrapSWMMobileCssBundle extends SWMMobileCssBundle, ClientB
 
 
 	@Override
-	@Source({ "css/scrollpanel.css", "css/page.css" })
+	@Source({"css/scrollpanel.css", "css/page.css"})
 	ScrollPanelCss getScrollPanelCss();
 
 
 
 	@Override
-	@Source({ "css/listpanel.css", "css/scrollpanel.css", "css/page.css" })
+	@Source({"css/listpanel.css", "css/scrollpanel.css", "css/page.css"})
 	ListPanelCss getListPanelCss();
 
 
 
 	@Override
-	@Source({ "css/listpanel-flex.css", "css/listpanel.css", "css/scrollpanel.css", "css/page.css" })
+	@Source({"css/listpanel-flex.css", "css/listpanel.css", "css/scrollpanel.css", "css/page.css"})
 	ListPanelFlexCss getListPanelFlexCss();
 
 
@@ -108,7 +108,7 @@ public interface BootstrapSWMMobileCssBundle extends SWMMobileCssBundle, ClientB
 
 
 	@Override
-	@Source({ "css/tabpanel.css", "css/page.css" })
+	@Source({"css/tabpanel.css", "css/page.css"})
 	TabPanelCss getTabPanelCss();
 
 
@@ -132,7 +132,7 @@ public interface BootstrapSWMMobileCssBundle extends SWMMobileCssBundle, ClientB
 
 
 	@Override
-	@Source({ "css/check-radio-box.css", "css/page.css", "css/display.css" })
+	@Source({"css/check-radio-box.css", "css/page.css", "css/display.css"})
 	CheckRadioBoxCss getCheckRadioBoxCss();
 
 
@@ -144,7 +144,7 @@ public interface BootstrapSWMMobileCssBundle extends SWMMobileCssBundle, ClientB
 
 
 	@Override
-	@Source({ "css/dropdown.css", "css/page.css" })
+	@Source({"css/dropdown.css", "css/page.css"})
 	DropDownCss getDropDownCss();
 
 

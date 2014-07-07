@@ -1,0 +1,23 @@
+@if swmmobile.css pretty {
+	@external transformLinear, topLinearReverse;	
+}
+
+.transformLinear {
+	-webkit-transition-property: -webkit-transform;
+	-webkit-transition-duration: 600ms;
+	-webkit-transition-timing-function: linear;
+	
+	transition-property: transform;
+	transition-duration: 600ms;
+	transition-timing-function: linear;
+}
+
+.transformEaseOut {
+	-webkit-transition-property: -webkit-transform;
+	-webkit-transition-duration: 600ms;
+	-webkit-transition-timing-function: ease-out;
+
+	transition-property: transform;
+	transition-duration: 600ms;
+	transition-timing-function: ease-out;
+}
