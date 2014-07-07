@@ -26,5 +26,5 @@ public enum StatusBarStyle {
 	/** Status bar style. **/
 	BLACK,
 	/** Status bar style. **/
-	BLACK_TRANSLUCENT;
+	BLACK_TRANSLUCENT
 }

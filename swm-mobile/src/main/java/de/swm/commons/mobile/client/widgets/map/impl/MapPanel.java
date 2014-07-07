@@ -95,8 +95,6 @@ public class MapPanel implements IMapView {
 	private IMapMoveHandler mapMoveHandler;
 	private IMapZoomHandler mapZoomHandler;
 	private final IMapController controller;
-	private final IMapResources resources;
-	private final IMapConfiguration configuration;
 	private Layer osmLayer;
 	private boolean isWithZoomControl;
 
@@ -109,8 +107,8 @@ public class MapPanel implements IMapView {
 	public MapPanel(IMapController controller) {
 		isWithZoomControl = SWMMobile.getOsDetection().isDesktop();
 		this.controller = controller;
-		this.resources = controller.getResources();
-		this.configuration = (controller.getConfiguration() == null) ?
+		IMapResources resources = controller.getResources();
+		IMapConfiguration configuration = (controller.getConfiguration() == null) ?
 				new DefaultMapConfiguration() : controller.getConfiguration();
 		this.defaultMarkerImage = resources.markerIconDefault();
 		this.ownPositionMarkerImage = resources.mapPinOwnPosition();

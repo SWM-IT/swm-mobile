@@ -27,5 +27,5 @@ public enum Orientation {
 	/**
 	 * Defines a Orientation Landscape.
 	 */
-	LANDSCAPE;
+	LANDSCAPE
 }

@@ -34,7 +34,6 @@ import de.swm.commons.mobile.client.utils.IsSWMMobileWidgetHelper;
  */
 public class SearchBoxLikeButton extends Composite implements IsSWMMobileWidget, HasTouchStartHandlers, HasClickHandlers {
 
-	private FlowPanel roundDiv;
 	protected final SearchBoxCss css;
 	private Label box;
 	private IsSWMMobileWidgetHelper myWidgetHelper = new IsSWMMobileWidgetHelper();
@@ -60,7 +59,7 @@ public class SearchBoxLikeButton extends Composite implements IsSWMMobileWidget,
 
 		initWidget(main);
 
-		roundDiv = new FlowPanel();
+		FlowPanel roundDiv = new FlowPanel();
 		roundDiv.addStyleName(css.round());
 
 		box = new Label();

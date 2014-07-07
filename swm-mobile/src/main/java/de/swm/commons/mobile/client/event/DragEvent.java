@@ -38,8 +38,8 @@ public class DragEvent {
 		/** Drag state. **/
 		Move,
 		/** Drag state. **/
-		End;
-	};
+		End
+	}
 
 	private final double x, y;
 	private final double offsetX, offsetY;

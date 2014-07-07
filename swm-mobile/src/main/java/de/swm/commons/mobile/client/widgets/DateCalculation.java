@@ -131,8 +131,7 @@ public class DateCalculation {
 
 		final DateTimeFormat format = (isLocalTime) ? DateTimeFormat.getFormat(dateStyle.getFormatPatternRfc3339Local())
 				: DateTimeFormat.getFormat(dateStyle.getFormatPatternRfc3339());
-		String format1 = format.format(date);
-		return format1;
+		return format.format(date);
 	}
 
 	/**

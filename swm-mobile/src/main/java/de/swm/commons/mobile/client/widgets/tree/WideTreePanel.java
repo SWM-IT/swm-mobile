@@ -53,11 +53,8 @@ public class WideTreePanel extends PanelBase implements SwipeEventsHandler {
 	private TreePanelCss css;
 
 	private boolean hasBreadcrumb;
-	private HorizontalPanel breadcrumbPanel;
 	private Label breadcrumbLabel;
-	private SimpleImageButton backButton;
-	
-	private HorizontalPanel container;
+
 	private ScrollPanel scrollPanel0;
 	private ScrollPanel scrollPanel1;
 	private ScrollPanel scrollPanel2;
@@ -81,10 +78,10 @@ public class WideTreePanel extends PanelBase implements SwipeEventsHandler {
 		addStyleName(css.getTreePanel());
 
 		if (hasBreadcrumb) {
-			breadcrumbPanel = new HorizontalPanel();
+			HorizontalPanel breadcrumbPanel = new HorizontalPanel();
 			breadcrumbPanel.addStyleName(css.getTreeBreadcrumbPanel());
-			backButton = new SimpleImageButton(SWMMobile.getTheme().getMGWTImageBundle().arrowleft(), new ClickHandler() {
-				
+			SimpleImageButton backButton = new SimpleImageButton(SWMMobile.getTheme().getMGWTImageBundle().arrowleft(), new ClickHandler() {
+
 				@Override
 				public void onClick(ClickEvent event) {
 					navigateBack();
@@ -97,8 +94,8 @@ public class WideTreePanel extends PanelBase implements SwipeEventsHandler {
 			breadcrumbPanel.add(breadcrumbLabel);
 			add(breadcrumbPanel);
 		}
-		
-		container = new HorizontalPanel();
+
+		HorizontalPanel container = new HorizontalPanel();
 		container.addStyleName(css.getWideTreeContainer());
 		add(container);
 

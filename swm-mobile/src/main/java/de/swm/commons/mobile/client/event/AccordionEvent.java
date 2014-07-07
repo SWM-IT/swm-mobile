@@ -33,8 +33,8 @@ public class AccordionEvent {
 		/** Opens an Accordion stack. **/
 		Open,
 		/** Will close an accordion stack. **/
-		Close;
-	};
+		Close
+	}
 
 	private Type myType;
 	private final AccordionStack accordionStack;

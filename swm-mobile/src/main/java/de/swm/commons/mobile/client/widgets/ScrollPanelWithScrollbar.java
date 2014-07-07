@@ -41,7 +41,6 @@ public class ScrollPanelWithScrollbar extends PanelBase implements HasWidgets, D
 	private ScrollBar scrollBar;
 
 	private boolean showScrollBar = true;
-	private boolean isDesktop = false;
 
 	/**
 	 * Default constructor.
@@ -69,7 +68,7 @@ public class ScrollPanelWithScrollbar extends PanelBase implements HasWidgets, D
 
 	@Override
 	public void onLoad() {
-		isDesktop = SWMMobile.getOsDetection().isDesktop();
+		boolean isDesktop = SWMMobile.getOsDetection().isDesktop();
 		
 		DragController.get().addDragEventsHandler(this);
 		DragController.get().addSwipeEventsHandler(this);

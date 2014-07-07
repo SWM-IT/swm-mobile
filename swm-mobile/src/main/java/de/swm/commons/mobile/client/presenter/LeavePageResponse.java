@@ -13,5 +13,5 @@ public enum LeavePageResponse {
 
 	YES_LEAVE_PAGE,
 
-	DISPLAY_YES_NO_DIALOG;
+	DISPLAY_YES_NO_DIALOG
 }

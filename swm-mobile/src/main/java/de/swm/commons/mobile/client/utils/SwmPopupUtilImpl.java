@@ -122,8 +122,7 @@ public class SwmPopupUtilImpl implements ISwmPopupUtil {
 
 	@Override
 	public CommandPopup buildMultiWidgetPopup(String header, Widget... widgets) {
-		final CommandPopup popup = new CommandPopup(header, this.images.information(), widgets);
-		return popup;
+		return new CommandPopup(header, this.images.information(), widgets);
 	}
 
 

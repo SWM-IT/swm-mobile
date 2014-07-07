@@ -32,7 +32,7 @@ public class LoadingIndicatorPopup extends PopupPanel {
 
 	private static final double PADDING = 6.0;
 	private static final double PADDING_SUBTITLE = 1.0;
-	private String loadingText = ".... Loading ....";
+	private static final String loadingText = ".... Loading ....";
 	private final Label loadingLabel;
 	private final Label loadingSubLabel;
 	private ImageResource loadingImage = SWMMobile.getTheme().getMGWTImageBundle().loading();

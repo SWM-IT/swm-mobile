@@ -23,6 +23,7 @@ import com.google.gwt.user.client.Event;
  * Represents a swipe event.
  * 
  */
+@SuppressWarnings("ALL")
 public class SwipeEvent {
 
 	/**
@@ -37,7 +38,7 @@ public class SwipeEvent {
 		Vertical,
 		/** Swipe direction. **/
 		Horizontal;
-	};
+	}
 
 	private double mySpeed;
 	private Event myNativeEvent;

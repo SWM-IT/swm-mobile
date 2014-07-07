@@ -6,7 +6,7 @@ import static org.junit.Assert.assertEquals;
 
 public class ViewPortTest {
 
-	private static String EXPECTED = "initial-scale=1,maximum-scale=1,width=device-width,user-scalable=no";
+	private static final String EXPECTED = "initial-scale=1,maximum-scale=1,width=device-width,user-scalable=no";
 
 	@Test
 	public void testGetContent() throws Exception {

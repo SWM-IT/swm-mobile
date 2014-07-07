@@ -333,8 +333,8 @@ public class ScrollPanel extends PanelBase implements HasWidgets, DragEventsHand
 		}
 
 		// current element is hidden? no height for this element.
-		if (element.getStyle().getVisibility().equals("hidden") == true
-				|| element.getStyle().getDisplay().equals("none") == true) {
+		if (element.getStyle().getVisibility().equals("hidden")
+				|| element.getStyle().getDisplay().equals("none")) {
 			return 0;
 		}
 

@@ -43,7 +43,7 @@ public class TreeChangedEvent extends GwtEvent<TreeChangedHandler> {
 	 */
 	public enum EventType {
 		/** Unter-Event typ. **/
-		INIT_COMPLETE, CHILD_SELECTED, BACK_EVENT;
+		INIT_COMPLETE, CHILD_SELECTED, BACK_EVENT
 	}
 
 	/**

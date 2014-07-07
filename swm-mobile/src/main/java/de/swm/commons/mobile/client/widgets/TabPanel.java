@@ -227,9 +227,8 @@ public class TabPanel extends SWMMobileWidgetBase implements HasWidgets, ClickHa
 		while (div.getParentElement() != myTabHeaderPanel.getElement()) {
 			div = div.getParentElement();
 		}
-		int index = DOM.getChildIndex((com.google.gwt.user.client.Element) myTabHeaderPanel.getElement(),
+		return DOM.getChildIndex((com.google.gwt.user.client.Element) myTabHeaderPanel.getElement(),
 				(com.google.gwt.user.client.Element) div);
-		return index;
 	}
 
 	/**

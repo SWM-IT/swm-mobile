@@ -33,8 +33,8 @@ import de.swm.commons.mobile.client.event.DragControllerMobile;
  */
 public class GhostClickPreventer {
 	
-	private int GHOST_CLICK_DELAY_MILLIS = 2500;
-	private int GHOST_CLICK_RADIUS = 25;
+	private static  final int GHOST_CLICK_DELAY_MILLIS = 2500;
+	private static final int GHOST_CLICK_RADIUS = 25;
 	
 	List<Point> clickedPoints = new ArrayList<Point>();
 	

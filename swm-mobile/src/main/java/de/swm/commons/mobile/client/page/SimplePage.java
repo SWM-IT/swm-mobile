@@ -152,7 +152,7 @@ public abstract class SimplePage extends SWMMobileWidgetBase implements IPage {
 			this.beforeLeaving();
 			toPage.beforeEnter();
 			if (transition != null) {
-				transition.start(this, toPageC, parent, ((direction.equals(Direction.RIGHT)) ? false : true));
+				transition.start(this, toPageC, parent, ((!direction.equals(Direction.RIGHT))));
 			} else {
 				Transition.start(this, toPageC, parent);
 			}

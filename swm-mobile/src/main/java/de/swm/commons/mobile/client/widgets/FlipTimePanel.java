@@ -52,8 +52,6 @@ public class FlipTimePanel extends HorizontalPanel {
 
 	}
 
-	private NumberFormat nf = NumberFormat.getFormat("00");
-
 	/**
 	 * Default constructor.
 	 * 
@@ -80,6 +78,7 @@ public class FlipTimePanel extends HorizontalPanel {
 				hoursAsInt = hoursAsInt - HOURS_PER_HALF_DAY;
 			}
 		}
+		NumberFormat nf = NumberFormat.getFormat("00");
 		FlipNumber hours = new FlipNumber(nf.format(hoursAsInt));
 		hours.addStyleName(SWMMobile.getTheme().getMGWTCssBundle()
 				.getFlipTimePanelCss().flipHours());

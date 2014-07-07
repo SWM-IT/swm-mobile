@@ -64,7 +64,7 @@ public class MarkerPopup extends VerticalPanel {
 		CENTER_TOP,
 		/** Pos. **/
 		CENTER_BOTTOM
-	};
+	}
 
 	private static final int ELEMENT_Z_INDEX = 500;
 	private static final String OPEN_LAYER_MAP_WIDGET_ID = "ol-map-widget";

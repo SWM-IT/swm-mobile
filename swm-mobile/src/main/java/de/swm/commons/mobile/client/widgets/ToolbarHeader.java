@@ -34,7 +34,6 @@ public class ToolbarHeader extends FlowPanel implements DragEventsHandler, IsSWM
 	private Image headerImage;
 	private ImageResource headerImageRes;
 	private ImageResource highlightImageRes;
-	private Label headerText;
 	private Label badgeLabel;
 	private ToolbarElement iAmInsideTisElement;
 	private boolean selectionEnabled = true;
@@ -59,8 +58,8 @@ public class ToolbarHeader extends FlowPanel implements DragEventsHandler, IsSWM
 			Image.prefetch(highlightImage.getSafeUri()); // prevent flicker of images on initial display
 		}
 		if (headerText != null) {
-			this.headerText = new Label(headerText);
-			add(this.headerText);
+			Label headerText1 = new Label(headerText);
+			add(headerText1);
 		}
 	}
 

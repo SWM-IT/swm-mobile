@@ -65,12 +65,11 @@ public class ConnectionListItem extends ListItem {
 		/** Transportmittel. **/
 		CABLE,
 		/** Transportmittel unbekannt. **/
-		UNKNOWN;
+		UNKNOWN
 	}
 
 	private Label timeLabel;
 	private Label durationAndInfoLabel;
-	private Label transferLabel;
 	private SWMMobileImageBundle icons;
 	private String infoText;
 	private final Date fromDate;
@@ -133,7 +132,7 @@ public class ConnectionListItem extends ListItem {
 		vPanel.add(durationAndInfoLabel);
 
 		HorizontalPanel tPanel = new HorizontalPanel();
-		transferLabel = new Label(SWMMobile.getI18N().interchanges() + " "
+		Label transferLabel = new Label(SWMMobile.getI18N().interchanges() + " "
 				+ numTransfer);
 		transferLabel.addStyleName(SWMMobile.getTheme().getMGWTCssBundle()
 				.getConnectionListItemCss().connectionListItemText());

@@ -410,9 +410,8 @@ public class Utils {
 				return -1;
 			}
 		}
-		int index = DOM.getChildIndex((com.google.gwt.user.client.Element) parent,
+		return DOM.getChildIndex((com.google.gwt.user.client.Element) parent,
 				(com.google.gwt.user.client.Element) div);
-		return index;
 	}
 
 

@@ -38,8 +38,7 @@ public final class SWMMobile {
 
     private static SWMMobileTheme theme;
     private static final OsDetection OS_DETECTION = new OsDetectionImpl();
-    private static boolean scrollingDisabled;
-    private static I18NConstants i18n = GWT.create(I18NConstants.class);
+	private static I18NConstants i18n = GWT.create(I18NConstants.class);
 
 
     /**
@@ -156,7 +155,7 @@ public final class SWMMobile {
             head.appendChild(fullScreenMetaTag);
         }
 
-        scrollingDisabled = settings.isPreventScrolling();
+		boolean scrollingDisabled = settings.isPreventScrolling();
         if (settings.isPreventScrolling() && getOsDetection().isIOs()) {
             BodyElement body = Document.get().getBody();
             setupPreventScrolling(body);
