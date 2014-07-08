@@ -31,13 +31,11 @@ public class ToolbarPage extends SimplePage {
     }
 
 
-    ///NEU
     private WidgetsPage widgetsPage;
     private AnimationsPage animationsPage;
     private PanelPage panelsPage;
     private FormsPage formsPage;
     private AboutPage aboutPage;
-    //NEU ENDE
 
     private AboutDetailPage aboutDetailPage;
 
@@ -85,7 +83,7 @@ public class ToolbarPage extends SimplePage {
             }
         });
 
-        toolbar.setBadgeValue(3, "2");
+        //toolbar.setBadgeValue(3, "2");
 
     }
 

@@ -6,11 +6,11 @@
              xmlns:m="urn:import:de.swm.commons.mobile.client.widgets">
     <g:HTMLPanel>
         <m:SimpleHeaderPanel ui:field="header" leftButton="Back">
-            <m:OnlyDesktopLabel>Text Box</m:OnlyDesktopLabel>
+            <m:OnlyDesktopLabel>Bootstrap3 integration</m:OnlyDesktopLabel>
         </m:SimpleHeaderPanel>
         <div class="row">
             <div class="col-md-10">
-                <h3>&nbsp;&nbsp;SWM Mobile mit Bootstrap3</h3>
+                <h4>&nbsp;&nbsp;SWM-Mobile and Bootstrap3</h4>
             </div>
         </div>
         <m:ScrollPanel hasTextBox="true">
@@ -22,7 +22,7 @@
                             <b:FieldSet>
                                 <b:Popover ui:field="dateRangeTooltip" trigger="MANUAL" placement="RIGHT">
                                     <b:FormGroup ui:field="dateRangeGroup">
-                                        <b:FormLabel for="tariffFormStartDate" addStyleNames="col-md-4">Zeitraum
+                                        <b:FormLabel for="tariffFormStartDate" addStyleNames="col-md-4">Range
                                         </b:FormLabel>
                                         <g:FlowPanel addStyleNames="col-md-4">
                                             <b:TextBox></b:TextBox>
@@ -34,14 +34,14 @@
                                 </b:Popover>
 
                                 <b:FormGroup>
-                                    <b:FormLabel addStyleNames="col-md-4">Rolle</b:FormLabel>
+                                    <b:FormLabel addStyleNames="col-md-4">Role</b:FormLabel>
                                     <g:FlowPanel addStyleNames="col-md-8">
                                         <b:TextBox></b:TextBox>
                                     </g:FlowPanel>
                                 </b:FormGroup>
 
                                 <b:FormGroup>
-                                    <b:FormLabel for="formGroupSelect" addStyleNames="col-md-4">Gruppe/Stufe
+                                    <b:FormLabel for="formGroupSelect" addStyleNames="col-md-4">Group
                                     </b:FormLabel>
                                     <g:FlowPanel addStyleNames="col-md-4">
                                         <b:TextBox></b:TextBox>
@@ -52,7 +52,7 @@
                                 </b:FormGroup>
 
                                 <b:FormGroup>
-                                    <b:FormLabel for="formFixedAmount" addStyleNames="col-md-4">Monatsgehalt
+                                    <b:FormLabel for="formFixedAmount" addStyleNames="col-md-4">Salary
                                     </b:FormLabel>
                                     <g:FlowPanel addStyleNames="col-md-8">
                                         <b:InputGroup>
@@ -63,7 +63,7 @@
                                 </b:FormGroup>
 
                                 <b:FormGroup>
-                                    <b:FormLabel for="formTotalSalary" addStyleNames="col-md-4">Jahresgehalt
+                                    <b:FormLabel for="formTotalSalary" addStyleNames="col-md-4">Bonus
                                     </b:FormLabel>
                                     <b:Popover ui:field="totalSalaryPopover" title="Effektives&nbsp;Jahresgehalt"
                                                trigger="MANUAL"
@@ -88,7 +88,7 @@
                             <b:Collapse b:id="tariffDetailCollapse" toggle="false">
                                 <b:FieldSet>
                                     <b:FormGroup ui:field="employmentPercentageGroup">
-                                        <b:FormLabel for="formEmploymentPercentage" addStyleNames="col-md-4">Teilzeit
+                                        <b:FormLabel for="formEmploymentPercentage" addStyleNames="col-md-4">Part time
                                         </b:FormLabel>
                                         <g:FlowPanel addStyleNames="col-md-8">
                                             <b:Popover ui:field="employmentPercentageTooltip" trigger="MANUAL"
@@ -103,7 +103,7 @@
 
                                     <b:FormGroup ui:field="retirementProvisionsGroup">
                                         <b:FormLabel for="formRetirementProvisions" addStyleNames="col-md-4">
-                                            Altersvorsorge
+                                            401K
                                         </b:FormLabel>
                                         <g:FlowPanel addStyleNames="col-md-8">
                                             <b:Popover ui:field="retirementProvisionsTooltip" trigger="MANUAL"
@@ -122,8 +122,8 @@
                         </b:Form>
 
 
-                        <b:Button ui:field="resetButton">Zurücksetzen</b:Button>
-                        <b:Button ui:field="saveButton" type="PRIMARY">Sichern</b:Button>
+                        <b:Button ui:field="resetButton">Reset</b:Button>
+                        <b:Button ui:field="saveButton" type="PRIMARY">Save</b:Button>
                         <b:PanelFooter/>
                     </bhtml:Div>
                 </bhtml:Div>

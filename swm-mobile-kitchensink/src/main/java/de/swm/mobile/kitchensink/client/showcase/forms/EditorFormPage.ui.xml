@@ -75,7 +75,6 @@
                 </m:ListPanel>
                 <m:ListPanel  selectable="false">
                     <m:ListItem>
-                        <m:DecoratedListItem image="{res.flag}" title="Buttons:" subtitle=""/>
                         <b:ButtonGroup ui:field="radioButtonGroup" dataToggle="BUTTONS">
                             <b:CheckBoxButton active="true">Option 1</b:CheckBoxButton>
                             <b:CheckBoxButton>Option 2</b:CheckBoxButton>
@@ -84,14 +83,13 @@
                         </b:ButtonGroup>
                     </m:ListItem>
                     <m:ListItem>
-                        <m:DecoratedListItem image="{res.flag}" title="Buttons:" subtitle="generisch"/>
                         <m:GenericRadioButtonGroup ui:field="radioButtonGroupGeneric" vertical="false" name="radiobuttonsGen"/>
                     </m:ListItem>
                 </m:ListPanel>
                 <m:ListPanel  selectable="false">
                     <m:ListItem>
-                        <m:Button ui:field="saveButton">Speichern</m:Button>
-                        <m:Button ui:field="cancelButton">Abbrechen</m:Button>
+                        <m:Button ui:field="saveButton">Save</m:Button>
+                        <m:Button ui:field="cancelButton">Cancel</m:Button>
                     </m:ListItem>
                 </m:ListPanel>
             </g:HTMLPanel>

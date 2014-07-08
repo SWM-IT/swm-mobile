@@ -9,16 +9,14 @@
 			<m:OnlyDesktopLabel>Header Panel</m:OnlyDesktopLabel>
 		</m:SimpleHeaderPanel>
 		<m:SimpleHeaderPanel>
-			<g:Label>Panel Has No Button</g:Label>			
+			<g:Label>No Button</g:Label>
 		</m:SimpleHeaderPanel>
 		<m:SimpleHeaderPanel leftButton="Menu">
-			<g:Label>Panel Has Left Button</g:Label>			
+			<g:Label>Left Btn.</g:Label>
 		</m:SimpleHeaderPanel>
 		<m:SimpleHeaderPanel rightButton="Menu">
-			<g:Label>Panel Has Right Button</g:Label>			
+			<g:Label>Right Btn.</g:Label>
 		</m:SimpleHeaderPanel>
-		<m:SimpleHeaderPanel leftButton="Back" rightButton="Next">
-			<g:Label>Panel Has Two Buttons</g:Label>			
-		</m:SimpleHeaderPanel>
+		<m:SimpleHeaderPanel leftButton="Back" rightButton="Next"/>
 	</g:HTMLPanel>	
 </ui:UiBinder> 

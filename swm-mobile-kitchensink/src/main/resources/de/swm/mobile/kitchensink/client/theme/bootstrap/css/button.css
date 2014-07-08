@@ -78,6 +78,12 @@
     background: literal('-webkit-gradient(linear, 0% 0%, 0% 100%, from(#D5D5D5), to(#A09D9D))');
 }
 
+.button.disabled {
+    color: gray;
+}
+
+/**Back button**/
+
 .backButton {
     z-index: 2;
     position: absolute;
@@ -99,22 +105,11 @@
     font-family: inherit;
 }
 
-.nextButton > .button {
-    background: none;
-    border: none;
-    box-shadow: none;
-    font-size: 21px;
-    padding-left: 0.925em;
-    font-family: inherit;
-    position: relative;
-    top: -5px;
-}
-
 .backButton > .pointer {
     display: block;
     position: absolute;
     left: 0;
-    top: -2px;
+    top: -1px;
 }
 
 .backButton > .pointer:before {
@@ -137,10 +132,32 @@
     display: none;
 }
 
+/** Next button **/
 .nextButton {
+    z-index: 2;
     position: relative;
+    left: 10px;
+    bottom: 11px;
+    top: 6px;
 }
 
+.nextButton > .button {
+    background: none;
+    border: none;
+    box-shadow: none;
+    font-size: 21px;
+    padding-left: 0.925em;
+    font-family: inherit;
+    /*position: relative;*/
+    /*top: -5px;*/
+}
+
+.nextButton > .pointer {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: -1px;
+}
 
 
 .nextButton:after {
@@ -151,25 +168,10 @@
     font-size: 30px;
     color: #585858;
     position: relative;
-    margin-left: -7px;
+    top: 3px;
 }
 
-.nextButton > span.button {
-
-}
-
-.nextButton > span.pointer {
-
-}
-
-.nextButton.pressed > span.pointer {
-
-}
-
-.button.disabled {
-    color: gray;
-}
-
+/** image button **/
 .imageButton.pressed {
     background: literal('-webkit-gradient(linear, 0% 0%, 0% 100%, from(lightgreen), color-stop(0.5, #298C08), color-stop(0.5, darkgreen), to(darkgreen))');
     background: literal('linear-gradient(to bottom, lightgreen 0%, #298C08 50%, darkgreen 50%, darkgreen 100%)');

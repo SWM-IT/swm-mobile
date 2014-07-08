@@ -36,6 +36,6 @@ public class TextBoxPage extends ShowcaseDetailPage {
 
 	@Override
 	public String getName() {
-		return "Text box page";
+		return "Bootstrap3 integration";
 	}
 }
