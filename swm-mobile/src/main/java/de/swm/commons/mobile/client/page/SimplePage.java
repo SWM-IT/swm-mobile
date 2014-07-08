@@ -20,7 +20,6 @@ import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.HasWidgets;
 import com.google.gwt.user.client.ui.RootLayoutPanel;
 import com.google.gwt.user.client.ui.Widget;
-
 import de.swm.commons.mobile.client.SWMMobile;
 import de.swm.commons.mobile.client.utils.Utils;
 import de.swm.commons.mobile.client.widgets.SWMMobileWidgetBase;

@@ -15,13 +15,12 @@
  */
 package de.swm.commons.mobile.client.utils;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.google.gwt.user.client.Event;
 import com.google.gwt.user.client.Timer;
-
 import de.swm.commons.mobile.client.event.DragControllerMobile;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Helper class to prevent 'ghost clicks' (extra click events that occur when a touch end event is converted to a click event).

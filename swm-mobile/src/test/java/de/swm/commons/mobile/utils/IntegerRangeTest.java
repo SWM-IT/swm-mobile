@@ -15,13 +15,12 @@
  */
 package de.swm.commons.mobile.utils;
 
-import static org.junit.Assert.*;
+import de.swm.commons.mobile.client.utils.IntegerRange;
+import org.junit.Test;
 
 import java.util.Date;
 
-import org.junit.Test;
-
-import de.swm.commons.mobile.client.utils.IntegerRange;
+import static org.junit.Assert.assertEquals;
 
 public class IntegerRangeTest {
 

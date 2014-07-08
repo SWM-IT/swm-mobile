@@ -15,10 +15,6 @@
  */
 package de.swm.commons.mobile.client.widgets.tree;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.event.shared.HandlerRegistration;
@@ -28,23 +24,16 @@ import com.google.gwt.user.client.EventListener;
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.Widget;
-
 import de.swm.commons.mobile.client.SWMMobile;
-import de.swm.commons.mobile.client.event.DragController;
-import de.swm.commons.mobile.client.event.SelectionChangedEvent;
-import de.swm.commons.mobile.client.event.SelectionChangedHandler;
-import de.swm.commons.mobile.client.event.SwipeEvent;
-import de.swm.commons.mobile.client.event.SwipeEventsHandler;
+import de.swm.commons.mobile.client.event.*;
 import de.swm.commons.mobile.client.theme.components.TreePanelCss;
 import de.swm.commons.mobile.client.utils.Utils;
-import de.swm.commons.mobile.client.widgets.DecoratedListItem;
-import de.swm.commons.mobile.client.widgets.HorizontalPanel;
-import de.swm.commons.mobile.client.widgets.ListItem;
-import de.swm.commons.mobile.client.widgets.ListPanel;
-import de.swm.commons.mobile.client.widgets.PanelBase;
-import de.swm.commons.mobile.client.widgets.ScrollPanel;
-import de.swm.commons.mobile.client.widgets.SimpleImageButton;
+import de.swm.commons.mobile.client.widgets.*;
 import de.swm.commons.mobile.client.widgets.tree.TreeChangedEvent.EventType;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class WideTreePanel extends PanelBase implements SwipeEventsHandler {
 

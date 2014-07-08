@@ -24,7 +24,6 @@ import com.google.gwt.user.client.ui.HasWidgets;
 import de.swm.commons.mobile.client.page.SimplePage;
 import de.swm.commons.mobile.client.page.Transition;
 import de.swm.commons.mobile.client.utils.AsyncCallbackSuccess;
-import de.swm.commons.mobile.client.utils.Utils;
 import de.swm.commons.mobile.client.widgets.LoadingIndicatorPopup;
 import de.swm.commons.mobile.client.widgets.itf.ISpinnerStarted;
 import de.swm.commons.mobile.client.widgets.page.IMainView;
@@ -484,8 +483,7 @@ public abstract class AbstractMobilePresenter implements IMobilePresenter {
 	 * originator is an instance of {@link IMainView}). I.E., if the main view is a tab panel, direct navigation via the tab header does not
 	 * lead to a transition effect.
 	 *
-	 * @param transitionsFromMainViewDisabled
-	 *         setting of transitionsFromMainViewDisabled
+	 * @param transitionsFromMainViewDisabled setting of transitionsFromMainViewDisabled
 	 */
 	public void setTransitionsFromMainViewDisabled(
 			boolean transitionsFromMainViewDisabled) {

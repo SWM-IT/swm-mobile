@@ -15,15 +15,13 @@
  */
 package de.swm.commons.mobile.client.widgets;
 
-import java.util.List;
-import java.util.logging.Logger;
-
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.resources.client.ImageResource;
 import com.google.gwt.user.client.rpc.AsyncCallback;
-
 import de.swm.commons.mobile.client.SWMMobile;
-import de.swm.commons.mobile.client.utils.Utils;
+
+import java.util.List;
+import java.util.logging.Logger;
 
 
 

@@ -17,7 +17,6 @@ package de.swm.commons.mobile.client.widgets;
 
 import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.user.client.ui.Label;
-
 import de.swm.commons.mobile.client.SWMMobile;
 
 

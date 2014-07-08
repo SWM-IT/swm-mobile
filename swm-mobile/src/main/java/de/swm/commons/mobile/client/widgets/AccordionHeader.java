@@ -18,7 +18,6 @@ package de.swm.commons.mobile.client.widgets;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.ui.HTML;
-
 import de.swm.commons.mobile.client.SWMMobile;
 import de.swm.commons.mobile.client.event.DragController;
 import de.swm.commons.mobile.client.event.DragEvent;

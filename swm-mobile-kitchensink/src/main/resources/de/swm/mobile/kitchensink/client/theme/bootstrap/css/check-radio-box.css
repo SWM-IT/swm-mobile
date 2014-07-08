@@ -2,12 +2,23 @@
 	@external checkBoxGroup, radioButtonGroup, radioButton, checkBoxIndicator, horizontal, vertical, selected, pressed;
 }
 
+
 .checkBoxGroup, .radioButtonGroup {
 	display: \-webkit-box;
 	\-webkit-box-orient: horizontal;
 	width: 80%;
 
 	display: -ms-flexbox;
+}
+
+
+.checkBoxGroup > span > label:before, .radioButtonGroup > span > label:before {
+    content: "  ";
+    font-family: inherit;
+    width: 16px;
+    display: inline-block;
+    font-size: 30px;
+    position: relative;
 }
 
 .checkBoxGroup > span, .radioButtonGroup > span {

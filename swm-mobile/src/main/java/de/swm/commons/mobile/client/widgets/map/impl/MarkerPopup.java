@@ -15,11 +15,6 @@
  */
 package de.swm.commons.mobile.client.widgets.map.impl;
 
-import org.gwtopenmaps.openlayers.client.LonLat;
-import org.gwtopenmaps.openlayers.client.Map;
-import org.gwtopenmaps.openlayers.client.Pixel;
-import org.gwtopenmaps.openlayers.client.event.MapZoomListener;
-
 import com.google.gwt.core.client.Scheduler;
 import com.google.gwt.core.client.Scheduler.ScheduledCommand;
 import com.google.gwt.dom.client.Document;
@@ -29,10 +24,13 @@ import com.google.gwt.user.client.DOM;
 import com.google.gwt.user.client.Element;
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.HasWidgets;
-
 import de.swm.commons.mobile.client.SWMMobile;
 import de.swm.commons.mobile.client.widgets.HorizontalPanel;
 import de.swm.commons.mobile.client.widgets.VerticalPanel;
+import org.gwtopenmaps.openlayers.client.LonLat;
+import org.gwtopenmaps.openlayers.client.Map;
+import org.gwtopenmaps.openlayers.client.Pixel;
+import org.gwtopenmaps.openlayers.client.event.MapZoomListener;
 
 
 

@@ -15,11 +15,7 @@
  */
 package de.swm.commons.mobile.client.widgets.map;
 
-import java.util.Collection;
-import java.util.List;
-
 import com.google.gwt.user.client.ui.Widget;
-
 import de.swm.commons.mobile.client.widgets.map.data.IMarkerData;
 import de.swm.commons.mobile.client.widgets.map.data.LatLng;
 import de.swm.commons.mobile.client.widgets.map.handlers.IMapMoveHandler;
@@ -27,6 +23,9 @@ import de.swm.commons.mobile.client.widgets.map.handlers.IMapZoomHandler;
 import de.swm.commons.mobile.client.widgets.map.handlers.IMarkerSelectedHandler;
 import de.swm.commons.mobile.client.widgets.map.impl.MarkerPopup;
 import org.gwtopenmaps.openlayers.client.event.MapClickListener;
+
+import java.util.Collection;
+import java.util.List;
 
 /**
  * Map View.

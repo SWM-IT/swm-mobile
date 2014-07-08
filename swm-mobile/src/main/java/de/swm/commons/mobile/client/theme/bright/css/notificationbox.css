@@ -1,17 +1,17 @@
 @if swmmobile.css pretty {
-	@external gwt-Label, bottomPanel, dialogAnimationContainer-center;
+@external gwt-Label, bottomPanel, dialogAnimationContainer-center;
 }
 
 @external gwt-Label, bottomPanel, dialogAnimationContainer-center;
 
 .bottomPanel {
-	position: absolute;
-	bottom: 0px;
-	left: 0px;
-	right: 0px;
-	background-color: rgba(255, 255, 200, 0.9);
-	border-top: 1px solid #030506;
-	padding: 10px;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    background-color: rgba(255, 255, 200, 0.9);
+    border-top: 1px solid #030506;
+    padding: 10px;
 }
 
 .bottomPanel div.gwt-Label {
@@ -19,8 +19,8 @@
 }
 
 .dialogAnimationContainer-center {
-		\-webkit-box-orient: horizontal;
-		\-webkit-box-pack: center;
-		\-webkit-box-align: center;
-	}
+    \-webkit-box-orient: horizontal;
+    \-webkit-box-pack: center;
+    \-webkit-box-align: center;
 }
+

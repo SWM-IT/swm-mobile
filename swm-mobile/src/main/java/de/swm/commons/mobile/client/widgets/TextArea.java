@@ -15,7 +15,6 @@
  */
 package de.swm.commons.mobile.client.widgets;
 
-import com.google.gwt.dom.client.Style.Unit;
 import com.google.gwt.event.dom.client.*;
 import com.google.gwt.user.client.Element;
 import de.swm.commons.mobile.client.SWMMobile;
@@ -24,9 +23,6 @@ import de.swm.commons.mobile.client.validation.IErrorOutputElement;
 import de.swm.commons.mobile.client.validation.IHasValidator;
 import de.swm.commons.mobile.client.validation.IValidator;
 import de.swm.commons.mobile.client.validation.impl.ValidationHelper;
-import de.swm.gwt.client.utils.Utils;
-
-import javax.rmi.CORBA.Util;
 
 /**
  * Input type for larger text elements.

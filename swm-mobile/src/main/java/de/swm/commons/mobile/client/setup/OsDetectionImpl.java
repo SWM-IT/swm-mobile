@@ -16,7 +16,6 @@
 package de.swm.commons.mobile.client.setup;
 
 import com.google.gwt.user.client.Window;
-
 import de.swm.commons.mobile.client.utils.Utils;
 
 import java.util.logging.Logger;

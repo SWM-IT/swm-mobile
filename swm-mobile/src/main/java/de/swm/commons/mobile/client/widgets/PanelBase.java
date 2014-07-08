@@ -15,11 +15,11 @@
  */
 package de.swm.commons.mobile.client.widgets;
 
-import java.util.Iterator;
-
 import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.HasWidgets;
 import com.google.gwt.user.client.ui.Widget;
+
+import java.util.Iterator;
 
 
 

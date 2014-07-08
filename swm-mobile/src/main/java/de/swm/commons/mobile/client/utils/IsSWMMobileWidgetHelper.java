@@ -16,7 +16,6 @@
 package de.swm.commons.mobile.client.utils;
 
 import com.google.gwt.user.client.ui.Widget;
-
 import de.swm.commons.mobile.client.widgets.IsSWMMobileWidget;
 
 

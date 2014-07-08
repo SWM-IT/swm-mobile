@@ -15,17 +15,16 @@
  */
 package de.swm.commons.mobile.client.widgets.progressbar;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.core.client.RunAsyncCallback;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.rpc.IncompatibleRemoteServiceException;
 import com.google.gwt.user.client.rpc.InvocationException;
-
 import de.swm.commons.mobile.client.widgets.LoadingIndicatorPopup;
 import de.swm.gwt.client.progressbar.IProgressBarNoCancelWaitDialog;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 

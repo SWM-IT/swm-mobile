@@ -15,9 +15,6 @@
  */
 package de.swm.commons.mobile.client.widgets;
 
-import java.util.Date;
-import java.util.logging.Logger;
-
 import com.google.gwt.dom.client.Style.Position;
 import com.google.gwt.dom.client.Style.Unit;
 import com.google.gwt.uibinder.client.UiConstructor;
@@ -26,10 +23,11 @@ import com.google.gwt.user.client.Element;
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.user.client.ui.Label;
-
 import de.swm.commons.mobile.client.SWMMobile;
 import de.swm.commons.mobile.client.theme.SWMMobileImageBundle;
-import de.swm.commons.mobile.client.utils.Utils;
+
+import java.util.Date;
+import java.util.logging.Logger;
 
 /**
  * ListItem wich represents a specific connection.

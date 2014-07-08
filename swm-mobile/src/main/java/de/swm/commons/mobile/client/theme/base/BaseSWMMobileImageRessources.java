@@ -17,7 +17,6 @@ package de.swm.commons.mobile.client.theme.base;
 
 import com.google.gwt.resources.client.ClientBundle;
 import com.google.gwt.resources.client.ImageResource;
-
 import de.swm.commons.mobile.client.theme.SWMMobileImageBundle;
 
 

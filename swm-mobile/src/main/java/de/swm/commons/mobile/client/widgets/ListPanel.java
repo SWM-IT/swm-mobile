@@ -21,13 +21,8 @@ import com.google.gwt.event.shared.HandlerRegistration;
 import com.google.gwt.user.client.Timer;
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.Widget;
-
 import de.swm.commons.mobile.client.SWMMobile;
-import de.swm.commons.mobile.client.event.DragController;
-import de.swm.commons.mobile.client.event.DragEvent;
-import de.swm.commons.mobile.client.event.DragEventsHandler;
-import de.swm.commons.mobile.client.event.SelectionChangedEvent;
-import de.swm.commons.mobile.client.event.SelectionChangedHandler;
+import de.swm.commons.mobile.client.event.*;
 import de.swm.commons.mobile.client.utils.Utils;
 
 

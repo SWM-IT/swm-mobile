@@ -15,9 +15,9 @@
  */
 package de.swm.commons.mobile.client.widgets;
 
-import java.text.ParseException;
-
 import com.google.gwt.text.shared.Parser;
+
+import java.text.ParseException;
 
 
 

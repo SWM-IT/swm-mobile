@@ -16,7 +16,6 @@
 package de.swm.commons.mobile.client.widgets;
 
 import com.google.gwt.event.dom.client.ClickHandler;
-
 import de.swm.commons.mobile.client.SWMMobile;
 import de.swm.commons.mobile.client.event.FastClickHelper;
 

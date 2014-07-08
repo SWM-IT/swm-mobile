@@ -25,9 +25,7 @@ import com.google.gwt.event.shared.EventBus;
 import com.google.gwt.event.shared.HandlerRegistration;
 import com.google.gwt.event.shared.SimpleEventBus;
 import com.google.gwt.user.client.Window;
-
 import de.swm.commons.mobile.client.SWMMobile;
-import de.swm.commons.mobile.client.utils.Utils;
 
 import java.util.logging.Logger;
 

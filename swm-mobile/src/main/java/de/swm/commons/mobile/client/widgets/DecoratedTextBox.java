@@ -25,11 +25,8 @@ import com.google.gwt.user.client.ui.HasText;
 import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.user.client.ui.Label;
 import de.swm.commons.mobile.client.SWMMobile;
-import de.swm.commons.mobile.client.event.DragController;
+import de.swm.commons.mobile.client.event.*;
 import de.swm.commons.mobile.client.event.DragEvent;
-import de.swm.commons.mobile.client.event.DragEventsHandler;
-import de.swm.commons.mobile.client.event.HasIconClickHandlers;
-import de.swm.commons.mobile.client.event.IconClickHandler;
 
 
 /**

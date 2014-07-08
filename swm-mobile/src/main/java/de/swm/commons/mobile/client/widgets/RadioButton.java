@@ -17,7 +17,6 @@ package de.swm.commons.mobile.client.widgets;
 
 import com.google.gwt.dom.client.DivElement;
 import com.google.gwt.dom.client.Document;
-
 import de.swm.commons.mobile.client.SWMMobile;
 import de.swm.commons.mobile.client.utils.IsSWMMobileWidgetHelper;
 import de.swm.commons.mobile.client.utils.Utils;

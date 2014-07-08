@@ -28,7 +28,6 @@ import com.google.gwt.user.client.ui.HasConstrainedValue;
 import com.google.gwt.user.client.ui.HasEnabled;
 import com.google.gwt.user.client.ui.Widget;
 import de.swm.commons.mobile.client.SWMMobile;
-import de.swm.commons.mobile.client.utils.Utils;
 import de.swm.commons.mobile.client.widgets.itf.IProvidesKeyAndValue;
 
 import java.util.Collection;

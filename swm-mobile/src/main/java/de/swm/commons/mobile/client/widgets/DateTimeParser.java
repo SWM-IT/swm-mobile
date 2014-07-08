@@ -15,12 +15,11 @@
  */
 package de.swm.commons.mobile.client.widgets;
 
-import java.text.ParseException;
-import java.util.Date;
-
 import com.google.gwt.i18n.client.DateTimeFormat;
 import com.google.gwt.text.shared.Parser;
-import de.swm.commons.mobile.client.utils.Utils;
+
+import java.text.ParseException;
+import java.util.Date;
 
 
 /**

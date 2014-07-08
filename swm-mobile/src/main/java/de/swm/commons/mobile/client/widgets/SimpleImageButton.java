@@ -9,7 +9,6 @@ import com.google.gwt.uibinder.client.UiConstructor;
 import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.user.client.ui.Label;
-
 import de.swm.commons.mobile.client.SWMMobile;
 import de.swm.commons.mobile.client.event.DragController;
 import de.swm.commons.mobile.client.event.DragEvent;

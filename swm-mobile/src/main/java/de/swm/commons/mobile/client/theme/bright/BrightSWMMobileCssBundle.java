@@ -17,8 +17,6 @@ package de.swm.commons.mobile.client.theme.bright;
 
 import com.google.gwt.resources.client.ClientBundle;
 import com.google.gwt.resources.client.DataResource;
-import com.google.gwt.resources.client.ClientBundle.Source;
-
 import de.swm.commons.mobile.client.theme.SWMMobileCssBundle;
 import de.swm.commons.mobile.client.theme.components.*;
 

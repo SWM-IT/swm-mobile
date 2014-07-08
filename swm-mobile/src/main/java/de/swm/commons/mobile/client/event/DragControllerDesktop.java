@@ -18,7 +18,6 @@ package de.swm.commons.mobile.client.event;
 import com.google.gwt.dom.client.Element;
 import com.google.gwt.dom.client.EventTarget;
 import com.google.gwt.user.client.Event;
-
 import de.swm.commons.mobile.client.utils.Point;
 import de.swm.commons.mobile.client.utils.Utils;
 

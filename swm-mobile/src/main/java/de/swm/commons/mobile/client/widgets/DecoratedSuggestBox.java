@@ -20,7 +20,6 @@ import com.google.gwt.resources.client.ImageResource;
 import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.user.client.ui.MultiWordSuggestOracle;
 import com.google.gwt.user.client.ui.SuggestBox;
-
 import de.swm.commons.mobile.client.SWMMobile;
 import de.swm.commons.mobile.client.event.DragController;
 import de.swm.commons.mobile.client.event.DragEvent;

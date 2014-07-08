@@ -15,8 +15,6 @@
  */
 package de.swm.commons.mobile.client.widgets;
 
-import java.io.IOException;
-
 import com.google.gwt.dom.client.InputElement;
 import com.google.gwt.event.dom.client.BlurEvent;
 import com.google.gwt.event.dom.client.BlurHandler;
@@ -27,12 +25,13 @@ import com.google.gwt.text.shared.Parser;
 import com.google.gwt.text.shared.Renderer;
 import com.google.gwt.user.client.ui.ValueBox;
 import com.google.gwt.user.client.ui.ValueBoxBase;
-
 import de.swm.commons.mobile.client.SWMMobile;
 import de.swm.commons.mobile.client.utils.IsSWMMobileWidgetHelper;
 import de.swm.commons.mobile.client.validation.IErrorOutputElement;
 import de.swm.commons.mobile.client.validation.IValidator;
 import de.swm.commons.mobile.client.validation.impl.ValidationHelper;
+
+import java.io.IOException;
 
 
 

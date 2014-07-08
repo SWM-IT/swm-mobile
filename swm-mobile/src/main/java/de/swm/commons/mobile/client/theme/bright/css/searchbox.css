@@ -6,9 +6,6 @@
 	@external mgwt-SearchBox, round, input, clear, clear-active, inputAsLabel;
 }
 
-//Alter wert
-//background-image: literal('-webkit-gradient(linear, 0% 0%, 0% 100%, from(#f1f3f4), color-stop(3%, #e0e4e7), color-stop(50%, #c7cfd4), color-stop(51%, #bec7cd), color-stop(97%, #b4bec6), to(#8999a5) )');
-
 .mgwt-SearchBox {
 	height: 60px;
 	padding-left: 5px;

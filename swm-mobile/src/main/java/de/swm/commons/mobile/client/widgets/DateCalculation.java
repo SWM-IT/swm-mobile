@@ -4,6 +4,7 @@
 package de.swm.commons.mobile.client.widgets;
 
 import com.google.gwt.i18n.client.DateTimeFormat;
+import de.swm.commons.mobile.client.utils.Utils;
 
 import java.util.Date;
 
@@ -204,7 +205,7 @@ public class DateCalculation {
 				decrementDay();
 				incrementDay();
 			} catch (NumberFormatException ex) {
-
+				Utils.console("Wrong day format " + day);
 			}
 		}
 	}

@@ -3,19 +3,15 @@
  */
 package de.swm.commons.mobile.client.widgets;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
-import java.util.Locale;
-
-import junit.framework.Assert;
-
 import org.joda.time.DateTime;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
+import static org.junit.Assert.assertEquals;
 
 
 /**

@@ -15,15 +15,14 @@
  */
 package de.swm.commons.mobile.client.widgets;
 
+import com.google.gwt.dom.client.Style.Unit;
+import com.google.gwt.user.client.ui.Label;
+import de.swm.commons.mobile.client.SWMMobile;
+
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-
-import com.google.gwt.dom.client.Style.Unit;
-import com.google.gwt.user.client.ui.Label;
-
-import de.swm.commons.mobile.client.SWMMobile;
 
 
 

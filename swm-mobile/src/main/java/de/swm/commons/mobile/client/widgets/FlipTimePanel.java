@@ -1,15 +1,13 @@
 package de.swm.commons.mobile.client.widgets;
 
-import java.util.Date;
-
 import com.google.gwt.dom.client.Style.Unit;
 import com.google.gwt.i18n.client.NumberFormat;
 import com.google.gwt.user.client.DOM;
 import com.google.gwt.user.client.Element;
 import com.google.gwt.user.client.ui.FlowPanel;
-
 import de.swm.commons.mobile.client.SWMMobile;
-import de.swm.commons.mobile.client.widgets.HorizontalPanel;
+
+import java.util.Date;
 
 /**
  * Displays Arrival and Departure times.

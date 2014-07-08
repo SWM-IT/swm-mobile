@@ -6,13 +6,14 @@ import com.google.gwt.dom.client.Document;
 import com.google.gwt.dom.client.ImageElement;
 import com.google.gwt.event.dom.client.LoadEvent;
 import com.google.gwt.event.dom.client.LoadHandler;
-import com.google.gwt.event.dom.client.MouseMoveEvent;
 import com.google.gwt.resources.client.ImageResource;
 import com.google.gwt.safehtml.shared.SafeUri;
-import com.google.gwt.user.client.ui.*;
-import com.google.gwt.user.client.ui.Image;import com.google.gwt.user.client.ui.Widget;import de.swm.commons.mobile.client.event.*;
-import de.swm.commons.mobile.client.event.DragController;import de.swm.commons.mobile.client.event.DragEvent;
-import de.swm.commons.mobile.client.event.DragEventsHandler;import de.swm.commons.mobile.client.utils.Utils;import java.lang.Override;import java.lang.String;
+import com.google.gwt.user.client.ui.Image;
+import com.google.gwt.user.client.ui.RootPanel;
+import com.google.gwt.user.client.ui.Widget;
+import de.swm.commons.mobile.client.event.DragController;
+import de.swm.commons.mobile.client.event.DragEvent;
+import de.swm.commons.mobile.client.event.DragEventsHandler;
 
 /**
  * Canvas element which is able to be painted with different colors and line widths.

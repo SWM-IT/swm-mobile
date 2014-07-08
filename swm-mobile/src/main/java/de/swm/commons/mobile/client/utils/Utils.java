@@ -55,9 +55,10 @@ public class Utils {
 
 	/**
 	 * Fuhrt ein Redirect der url durch.
+	 *
 	 * @param url die Zielurl
 	 */
-	public static void redirect(final String url){
+	public static void redirect(final String url) {
 		ApplicationRedirecter.redirect(url);
 	}
 
@@ -66,8 +67,8 @@ public class Utils {
 	 * Removes the Title bar on Adroid
 	 */
 	public static native void removeTitleBar() /*-{
-		$wnd.scrollTo(0,1);
-	}-*/;
+        $wnd.scrollTo(0, 1);
+    }-*/;
 
 	/**
 	 * A utility method to hide the soft keyboard
@@ -97,13 +98,13 @@ public class Utils {
 	/**
 	 * Will re-redner a screen on android.
 	 */
-	public static void forceFullRepaint(){
+	public static void forceFullRepaint() {
 		OsDetection d = SWMMobile.getOsDetection();
-		if(d.isAndroid()){
+		if (d.isAndroid()) {
 			final String zIndex = Document.get().getBody().getStyle().getZIndex();
 			Document.get().getBody().getStyle().setZIndex(-1);
 
-			new Timer(){
+			new Timer() {
 
 				@Override
 				public void run() {
@@ -123,15 +124,15 @@ public class Utils {
 	 * @param msg the message to write.
 	 */
 	private static native void consoleLogNative(String msg) /*-{
-		var log = $doc.getElementById('log');
-		if (log) {
-			log.innerHTML = msg + '<br/>' + log.innerHTML;
-		}else {
-			if ($wnd.console) {
-				$wnd.console.log(msg);
-			}
-		}
-	}-*/;
+        var log = $doc.getElementById('log');
+        if (log) {
+            log.innerHTML = msg + '<br/>' + log.innerHTML;
+        } else {
+            if ($wnd.console) {
+                $wnd.console.log(msg);
+            }
+        }
+    }-*/;
 
 
 	/**
@@ -145,12 +146,12 @@ public class Utils {
 	 */
 	public static native JavaScriptObject addEventListener(Element ele, String event, boolean capture,
 														   EventListener listener) /*-{
-								var callBack = function(e) {
-								listener.@com.google.gwt.user.client.EventListener::onBrowserEvent(Lcom/google/gwt/user/client/Event;)(e);			
-								};
-								ele.addEventListener(event, callBack, capture);
-								return callBack;
-								}-*/;
+        var callBack = function (e) {
+            listener.@com.google.gwt.user.client.EventListener::onBrowserEvent(Lcom/google/gwt/user/client/Event;)(e);
+        };
+        ele.addEventListener(event, callBack, capture);
+        return callBack;
+    }-*/;
 
 
 	/**
@@ -162,12 +163,12 @@ public class Utils {
 	 * @param listener the listener to add
 	 */
 	public static native void addEventListenerOnce(Element ele, String event, boolean capture, EventListener listener) /*-{
-																														var callBack = function(e) {
-																														ele.removeEventListener(event, callBack, capture);
-																														listener.@com.google.gwt.user.client.EventListener::onBrowserEvent(Lcom/google/gwt/user/client/Event;)(e);			
-																														};
-																														ele.addEventListener(event, callBack, capture);
-																														}-*/;
+        var callBack = function (e) {
+            ele.removeEventListener(event, callBack, capture);
+            listener.@com.google.gwt.user.client.EventListener::onBrowserEvent(Lcom/google/gwt/user/client/Event;)(e);
+        };
+        ele.addEventListener(event, callBack, capture);
+    }-*/;
 
 
 	/**
@@ -179,8 +180,8 @@ public class Utils {
 	 * @param callBack call back if removed
 	 */
 	public static native void removeEventListener(Element ele, String event, boolean capture, JavaScriptObject callBack) /*-{
-																															ele.removeEventListener(event, callBack, capture);
-																															}-*/;
+        ele.removeEventListener(event, callBack, capture);
+    }-*/;
 
 	private static Element htmlNode = DOM.createElement("DIV");
 
@@ -208,8 +209,8 @@ public class Utils {
 	 * @return the html element
 	 */
 	public static native Element getActiveElement() /*-{
-													return $doc.activeElement;
-													}-*/;
+        return $doc.activeElement;
+    }-*/;
 
 
 	/**
@@ -232,12 +233,12 @@ public class Utils {
 	 * @return the device pixel ratio.
 	 */
 	public static native int getDevicePixelRatio() /*-{
-													if( typeof $wnd.devicePixelRatio != 'undefined' ) {
-														return $wnd.devicePixelRatio;
-													} else {
-														return 1;
-													}
-													}-*/;
+        if (typeof $wnd.devicePixelRatio != 'undefined') {
+            return $wnd.devicePixelRatio;
+        } else {
+            return 1;
+        }
+    }-*/;
 
 
 	/**
@@ -247,14 +248,14 @@ public class Utils {
 	 * @param value the value in px
 	 */
 	public static native void setTranslateX(Element ele, double value) /*-{
-		if ( typeof ele.style.webkitTransform != 'undefined' ) {
-			ele.style.webkitTransform = "translate3d(" + value + "px, 0px, 0px)";
-		} else {
-			if ( typeof ele.style.transform != 'undefined' ) {
-				ele.style.transform = "translate3d(" + value + "px, 0px, 0px)";
-			}
-		}
-	}-*/;
+        if (typeof ele.style.webkitTransform != 'undefined') {
+            ele.style.webkitTransform = "translate3d(" + value + "px, 0px, 0px)";
+        } else {
+            if (typeof ele.style.transform != 'undefined') {
+                ele.style.transform = "translate3d(" + value + "px, 0px, 0px)";
+            }
+        }
+    }-*/;
 
 
 	/**
@@ -264,21 +265,21 @@ public class Utils {
 	 * @return the position
 	 */
 	public static native int getTranslateX(Element ele) /*-{
-		var transform;
-		var translateX = 0;
-		if ( typeof ele.style.webkitTransform != 'undefined' ) {
-        	transform = ele.style.webkitTransform;
+        var transform;
+        var translateX = 0;
+        if (typeof ele.style.webkitTransform != 'undefined') {
+            transform = ele.style.webkitTransform;
         } else {
-			if ( typeof ele.style.transform != 'undefined' ) {
-        		transform = ele.style.transform;
-			}
+            if (typeof ele.style.transform != 'undefined') {
+                transform = ele.style.transform;
+            }
         }
-        
-		if (transform && transform !== "") {
-			translateX = parseInt((/translate3d\((\-?.*)px, 0px, 0px\)/).exec(transform)[1]);
-		}        
-		return translateX;
-	}-*/;
+
+        if (transform && transform !== "") {
+            translateX = parseInt((/translate3d\((\-?.*)px, 0px, 0px\)/).exec(transform)[1]);
+        }
+        return translateX;
+    }-*/;
 
 
 	/**
@@ -288,14 +289,14 @@ public class Utils {
 	 * @param value the value in px
 	 */
 	public static native void setTranslateY(Element ele, double value) /*-{
-		if ( typeof ele.style.webkitTransform != 'undefined' ) {
-			ele.style.webkitTransform = "translate3d(0px, " + value + "px ,0px)";
-		} else {
-			if ( typeof ele.style.transform != 'undefined' ) {
-				ele.style.transform = "translate3d(0px, " + value + "px ,0px)";
-			}
-		}
-	}-*/;
+        if (typeof ele.style.webkitTransform != 'undefined') {
+            ele.style.webkitTransform = "translate3d(0px, " + value + "px ,0px)";
+        } else {
+            if (typeof ele.style.transform != 'undefined') {
+                ele.style.transform = "translate3d(0px, " + value + "px ,0px)";
+            }
+        }
+    }-*/;
 
 
 	/**
@@ -305,21 +306,21 @@ public class Utils {
 	 * @return the position
 	 */
 	public static native int getTranslateY(Element ele) /*-{
-		var transform;
-		var translateY = 0;
-		if ( typeof ele.style.webkitTransform != 'undefined' ) {
-        	transform = ele.style.webkitTransform;
+        var transform;
+        var translateY = 0;
+        if (typeof ele.style.webkitTransform != 'undefined') {
+            transform = ele.style.webkitTransform;
         } else {
-			if ( typeof ele.style.transform != 'undefined' ) {
-        		transform = ele.style.transform;
-			}
+            if (typeof ele.style.transform != 'undefined') {
+                transform = ele.style.transform;
+            }
         }
-														        
-		if (transform && transform !== "") {
-			translateY = parseInt((/translate3d\(0px, (\-?.*)px, 0px\)/).exec(transform)[1]);
-		}        
-		return translateY;
-	}-*/;
+
+        if (transform && transform !== "") {
+            translateY = parseInt((/translate3d\(0px, (\-?.*)px, 0px\)/).exec(transform)[1]);
+        }
+        return translateY;
+    }-*/;
 
 
 	/**
@@ -331,16 +332,16 @@ public class Utils {
 	 * @return the value
 	 */
 	public static native int getMatrixY(Element ele) /*-{
-		var matrix;
-		if ( typeof window.getComputedStyle(ele).webkitTransform != 'undefined' ) {
-			matrix = new WebKitCSSMatrix(window.getComputedStyle(ele).webkitTransform);
+        var matrix;
+        if (typeof window.getComputedStyle(ele).webkitTransform != 'undefined') {
+            matrix = new WebKitCSSMatrix(window.getComputedStyle(ele).webkitTransform);
         } else {
-			if ( typeof window.getComputedStyle(ele).transform != 'undefined' ) {
-				matrix = new MSCSSMatrix(window.getComputedStyle(ele).transform);
-			}
+            if (typeof window.getComputedStyle(ele).transform != 'undefined') {
+                matrix = new MSCSSMatrix(window.getComputedStyle(ele).transform);
+            }
         }
-		return matrix.f;
-	}-*/;
+        return matrix.f;
+    }-*/;
 
 
 	/**
@@ -350,25 +351,25 @@ public class Utils {
 	 * @param value the value
 	 */
 	public static native void setTransitionDuration(Element ele, double value) /*-{
-		if ( typeof ele.style.webkitTransitionDuration != 'undefined' ) {
-			ele.style.webkitTransitionDuration = "" + value + "ms";
-	    } else {
-			if ( typeof ele.style.transitionDuration != 'undefined' ) {
-				ele.style.transitionDuration = "" + value + "ms";
-			}
-	    }
-	}-*/;
-	
+        if (typeof ele.style.webkitTransitionDuration != 'undefined') {
+            ele.style.webkitTransitionDuration = "" + value + "ms";
+        } else {
+            if (typeof ele.style.transitionDuration != 'undefined') {
+                ele.style.transitionDuration = "" + value + "ms";
+            }
+        }
+    }-*/;
+
 	public static native String getTransitionEventName(Element ele) /*-{
-		if ( typeof ele.style.webkitTransition != 'undefined' ) {
-			return "webkitTransitionEnd";
-	    } else {
-			if ( typeof ele.style.transition != 'undefined' ) {
-				return "transitionend";
-			}
-	    }
-	    return "undefined";
-	}-*/;
+        if (typeof ele.style.webkitTransition != 'undefined') {
+            return "webkitTransitionEnd";
+        } else {
+            if (typeof ele.style.transition != 'undefined') {
+                return "transitionend";
+            }
+        }
+        return "undefined";
+    }-*/;
 
 	/**
 	 * Computes the height of passed HTML element.
@@ -377,8 +378,8 @@ public class Utils {
 	 * @return the height in px
 	 */
 	public static native int getHeight(Element ele) /*-{
-		return parseInt($doc.defaultView.getComputedStyle(ele, "").getPropertyValue("height"));
-	}-*/;
+        return parseInt($doc.defaultView.getComputedStyle(ele, "").getPropertyValue("height"));
+    }-*/;
 
 
 	/**
@@ -388,8 +389,8 @@ public class Utils {
 	 * @return the width in px
 	 */
 	public static native int getWidth(Element ele) /*-{
-		return parseInt($doc.defaultView.getComputedStyle(ele, "").getPropertyValue("width"));
-	}-*/;
+        return parseInt($doc.defaultView.getComputedStyle(ele, "").getPropertyValue("width"));
+    }-*/;
 
 
 	/**
