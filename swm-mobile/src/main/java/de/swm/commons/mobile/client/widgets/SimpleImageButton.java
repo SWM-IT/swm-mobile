@@ -17,7 +17,7 @@ import de.swm.commons.mobile.client.utils.IsSWMMobileWidgetHelper;
 
 public class SimpleImageButton extends FlowPanel implements HasClickHandlers, DragEventsHandler, IsSWMMobileWidget {
 
-	private IsSWMMobileWidgetHelper widgetHelper = new IsSWMMobileWidgetHelper();
+	private final IsSWMMobileWidgetHelper widgetHelper = new IsSWMMobileWidgetHelper();
 	protected Image icon;
 	protected ImageResource normalIcon;
 	protected ImageResource highlightIcon;

@@ -33,8 +33,8 @@ import de.swm.commons.mobile.client.event.DragEventsHandler;
  */
 public class DecoratedSuggestBox extends HorizontalPanel implements DragEventsHandler {
 
-	private SuggestBox suggestBox;
-	private Image img;
+	private final SuggestBox suggestBox;
+	private final Image img;
 	private final ImageResource icon1, icon2;
 
 

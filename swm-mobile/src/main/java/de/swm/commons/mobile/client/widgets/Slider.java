@@ -44,9 +44,9 @@ public class Slider extends SWMMobileWidgetBase implements DragEventsHandler, Ha
 
 	private static final int SCALE_FACTOR = 100;
 	protected int myValue = 0;
-	protected FlowPanel contentPanel = new FlowPanel();
-	protected HTML myLabel = new HTML(myValue + "");
-	protected HTML mySlider = new HTML();
+	protected final FlowPanel contentPanel = new FlowPanel();
+	protected final HTML myLabel = new HTML(myValue + "");
+	protected final HTML mySlider = new HTML();
 	private LeafValueEditor<Integer> editor;
 
 

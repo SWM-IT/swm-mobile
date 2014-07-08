@@ -25,13 +25,13 @@ public class NotificationBox extends Composite implements HasWidgets, IsSWMMobil
 	private static final int FADE_OUT_AFTER_MS = 5000;
 	private static final int FADE_OUT_DURATION = 1000;
 
-	protected FlowPanel slideUpPanel;
-	private FlowPanel container;
+	protected final FlowPanel slideUpPanel;
+	private final FlowPanel container;
 	protected HasWidgets panelToOverlay;
 	protected final NotificationBoxCss css;
 
 	private boolean isVisible = false;
-	private IsSWMMobileWidgetHelper myWidgetHelper = new IsSWMMobileWidgetHelper();
+	private final IsSWMMobileWidgetHelper myWidgetHelper = new IsSWMMobileWidgetHelper();
 
 	/**
 	 * Construct a popin dialog

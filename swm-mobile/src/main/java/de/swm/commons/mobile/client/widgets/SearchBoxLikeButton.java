@@ -35,8 +35,8 @@ import de.swm.commons.mobile.client.utils.IsSWMMobileWidgetHelper;
 public class SearchBoxLikeButton extends Composite implements IsSWMMobileWidget, HasTouchStartHandlers, HasClickHandlers {
 
 	protected final SearchBoxCss css;
-	private Label box;
-	private IsSWMMobileWidgetHelper myWidgetHelper = new IsSWMMobileWidgetHelper();
+	private final Label box;
+	private final IsSWMMobileWidgetHelper myWidgetHelper = new IsSWMMobileWidgetHelper();
 
 	/**
 	 * Construct a search box

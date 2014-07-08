@@ -32,7 +32,7 @@ public class TextArea extends com.google.gwt.user.client.ui.TextArea implements 
 
 	private final ValidationHelper<String> validationHelper = new ValidationHelper<String>();
 
-	private IsSWMMobileWidgetHelper myWidgetHelper = new IsSWMMobileWidgetHelper();
+	private final IsSWMMobileWidgetHelper myWidgetHelper = new IsSWMMobileWidgetHelper();
 
 	/**
 	 * Default constructor.

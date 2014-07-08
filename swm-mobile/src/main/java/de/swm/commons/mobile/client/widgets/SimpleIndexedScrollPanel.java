@@ -35,13 +35,13 @@ public class SimpleIndexedScrollPanel extends HorizontalPanel {
 
 	private static final double INNER_HEIGHT = 90.0;
 	private static final double OUTER_HEIGHT = 100.0;
-	private static Set<Integer> usedIndexes = new HashSet<Integer>();
+	private static final Set<Integer> usedIndexes = new HashSet<Integer>();
 
-	private static String[] letters = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P",
+	private static final String[] letters = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P",
 		"Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z" };
 
-	private ScrollPanel scroller;
-	private ListPanel list;
+	private final ScrollPanel scroller;
+	private final ListPanel list;
 
 
 

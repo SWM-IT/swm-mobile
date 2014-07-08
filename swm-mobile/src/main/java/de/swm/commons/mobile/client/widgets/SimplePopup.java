@@ -90,7 +90,7 @@ public class SimplePopup extends SimplePanel implements HasCloseHandlers<SimpleP
 
 	}
 
-	protected VerticalPanel panel;
+	protected final VerticalPanel panel;
 	private boolean autoHide = false;
 	private boolean displayed = false;
 	private boolean glassEnabled = false;
@@ -101,7 +101,7 @@ public class SimplePopup extends SimplePanel implements HasCloseHandlers<SimpleP
 	/**
 	 * Window resize handler used to keep the glass the proper size.
 	 */
-	private ResizeHandler glassResizer = new ResizeHandler() {
+	private final ResizeHandler glassResizer = new ResizeHandler() {
 		public void onResize(ResizeEvent event) {
 			Style style = glass.getStyle();
 

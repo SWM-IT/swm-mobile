@@ -48,7 +48,7 @@ public class SimpleDatePopup extends SimplePopup {
 	/**
 	 * Number Formatter for two-digit number strings.
 	 */
-	private NumberFormat numFormat = NumberFormat.getFormat("00");
+	private final NumberFormat numFormat = NumberFormat.getFormat("00");
 
 	/**
 	 * Date selection handler.
@@ -80,7 +80,7 @@ public class SimpleDatePopup extends SimplePopup {
 	/**
 	 * The underlying selection handler.
 	 */
-	protected DateSelectionHandler selectionHandler;
+	protected final DateSelectionHandler selectionHandler;
 
 	/**
 	 * Label displaying the day.
@@ -112,13 +112,13 @@ public class SimpleDatePopup extends SimplePopup {
 	 */
 	private DateCalculation dateCalc;
 
-	private VerticalPanel mainPanel;
+	private final VerticalPanel mainPanel;
 
-	private DateStyle dateStyle;
+	private final DateStyle dateStyle;
 
 	private TextBox dateTextBox;
 
-	private Label dateTimeSelectionCaption;
+	private final Label dateTimeSelectionCaption;
 
 	private DropDownList<String> dropDown;
 

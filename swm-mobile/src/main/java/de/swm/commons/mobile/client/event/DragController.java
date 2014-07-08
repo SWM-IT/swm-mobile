@@ -43,19 +43,19 @@ public abstract class DragController implements EventListener {
 	private static final Logger LOGGER = Logger.getLogger(DragController.class.getName());
 
 
-	private List<DragEventsHandler> dragEventHandlers = new ArrayList<DragEventsHandler>();
-	private List<SwipeEventsHandler> swipeEventHandlers = new ArrayList<SwipeEventsHandler>();
+	private final List<DragEventsHandler> dragEventHandlers = new ArrayList<DragEventsHandler>();
+	private final List<SwipeEventsHandler> swipeEventHandlers = new ArrayList<SwipeEventsHandler>();
 	private DragEventsHandler capturingDragEventsHandler = null;
 	private SwipeEventsHandler capturingSwipeEventsHandler = null;
 	private Widget source;
 	private boolean isDown = false;
 	private boolean suppressNextClick = false;
 	private long lastDragTimeStamp = 0;
-	private Point lastDragPos = new Point(0, 0);
+	private final Point lastDragPos = new Point(0, 0);
 	private long currDragTimeStamp = 0;
-	private Point currDragPos = new Point(0, 0);
+	private final Point currDragPos = new Point(0, 0);
 	private JavaScriptObject clickListener;
-	private Point dragStartPos = new Point(0, 0);
+	private final Point dragStartPos = new Point(0, 0);
 
 	private JavaScriptObject dragStartListener;
 	private JavaScriptObject dragMoveListener;

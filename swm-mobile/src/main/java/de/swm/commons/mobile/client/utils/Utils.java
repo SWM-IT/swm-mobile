@@ -220,10 +220,7 @@ public class Utils {
 	 */
 	public static boolean isWVGA() {
 		int ratio = getDevicePixelRatio();
-		if (ratio == HVGA_PIXEL_RATIO) {
-			return true;
-		}
-		return false;
+		return ratio == HVGA_PIXEL_RATIO;
 	}
 
 

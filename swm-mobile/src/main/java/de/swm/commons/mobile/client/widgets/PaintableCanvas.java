@@ -28,8 +28,8 @@ public class PaintableCanvas extends Widget implements DragEventsHandler {
 
 	private static final String PIXEL_CSS = "px";
 
-	private CanvasElement canvasElement;
-	private Context2d context2d;
+	private final CanvasElement canvasElement;
+	private final Context2d context2d;
 
 	private int lastX;
 	private int lastY;

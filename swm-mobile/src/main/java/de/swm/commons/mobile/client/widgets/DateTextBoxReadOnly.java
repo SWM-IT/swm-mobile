@@ -36,8 +36,8 @@ import java.util.Date;
  */
 public class DateTextBoxReadOnly extends PanelBase implements HasValue<Date>, IsEditor<TakesValueEditor<Date>>, HasValueChangeHandlers<Date> {
 
-	private DateTimeFormat dateFormatter;
-	private Label internLabelField;
+	private final DateTimeFormat dateFormatter;
+	private final Label internLabelField;
 	private Date value;
 
 	@UiConstructor

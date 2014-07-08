@@ -76,12 +76,12 @@ public class ToolbarPanel extends SWMMobileWidgetBase implements HasWidgets {
 		void toolSelected(int index, ToolbarElement te);
 	}
 
-	private FlowPanel mainPanel = new FlowPanel();
-	private FlowPanel toolbarPanel = new FlowPanel();
-	private FlowPanel contentPanel = new FlowPanel();
+	private final FlowPanel mainPanel = new FlowPanel();
+	private final FlowPanel toolbarPanel = new FlowPanel();
+	private final FlowPanel contentPanel = new FlowPanel();
 	private int selectedToolIndex = -1;
-	private List<ToolbarSelectionHandler> selectionHandlers = new ArrayList<ToolbarSelectionHandler>();
-	private List<ToolbarElement> myElements = new ArrayList<ToolbarElement>();
+	private final List<ToolbarSelectionHandler> selectionHandlers = new ArrayList<ToolbarSelectionHandler>();
+	private final List<ToolbarElement> myElements = new ArrayList<ToolbarElement>();
 	private final int indexToSelectOnInit;
 
 	/**

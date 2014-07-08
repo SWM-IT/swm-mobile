@@ -47,12 +47,12 @@ public class CommandItem extends FlowPanel implements DragEventsHandler,
 
 	private boolean isDisabled = false;
 	private boolean isSelected = false;
-	private IsSWMMobileWidgetHelper widgetHelper = new IsSWMMobileWidgetHelper();
+	private final IsSWMMobileWidgetHelper widgetHelper = new IsSWMMobileWidgetHelper();
 	protected Image icon;
 	protected ImageResource normalIcon;
 	protected ImageResource highlightIcon;
 	protected Label headerText;
-	private ShimClickHandler clickHandler = new ShimClickHandler();
+	private final ShimClickHandler clickHandler = new ShimClickHandler();
 
 	/**
 	 * Allow subclasses to use different constructors

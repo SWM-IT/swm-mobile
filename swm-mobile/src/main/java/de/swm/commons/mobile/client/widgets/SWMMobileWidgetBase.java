@@ -26,7 +26,7 @@ import de.swm.commons.mobile.client.utils.IsSWMMobileWidgetHelper;
  */
 public class SWMMobileWidgetBase extends Composite implements IsSWMMobileWidget {
 
-	private IsSWMMobileWidgetHelper myWidgetHelper = new IsSWMMobileWidgetHelper();
+	private final IsSWMMobileWidgetHelper myWidgetHelper = new IsSWMMobileWidgetHelper();
 
 
 

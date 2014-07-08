@@ -36,9 +36,9 @@ import de.swm.gwt.client.utils.ShimClickHandler;
  */
 public class CheckBox extends com.google.gwt.user.client.ui.CheckBox implements IsSWMMobileWidget {
 
-	private IsSWMMobileWidgetHelper widgetHelper = new IsSWMMobileWidgetHelper();
+	private final IsSWMMobileWidgetHelper widgetHelper = new IsSWMMobileWidgetHelper();
 	private Node imageNode = null;
-	private ShimClickHandler checkBoxClickHanlders = new ShimClickHandler();
+	private final ShimClickHandler checkBoxClickHanlders = new ShimClickHandler();
 	private boolean isEnabled = true;
 	private boolean currentValue = false;
 

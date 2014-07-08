@@ -19,10 +19,10 @@ import com.google.gwt.resources.client.ImageResource;
 
 public class DefaultTreeNodeImpl implements ITreeNode {
 	
-	String header;
-	String styleName;
-	ImageResource icon;
-	ImageResource selectedIcon;
+	final String header;
+	final String styleName;
+	final ImageResource icon;
+	final ImageResource selectedIcon;
 	Object userData;
 	ITreeNodeDisplay display;
 	

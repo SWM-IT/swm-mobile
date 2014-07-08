@@ -50,7 +50,7 @@ public class DatePopup extends PopupPanel {
 	/**
 	 * Number Formatter for two-digit number strings.
 	 */
-	private NumberFormat numFormat = NumberFormat.getFormat("00");
+	private final NumberFormat numFormat = NumberFormat.getFormat("00");
 
 	/**
 	 * Date selection handler.
@@ -82,7 +82,7 @@ public class DatePopup extends PopupPanel {
 	/**
 	 * The underlying selection handler.
 	 */
-	protected DateSelectionHandler selectionHandler;
+	protected final DateSelectionHandler selectionHandler;
 
 	/**
 	 * Label displaying the day.
@@ -114,13 +114,13 @@ public class DatePopup extends PopupPanel {
 	 */
 	private DateCalculation dateCalc;
 
-	private VerticalPanel mainPanel;
+	private final VerticalPanel mainPanel;
 
-	private DateStyle dateStyle;
+	private final DateStyle dateStyle;
 
 	private TextBox dateTextBox;
 
-	private Label dateTimeSelectionCaption;
+	private final Label dateTimeSelectionCaption;
 
 	private DropDownList<String> dropDown;
 

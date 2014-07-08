@@ -32,7 +32,7 @@ import de.swm.commons.mobile.client.utils.IsSWMMobileWidgetHelper;
 public class Button extends HTML implements DragEventsHandler, IsSWMMobileWidget, HasTouchStartHandlers, HasClickHandlers {
 
 	private boolean isDisabled = false;
-	private IsSWMMobileWidgetHelper myWidgetHelper = new IsSWMMobileWidgetHelper();
+	private final IsSWMMobileWidgetHelper myWidgetHelper = new IsSWMMobileWidgetHelper();
 	private HandlerRegistration touchStartHandler;
 	private HandlerRegistration touchEndHandler;
 

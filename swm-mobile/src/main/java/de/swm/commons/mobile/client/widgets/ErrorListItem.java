@@ -33,8 +33,8 @@ import de.swm.commons.mobile.client.validation.IErrorOutputElement;
  */
 public class ErrorListItem extends ListItem implements IErrorOutputElement {
 
-	private Label errorTitle;
-	private Label errorMessage;
+	private final Label errorTitle;
+	private final Label errorMessage;
 
 
 

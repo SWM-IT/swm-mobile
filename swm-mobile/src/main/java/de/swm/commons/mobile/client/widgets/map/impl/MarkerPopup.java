@@ -71,9 +71,10 @@ public class MarkerPopup extends VerticalPanel {
 	private Element mapContainer;
 	private Map map;
 	private LonLat position;
-	private int offsetX, offsetY;
-	private Anchor anchor;
-	private HorizontalPanel contentPanel;
+	private final int offsetX;
+	private final int offsetY;
+	private final Anchor anchor;
+	private final HorizontalPanel contentPanel;
 	private boolean isVisible = false;
 	private MapZoomListener zoomListener;
 	private boolean initialized = false;

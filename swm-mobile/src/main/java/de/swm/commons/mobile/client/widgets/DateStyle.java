@@ -22,9 +22,9 @@ public enum DateStyle {
 	DATETIME("datetime-local", "dd.MM.yyyy HH:mm", "dd.MM.yyyy HH:mm", "yyyy-MM-dd'T'HH:mm:ss.SS'Z'",
 			"yyyy-MM-dd'T'HH:mm:ss.SS'Z'", "yyyy-MM-dd'T'HH:mm:ss.SS", "yyyy-MM-dd'T'HH:mm:ss.SS");
 
-	private String htmlInputType;
-	private String formatPattern;
-	private String parsePattern;
+	private final String htmlInputType;
+	private final String formatPattern;
+	private final String parsePattern;
 	private final String formatPatternRfc3339;
 	private final String parsePatternRfc3339;
 	private final String formatPatternRfc3339Local;

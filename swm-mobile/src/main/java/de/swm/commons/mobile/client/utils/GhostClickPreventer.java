@@ -35,7 +35,7 @@ public class GhostClickPreventer {
 	private static  final int GHOST_CLICK_DELAY_MILLIS = 2500;
 	private static final int GHOST_CLICK_RADIUS = 25;
 	
-	List<Point> clickedPoints = new ArrayList<Point>();
+	final List<Point> clickedPoints = new ArrayList<Point>();
 	
 	public void rememberGhostClick(Point point) {
 		clickedPoints.add(point);

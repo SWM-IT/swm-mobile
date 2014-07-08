@@ -28,7 +28,7 @@ import com.google.gwt.user.client.ui.Image;
  */
 public class ImageButton extends Button {
 	
-	Image img;
+	final Image img;
 	
 	public ImageButton() {
 		super();

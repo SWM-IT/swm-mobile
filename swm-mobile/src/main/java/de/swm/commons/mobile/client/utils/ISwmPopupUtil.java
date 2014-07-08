@@ -55,17 +55,17 @@ public interface ISwmPopupUtil {
 		 * Ist eine beliebige Zeichenkette, welcher den Bottontyp definiert/beschreibt. Der Buttontyp
 		 * wird der der Action bei der Ausfuehrung {@link de.swm.gwt.client.interfaces.ITypedAction#execute(Object)} uebergeben.
 		 */
-		private T type;
+		private final T type;
 
 		/**
 		 * i18-Text des Buttons.
 		 */
-		private String text;
+		private final String text;
 
 		/**
 		 * Reihnfolge des buttons.
 		 */
-		private int order;
+		private final int order;
 
 		/**
 		 * Action, die beim betaetigen des Buttons ausgefuehrt wird.

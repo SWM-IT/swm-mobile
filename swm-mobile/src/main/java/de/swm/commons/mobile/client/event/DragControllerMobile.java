@@ -34,7 +34,7 @@ public class DragControllerMobile extends DragController {
 	private static final Logger LOGGER = Logger.getLogger(DragControllerMobile.class.getName());
 
 	protected Element touchTarget = null;
-	private GhostClickPreventer ghostClickPreventer;
+	private final GhostClickPreventer ghostClickPreventer;
 
 
 	/**

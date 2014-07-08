@@ -95,9 +95,8 @@ public class LatLng {
 		LatLng latLng = (LatLng) o;
 
 		if (Double.compare(latLng.latitude, latitude) != 0) return false;
-		if (Double.compare(latLng.longitude, longitude) != 0) return false;
+		return Double.compare(latLng.longitude, longitude) == 0;
 
-		return true;
 	}
 
 	@Override

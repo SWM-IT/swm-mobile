@@ -30,8 +30,8 @@ public class SelectionChangedEvent extends GwtEvent<SelectionChangedHandler> {
 	 * GWT Event type system.
 	 */
 	public static final Type<SelectionChangedHandler> TYPE = new Type<SelectionChangedHandler>();
-	private int mySelection;
-	private EventTarget myTarget;
+	private final int mySelection;
+	private final EventTarget myTarget;
 
 
 

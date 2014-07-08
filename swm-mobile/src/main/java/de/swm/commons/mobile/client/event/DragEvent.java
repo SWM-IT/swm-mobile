@@ -43,9 +43,9 @@ public class DragEvent {
 
 	private final double x, y;
 	private final double offsetX, offsetY;
-	private Event myNnativeEvent;
+	private final Event myNnativeEvent;
 	private boolean myStopPropagation = false;
-	private Type myType;
+	private final Type myType;
 
 
 

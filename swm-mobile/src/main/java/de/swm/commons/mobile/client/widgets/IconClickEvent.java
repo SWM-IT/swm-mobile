@@ -10,7 +10,7 @@ public class IconClickEvent extends GwtEvent<IconClickHandler> {
 	
 	  private static final Type<IconClickHandler> TYPE = new Type<IconClickHandler>();
 
-	  private ClickEvent clickEvent;
+	  private final ClickEvent clickEvent;
 	  
 	  public IconClickEvent(ClickEvent clickEvent) {
 		  this.clickEvent = clickEvent;

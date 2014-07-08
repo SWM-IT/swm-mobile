@@ -38,7 +38,7 @@ public class SimpleHeaderPanel extends SWMMobileWidgetBase implements HasWidgets
 	ClickHandler myRightButtonClickHandler;
 	TouchStartHandler myLeftButtonTouchHandler;
 	TouchStartHandler myRightButtonTouchHandler;
-	FlowPanel container;
+	final FlowPanel container;
 
 	/**
 	 * Default constructor.

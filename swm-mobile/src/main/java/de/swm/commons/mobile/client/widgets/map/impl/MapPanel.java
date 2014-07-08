@@ -77,18 +77,18 @@ public class MapPanel implements IMapView {
 	private final ImageResource defaultMarkerImage;
 	private final ImageResource ownPositionMarkerImage;
 
-	private MapWidget mapWidget;
-	private Map map;
+	private final MapWidget mapWidget;
+	private final Map map;
 	private ZoomControlPanel zoomControl;
 
-	private Markers[] markerLayers;
-	private java.util.Map<ImmutableMarkerData, Marker> displayedMarkersMap;
-	private java.util.Map<ImmutableMarkerData, IMarkerData> originalMarkerDataMap;
-	private java.util.Map<ImmutableMarkerData, MarkerPopup> markerPopupsMap;
+	private final Markers[] markerLayers;
+	private final java.util.Map<ImmutableMarkerData, Marker> displayedMarkersMap;
+	private final java.util.Map<ImmutableMarkerData, IMarkerData> originalMarkerDataMap;
+	private final java.util.Map<ImmutableMarkerData, MarkerPopup> markerPopupsMap;
 
 
-	private Markers currentPositionMarkerLayer;
-	private Vector routeLayer;
+	private final Markers currentPositionMarkerLayer;
+	private final Vector routeLayer;
 	private Marker positionMarker;
 	private MarkerPopup ownPositionPopup;
 	private IMarkerSelectedHandler markerSelectedHandler;
@@ -96,7 +96,7 @@ public class MapPanel implements IMapView {
 	private IMapZoomHandler mapZoomHandler;
 	private final IMapController controller;
 	private Layer osmLayer;
-	private boolean isWithZoomControl;
+	private final boolean isWithZoomControl;
 
 	/**
 	 * Default constructor.

@@ -36,7 +36,7 @@ public class IndexedScrollPanel extends HorizontalPanel {
 
 	private static final double INNER_HEIGHT = 90.0;
 	private static final double OUTER_HEIGHT = 100.0;
-	private static String[] letters = { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P",
+	private static final String[] letters = { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P",
 			"Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z" };
 
 	/**
@@ -48,9 +48,9 @@ public class IndexedScrollPanel extends HorizontalPanel {
 
 		private static final int NO_OF_LETTERS = 26;
 
-		private IsSWMMobileWidgetHelper myWidgetHelper = new IsSWMMobileWidgetHelper();
+		private final IsSWMMobileWidgetHelper myWidgetHelper = new IsSWMMobileWidgetHelper();
 
-		private int[] sectionHeight = new int[NO_OF_LETTERS];
+		private final int[] sectionHeight = new int[NO_OF_LETTERS];
 		private int absY, letterHeight;
 		private final ScrollPanel scroller;
 
@@ -140,9 +140,9 @@ public class IndexedScrollPanel extends HorizontalPanel {
 		}
 	}
 
-	private IndexPanel indexPanel;
-	private ScrollPanel scroller;
-	private ListPanel list;
+	private final IndexPanel indexPanel;
+	private final ScrollPanel scroller;
+	private final ListPanel list;
 
 
 	/**

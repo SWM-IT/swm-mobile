@@ -13,7 +13,7 @@ import de.swm.commons.mobile.client.utils.Utils;
 public class SlidePopup extends SimplePopup {
 	
     private JavaScriptObject transitionRegistration;
-    private String transitionEndEvent;
+    private final String transitionEndEvent;
     private boolean hiding = false;
 
 	public SlidePopup() {

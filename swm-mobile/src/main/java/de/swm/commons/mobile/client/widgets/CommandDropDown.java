@@ -33,7 +33,7 @@ public class CommandDropDown extends CommandItem implements HasValueChangeHandle
 
 	private DropDownList<String> list;
 	private SelectPopup popup;
-	private ShimClickHandler clickHandlerWithDisableOption = new ShimClickHandler();
+	private final ShimClickHandler clickHandlerWithDisableOption = new ShimClickHandler();
 
 	@UiConstructor
 	public CommandDropDown(String headerText, ImageResource normalIcon, ImageResource highlightIcon) {

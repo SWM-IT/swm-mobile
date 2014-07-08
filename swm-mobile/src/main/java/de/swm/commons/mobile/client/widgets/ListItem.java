@@ -29,7 +29,7 @@ import de.swm.gwt.client.utils.ShimClickHandler;
  */
 public class ListItem extends FlowPanel {
 
-	private ShimClickHandler shimClickHandler = new ShimClickHandler();
+	private final ShimClickHandler shimClickHandler = new ShimClickHandler();
 
 	/**
 	 * Arrow visibility.

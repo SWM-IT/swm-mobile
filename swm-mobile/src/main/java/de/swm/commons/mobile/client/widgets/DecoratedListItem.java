@@ -33,11 +33,11 @@ import de.swm.commons.mobile.client.SWMMobile;
  */
 public class DecoratedListItem extends ListItem {
 
-	protected Image img;
-	protected Label titleLabel;
-	protected Label subtitleLabel;
-	protected HorizontalPanel mainPanel;
-	protected VerticalPanel vPanel;
+	protected final Image img;
+	protected final Label titleLabel;
+	protected final Label subtitleLabel;
+	protected final HorizontalPanel mainPanel;
+	protected final VerticalPanel vPanel;
 	protected Object userObject;
 
 

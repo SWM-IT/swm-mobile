@@ -36,7 +36,7 @@ public class AccordionEvent {
 		Close
 	}
 
-	private Type myType;
+	private final Type myType;
 	private final AccordionStack accordionStack;
 
 	/**

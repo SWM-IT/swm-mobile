@@ -29,7 +29,7 @@ import java.util.Iterator;
  */
 public class PanelBase extends SWMMobileWidgetBase implements HasWidgets {
 
-	protected FlowPanel myFlowPanel = new FlowPanel();
+	protected final FlowPanel myFlowPanel = new FlowPanel();
 
 
 

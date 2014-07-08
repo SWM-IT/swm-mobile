@@ -38,9 +38,9 @@ public class TreePanel extends PanelBase implements SwipeEventsHandler {
 	
 	private static final String BREADCRUMB_DELIMITER = ">";
 	
-	private TreePanelCss css;
+	private final TreePanelCss css;
 	
-	private boolean hasBreadcrumb;
+	private final boolean hasBreadcrumb;
 	private Label breadcrumbLabel;
 
 	private ScrollPanelWithScrollbar leftScrollPanel;
@@ -49,8 +49,8 @@ public class TreePanel extends PanelBase implements SwipeEventsHandler {
 	
 	private ITree selectedTree;
 	private HandlerRegistration selectionHandlerRegistration;
-	private SelectionChangedHandler selectionHandler;
-	private Map<ListItem, ITree> itemMap = new HashMap<ListItem, ITree>();
+	private final SelectionChangedHandler selectionHandler;
+	private final Map<ListItem, ITree> itemMap = new HashMap<ListItem, ITree>();
 	
 	public TreePanel() {
 		this(false);

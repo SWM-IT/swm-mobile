@@ -38,7 +38,7 @@ public class ScrollPanelWithScrollbar extends PanelBase implements HasWidgets, D
 	private static final int OFFSET = 2;
 	private boolean myHasTextBox = false;
 	private IScrollMonitor scrollMonitor;
-	private ScrollBar scrollBar;
+	private final ScrollBar scrollBar;
 
 	private boolean showScrollBar = true;
 

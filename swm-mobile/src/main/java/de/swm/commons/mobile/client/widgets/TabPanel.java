@@ -40,9 +40,9 @@ public class TabPanel extends SWMMobileWidgetBase implements HasWidgets, ClickHa
 
 
 	public static final int SPINNER_DELAY_MILLIS = 500;
-	private FlowPanel myPanel = new FlowPanel();
-	private FlowPanel myTabHeaderPanel = new FlowPanel();
-	private FlowPanel myTabContentPanel = new FlowPanel();
+	private final FlowPanel myPanel = new FlowPanel();
+	private final FlowPanel myTabHeaderPanel = new FlowPanel();
+	private final FlowPanel myTabContentPanel = new FlowPanel();
 	private int mySelectedTabIndex = -1;
 	private Transition transition = Transition.SLIDE;
 	/**

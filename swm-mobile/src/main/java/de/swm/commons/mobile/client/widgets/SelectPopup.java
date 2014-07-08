@@ -7,7 +7,7 @@ import de.swm.commons.mobile.client.event.SelectionChangedHandler;
 public class SelectPopup extends SimplePopup {
 
 	private String selectedKey;
-	private SelectPanel sPanel;
+	private final SelectPanel sPanel;
 
 	public SelectPopup() {
 		super();

@@ -50,7 +50,7 @@ import java.io.IOException;
 public class BoxBase<T> extends com.google.gwt.user.client.ui.ValueBoxBase<T> implements FocusHandler, BlurHandler,
 		IsSWMMobileWidget {
 
-	private IsSWMMobileWidgetHelper myWidgetHelper = new IsSWMMobileWidgetHelper();
+	private final IsSWMMobileWidgetHelper myWidgetHelper = new IsSWMMobileWidgetHelper();
 	private final ValidationHelper<T> validationHelper = new ValidationHelper<T>();
 
 	public static class ToStringRenderer<V> implements Renderer<V>{

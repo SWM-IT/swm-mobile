@@ -35,9 +35,9 @@ import de.swm.commons.mobile.client.event.DragEvent;
 public class DecoratedTextBox extends Composite implements DragEventsHandler, HasClickHandlers, HasText,
 		HasFocusHandlers, HasBlurHandlers, HasIconClickHandlers {
 
-	private TextBox textBox;
+	private final TextBox textBox;
 	private Label captionLabel;
-	private Image img;
+	private final Image img;
 	private final ImageResource icon1, icon2;
 
 	/**

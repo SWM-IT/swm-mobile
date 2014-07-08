@@ -44,7 +44,7 @@ public interface IMapView {
 		PRIMARY(0),
 		SECONDARY(1);
 		
-		private int index;
+		private final int index;
 		
 		private MarkerLayer(int index) {
 			this.index = index;

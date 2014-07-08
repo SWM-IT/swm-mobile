@@ -42,7 +42,7 @@ public class DropDownList<T> extends PanelBase implements FocusHandler, BlurHand
 		HasValueChangeHandlers<T>, IsEditor<TakesValueEditor<T>>, HasConstrainedValue<T>, HasFocusHandlers,
 		HasBlurHandlers, HasEnabled {
 
-	private ListBox listBox = new ListBox();
+	private final ListBox listBox = new ListBox();
 
 	private final Map<Integer, String> indexKeyMap = new HashMap<Integer, String>();
 

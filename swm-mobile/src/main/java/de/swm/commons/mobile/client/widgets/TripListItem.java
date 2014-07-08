@@ -28,12 +28,12 @@ import java.util.Date;
  */
 public class TripListItem extends ListItem {
 
-	private Image progressImage;
+	private final Image progressImage;
 	private Image categoryImage;
-	private Label titleLabel;
-	private Label subtitleLabel;
-	private Label subSubtitleLabel;
-	private Label timeLabel;
+	private final Label titleLabel;
+	private final Label subtitleLabel;
+	private final Label subSubtitleLabel;
+	private final Label timeLabel;
 	private Date departureTime;
 	private Date arrivalTime;
 

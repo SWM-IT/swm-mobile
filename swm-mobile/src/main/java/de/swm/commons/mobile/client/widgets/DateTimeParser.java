@@ -27,7 +27,7 @@ import java.util.Date;
  */
 public class DateTimeParser implements Parser<Date> {
 
-	DateTimeFormat format;
+	final DateTimeFormat format;
 
 
 	/**

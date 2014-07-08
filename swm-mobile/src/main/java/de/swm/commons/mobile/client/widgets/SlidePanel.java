@@ -38,11 +38,11 @@ import java.util.Iterator;
 public class SlidePanel extends SWMMobileWidgetBase implements HasWidgets, SwipeEventsHandler, HasValueChangeHandlers<Boolean> {
 
 	private final int firstSlideOnLoad;
-	protected FlowPanel contentPanel = new FlowPanel();
+	protected final FlowPanel contentPanel = new FlowPanel();
 	protected int myCount = 0;
 	protected int myCurrent = 0;
 	protected SlideProvider mySlideProvider = null;
-	protected ArrayList<Widget> mySlides = new ArrayList<Widget>();
+	protected final ArrayList<Widget> mySlides = new ArrayList<Widget>();
 	protected boolean isRotate = false;
 
 

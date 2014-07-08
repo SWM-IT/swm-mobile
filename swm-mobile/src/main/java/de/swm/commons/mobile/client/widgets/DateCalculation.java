@@ -43,7 +43,7 @@ public class DateCalculation {
 	/**
 	 * Holds all months with their number of days.
 	 */
-	private int[] month2day;
+	private final int[] month2day;
 
 	/**
 	 * The current day.
@@ -205,7 +205,7 @@ public class DateCalculation {
 				decrementDay();
 				incrementDay();
 			} catch (NumberFormatException ex) {
-				Utils.console("Wrong day format " + day);
+				Utils.console("Wrong number format " + day);
 			}
 		}
 	}
@@ -223,7 +223,7 @@ public class DateCalculation {
 				decrementMonth();
 				incrementMonth();
 			} catch (NumberFormatException ex) {
-
+				Utils.console("Wrong number format " + month);
 			}
 		}
 	}
@@ -241,7 +241,7 @@ public class DateCalculation {
 				decrementYear();
 				incrementYear();
 			} catch (NumberFormatException ex) {
-
+				Utils.console("Wrong number format " + year);
 			}
 		}
 	}
@@ -259,7 +259,7 @@ public class DateCalculation {
 				decrementHour();
 				incrementHour();
 			} catch (NumberFormatException ex) {
-
+				Utils.console("Wrong number format " + hour);
 			}
 		}
 	}
@@ -277,7 +277,7 @@ public class DateCalculation {
 				decrementMinute();
 				incrementMinute();
 			} catch (NumberFormatException ex) {
-
+				Utils.console("Wrong number format " + minute);
 			}
 		}
 	}

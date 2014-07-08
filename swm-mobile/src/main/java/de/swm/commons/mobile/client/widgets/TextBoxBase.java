@@ -34,7 +34,7 @@ import de.swm.commons.mobile.client.validation.impl.ValidationHelper;
 class TextBoxBase extends com.google.gwt.user.client.ui.TextBoxBase implements FocusHandler, BlurHandler,
 		IsSWMMobileWidget, IHasValidator {
 
-	private IsSWMMobileWidgetHelper myWidgetHelper = new IsSWMMobileWidgetHelper();
+	private final IsSWMMobileWidgetHelper myWidgetHelper = new IsSWMMobileWidgetHelper();
 	private final ValidationHelper<String> validationHelper = new ValidationHelper<String>();
 	private String placeholder = null;
 

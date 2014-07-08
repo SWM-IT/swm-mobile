@@ -29,7 +29,7 @@ import de.swm.commons.mobile.client.utils.Utils;
  */
 public class RadioButton extends com.google.gwt.user.client.ui.RadioButton implements IsSWMMobileWidget {
 
-	private IsSWMMobileWidgetHelper widgetHelper = new IsSWMMobileWidgetHelper();
+	private final IsSWMMobileWidgetHelper widgetHelper = new IsSWMMobileWidgetHelper();
 
 
 

@@ -26,7 +26,7 @@ public class PresenterController {
 	private final Set<IPageChangeListener> pageChangeListener = new HashSet<IPageChangeListener>();
 	private IMobilePresenter activePresenter;
 	private IPageWithoutHeader activeView;
-	private ISwmPopupUtil swmPopupUtil = new SwmPopupUtilImpl();
+	private final ISwmPopupUtil swmPopupUtil = new SwmPopupUtilImpl();
 	private final I18NConstants appConstants = GWT.create(I18NConstants.class);
 
 	/**

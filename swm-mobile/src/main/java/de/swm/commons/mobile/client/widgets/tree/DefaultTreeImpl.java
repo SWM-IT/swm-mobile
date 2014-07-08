@@ -20,9 +20,9 @@ import java.util.List;
 
 public class DefaultTreeImpl implements ITree {
 	
-	ITreeNode node;
+	final ITreeNode node;
 	ITree parent;
-	List<ITree> children = new ArrayList<ITree>();
+	final List<ITree> children = new ArrayList<ITree>();
 	
 	public DefaultTreeImpl(ITreeNode node, ITree parent) {
 		this.node = node;

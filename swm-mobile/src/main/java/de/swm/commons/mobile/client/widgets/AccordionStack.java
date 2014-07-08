@@ -53,7 +53,7 @@ public class AccordionStack extends PanelBase {
 
 	private AccordionHeader myHeader;
 	private AccordionContent myContent;
-	private List<AccordionEventsHandler> accordionEventHandlers = new ArrayList<AccordionEventsHandler>();
+	private final List<AccordionEventsHandler> accordionEventHandlers = new ArrayList<AccordionEventsHandler>();
 
 
 	@Override

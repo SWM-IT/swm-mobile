@@ -32,8 +32,8 @@ import java.util.List;
  */
 public class ValidationHelper<T> {
 
-	private List<IValidator<T>> validators = new ArrayList<IValidator<T>>();
-	private List<IErrorOutputElement> validatorErrorOutputs = new ArrayList<IErrorOutputElement>();
+	private final List<IValidator<T>> validators = new ArrayList<IValidator<T>>();
+	private final List<IErrorOutputElement> validatorErrorOutputs = new ArrayList<IErrorOutputElement>();
 
 
 

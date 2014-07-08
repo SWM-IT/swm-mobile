@@ -16,11 +16,11 @@ import de.swm.commons.mobile.client.utils.Utils;
  */
 public class ScrollBar extends SimplePanel {
 	private Timer fadeOutTimer;
-	SimplePanel scrollbarPanel = new SimplePanel();
-	FlowPanel scrollbarTable = new FlowPanel();
-	SimplePanel scrollbarRail = new SimplePanel();
-	FlowPanel scrollbarIndicator = new FlowPanel();
-	SimplePanel filler = new SimplePanel();
+	final SimplePanel scrollbarPanel = new SimplePanel();
+	final FlowPanel scrollbarTable = new FlowPanel();
+	final SimplePanel scrollbarRail = new SimplePanel();
+	final FlowPanel scrollbarIndicator = new FlowPanel();
+	final SimplePanel filler = new SimplePanel();
 
 	/**
 	 * default constructor.

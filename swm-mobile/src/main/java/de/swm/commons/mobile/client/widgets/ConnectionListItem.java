@@ -66,9 +66,9 @@ public class ConnectionListItem extends ListItem {
 		UNKNOWN
 	}
 
-	private Label timeLabel;
-	private Label durationAndInfoLabel;
-	private SWMMobileImageBundle icons;
+	private final Label timeLabel;
+	private final Label durationAndInfoLabel;
+	private final SWMMobileImageBundle icons;
 	private String infoText;
 	private final Date fromDate;
 	private final Date toDate;

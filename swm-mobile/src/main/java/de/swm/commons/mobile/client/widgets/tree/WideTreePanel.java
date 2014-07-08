@@ -39,9 +39,9 @@ public class WideTreePanel extends PanelBase implements SwipeEventsHandler {
 
 	private static final String BREADCRUMB_DELIMITER = ">";
 
-	private TreePanelCss css;
+	private final TreePanelCss css;
 
-	private boolean hasBreadcrumb;
+	private final boolean hasBreadcrumb;
 	private Label breadcrumbLabel;
 
 	private ScrollPanel scrollPanel0;
@@ -51,10 +51,10 @@ public class WideTreePanel extends PanelBase implements SwipeEventsHandler {
 
 	private HandlerRegistration handlerRegistration1;
 	private HandlerRegistration handlerRegistration2;
-	private SelectionChangedHandler selectionHandler1;
-	private SelectionChangedHandler selectionHandler2;
+	private final SelectionChangedHandler selectionHandler1;
+	private final SelectionChangedHandler selectionHandler2;
 	private ITree selectedTree;
-	private Map<ListItem, ITree> itemMap = new HashMap<ListItem, ITree>();
+	private final Map<ListItem, ITree> itemMap = new HashMap<ListItem, ITree>();
 
 	public WideTreePanel() {
 		this(false);

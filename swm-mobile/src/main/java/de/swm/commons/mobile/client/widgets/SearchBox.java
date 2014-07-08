@@ -40,11 +40,11 @@ public class SearchBox extends Composite implements HasChangeHandlers, HasText,
 	 */
 	public static final int RADIUS = 10;
 
-	private TextBox box;
+	private final TextBox box;
 	private ClearButton clearButton;
 	private ClearButtonTouchHandler clearButtonHandler;
 	private HandlerRegistration boxHandler;
-	private FlowPanel roundDiv;
+	private final FlowPanel roundDiv;
 	protected final SearchBoxCss css;
 
 	/**

@@ -41,7 +41,7 @@ public class DateTextBox extends PanelBase implements HasValue<Date>, IsEditor<T
 	/**
 	 * inner text box to display the formated date value.
 	 */
-	private TextBox dateDisplayBox;
+	private final TextBox dateDisplayBox;
 
 	/**
 	 * current date value.
@@ -61,7 +61,7 @@ public class DateTextBox extends PanelBase implements HasValue<Date>, IsEditor<T
 	/**
 	 * Current date foematter. See {@link de.swm.commons.mobile.client.widgets.DateStyle#getFormatPattern()}.
 	 */
-	private DateTimeFormat dateFormatter;
+	private final DateTimeFormat dateFormatter;
 
 
 	/**

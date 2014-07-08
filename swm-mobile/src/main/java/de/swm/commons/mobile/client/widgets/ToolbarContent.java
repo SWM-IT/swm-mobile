@@ -30,7 +30,7 @@ import java.util.Iterator;
  */
 public class ToolbarContent extends SWMMobileWidgetBase implements HasWidgets {
 
-	protected FlowPanel panel = new FlowPanel();
+	protected final FlowPanel panel = new FlowPanel();
 
 
 

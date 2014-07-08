@@ -38,7 +38,7 @@ public final class SWMMobile {
 
     private static SWMMobileTheme theme;
     private static final OsDetection OS_DETECTION = new OsDetectionImpl();
-	private static I18NConstants i18n = GWT.create(I18NConstants.class);
+	private static final I18NConstants i18n = GWT.create(I18NConstants.class);
 
 
     /**

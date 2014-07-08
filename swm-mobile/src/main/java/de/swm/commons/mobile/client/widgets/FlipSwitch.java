@@ -52,7 +52,7 @@ public class FlipSwitch extends SWMMobileWidgetBase implements DragEventsHandler
 	private static final double MIDDLE = 0.5;
 	protected boolean myEnabled = true;
 	protected boolean myValue = true;
-	protected HTML myHtml = new HTML();
+	protected final HTML myHtml = new HTML();
 	private LeafValueEditor<Boolean> editor;
 	private final List<DragEventsHandler> dragHandlers = new ArrayList<DragEventsHandler>();
 	private String option1 = "On";
