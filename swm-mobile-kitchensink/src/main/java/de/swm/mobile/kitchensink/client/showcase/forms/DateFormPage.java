@@ -17,10 +17,10 @@ import static de.swm.mobile.kitchensink.client.ShowcaseAnnotations.ShowcaseUiXML
 @ShowcaseUiXML({"DateFormPage.ui.xml"})
 public class DateFormPage extends ShowcaseDetailPage {
 
-    private static SpinPageUiBinder uiBinder = GWT.create(SpinPageUiBinder.class);
+    private static DatePageUiBinder uiBinder = GWT.create(DatePageUiBinder.class);
 
 
-    interface SpinPageUiBinder extends UiBinder<Widget, DateFormPage> {
+    interface DatePageUiBinder extends UiBinder<Widget, DateFormPage> {
     }
 
     @UiField

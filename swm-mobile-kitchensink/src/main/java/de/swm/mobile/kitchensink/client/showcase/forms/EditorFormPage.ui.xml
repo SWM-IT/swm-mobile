@@ -2,7 +2,8 @@
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
 	xmlns:g="urn:import:com.google.gwt.user.client.ui"
     xmlns:b="urn:import:org.gwtbootstrap3.client.ui"
-	xmlns:m="urn:import:de.swm.commons.mobile.client.widgets">
+	xmlns:m="urn:import:de.swm.commons.mobile.client.widgets"
+    xmlns:md="urn:import:de.swm.commons.mobile.client.widgets.date">
 
 	<ui:style>
 		.flex > div {
@@ -49,15 +50,15 @@
                     </m:ListItem>
                     <m:ListItem>
                         <g:Label>Geburtstag:</g:Label>
-                        <m:DateTextBox ui:field="birthdateTextBox" dateStyle='DATE'/>
+                        <md:DateTextBox ui:field="birthdateTextBox" dateStyle='DATE'/>
                     </m:ListItem>
                     <m:ListItem>
                         <g:Label>Uhrzeit:</g:Label>
-                        <m:DateTextBox ui:field="timeTextBox" dateStyle='TIME'/>
+                        <md:DateTextBox ui:field="timeTextBox" dateStyle='TIME'/>
                     </m:ListItem>
                     <m:ListItem>
                         <g:Label>Termin:</g:Label>
-                        <m:DateTextBox ui:field="scheduleTextBox" dateStyle='DATETIME'/>
+                        <md:DateTextBox ui:field="scheduleTextBox" dateStyle='DATETIME'/>
                     </m:ListItem>
                     <m:ListItem>
                         <g:Label>Beschreibung:</g:Label>
