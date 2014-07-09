@@ -83,7 +83,7 @@ public class DatePopup extends PopupPanel {
 	/**
 	 * The underlying selection handler.
 	 */
-	protected final DateSelectionHandler selectionHandler;
+	private DateSelectionHandler selectionHandler;
 
 	/**
 	 * Label displaying the day.
@@ -415,6 +415,13 @@ public class DatePopup extends PopupPanel {
 		});
 	}
 
+	public DateSelectionHandler getSelectionHandler() {
+		return selectionHandler;
+	}
+
+	public void setSelectionHandler(DateSelectionHandler selectionHandler) {
+		this.selectionHandler = selectionHandler;
+	}
 
 	/**
 	 * Will create the spinner buttons.
@@ -607,9 +614,9 @@ public class DatePopup extends PopupPanel {
 	 * @return the input element.
 	 */
 	private static native InputElement createNumberInputElement(String type) /*-{
-																				var e = $doc.createElement("INPUT");
-																				e.type = type;
-																				return e;
-																				}-*/;
+        var e = $doc.createElement("INPUT");
+        e.type = type;
+        return e;
+    }-*/;
 
 }

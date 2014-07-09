@@ -23,7 +23,7 @@
     <facet type="gwt" name="GWT">
       <configuration>
         <setting name="gwtScriptOutputStyle" value="PRETTY" />
-        <setting name="gwtSdkUrl" value="file://$MAVEN_REPOSITORY$/com/google/gwt/gwt-dev/2.6.0/" />
+        <setting name="gwtSdkUrl" value="file://$MAVEN_REPOSITORY$/com/google/gwt/gwt-dev/2.6.1/" />
         <setting name="gwtSdkType" value="maven" />
         <setting name="webFacet" value="Web" />
       </configuration>
@@ -41,12 +41,12 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="Maven: com.google.gwt:gwt-servlet:2.6.0" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.google.gwt:gwt-user:2.6.0" level="project" />
+    <orderEntry type="library" name="Maven: com.google.gwt:gwt-servlet:2.6.1" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.google.gwt:gwt-user:2.6.1" level="project" />
     <orderEntry type="library" name="Maven: javax.validation:validation-api:1.0.0.GA" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: javax.validation:validation-api:sources:1.0.0.GA" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.json:json:20090211" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: com.google.gwt:gwt-dev:2.6.0" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.google.gwt:gwt-dev:2.6.1" level="project" />
     <orderEntry type="module" module-name="swm-mobile" />
     <orderEntry type="module" module-name="swm-gwt-client" />
     <orderEntry type="library" name="Maven: com.google.gwt.eventbinder:eventbinder:1.0.2" level="project" />
