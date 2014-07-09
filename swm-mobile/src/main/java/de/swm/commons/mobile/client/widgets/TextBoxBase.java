@@ -26,6 +26,7 @@ import de.swm.commons.mobile.client.validation.IErrorOutputElement;
 import de.swm.commons.mobile.client.validation.IHasValidator;
 import de.swm.commons.mobile.client.validation.IValidator;
 import de.swm.commons.mobile.client.validation.impl.ValidationHelper;
+import de.swm.commons.mobile.client.widgets.itf.IsSWMMobileWidget;
 
 
 /**

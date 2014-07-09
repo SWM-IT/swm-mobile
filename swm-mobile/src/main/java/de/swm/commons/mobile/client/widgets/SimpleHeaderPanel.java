@@ -21,6 +21,7 @@ import com.google.gwt.event.dom.client.TouchStartEvent;
 import com.google.gwt.event.dom.client.TouchStartHandler;
 import com.google.gwt.user.client.ui.*;
 import de.swm.commons.mobile.client.SWMMobile;
+import de.swm.commons.mobile.client.widgets.itf.IHeaderPanel;
 
 import java.util.Iterator;
 

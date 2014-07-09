@@ -15,7 +15,7 @@
  */
 package de.swm.commons.mobile.client.event;
 
-import de.swm.commons.mobile.client.widgets.AccordionStack;
+import de.swm.commons.mobile.client.widgets.accordion.AccordionStack;
 
 /**
  * TODO Dokumentieren.

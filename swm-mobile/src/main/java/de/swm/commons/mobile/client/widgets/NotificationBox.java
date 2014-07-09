@@ -6,6 +6,7 @@ import de.swm.commons.mobile.client.SWMMobile;
 import de.swm.commons.mobile.client.theme.components.NotificationBoxCss;
 import de.swm.commons.mobile.client.theme.components.TransitionsCss;
 import de.swm.commons.mobile.client.utils.IsSWMMobileWidgetHelper;
+import de.swm.commons.mobile.client.widgets.itf.IsSWMMobileWidget;
 
 import java.util.Iterator;
 

@@ -11,6 +11,8 @@ import com.google.gwt.uibinder.client.UiConstructor;
 import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.user.client.ui.Label;
 import de.swm.commons.mobile.client.SWMMobile;
+import de.swm.commons.mobile.client.widgets.popup.SelectPopup;
+import de.swm.commons.mobile.client.widgets.popup.SimplePopup;
 import de.swm.gwt.client.utils.ShimClickHandler;
 
 /**

@@ -20,7 +20,7 @@ import com.google.gwt.dom.client.Document;
 import de.swm.commons.mobile.client.SWMMobile;
 import de.swm.commons.mobile.client.utils.IsSWMMobileWidgetHelper;
 import de.swm.commons.mobile.client.utils.Utils;
-
+import de.swm.commons.mobile.client.widgets.itf.IsSWMMobileWidget;
 
 
 /**

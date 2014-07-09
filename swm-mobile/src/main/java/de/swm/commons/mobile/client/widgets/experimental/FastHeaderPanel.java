@@ -23,6 +23,7 @@ import com.google.gwt.user.client.ui.Widget;
 import de.swm.commons.mobile.client.SWMMobile;
 import de.swm.commons.mobile.client.event.FastClickHelper;
 import de.swm.commons.mobile.client.widgets.*;
+import de.swm.commons.mobile.client.widgets.itf.IHeaderPanel;
 
 
 /**

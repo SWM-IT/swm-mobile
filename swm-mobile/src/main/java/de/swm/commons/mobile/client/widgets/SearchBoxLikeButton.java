@@ -26,6 +26,7 @@ import com.google.gwt.user.client.ui.Label;
 import de.swm.commons.mobile.client.SWMMobile;
 import de.swm.commons.mobile.client.theme.components.SearchBoxCss;
 import de.swm.commons.mobile.client.utils.IsSWMMobileWidgetHelper;
+import de.swm.commons.mobile.client.widgets.itf.IsSWMMobileWidget;
 
 /**
  * A button which looks like a search widget.

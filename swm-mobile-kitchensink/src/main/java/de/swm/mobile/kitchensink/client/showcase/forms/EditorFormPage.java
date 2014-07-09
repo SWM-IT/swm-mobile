@@ -13,6 +13,7 @@ import com.google.gwt.user.client.ui.Widget;
 import de.swm.commons.mobile.client.utils.Utils;
 import de.swm.commons.mobile.client.validation.IValidator;
 import de.swm.commons.mobile.client.widgets.*;
+import de.swm.commons.mobile.client.widgets.date.DateTextBox;
 import de.swm.mobile.kitchensink.client.base.ShowcaseDetailPage;
 import de.swm.mobile.kitchensink.client.showcase.forms.utils.EnumRenderer;
 import de.swm.mobile.kitchensink.client.showcase.forms.utils.Person;
@@ -33,7 +34,7 @@ public class EditorFormPage extends ShowcaseDetailPage implements Editor<Person>
 	TextBox nameTextBox;
 	@UiField @Path("email")
 	EmailTextBox mailTextBox;
-	@UiField @Path("birthdate") 
+	@UiField @Path("birthdate")
 	DateTextBox birthdateTextBox;
 	@UiField @Path("name")
 	TextArea description;

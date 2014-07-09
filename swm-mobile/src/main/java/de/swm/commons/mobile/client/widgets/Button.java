@@ -24,6 +24,7 @@ import de.swm.commons.mobile.client.event.DragEvent;
 import de.swm.commons.mobile.client.event.DragEventsHandler;
 import de.swm.commons.mobile.client.event.FastClickHelper;
 import de.swm.commons.mobile.client.utils.IsSWMMobileWidgetHelper;
+import de.swm.commons.mobile.client.widgets.itf.IsSWMMobileWidget;
 
 
 /**

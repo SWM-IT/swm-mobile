@@ -10,6 +10,10 @@ import de.swm.commons.mobile.client.setup.ViewPort;
 import de.swm.commons.mobile.client.theme.base.BaseSWMMobileTheme;
 import de.swm.commons.mobile.client.theme.bright.BrightSWMMobileTheme;
 import de.swm.commons.mobile.client.widgets.*;
+import de.swm.commons.mobile.client.widgets.accordion.AccordionContent;
+import de.swm.commons.mobile.client.widgets.accordion.AccordionHeader;
+import de.swm.commons.mobile.client.widgets.accordion.AccordionPanel;
+import de.swm.commons.mobile.client.widgets.accordion.AccordionStack;
 
 
 /**

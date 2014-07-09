@@ -12,6 +12,9 @@ import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Widget;
 import de.swm.commons.mobile.client.utils.Utils;
 import de.swm.commons.mobile.client.widgets.*;
+import de.swm.commons.mobile.client.widgets.date.DateStyle;
+import de.swm.commons.mobile.client.widgets.popup.SimpleDatePopup;
+import de.swm.commons.mobile.client.widgets.popup.SimplePopup;
 import de.swm.mobile.kitchensink.client.Application;
 import de.swm.mobile.kitchensink.client.base.ShowcaseDetailPage;
 

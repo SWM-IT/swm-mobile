@@ -27,7 +27,7 @@ import de.swm.commons.mobile.client.event.*;
 import de.swm.commons.mobile.client.utils.Utils;
 
 /**
- * Scroll panel - has the ability to keep the {@link IHeaderPanel} implementations always on the top.
+ * Scroll panel - has the ability to keep the {@link de.swm.commons.mobile.client.widgets.itf.IHeaderPanel} implementations always on the top.
  */
 public class ScrollPanel extends PanelBase implements HasWidgets, DragEventsHandler, SwipeEventsHandler {
 

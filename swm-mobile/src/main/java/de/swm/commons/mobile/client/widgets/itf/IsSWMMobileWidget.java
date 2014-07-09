@@ -13,7 +13,7 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
-package de.swm.commons.mobile.client.widgets;
+package de.swm.commons.mobile.client.widgets.itf;
 
 /**
  * Marker interface for all SWMMobile Widgets. This interface defines all common widget methods.

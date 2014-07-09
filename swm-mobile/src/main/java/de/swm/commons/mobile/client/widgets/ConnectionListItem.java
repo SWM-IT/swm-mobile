@@ -25,6 +25,7 @@ import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.user.client.ui.Label;
 import de.swm.commons.mobile.client.SWMMobile;
 import de.swm.commons.mobile.client.theme.SWMMobileImageBundle;
+import de.swm.commons.mobile.client.widgets.publictransport.FlipTimePanel;
 
 import java.util.Date;
 import java.util.logging.Logger;

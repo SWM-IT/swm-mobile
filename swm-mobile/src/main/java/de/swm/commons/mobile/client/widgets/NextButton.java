@@ -21,7 +21,7 @@ import de.swm.commons.mobile.client.event.FastClickHelper;
 
 
 /**
- * The next button typically placed inside a {@link IHeaderPanel}.
+ * The next button typically placed inside a {@link de.swm.commons.mobile.client.widgets.itf.IHeaderPanel}.
  * 
  */
 public class NextButton extends Button {

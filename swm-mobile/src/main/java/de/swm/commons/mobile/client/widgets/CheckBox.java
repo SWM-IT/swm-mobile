@@ -28,6 +28,7 @@ import com.google.gwt.user.client.ui.Image;
 import de.swm.commons.mobile.client.SWMMobile;
 import de.swm.commons.mobile.client.utils.IsSWMMobileWidgetHelper;
 import de.swm.commons.mobile.client.utils.Utils;
+import de.swm.commons.mobile.client.widgets.itf.IsSWMMobileWidget;
 import de.swm.gwt.client.utils.ShimClickHandler;
 
 

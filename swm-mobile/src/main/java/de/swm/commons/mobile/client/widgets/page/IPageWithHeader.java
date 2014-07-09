@@ -15,7 +15,7 @@
  */
 package de.swm.commons.mobile.client.widgets.page;
 
-import de.swm.commons.mobile.client.widgets.IHeaderPanel;
+import de.swm.commons.mobile.client.widgets.itf.IHeaderPanel;
 
 
 /**
