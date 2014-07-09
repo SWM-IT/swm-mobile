@@ -6,15 +6,14 @@ import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.Widget;
 
-import de.swm.commons.mobile.client.page.SimplePage;
 import de.swm.commons.mobile.client.widgets.ListItem;
 import de.swm.commons.mobile.client.widgets.ListPanel;
 import de.swm.commons.mobile.client.widgets.ScrollPanel;
 import de.swm.commons.mobile.client.widgets.SimpleHeaderPanel;
-import de.swm.commons.mobile.client.widgets.ToolbarContent;
-import de.swm.commons.mobile.client.widgets.ToolbarElement;
-import de.swm.commons.mobile.client.widgets.ToolbarPanel;
-import de.swm.commons.mobile.client.widgets.ToolbarPanel.ToolbarSelectionHandler;
+import de.swm.commons.mobile.client.widgets.toolbar.ToolbarContent;
+import de.swm.commons.mobile.client.widgets.toolbar.ToolbarElement;
+import de.swm.commons.mobile.client.widgets.toolbar.ToolbarPanel;
+import de.swm.commons.mobile.client.widgets.toolbar.ToolbarPanel.ToolbarSelectionHandler;
 import de.swm.mobile.kitchensink.client.Application;
 import de.swm.mobile.kitchensink.client.base.ShowcaseDetailPage;
 

@@ -16,7 +16,7 @@
 package de.swm.commons.mobile.client.theme.components;
 
 import com.google.gwt.resources.client.CssResource;
-import de.swm.commons.mobile.client.widgets.ConnectionListItem;
+import de.swm.commons.mobile.client.widgets.publictransport.ConnectionListItem;
 
 
 

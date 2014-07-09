@@ -13,6 +13,7 @@ import de.swm.commons.mobile.client.theme.SWMMobileImageBundle;
 import de.swm.commons.mobile.client.widgets.Button;
 import de.swm.commons.mobile.client.widgets.*;
 import de.swm.commons.mobile.client.widgets.HorizontalPanel;
+import de.swm.commons.mobile.client.widgets.command.CommandPopup;
 import de.swm.gwt.client.interfaces.ITypedAction;
 
 import java.util.*;

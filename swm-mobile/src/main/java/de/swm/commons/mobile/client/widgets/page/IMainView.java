@@ -15,7 +15,7 @@
  */
 package de.swm.commons.mobile.client.widgets.page;
 
-import de.swm.commons.mobile.client.widgets.ToolbarPanel;
+import de.swm.commons.mobile.client.widgets.toolbar.ToolbarPanel;
 
 
 /**

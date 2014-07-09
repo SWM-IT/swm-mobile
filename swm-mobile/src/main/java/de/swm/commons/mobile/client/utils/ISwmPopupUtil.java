@@ -2,7 +2,7 @@ package de.swm.commons.mobile.client.utils;
 
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.ui.Widget;
-import de.swm.commons.mobile.client.widgets.CommandPopup;
+import de.swm.commons.mobile.client.widgets.command.CommandPopup;
 import de.swm.gwt.client.interfaces.ITypedAction;
 
 import java.util.List;

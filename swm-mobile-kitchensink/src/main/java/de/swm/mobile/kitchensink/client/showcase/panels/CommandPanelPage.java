@@ -12,6 +12,8 @@ import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Widget;
 import de.swm.commons.mobile.client.utils.Utils;
 import de.swm.commons.mobile.client.widgets.*;
+import de.swm.commons.mobile.client.widgets.command.CommandDropDown;
+import de.swm.commons.mobile.client.widgets.command.CommandItem;
 import de.swm.commons.mobile.client.widgets.date.DateStyle;
 import de.swm.commons.mobile.client.widgets.popup.SimpleDatePopup;
 import de.swm.commons.mobile.client.widgets.popup.SimplePopup;
@@ -30,11 +32,11 @@ public class CommandPanelPage extends ShowcaseDetailPage {
     @UiField
     SimpleHeaderPanel header;
     @UiField
-    CommandItem command1;
+	CommandItem command1;
     @UiField
     CommandItem command2;
     @UiField
-    CommandDropDown commandDropDown;
+	CommandDropDown commandDropDown;
     @UiField
     CommandItem command21;
     @UiField

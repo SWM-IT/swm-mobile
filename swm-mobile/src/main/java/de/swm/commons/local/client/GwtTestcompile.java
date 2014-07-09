@@ -14,6 +14,8 @@ import de.swm.commons.mobile.client.widgets.accordion.AccordionContent;
 import de.swm.commons.mobile.client.widgets.accordion.AccordionHeader;
 import de.swm.commons.mobile.client.widgets.accordion.AccordionPanel;
 import de.swm.commons.mobile.client.widgets.accordion.AccordionStack;
+import de.swm.commons.mobile.client.widgets.command.CommandDropDown;
+import de.swm.commons.mobile.client.widgets.command.CommandItem;
 
 
 /**
