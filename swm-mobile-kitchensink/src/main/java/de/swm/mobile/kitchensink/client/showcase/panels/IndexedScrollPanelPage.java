@@ -6,9 +6,9 @@ import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.HTMLPanel;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.Widget;
-import de.swm.commons.mobile.client.widgets.IndexedScrollPanel;
+import de.swm.commons.mobile.client.widgets.HeaderPanel;
+import de.swm.commons.mobile.client.widgets.IndexedScrollPanelWithPager;
 import de.swm.commons.mobile.client.widgets.ListItem;
-import de.swm.commons.mobile.client.widgets.SimpleHeaderPanel;
 import de.swm.mobile.kitchensink.client.Application;
 import de.swm.mobile.kitchensink.client.base.ShowcaseDetailPage;
 
@@ -32,9 +32,9 @@ public class IndexedScrollPanelPage extends ShowcaseDetailPage {
     @UiField
     HTMLPanel content;
     @UiField
-    SimpleHeaderPanel header;
+	HeaderPanel header;
     @UiField
-    IndexedScrollPanel list;
+	IndexedScrollPanelWithPager list;
 
     public IndexedScrollPanelPage() {
         super(IndexedScrollPanelPage.class);
@@ -59,7 +59,7 @@ public class IndexedScrollPanelPage extends ShowcaseDetailPage {
 
 
     @Override
-    public SimpleHeaderPanel getHeaderPanel() {
+    public HeaderPanel getHeaderPanel() {
         return header;
     }
 }

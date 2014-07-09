@@ -10,11 +10,10 @@ import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.uibinder.client.UiHandler;
 import com.google.gwt.user.client.ui.Widget;
 
-import de.swm.commons.mobile.client.page.SimplePage;
 import de.swm.commons.mobile.client.utils.Utils;
 import de.swm.commons.mobile.client.widgets.DropDownItem;
 import de.swm.commons.mobile.client.widgets.DropDownList;
-import de.swm.commons.mobile.client.widgets.SimpleHeaderPanel;
+import de.swm.commons.mobile.client.widgets.HeaderPanel;
 import de.swm.commons.mobile.client.widgets.itf.IProvidesKeyAndValue;
 import de.swm.mobile.kitchensink.client.Application;
 import de.swm.mobile.kitchensink.client.base.ShowcaseDetailPage;
@@ -29,12 +28,13 @@ public class DropDownListPage extends ShowcaseDetailPage {
 
 	@UiField
 	DropDownList<String> cars;
-	@UiField SimpleHeaderPanel header;
+	@UiField
+	HeaderPanel header;
 
 	private static DropDownListPageUiBinder uiBinder = GWT.create(DropDownListPageUiBinder.class);
 
 	@Override
-	public SimpleHeaderPanel getHeaderPanel() {
+	public HeaderPanel getHeaderPanel() {
 		return header;
 	}
 

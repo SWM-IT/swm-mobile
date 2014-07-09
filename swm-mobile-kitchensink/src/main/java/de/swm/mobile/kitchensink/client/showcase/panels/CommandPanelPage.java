@@ -30,7 +30,7 @@ import static de.swm.mobile.kitchensink.client.ShowcaseAnnotations.ShowcaseUiXML
 public class CommandPanelPage extends ShowcaseDetailPage {
 
     @UiField
-    SimpleHeaderPanel header;
+	HeaderPanel header;
     @UiField
 	CommandItem command1;
     @UiField
@@ -158,7 +158,7 @@ public class CommandPanelPage extends ShowcaseDetailPage {
     }
 
     @Override
-    public SimpleHeaderPanel getHeaderPanel() {
+    public HeaderPanel getHeaderPanel() {
         return header;
     }
 

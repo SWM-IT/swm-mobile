@@ -5,18 +5,18 @@
 	<ui:style>
 	</ui:style>
 	<g:HTMLPanel>
-		<m:SimpleHeaderPanel ui:field="header" leftButton="Back">
+		<m:HeaderPanel ui:field="header" leftButton="Back">
 			<m:OnlyDesktopLabel>Header Panel</m:OnlyDesktopLabel>
-		</m:SimpleHeaderPanel>
-		<m:SimpleHeaderPanel>
+		</m:HeaderPanel>
+		<m:HeaderPanel>
 			<g:Label>No Button</g:Label>
-		</m:SimpleHeaderPanel>
-		<m:SimpleHeaderPanel leftButton="Menu">
+		</m:HeaderPanel>
+		<m:HeaderPanel leftButton="Menu">
 			<g:Label>Left Btn.</g:Label>
-		</m:SimpleHeaderPanel>
-		<m:SimpleHeaderPanel rightButton="Menu">
+		</m:HeaderPanel>
+		<m:HeaderPanel rightButton="Menu">
 			<g:Label>Right Btn.</g:Label>
-		</m:SimpleHeaderPanel>
-		<m:SimpleHeaderPanel leftButton="Back" rightButton="Next"/>
+		</m:HeaderPanel>
+		<m:HeaderPanel leftButton="Back" rightButton="Next"/>
 	</g:HTMLPanel>	
 </ui:UiBinder> 

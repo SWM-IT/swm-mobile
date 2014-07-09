@@ -4,9 +4,9 @@
 	xmlns:m="urn:import:de.swm.commons.mobile.client.widgets">
 
 	<g:HTMLPanel>
-        <m:SimpleHeaderPanel ui:field="header" leftButton="Back">
+        <m:HeaderPanel ui:field="header" leftButton="Back">
             <m:OnlyDesktopLabel>Load page</m:OnlyDesktopLabel>
-        </m:SimpleHeaderPanel>
+        </m:HeaderPanel>
 		<m:ScrollPanel>
 			<m:PagingListPanel ui:field="list" />
 		</m:ScrollPanel>		

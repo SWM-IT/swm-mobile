@@ -26,9 +26,9 @@
     </ui:style>
 
     <g:HTMLPanel>
-        <m:SimpleHeaderPanel ui:field="header" leftButton="Back">
+        <m:HeaderPanel ui:field="header" leftButton="Back">
             <m:OnlyDesktopLabel>Date Spinner</m:OnlyDesktopLabel>
-        </m:SimpleHeaderPanel>
+        </m:HeaderPanel>
         <m:ScrollPanel hasTextBox="true">
             <m:ListPanel selectable="false" styleName="ListPanel {style.flex}">
                 <m:ListItem>

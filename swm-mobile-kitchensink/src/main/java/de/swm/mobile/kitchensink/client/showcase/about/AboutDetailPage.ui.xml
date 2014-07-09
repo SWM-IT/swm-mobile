@@ -7,9 +7,9 @@
     <ui:with field='res' type='de.swm.mobile.kitchensink.client.theme.bootstrap.extention.TestResources'/>
 
     <g:HTMLPanel>
-        <m:SimpleHeaderPanel ui:field="header" leftButton="Back">
+        <m:HeaderPanel ui:field="header" leftButton="Back">
             <m:OnlyDesktopLabel>About</m:OnlyDesktopLabel>
-        </m:SimpleHeaderPanel>
+        </m:HeaderPanel>
         <div style="margin-left:10px;margin-top:10px;">Kitchensink demo for swm-mobile framework</div>
         <div style="margin-left:10px;min-height:30px;">See
             <a href="http://code.google.com/p/swm-mobile/" style="color:grey;">http://code.google.com/p/swm-mobile/</a>

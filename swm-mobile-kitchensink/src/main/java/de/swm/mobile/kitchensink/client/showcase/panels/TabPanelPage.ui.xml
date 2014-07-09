@@ -5,9 +5,9 @@
 	<ui:style>
 	</ui:style>
 	<g:HTMLPanel>
-		<m:SimpleHeaderPanel ui:field="header" leftButton="Back">
+		<m:HeaderPanel ui:field="header" leftButton="Back">
 			<m:OnlyDesktopLabel>Tab Panel</m:OnlyDesktopLabel>
-		</m:SimpleHeaderPanel>
+		</m:HeaderPanel>
 		<m:TabPanel ui:field="tab">
 			<m:Tab>
 				<m:TabHeader>

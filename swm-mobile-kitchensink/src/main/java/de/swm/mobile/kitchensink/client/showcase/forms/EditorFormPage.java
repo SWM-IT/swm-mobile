@@ -53,7 +53,7 @@ public class EditorFormPage extends ShowcaseDetailPage implements Editor<Person>
 	@UiField @Ignore
 	Button cancelButton;
     @UiField @Ignore
-    SimpleHeaderPanel header;
+	HeaderPanel header;
 
 
     private static EditorPageUiBinder uiBinder = GWT.create(EditorPageUiBinder.class);
@@ -117,7 +117,7 @@ public class EditorFormPage extends ShowcaseDetailPage implements Editor<Person>
 	}
 
     @Override
-    public SimpleHeaderPanel getHeaderPanel() {
+    public HeaderPanel getHeaderPanel() {
         return header;
     }
 }

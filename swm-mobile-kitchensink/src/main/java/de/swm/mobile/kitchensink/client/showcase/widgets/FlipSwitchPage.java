@@ -7,8 +7,7 @@ import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.uibinder.client.UiHandler;
 import com.google.gwt.user.client.ui.Widget;
 import de.swm.commons.mobile.client.utils.Utils;
-import de.swm.commons.mobile.client.widgets.SimpleHeaderPanel;
-import de.swm.mobile.kitchensink.client.Application;
+import de.swm.commons.mobile.client.widgets.HeaderPanel;
 import de.swm.mobile.kitchensink.client.base.ShowcaseDetailPage;
 
 import static de.swm.mobile.kitchensink.client.ShowcaseAnnotations.ShowcaseSource;
@@ -20,12 +19,12 @@ public class FlipSwitchPage extends ShowcaseDetailPage {
 
 
 	@UiField
-	SimpleHeaderPanel header;
+	HeaderPanel header;
 
 	private static FlipSwitchPageUiBinder uiBinder = GWT.create(FlipSwitchPageUiBinder.class);
 
 	@Override
-	public SimpleHeaderPanel getHeaderPanel() {
+	public HeaderPanel getHeaderPanel() {
 		return header;
 	}
 

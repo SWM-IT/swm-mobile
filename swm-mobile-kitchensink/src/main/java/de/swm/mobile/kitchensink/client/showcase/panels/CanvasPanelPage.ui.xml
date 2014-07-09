@@ -5,8 +5,8 @@
 	<ui:style>
 	</ui:style>
 	<g:HTMLPanel ui:field="htmlPanel">
-		<m:SimpleHeaderPanel ui:field="header" leftButton="Back">
+		<m:HeaderPanel ui:field="header" leftButton="Back">
             <m:OnlyDesktopLabel>Accordion Panel</m:OnlyDesktopLabel>
-		</m:SimpleHeaderPanel>
+		</m:HeaderPanel>
 	</g:HTMLPanel>	
 </ui:UiBinder> 

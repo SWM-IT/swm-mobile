@@ -11,12 +11,9 @@ import com.google.gwt.event.shared.UmbrellaException;
 import de.swm.commons.mobile.client.SWMMobile;
 import de.swm.commons.mobile.client.SWMMobileSettings;
 import de.swm.commons.mobile.client.page.SimplePage;
-import de.swm.commons.mobile.client.setup.Density;
 import de.swm.commons.mobile.client.setup.StatusBarStyle;
 import de.swm.commons.mobile.client.setup.ViewPort;
-import de.swm.commons.mobile.client.theme.base.BaseSWMMobileTheme;
-import de.swm.commons.mobile.client.theme.bright.BrightSWMMobileTheme;
-import de.swm.commons.mobile.client.widgets.SimpleHeaderPanel;
+import de.swm.commons.mobile.client.widgets.HeaderPanel;
 import de.swm.gwt.client.utils.Utils;
 import de.swm.mobile.kitchensink.client.theme.bootstrap.BootsrapSWMMobileTheme;
 
@@ -98,7 +95,7 @@ public class Application implements EntryPoint {
 
 
 
-	public static void addDefaultBackButtonHanlder(SimpleHeaderPanel header) {
+	public static void addDefaultBackButtonHanlder(HeaderPanel header) {
 		header.setLeftButtonClickHandler(new ClickHandler() {
 
 			@Override

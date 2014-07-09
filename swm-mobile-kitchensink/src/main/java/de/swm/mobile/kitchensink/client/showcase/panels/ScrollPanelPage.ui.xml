@@ -5,9 +5,9 @@
 	<ui:style>
 	</ui:style>
 	<g:HTMLPanel>
-		<m:SimpleHeaderPanel ui:field="header" leftButton="Back">
+		<m:HeaderPanel ui:field="header" leftButton="Back">
 			<m:OnlyDesktopLabel>Scroll Panel</m:OnlyDesktopLabel>
-		</m:SimpleHeaderPanel>
+		</m:HeaderPanel>
 		<m:ScrollPanel>
 			<m:ListPanel ui:field="list" showArrow="false">
 				<g:Label>Scroll Me 01</g:Label>

@@ -5,9 +5,9 @@
 	xmlns:t="urn:import:de.swm.commons.mobile.client.widgets.tree">
 	
 	<g:HTMLPanel ui:field="content">
-		<m:SimpleHeaderPanel ui:field="header" leftButton="Back">
+		<m:HeaderPanel ui:field="header" leftButton="Back">
 			<m:OnlyDesktopLabel>Tree Panel</m:OnlyDesktopLabel>
-		</m:SimpleHeaderPanel>
+		</m:HeaderPanel>
 		<t:TreePanel ui:field="treePanel" hasBreadcrumb="false" />		
 	</g:HTMLPanel>	
 </ui:UiBinder> 

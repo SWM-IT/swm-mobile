@@ -7,10 +7,9 @@ import com.google.gwt.uibinder.client.UiHandler;
 import com.google.gwt.user.client.ui.Widget;
 import de.swm.commons.mobile.client.event.SelectionChangedEvent;
 import de.swm.commons.mobile.client.utils.Utils;
+import de.swm.commons.mobile.client.widgets.HeaderPanel;
 import de.swm.commons.mobile.client.widgets.RadioButton;
 import de.swm.commons.mobile.client.widgets.RadioButtonGroup;
-import de.swm.commons.mobile.client.widgets.SimpleHeaderPanel;
-import de.swm.mobile.kitchensink.client.Application;
 import de.swm.mobile.kitchensink.client.base.ShowcaseDetailPage;
 
 import static de.swm.mobile.kitchensink.client.ShowcaseAnnotations.ShowcaseSource;
@@ -27,12 +26,12 @@ public class RadioButtonPage extends ShowcaseDetailPage {
 	RadioButtonGroup radiogroup2;
 
 	@UiField
-	SimpleHeaderPanel header;
+	HeaderPanel header;
 
 	private static RadioButtonPageUiBinder uiBinder = GWT.create(RadioButtonPageUiBinder.class);
 
 	@Override
-	public SimpleHeaderPanel getHeaderPanel() {
+	public HeaderPanel getHeaderPanel() {
 		return header;
 	}
 

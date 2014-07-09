@@ -16,9 +16,9 @@
 	
 	
 	<g:HTMLPanel>
-		<m:SimpleHeaderPanel ui:field="header" leftButton="Back">
+		<m:HeaderPanel ui:field="header" leftButton="Back">
 			<m:OnlyDesktopLabel>Check Box</m:OnlyDesktopLabel>
-		</m:SimpleHeaderPanel>
+		</m:HeaderPanel>
 		<m:ScrollPanel>
 			<m:ListPanel selectable="false">
 				<m:ListItem styleName="{style.modify}">

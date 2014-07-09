@@ -9,9 +9,9 @@
 	<ui:with field='icon' type='de.swm.mobile.kitchensink.client.theme.bootstrap.icon.IconResources'/>
 	
 	<g:HTMLPanel>
-		<m:SimpleHeaderPanel ui:field="header" leftButton="Back">
+		<m:HeaderPanel ui:field="header" leftButton="Back">
 			<m:OnlyDesktopLabel>Command Panel</m:OnlyDesktopLabel>
-		</m:SimpleHeaderPanel>
+		</m:HeaderPanel>
 		<mc:CommandPanel>
 				<mc:CommandItem ui:field='command1' headerText='Home' normalIcon='{icon.home}' highlightIcon='{icon.home_selected}' />
 				<mc:CommandItem ui:field='command2' headerText='Download' normalIcon='{icon.download}' highlightIcon='{icon.download_selected}' />

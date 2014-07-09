@@ -34,9 +34,9 @@
     <ui:with field='res' type='de.swm.mobile.kitchensink.client.theme.bootstrap.extention.TestResources'/>
 		
 	<g:HTMLPanel>
-		<m:SimpleHeaderPanel ui:field="header" leftButton="Back">
+		<m:HeaderPanel ui:field="header" leftButton="Back">
 			<m:OnlyDesktopLabel>Editor</m:OnlyDesktopLabel>
-		</m:SimpleHeaderPanel>
+		</m:HeaderPanel>
 		<m:ScrollPanel>
             <g:HTMLPanel>
                 <m:ListPanel selectable="false">

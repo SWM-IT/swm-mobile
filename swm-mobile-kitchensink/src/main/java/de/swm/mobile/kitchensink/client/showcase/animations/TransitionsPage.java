@@ -8,8 +8,8 @@ import com.google.gwt.user.client.ui.Widget;
 
 import de.swm.commons.mobile.client.event.SelectionChangedEvent;
 import de.swm.commons.mobile.client.page.Transition;
+import de.swm.commons.mobile.client.widgets.HeaderPanel;
 import de.swm.commons.mobile.client.widgets.ListPanel;
-import de.swm.commons.mobile.client.widgets.SimpleHeaderPanel;
 import de.swm.gwt.client.mobile.Direction;
 import de.swm.mobile.kitchensink.client.base.ShowcaseDetailPage;
 import de.swm.mobile.kitchensink.client.showcase.animations.util.TransitionDemoPage;
@@ -22,7 +22,7 @@ import static de.swm.mobile.kitchensink.client.ShowcaseAnnotations.ShowcaseUiXML
 public class TransitionsPage extends ShowcaseDetailPage {
 
     @UiField
-    SimpleHeaderPanel header;
+	HeaderPanel header;
 
 	@UiField
 	ListPanel list;
@@ -87,7 +87,7 @@ public class TransitionsPage extends ShowcaseDetailPage {
 	}
 
     @Override
-    public SimpleHeaderPanel getHeaderPanel() {
+    public HeaderPanel getHeaderPanel() {
         return header;
     }
 }

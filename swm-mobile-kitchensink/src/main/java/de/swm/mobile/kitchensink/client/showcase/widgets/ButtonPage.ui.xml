@@ -13,9 +13,9 @@
 	<ui:with field='icon' type='de.swm.mobile.kitchensink.client.theme.bootstrap.icon.IconResources'/>
 	
 	<g:HTMLPanel>
-		<m:SimpleHeaderPanel ui:field="header" leftButton="Back">
+		<m:HeaderPanel ui:field="header" leftButton="Back">
 			<m:OnlyDesktopLabel>Button</m:OnlyDesktopLabel>
-		</m:SimpleHeaderPanel>
+		</m:HeaderPanel>
 		<m:ScrollPanel>
 			<m:ListPanel selectable="false" secondaryStyle="{style.modify}">
 				<m:ListItem>
@@ -31,7 +31,7 @@
 					<m:Button ui:field="cancel3">Cancel</m:Button>
 				</m:ListItem>
 				<m:ListItem>
-					<m:SimpleImageButton ui:field="img" normalIcon='{icon.information}' headerText="Image Button Test" />
+					<m:ImageHighlightButton ui:field="img" normalIcon='{icon.information}' headerText="Image Button Test" />
 				</m:ListItem>
                 <m:ListItem>
                     <m:BigButton text="Big Button" />

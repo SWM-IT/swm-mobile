@@ -7,8 +7,8 @@ import com.google.gwt.uibinder.client.UiHandler;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Widget;
 import de.swm.commons.mobile.client.event.SelectionChangedEvent;
+import de.swm.commons.mobile.client.widgets.HeaderPanel;
 import de.swm.commons.mobile.client.widgets.ListPanel;
-import de.swm.commons.mobile.client.widgets.SimpleHeaderPanel;
 import de.swm.mobile.kitchensink.client.Application;
 import de.swm.mobile.kitchensink.client.base.ShowcaseDetailPage;
 
@@ -22,7 +22,7 @@ public class ListPanelPage extends ShowcaseDetailPage {
     @UiField
     ListPanel list1, list2;
     @UiField
-    SimpleHeaderPanel header;
+	HeaderPanel header;
 
     private static ListPanelPageUiBinder uiBinder = GWT.create(ListPanelPageUiBinder.class);
 
@@ -38,7 +38,7 @@ public class ListPanelPage extends ShowcaseDetailPage {
     }
 
     @Override
-    public SimpleHeaderPanel getHeaderPanel() {
+    public HeaderPanel getHeaderPanel() {
         return header;
     }
 

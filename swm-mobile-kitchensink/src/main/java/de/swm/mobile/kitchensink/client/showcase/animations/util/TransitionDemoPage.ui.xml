@@ -3,9 +3,9 @@
 	xmlns:g="urn:import:com.google.gwt.user.client.ui"
 	xmlns:m="urn:import:de.swm.commons.mobile.client.widgets">
 	<g:HTMLPanel>
-		<m:SimpleHeaderPanel leftButton="Back" ui:field="header">
+		<m:HeaderPanel leftButton="Back" ui:field="header">
 			<g:Label>Transition</g:Label>			
-		</m:SimpleHeaderPanel>
+		</m:HeaderPanel>
 		<m:ScrollPanel>
 			<m:ListPanel ui:field="list" showArrow="false">
 				<g:Label>Hope it is smooth</g:Label>			

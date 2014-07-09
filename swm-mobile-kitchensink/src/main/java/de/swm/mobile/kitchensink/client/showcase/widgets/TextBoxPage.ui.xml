@@ -5,9 +5,9 @@
              xmlns:bhtml="urn:import:org.gwtbootstrap3.client.ui"
              xmlns:m="urn:import:de.swm.commons.mobile.client.widgets">
     <g:HTMLPanel>
-        <m:SimpleHeaderPanel ui:field="header" leftButton="Back">
+        <m:HeaderPanel ui:field="header" leftButton="Back">
             <m:OnlyDesktopLabel>Bootstrap3 integration</m:OnlyDesktopLabel>
-        </m:SimpleHeaderPanel>
+        </m:HeaderPanel>
         <div class="row">
             <div class="col-md-10">
                 <h4>&nbsp;&nbsp;SWM-Mobile and Bootstrap3</h4>

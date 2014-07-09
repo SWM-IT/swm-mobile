@@ -5,9 +5,9 @@
 	<ui:style>
 	</ui:style>
 	<g:HTMLPanel>
-		<m:SimpleHeaderPanel ui:field="header" leftButton="Back" rightButton="Next">
+		<m:HeaderPanel ui:field="header" leftButton="Back" rightButton="Next">
 			<m:OnlyDesktopLabel>Slide Panel</m:OnlyDesktopLabel>
-		</m:SimpleHeaderPanel>
+		</m:HeaderPanel>
 		<m:SlidePanel ui:field="slider">
 			<m:Slide styleName="Slide Slide-Content">
 				<g:HTML>Slide Me!</g:HTML>

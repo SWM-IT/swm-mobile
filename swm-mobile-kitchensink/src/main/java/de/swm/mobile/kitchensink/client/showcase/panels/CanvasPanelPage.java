@@ -20,7 +20,7 @@ import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.HTMLPanel;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.Widget;
-import de.swm.commons.mobile.client.widgets.SimpleHeaderPanel;
+import de.swm.commons.mobile.client.widgets.HeaderPanel;
 import de.swm.mobile.kitchensink.client.Application;
 import de.swm.mobile.kitchensink.client.base.ShowcaseDetailPage;
 
@@ -36,7 +36,7 @@ public class CanvasPanelPage extends ShowcaseDetailPage {
     static final int width = 400;
 
     @UiField
-    SimpleHeaderPanel header;
+	HeaderPanel header;
     @UiField
     HTMLPanel htmlPanel;
 
@@ -59,7 +59,7 @@ public class CanvasPanelPage extends ShowcaseDetailPage {
     }
 
     @Override
-    public SimpleHeaderPanel getHeaderPanel() {
+    public HeaderPanel getHeaderPanel() {
         return header;
     }
 

@@ -4,7 +4,7 @@ import com.google.gwt.core.client.GWT;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.Widget;
-import de.swm.commons.mobile.client.widgets.SimpleHeaderPanel;
+import de.swm.commons.mobile.client.widgets.HeaderPanel;
 import de.swm.mobile.kitchensink.client.Application;
 import de.swm.mobile.kitchensink.client.base.ShowcaseDetailPage;
 
@@ -16,7 +16,7 @@ import static de.swm.mobile.kitchensink.client.ShowcaseAnnotations.ShowcaseUiXML
 public class ScrollPanelPage extends ShowcaseDetailPage {
 
     @UiField
-    SimpleHeaderPanel header;
+	HeaderPanel header;
 
     private static ScrollPanelPageUiBinder uiBinder = GWT
             .create(ScrollPanelPageUiBinder.class);
@@ -37,7 +37,7 @@ public class ScrollPanelPage extends ShowcaseDetailPage {
     }
 
     @Override
-    public SimpleHeaderPanel getHeaderPanel() {
+    public HeaderPanel getHeaderPanel() {
         return header;
     }
 

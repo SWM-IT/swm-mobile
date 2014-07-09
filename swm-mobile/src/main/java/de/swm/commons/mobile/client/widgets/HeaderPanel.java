@@ -13,36 +13,39 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
-package de.swm.commons.mobile.client.widgets.experimental;
+package de.swm.commons.mobile.client.widgets;
 
+import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
-import com.google.gwt.user.client.ui.FlowPanel;
-import com.google.gwt.user.client.ui.HTML;
-import com.google.gwt.user.client.ui.SimplePanel;
-import com.google.gwt.user.client.ui.Widget;
+import com.google.gwt.event.dom.client.TouchStartEvent;
+import com.google.gwt.event.dom.client.TouchStartHandler;
+import com.google.gwt.user.client.ui.*;
 import de.swm.commons.mobile.client.SWMMobile;
-import de.swm.commons.mobile.client.event.FastClickHelper;
-import de.swm.commons.mobile.client.widgets.*;
 import de.swm.commons.mobile.client.widgets.itf.IHeaderPanel;
+
+import java.util.Iterator;
 
 
 /**
- * Header-Panel which is very fast on Click events because an touch event will be forwarded as click event.
+ * Header-Panel which is not maintaining any history.
  */
-public class FastHeaderPanel extends SWMMobileWidgetBase implements IHeaderPanel {
+public class HeaderPanel extends SWMMobileWidgetBase implements HasWidgets, IHeaderPanel {
 
 	private static String next_caption = SWMMobile.getI18N().headerPanelNextButton();
 	private static String back_caption = SWMMobile.getI18N().headerPanelBackButton();
+	private static boolean isHideBackUttonsOnAndroid;
 
-	FastClickHelper.FastClickHandler myLeftButtonClickHandler;
-	FastClickHelper.FastClickHandler myRightButtonClickHandler;
-
+	ClickHandler myLeftButtonClickHandler;
+	ClickHandler myRightButtonClickHandler;
+	TouchStartHandler myLeftButtonTouchHandler;
+	TouchStartHandler myRightButtonTouchHandler;
+	final FlowPanel container;
 
 	/**
 	 * Default constructor.
 	 */
-	public FastHeaderPanel() {
-		FlowPanel container = new FlowPanel();
+	public HeaderPanel() {
+		container = new FlowPanel();
 
 		final SimplePanel leftButtonContainer = new SimplePanel();
 		container.add(leftButtonContainer); // left button placeholder
@@ -83,6 +86,7 @@ public class FastHeaderPanel extends SWMMobileWidgetBase implements IHeaderPanel
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void add(Widget w) {
 		FlowPanel contents = ((FlowPanel) ((FlowPanel) getWidget()).getWidget(1));
 		contents.add(w);
@@ -92,6 +96,7 @@ public class FastHeaderPanel extends SWMMobileWidgetBase implements IHeaderPanel
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void setCaption(String caption) {
 		FlowPanel contents = ((FlowPanel) ((FlowPanel) getWidget()).getWidget(1));
 		contents.clear();
@@ -102,6 +107,7 @@ public class FastHeaderPanel extends SWMMobileWidgetBase implements IHeaderPanel
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public String getCaption() {
 		FlowPanel contents = ((FlowPanel) ((FlowPanel) getWidget()).getWidget(1));
 		if (contents.getWidgetCount() > 0) {
@@ -139,39 +145,69 @@ public class FastHeaderPanel extends SWMMobileWidgetBase implements IHeaderPanel
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void setLeftButton(String buttonName) {
-		SimplePanel leftButton = ((SimplePanel) ((FlowPanel) getWidget()).getWidget(0));
-		FastClickHelper.FastClickHandler clickHandler = new FastClickHelper.FastClickHandler() {
-
-			@Override
-			public void onFastClick(FastClickHelper.FastClickEvent event) {
-				onLeftButtonClick(event);
+		if (!hideBackButtonsOnAndroid()) {
+			SimplePanel leftButton = ((SimplePanel) ((FlowPanel) getWidget()).getWidget(0));
+			final ClickHandler clickHandler = new ClickHandler() {
+				@Override
+				public void onClick(ClickEvent event) {
+					onLeftButtonClick(event);
+				}
+			};
+			final TouchStartHandler touchStartHandler = new TouchStartHandler() {
+				@Override
+				public void onTouchStart(TouchStartEvent event) {
+					onLeftButtonTouchStart(event);
+				}
+			};
+			if (back_caption.equalsIgnoreCase(buttonName)) {
+				BackButton button = new BackButton(buttonName, clickHandler);
+				button.addTouchStartHandler(touchStartHandler);
+				leftButton.setWidget(button);
+			} else {
+				Button button = new Button(buttonName, clickHandler);
+				button.addTouchStartHandler(touchStartHandler);
+				leftButton.setWidget(button);
 			}
-		};
-		if (back_caption.equalsIgnoreCase(buttonName)) {
-			leftButton.setWidget(new BackButton(buttonName, clickHandler));
-		} else {
-			leftButton.setWidget(new Button(buttonName, clickHandler));
 		}
+	}
+
+	private boolean hideBackButtonsOnAndroid() {
+		if (SWMMobile.getOsDetection().isAndroid() && isHideBackUttonsOnAndroid){
+			return true;
+		}
+		//dafaultmassig ist der back button aktiv
+		return false;
 	}
 
 
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public void setRightButton(String buttonName) {
 		SimplePanel rightButton = ((SimplePanel) ((FlowPanel) getWidget()).getWidget(2));
-		FastClickHelper.FastClickHandler clickHandler = new FastClickHelper.FastClickHandler() {
-
+		final ClickHandler clickHandler = new ClickHandler() {
 			@Override
-			public void onFastClick(FastClickHelper.FastClickEvent event) {
+			public void onClick(ClickEvent event) {
 				onRightButtonClick(event);
 			}
 		};
+		final TouchStartHandler touchStartHandler = new TouchStartHandler() {
+			@Override
+			public void onTouchStart(TouchStartEvent event) {
+				onRightButtonTouchStart(event);
+			}
+		};
 		if (buttonName.equalsIgnoreCase(next_caption)) {
-			rightButton.setWidget(new NextButton(buttonName, clickHandler));
+			NextButton button = new NextButton(buttonName, clickHandler);
+			button.addTouchStartHandler(touchStartHandler);
+			rightButton.setWidget(button);
 		} else {
-			rightButton.setWidget(new Button(buttonName, clickHandler));
+			Button button = new Button(buttonName, clickHandler);
+			button.addTouchStartHandler(touchStartHandler);
+			rightButton.setWidget(button);
 		}
 	}
 
@@ -190,6 +226,7 @@ public class FastHeaderPanel extends SWMMobileWidgetBase implements IHeaderPanel
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public Button getLeftButton() {
 		SimplePanel leftButton = ((SimplePanel) ((FlowPanel) getWidget()).getWidget(0));
 		return (Button) leftButton.getWidget();
@@ -199,33 +236,35 @@ public class FastHeaderPanel extends SWMMobileWidgetBase implements IHeaderPanel
 	/**
 	 * {@inheritDoc}
 	 */
+	@Override
 	public Button getRightButton() {
 		SimplePanel rightButton = ((SimplePanel) ((FlowPanel) getWidget()).getWidget(2));
 		return (Button) rightButton.getWidget();
 	}
 
 
-
-	/**
-	 * When the left button was clicked
-	 *
-	 * @param event the click event
-	 */
-	public void onLeftButtonClick(FastClickHelper.FastClickEvent event) {
+	private void onLeftButtonClick(ClickEvent event) {
 		if (myLeftButtonClickHandler != null) {
-			myLeftButtonClickHandler.onFastClick(event);
+			myLeftButtonClickHandler.onClick(event);
 		}
 	}
 
 
-	/**
-	 * When the right button was clicked
-	 *
-	 * @param event the click event
-	 */
-	void onRightButtonClick(FastClickHelper.FastClickEvent event) {
+	private void onRightButtonClick(ClickEvent event) {
 		if (myRightButtonClickHandler != null) {
-			myRightButtonClickHandler.onFastClick(event);
+			myRightButtonClickHandler.onClick(event);
+		}
+	}
+
+	private void onLeftButtonTouchStart(TouchStartEvent event) {
+		if (myLeftButtonTouchHandler != null) {
+			myLeftButtonTouchHandler.onTouchStart(event);
+		}
+	}
+
+	private void onRightButtonTouchStart(TouchStartEvent event) {
+		if (myRightButtonTouchHandler != null) {
+			myRightButtonTouchHandler.onTouchStart(event);
 		}
 	}
 
@@ -233,7 +272,8 @@ public class FastHeaderPanel extends SWMMobileWidgetBase implements IHeaderPanel
 	/**
 	 * {@inheritDoc}
 	 */
-	public void setLeftButtonClickHandler(FastClickHelper.FastClickHandler handler) {
+	@Override
+	public void setLeftButtonClickHandler(ClickHandler handler) {
 		myLeftButtonClickHandler = handler;
 	}
 
@@ -241,18 +281,49 @@ public class FastHeaderPanel extends SWMMobileWidgetBase implements IHeaderPanel
 	/**
 	 * {@inheritDoc}
 	 */
-	public void setRightButtonClickHandler(FastClickHelper.FastClickHandler handler) {
+	@Override
+	public void setRightButtonClickHandler(ClickHandler handler) {
 		myRightButtonClickHandler = handler;
 	}
 
-	@Override
-	public void setLeftButtonClickHandler(ClickHandler handler) {
-		setLeftButtonClickHandler(FastClickHelper.wrapAsFastClickHandler(handler));
+	/**
+	 * {@inheritDoc}
+	 */
+	public void setLeftButtonTouchHandler(TouchStartHandler handler) {
+		myLeftButtonTouchHandler = handler;
 	}
 
+
+	/**
+	 * {@inheritDoc}
+	 */
+	public void setRightButtonTouchHandler(TouchStartHandler handler) {
+		myRightButtonTouchHandler = handler;
+	}
+
+
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
-	public void setRightButtonClickHandler(ClickHandler handler) {
-		setRightButtonClickHandler(FastClickHelper.wrapAsFastClickHandler(handler));
+	public Iterator<Widget> iterator() {
+		return null;
+	}
+
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public boolean remove(Widget w) {
+		return false;
+	}
+
+
+	@Override
+	public void clear() {
+		container.clear();
+
 	}
 
 
@@ -268,4 +339,11 @@ public class FastHeaderPanel extends SWMMobileWidgetBase implements IHeaderPanel
 		next_caption = nextCaptionText;
 	}
 
+	/**
+	 * If true - back button will not be visible on android.
+	 * @param hideBackUttonsOnAndroid if true back button will not be visible on android
+	 */
+	public static void setHideBackBttonsOnAndroid(boolean hideBackUttonsOnAndroid) {
+		isHideBackUttonsOnAndroid = hideBackUttonsOnAndroid;
+	}
 }

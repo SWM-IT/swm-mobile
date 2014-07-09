@@ -10,15 +10,15 @@ import com.google.gwt.user.client.ui.Widget;
 
 import de.swm.commons.mobile.client.event.SelectionChangedEvent;
 import de.swm.commons.mobile.client.page.SimplePage;
+import de.swm.commons.mobile.client.widgets.HeaderPanel;
 import de.swm.commons.mobile.client.widgets.ListPanel;
-import de.swm.commons.mobile.client.widgets.SimpleHeaderPanel;
 import de.swm.gwt.client.mobile.Direction;
 import de.swm.mobile.kitchensink.client.base.ShowcaseDetailPage;
 
 public class TransitionDemoPage extends SimplePage {
 
     @UiField
-    SimpleHeaderPanel header;
+	HeaderPanel header;
 
     @UiField
     ListPanel list;

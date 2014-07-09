@@ -9,9 +9,9 @@
 	<ui:with field='icon' type='de.swm.mobile.kitchensink.client.theme.bootstrap.icon.IconResources'/>
 	
 	<g:HTMLPanel>
-		<m:SimpleHeaderPanel ui:field="header" leftButton="Back">
+		<m:HeaderPanel ui:field="header" leftButton="Back">
 			<m:OnlyDesktopLabel>Toolbar Panel</m:OnlyDesktopLabel>
-		</m:SimpleHeaderPanel>
+		</m:HeaderPanel>
 		<mt:ToolbarPanel indexToSelectOnInit="0" ui:field="toolbar">
 			<mt:ToolbarElement>
 				<mt:ToolbarHeader headerText='Item 1' headerImage='{icon.tab0}' highlightImage='{icon.tab0selected}' />

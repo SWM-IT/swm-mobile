@@ -6,10 +6,10 @@ import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.Widget;
 
+import de.swm.commons.mobile.client.widgets.HeaderPanel;
 import de.swm.commons.mobile.client.widgets.ListItem;
 import de.swm.commons.mobile.client.widgets.ListPanel;
 import de.swm.commons.mobile.client.widgets.ScrollPanel;
-import de.swm.commons.mobile.client.widgets.SimpleHeaderPanel;
 import de.swm.commons.mobile.client.widgets.toolbar.ToolbarContent;
 import de.swm.commons.mobile.client.widgets.toolbar.ToolbarElement;
 import de.swm.commons.mobile.client.widgets.toolbar.ToolbarPanel;
@@ -24,7 +24,8 @@ import static de.swm.mobile.kitchensink.client.ShowcaseAnnotations.ShowcaseUiXML
 @ShowcaseUiXML({"ToolbarPanelPage.ui.xml"})
 public class ToolbarPanelPage extends ShowcaseDetailPage {
 
-	@UiField SimpleHeaderPanel header;
+	@UiField
+	HeaderPanel header;
 	@UiField ToolbarPanel toolbar;
 	
 	private static ToolbarPanelPageUiBinder uiBinder = GWT.create(ToolbarPanelPageUiBinder.class);
@@ -59,7 +60,7 @@ public class ToolbarPanelPage extends ShowcaseDetailPage {
 	}
 
     @Override
-    public SimpleHeaderPanel getHeaderPanel() {
+    public HeaderPanel getHeaderPanel() {
         return header;
     }
 

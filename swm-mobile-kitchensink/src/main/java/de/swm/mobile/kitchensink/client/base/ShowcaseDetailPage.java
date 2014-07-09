@@ -7,8 +7,8 @@ import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.HasWidgets;
 import de.swm.commons.mobile.client.page.SimplePage;
 import de.swm.commons.mobile.client.widgets.Button;
+import de.swm.commons.mobile.client.widgets.HeaderPanel;
 import de.swm.commons.mobile.client.widgets.HorizontalPanel;
-import de.swm.commons.mobile.client.widgets.SimpleHeaderPanel;
 import de.swm.gwt.client.mobile.Direction;
 import de.swm.mobile.kitchensink.client.ShowcaseConstants;
 
@@ -25,7 +25,7 @@ public abstract class ShowcaseDetailPage extends SimplePage {
     private HasWidgets parentPage;
 
 
-    public abstract SimpleHeaderPanel getHeaderPanel();
+    public abstract HeaderPanel getHeaderPanel();
 
 	protected ShowcaseDetailPage(Class<? extends ShowcaseDetailPage> clazz) {
 		this.clazz = clazz;

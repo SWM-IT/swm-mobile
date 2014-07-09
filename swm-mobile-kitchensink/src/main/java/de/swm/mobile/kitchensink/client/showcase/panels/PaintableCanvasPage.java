@@ -8,8 +8,8 @@ import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.HTMLPanel;
 import com.google.gwt.user.client.ui.ListBox;
 import com.google.gwt.user.client.ui.Widget;
+import de.swm.commons.mobile.client.widgets.HeaderPanel;
 import de.swm.commons.mobile.client.widgets.PaintableCanvas;
-import de.swm.commons.mobile.client.widgets.SimpleHeaderPanel;
 import de.swm.mobile.kitchensink.client.Application;
 import de.swm.mobile.kitchensink.client.base.ShowcaseDetailPage;
 import de.swm.mobile.kitchensink.client.theme.bootstrap.icon.IconResources;
@@ -26,7 +26,7 @@ public class PaintableCanvasPage extends ShowcaseDetailPage {
     static final int width = 400;
 
     @UiField
-    SimpleHeaderPanel header;
+	HeaderPanel header;
 
     @UiField
     HTMLPanel htmlPanel;
@@ -106,7 +106,7 @@ public class PaintableCanvasPage extends ShowcaseDetailPage {
     }
 
     @Override
-    public SimpleHeaderPanel getHeaderPanel() {
+    public HeaderPanel getHeaderPanel() {
         return header;
     }
 }

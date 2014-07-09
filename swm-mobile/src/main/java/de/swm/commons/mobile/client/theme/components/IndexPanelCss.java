@@ -16,12 +16,10 @@
 package de.swm.commons.mobile.client.theme.components;
 
 import com.google.gwt.resources.client.CssResource;
-import de.swm.commons.mobile.client.widgets.IndexedScrollPanel;
-
 
 
 /**
- * Represents a css resource for a {@link IndexedScrollPanel}. <br>
+ * Represents a css resource for a {@link de.swm.commons.mobile.client.widgets.IndexedScrollPanelWithPager}. <br>
  * 
  */
 public interface IndexPanelCss extends CssResource {

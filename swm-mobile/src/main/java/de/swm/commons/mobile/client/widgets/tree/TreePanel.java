@@ -65,7 +65,7 @@ public class TreePanel extends PanelBase implements SwipeEventsHandler {
 		if (hasBreadcrumb) {
 			HorizontalPanel breadcrumbPanel = new HorizontalPanel();
 			breadcrumbPanel.addStyleName(css.getTreeBreadcrumbPanel());
-			SimpleImageButton backButton = new SimpleImageButton(SWMMobile.getTheme().getMGWTImageBundle().arrowleft(), new ClickHandler() {
+			ImageHighlightButton backButton = new ImageHighlightButton(SWMMobile.getTheme().getMGWTImageBundle().arrowleft(), new ClickHandler() {
 
 				@Override
 				public void onClick(ClickEvent event) {

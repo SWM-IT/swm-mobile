@@ -7,8 +7,7 @@ import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.uibinder.client.UiHandler;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Widget;
-import de.swm.commons.mobile.client.widgets.SimpleHeaderPanel;
-import de.swm.mobile.kitchensink.client.Application;
+import de.swm.commons.mobile.client.widgets.HeaderPanel;
 import de.swm.mobile.kitchensink.client.base.ShowcaseDetailPage;
 
 import static de.swm.mobile.kitchensink.client.ShowcaseAnnotations.ShowcaseSource;
@@ -21,7 +20,7 @@ public class ButtonPage extends ShowcaseDetailPage {
 	private static ButtonPageUiBinder uiBinder = GWT.create(ButtonPageUiBinder.class);
 
 	@UiField
-	SimpleHeaderPanel header;
+	HeaderPanel header;
 
 
 	interface ButtonPageUiBinder extends UiBinder<Widget, ButtonPage> {
@@ -37,7 +36,7 @@ public class ButtonPage extends ShowcaseDetailPage {
 	 * Initialize this example.
 	 */
 	@Override
-	public SimpleHeaderPanel getHeaderPanel() {
+	public HeaderPanel getHeaderPanel() {
 		StringBuilder sb = new StringBuilder();
 		sb.append("halooo showcase");
 		GWT.log(sb.toString());

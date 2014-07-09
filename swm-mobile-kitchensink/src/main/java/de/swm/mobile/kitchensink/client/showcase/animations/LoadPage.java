@@ -9,10 +9,10 @@ import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Widget;
 import de.swm.commons.mobile.client.event.SelectionChangedEvent;
 import de.swm.commons.mobile.client.widgets.DecoratedListItem;
+import de.swm.commons.mobile.client.widgets.HeaderPanel;
 import de.swm.commons.mobile.client.widgets.ListItem;
 import de.swm.commons.mobile.client.widgets.PagingListPanel;
 import de.swm.commons.mobile.client.widgets.PagingListPanel.ListItemProvider;
-import de.swm.commons.mobile.client.widgets.SimpleHeaderPanel;
 import de.swm.mobile.kitchensink.client.base.ShowcaseDetailPage;
 import de.swm.mobile.kitchensink.client.theme.bootstrap.extention.TestResources;
 
@@ -30,7 +30,7 @@ public class LoadPage extends ShowcaseDetailPage {
     PagingListPanel list;
 
     @UiField
-    SimpleHeaderPanel header;
+	HeaderPanel header;
 
     private static LoadPageUiBinder uiBinder = GWT.create(LoadPageUiBinder.class);
 
@@ -90,7 +90,7 @@ public class LoadPage extends ShowcaseDetailPage {
     }
 
     @Override
-    public SimpleHeaderPanel getHeaderPanel() {
+    public HeaderPanel getHeaderPanel() {
         return header;
     }
 }

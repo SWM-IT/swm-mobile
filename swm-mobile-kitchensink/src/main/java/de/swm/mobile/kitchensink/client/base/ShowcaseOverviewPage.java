@@ -9,9 +9,9 @@ import com.google.gwt.user.client.ui.HasWidgets;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.Widget;
 import de.swm.commons.mobile.client.page.SimplePage;
+import de.swm.commons.mobile.client.widgets.HeaderPanel;
 import de.swm.commons.mobile.client.widgets.ListItem;
 import de.swm.commons.mobile.client.widgets.ListPanel;
-import de.swm.commons.mobile.client.widgets.SimpleHeaderPanel;
 import de.swm.gwt.client.mobile.Direction;
 import de.swm.mobile.kitchensink.client.theme.bootstrap.extention.TestResources;
 
@@ -27,7 +27,7 @@ public abstract class ShowcaseOverviewPage extends SimplePage {
 	private final TestResources resources;
 
 	@UiField
-	SimpleHeaderPanel header;
+	HeaderPanel header;
 
 	@UiField
 	ListPanel components;

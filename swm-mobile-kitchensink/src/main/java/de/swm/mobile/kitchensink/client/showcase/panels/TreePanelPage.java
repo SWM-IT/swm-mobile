@@ -7,7 +7,7 @@ import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.HTMLPanel;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.Widget;
-import de.swm.commons.mobile.client.widgets.SimpleHeaderPanel;
+import de.swm.commons.mobile.client.widgets.HeaderPanel;
 import de.swm.commons.mobile.client.widgets.VerticalPanel;
 import de.swm.commons.mobile.client.widgets.tree.*;
 import de.swm.commons.mobile.client.widgets.tree.ITreeNode.ITreeNodeDisplay;
@@ -34,7 +34,7 @@ public class TreePanelPage extends ShowcaseDetailPage {
     @UiField
     HTMLPanel content;
     @UiField
-    SimpleHeaderPanel header;
+	HeaderPanel header;
     @UiField
     TreePanel treePanel;
 
@@ -49,7 +49,7 @@ public class TreePanelPage extends ShowcaseDetailPage {
     }
 
     @Override
-    public SimpleHeaderPanel getHeaderPanel() {
+    public HeaderPanel getHeaderPanel() {
         return header;
     }
 

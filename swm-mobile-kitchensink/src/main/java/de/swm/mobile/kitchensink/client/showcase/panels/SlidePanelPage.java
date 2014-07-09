@@ -7,7 +7,7 @@ import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.Widget;
-import de.swm.commons.mobile.client.widgets.SimpleHeaderPanel;
+import de.swm.commons.mobile.client.widgets.HeaderPanel;
 import de.swm.commons.mobile.client.widgets.Slide;
 import de.swm.commons.mobile.client.widgets.SlidePanel;
 import de.swm.commons.mobile.client.widgets.SlidePanel.SlideProvider;
@@ -23,7 +23,7 @@ import static de.swm.mobile.kitchensink.client.ShowcaseAnnotations.ShowcaseUiXML
 public class SlidePanelPage extends ShowcaseDetailPage implements SlideProvider {
 
     @UiField
-    SimpleHeaderPanel header;
+	HeaderPanel header;
     @UiField
     SlidePanel slider;
 
@@ -74,7 +74,7 @@ public class SlidePanelPage extends ShowcaseDetailPage implements SlideProvider 
     }
 
     @Override
-    public SimpleHeaderPanel getHeaderPanel() {
+    public HeaderPanel getHeaderPanel() {
         return header;
     }
 

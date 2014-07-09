@@ -403,7 +403,7 @@ public class SimpleDatePopup extends SimplePopup {
 	private VerticalPanel createSpinner(final DateField df) {
 		VerticalPanel vPanel = new VerticalPanel();
 		vPanel.setVisible(false);
-		SimpleImageButton upButton = new SimpleImageButton(null, SWMMobile.getTheme().getMGWTImageBundle().arrowup(), null, new ClickHandler() {
+		ImageHighlightButton upButton = new ImageHighlightButton(null, SWMMobile.getTheme().getMGWTImageBundle().arrowup(), null, new ClickHandler() {
 			/**
 			 * {@inheritDoc}
 			 */
@@ -518,7 +518,7 @@ public class SimpleDatePopup extends SimplePopup {
 		label.setStyleName(SWMMobile.getTheme().getMGWTCssBundle().getPopupsCss().dateValueLabel());
 		vPanel.add(label);
 
-		SimpleImageButton downButton = new SimpleImageButton(null, SWMMobile.getTheme().getMGWTImageBundle().arrowdown(), null,
+		ImageHighlightButton downButton = new ImageHighlightButton(null, SWMMobile.getTheme().getMGWTImageBundle().arrowdown(), null,
 				new ClickHandler() {
 
 					@Override
