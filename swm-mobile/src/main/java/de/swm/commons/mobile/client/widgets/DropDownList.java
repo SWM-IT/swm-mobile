@@ -27,6 +27,7 @@ import com.google.gwt.user.client.DOM;
 import com.google.gwt.user.client.Timer;
 import com.google.gwt.user.client.ui.*;
 import de.swm.commons.mobile.client.SWMMobile;
+import de.swm.commons.mobile.client.base.PanelBase;
 import de.swm.commons.mobile.client.widgets.itf.IProvidesKeyAndValue;
 
 import java.util.Collection;

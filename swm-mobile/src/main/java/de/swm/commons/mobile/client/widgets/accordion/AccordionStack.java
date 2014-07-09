@@ -23,7 +23,7 @@ import de.swm.commons.mobile.client.SWMMobile;
 import de.swm.commons.mobile.client.event.AccordionEvent;
 import de.swm.commons.mobile.client.event.AccordionEventsHandler;
 import de.swm.commons.mobile.client.utils.Utils;
-import de.swm.commons.mobile.client.widgets.PanelBase;
+import de.swm.commons.mobile.client.base.PanelBase;
 
 import java.util.ArrayList;
 import java.util.List;

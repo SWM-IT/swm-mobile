@@ -15,7 +15,7 @@
  */
 package de.swm.commons.mobile.client.widgets.accordion;
 
-import de.swm.commons.mobile.client.widgets.PanelBase;
+import de.swm.commons.mobile.client.base.PanelBase;
 
 /**
  * Represents the content of an {@link AccordionStack}.

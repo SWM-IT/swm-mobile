@@ -25,7 +25,7 @@ import com.google.gwt.i18n.client.DateTimeFormat;
 import com.google.gwt.uibinder.client.UiConstructor;
 import com.google.gwt.user.client.ui.HasValue;
 import com.google.gwt.user.client.ui.Label;
-import de.swm.commons.mobile.client.widgets.PanelBase;
+import de.swm.commons.mobile.client.base.PanelBase;
 
 import java.util.Date;
 

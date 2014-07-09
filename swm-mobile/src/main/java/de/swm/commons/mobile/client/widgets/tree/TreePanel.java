@@ -24,6 +24,7 @@ import com.google.gwt.user.client.EventListener;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.Widget;
 import de.swm.commons.mobile.client.SWMMobile;
+import de.swm.commons.mobile.client.base.PanelBase;
 import de.swm.commons.mobile.client.event.*;
 import de.swm.commons.mobile.client.theme.components.TreePanelCss;
 import de.swm.commons.mobile.client.utils.Utils;

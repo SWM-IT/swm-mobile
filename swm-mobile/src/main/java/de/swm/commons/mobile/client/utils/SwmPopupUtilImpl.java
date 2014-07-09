@@ -7,6 +7,7 @@ import com.google.gwt.event.logical.shared.ValueChangeEvent;
 import com.google.gwt.event.logical.shared.ValueChangeHandler;
 import com.google.gwt.user.client.ui.*;
 import de.swm.commons.mobile.client.SWMMobile;
+import de.swm.commons.mobile.client.base.PanelBase;
 import de.swm.commons.mobile.client.constants.I18NConstants;
 import de.swm.commons.mobile.client.event.FastClickHelper;
 import de.swm.commons.mobile.client.theme.SWMMobileImageBundle;

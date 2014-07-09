@@ -23,6 +23,7 @@ import com.google.gwt.user.client.Element;
 import com.google.gwt.user.client.ui.HasWidgets;
 import com.google.gwt.user.client.ui.Widget;
 import de.swm.commons.mobile.client.SWMMobile;
+import de.swm.commons.mobile.client.base.PanelBase;
 import de.swm.commons.mobile.client.event.*;
 import de.swm.commons.mobile.client.utils.Utils;
 

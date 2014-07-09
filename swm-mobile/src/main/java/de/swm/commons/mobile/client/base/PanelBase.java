@@ -13,11 +13,12 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
-package de.swm.commons.mobile.client.widgets;
+package de.swm.commons.mobile.client.base;
 
 import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.HasWidgets;
 import com.google.gwt.user.client.ui.Widget;
+import de.swm.commons.mobile.client.widgets.SWMMobileWidgetBase;
 
 import java.util.Iterator;
 

@@ -195,7 +195,7 @@ public class IndexedScrollPanelWithPager extends HorizontalPanel {
 	/**
 	 * Clears all entries.
 	 *
-	 * @see de.swm.commons.mobile.client.widgets.PanelBase#clear()
+	 * @see de.swm.commons.mobile.client.base.PanelBase#clear()
 	 */
 	@Override
 	public void clear() {

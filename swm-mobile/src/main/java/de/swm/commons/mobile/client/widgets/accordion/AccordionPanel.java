@@ -16,7 +16,7 @@
 package de.swm.commons.mobile.client.widgets.accordion;
 
 import de.swm.commons.mobile.client.SWMMobile;
-import de.swm.commons.mobile.client.widgets.PanelBase;
+import de.swm.commons.mobile.client.base.PanelBase;
 
 
 /**

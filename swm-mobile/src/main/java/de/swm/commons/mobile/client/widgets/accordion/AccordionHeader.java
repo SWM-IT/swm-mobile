@@ -22,7 +22,7 @@ import de.swm.commons.mobile.client.SWMMobile;
 import de.swm.commons.mobile.client.event.DragController;
 import de.swm.commons.mobile.client.event.DragEvent;
 import de.swm.commons.mobile.client.event.DragEventsHandler;
-import de.swm.commons.mobile.client.widgets.PanelBase;
+import de.swm.commons.mobile.client.base.PanelBase;
 
 
 /**
