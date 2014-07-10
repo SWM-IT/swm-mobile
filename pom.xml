@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>de.swm</groupId>
     <artifactId>swm-mobile-base</artifactId>
@@ -18,9 +19,9 @@
         <maven.javadoc.skip>true</maven.javadoc.skip>
     </properties>
     <scm>
-        <connection>scm:git:https://github.com/SWM-IT/swm-mobile.git</connection>
-        <developerConnection>scm:git:https://github.com/SWM-IT/swm-mobile.git</developerConnection>
-        <url>https://github.com/SWM-IT/swm-mobile.git</url>
+        <connection>scm:git:https://SWM-IT@github.com/SWM-IT/swm-mobile.git</connection>
+        <developerConnection>scm:git:https://SWM-IT@github.com/SWM-IT/swm-mobile.git</developerConnection>
+        <url>SWM-IT@github.com/SWM-IT/swm-mobile.git</url>
     </scm>
     <organization>
         <name>SWM</name>
@@ -40,208 +41,211 @@
         </developer>
     </developers>
     <dependencyManagement>
-	   <dependencies>
-		<!-- START SUBPROJEKTE -->
-		<dependency>
-            <groupId>de.swm</groupId>
-            <artifactId>swm-gwt-client</artifactId>
-            <version>${swm.gwtclient.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>de.swm</groupId>
-            <artifactId>swm-mobile</artifactId>
-            <version>${swm.mobile.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>de.swm</groupId>
-            <artifactId>swm-mobile-kitchensink</artifactId>
-            <version>2.0-SNAPSHOT</version>
-        </dependency>
-		<!-- ENDE SUBPROJEKTE -->
-        <!-- Open Street-Map integration -->
-        <dependency>
-            <groupId>org.gwtopenmaps.openlayers</groupId>
-            <artifactId>gwt-openlayers-client</artifactId>
-            <version>0.8</version>
-        </dependency>
-        <!-- Enable to use GIN as DI framework -->
-        <dependency>
-            <groupId>com.google.inject</groupId>
-            <artifactId>guice</artifactId>
-            <version>${guice.version}</version>
-            <scope>provided</scope>
-        </dependency>
-		<!-- Piriti for GWT-JSON-Mapping http://code.google.com/p/piriti/ -->
-        <dependency>
-            <groupId>name.pehl.piriti</groupId>
-            <artifactId>piriti-core</artifactId>
-            <version>0.7b3</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>name.pehl</groupId>
-            <artifactId>totoe</artifactId>
-            <version>0.2.4</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>javax.inject</groupId>
-            <artifactId>javax.inject</artifactId>
-            <version>1</version>
-            <scope>provided</scope>
-        </dependency>
-        <!-- GWT Event bus -->
-        <dependency>
-            <groupId>com.google.gwt.eventbinder</groupId>
-            <artifactId>eventbinder</artifactId>
-            <version>1.0.2</version>
-        </dependency>
-        <!--http://gwt-mobile-webkit.googlecode.com/svn/repo/  -->
-        <dependency>
-            <groupId>com.google.code.gwt-mobile-webkit</groupId>
-            <artifactId>gwt-html5-database</artifactId>
-            <version>1.5.1.gwt2</version>
-            <scope>provided</scope>
-        </dependency>
-        <!-- GWT dependencies (from maven "central" repo). -->
-        <dependency>
-            <groupId>com.google.gwt</groupId>
-            <artifactId>gwt-servlet</artifactId>
-            <version>${gwt.version}</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.google.gwt</groupId>
-            <artifactId>gwt-user</artifactId>
-            <version>${gwt.version}</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.google.gwt</groupId>
-            <artifactId>gwt-dev</artifactId>
-            <version>${gwt.version}</version>
-            <scope>provided</scope>
-        </dependency>
-        <!-- Gin 1.5 -->
-        <dependency>
-            <groupId>com.google.gwt.inject</groupId>
-            <artifactId>gin</artifactId>
-            <version>1.5.0</version>
-            <scope>provided</scope>
-        </dependency>
-        <!-- Testing -->
-        <dependency>
-            <groupId>org.easymock</groupId>
-            <artifactId>easymock</artifactId>
-            <version>3.0</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.5</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>joda-time</groupId>
-            <artifactId>joda-time</artifactId>
-            <version>2.0</version>
-            <scope>test</scope>
-        </dependency>
-		  <!-- zur Emulation von Json reader / Writer -->
-        <dependency>
-            <groupId>com.thoughtworks.xstream</groupId>
-            <artifactId>xstream</artifactId>
-            <scope>test</scope>
-            <version>1.3.1</version>
-        </dependency>
-		        </dependencies>
+        <dependencies>
+            <!-- START SUBPROJEKTE -->
+            <dependency>
+                <groupId>de.swm</groupId>
+                <artifactId>swm-gwt-client</artifactId>
+                <version>${swm.gwtclient.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>de.swm</groupId>
+                <artifactId>swm-mobile</artifactId>
+                <version>${swm.mobile.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>de.swm</groupId>
+                <artifactId>swm-mobile-kitchensink</artifactId>
+                <version>2.0-SNAPSHOT</version>
+            </dependency>
+            <!-- ENDE SUBPROJEKTE -->
+            <!-- Open Street-Map integration -->
+            <dependency>
+                <groupId>org.gwtopenmaps.openlayers</groupId>
+                <artifactId>gwt-openlayers-client</artifactId>
+                <version>0.8</version>
+            </dependency>
+            <!-- Enable to use GIN as DI framework -->
+            <dependency>
+                <groupId>com.google.inject</groupId>
+                <artifactId>guice</artifactId>
+                <version>${guice.version}</version>
+                <scope>provided</scope>
+            </dependency>
+            <!-- Piriti for GWT-JSON-Mapping http://code.google.com/p/piriti/ -->
+            <dependency>
+                <groupId>name.pehl.piriti</groupId>
+                <artifactId>piriti-core</artifactId>
+                <version>0.7b3</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>name.pehl</groupId>
+                <artifactId>totoe</artifactId>
+                <version>0.2.4</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>javax.inject</groupId>
+                <artifactId>javax.inject</artifactId>
+                <version>1</version>
+                <scope>provided</scope>
+            </dependency>
+            <!-- GWT Event bus -->
+            <dependency>
+                <groupId>com.google.gwt.eventbinder</groupId>
+                <artifactId>eventbinder</artifactId>
+                <version>1.0.2</version>
+            </dependency>
+            <!--http://gwt-mobile-webkit.googlecode.com/svn/repo/  -->
+            <dependency>
+                <groupId>com.google.code.gwt-mobile-webkit</groupId>
+                <artifactId>gwt-html5-database</artifactId>
+                <version>1.5.1.gwt2</version>
+                <scope>provided</scope>
+            </dependency>
+            <!-- GWT dependencies (from maven "central" repo). -->
+            <dependency>
+                <groupId>com.google.gwt</groupId>
+                <artifactId>gwt-servlet</artifactId>
+                <version>${gwt.version}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.google.gwt</groupId>
+                <artifactId>gwt-user</artifactId>
+                <version>${gwt.version}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.google.gwt</groupId>
+                <artifactId>gwt-dev</artifactId>
+                <version>${gwt.version}</version>
+                <scope>provided</scope>
+            </dependency>
+            <!-- Gin 1.5 -->
+            <dependency>
+                <groupId>com.google.gwt.inject</groupId>
+                <artifactId>gin</artifactId>
+                <version>1.5.0</version>
+                <scope>provided</scope>
+            </dependency>
+            <!-- Testing -->
+            <dependency>
+                <groupId>org.easymock</groupId>
+                <artifactId>easymock</artifactId>
+                <version>3.0</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>4.5</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>joda-time</groupId>
+                <artifactId>joda-time</artifactId>
+                <version>2.0</version>
+                <scope>test</scope>
+            </dependency>
+            <!-- zur Emulation von Json reader / Writer -->
+            <dependency>
+                <groupId>com.thoughtworks.xstream</groupId>
+                <artifactId>xstream</artifactId>
+                <scope>test</scope>
+                <version>1.3.1</version>
+            </dependency>
+        </dependencies>
     </dependencyManagement>
 
     <build>
         <pluginManagement>
-		 <plugins>
-            <!-- START: Plugins for maven central distribution -->
-            <plugin>
-                <groupId>org.sonatype.plugins</groupId>
-                <artifactId>nexus-staging-maven-plugin</artifactId>
-                <version>1.6.1</version>
-                <extensions>true</extensions>
-                <configuration>
-                    <serverId>ossrh</serverId>
-                    <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-                    <autoReleaseAfterClose>true</autoReleaseAfterClose>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-source-plugin</artifactId>
-                <version>2.2.1</version>
-                <executions>
-                    <execution>
-                        <id>attach-sources</id>
-                        <goals>
-                            <goal>jar-no-fork</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-javadoc-plugin</artifactId>
-                <version>2.9.1</version>
-                <executions>
-                    <execution>
-                        <id>attach-javadocs</id>
-                        <goals>
-                            <goal>jar</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-gpg-plugin</artifactId>
-                <version>1.5</version>
-                <executions>
-                    <execution>
-                        <id>sign-artifacts</id>
-                        <phase>deploy</phase>
-                        <goals>
-                            <goal>sign</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <!-- END: Plugins for maven central distribution -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.1</version>
-                <configuration>
-                    <encoding>UTF-8</encoding>
-                    <source>1.7</source>
-                    <target>1.7</target>
-                </configuration>
-            </plugin>
-            <plugin>
-                <!-- lokale Konfiguration asusschliessen -->
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
-                <version>2.3.1</version>
-                <configuration>
-                    <excludes>
-                        <value>**/local/**/*</value>
-                    </excludes>
-                </configuration>
-            </plugin>
-            <plugin>
-                <artifactId>maven-release-plugin</artifactId>
-                <version>2.2.1</version>
-            </plugin>
-			 </plugins>
-     </pluginManagement>
+            <plugins>
+                <!-- START: Plugins for maven central distribution -->
+                <plugin>
+                    <groupId>org.sonatype.plugins</groupId>
+                    <artifactId>nexus-staging-maven-plugin</artifactId>
+                    <version>1.6.1</version>
+                    <extensions>true</extensions>
+                    <configuration>
+                        <serverId>ossrh</serverId>
+                        <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+                        <autoReleaseAfterClose>true</autoReleaseAfterClose>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-source-plugin</artifactId>
+                    <version>2.2.1</version>
+                    <executions>
+                        <execution>
+                            <id>attach-sources</id>
+                            <goals>
+                                <goal>jar-no-fork</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-javadoc-plugin</artifactId>
+                    <version>2.9.1</version>
+                    <executions>
+                        <execution>
+                            <id>attach-javadocs</id>
+                            <goals>
+                                <goal>jar</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-gpg-plugin</artifactId>
+                    <version>1.5</version>
+                    <executions>
+                        <execution>
+                            <id>sign-artifacts</id>
+                            <!-- 1) Fuer das release: verify einstellen -->
+                            <phase>verify</phase>
+                            <!-- Fuer normale benutzung auf deploy stellen (dann braucht nicht jeder das pgp plugin) -->
+                            <!--<phase>deploy</phase>-->
+                            <goals>
+                                <goal>sign</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+                <!-- END: Plugins for maven central distribution -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.1</version>
+                    <configuration>
+                        <encoding>UTF-8</encoding>
+                        <source>1.7</source>
+                        <target>1.7</target>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <!-- lokale Konfiguration asusschliessen -->
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-jar-plugin</artifactId>
+                    <version>2.3.1</version>
+                    <configuration>
+                        <excludes>
+                            <value>**/local/**/*</value>
+                        </excludes>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-release-plugin</artifactId>
+                    <version>2.2.1</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
     </build>
     <!-- Central Distribution -->
     <distributionManagement>
@@ -254,9 +258,10 @@
             <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
         </repository>
     </distributionManagement>
-	 <modules>
+    <modules>
         <module>swm-gwt</module>
         <module>swm-mobile</module>
-        <module>swm-mobile-kitchensink</module>
+        <!-- 2) Fuer das release: kitchensink raus (noch nicht registriert) -->
+        <!--<module>swm-mobile-kitchensink</module>-->
     </modules>
 </project>
