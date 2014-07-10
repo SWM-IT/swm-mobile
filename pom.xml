@@ -19,9 +19,9 @@
         <maven.javadoc.skip>true</maven.javadoc.skip>
     </properties>
     <scm>
-        <connection>scm:git:git@github.com:SWM-IT/swm-mobile.git</connection>
-        <developerConnection>scm:git:git@github.com:SWM-IT/swm-mobile.git</developerConnection>
-        <url>git@github.com:SWM-IT/swm-mobile.git</url>
+        <connection>scm:git:SWM-IT@github.com:SWM-IT/swm-mobile.git</connection>
+        <developerConnection>scm:SWM-IT:git@github.com:SWM-IT/swm-mobile.git</developerConnection>
+        <url>SWM-IT@github.com:SWM-IT/swm-mobile.git</url>
     </scm>
     <organization>
         <name>SWM</name>
