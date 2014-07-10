@@ -5,13 +5,13 @@
     <groupId>de.swm</groupId>
     <artifactId>swm-mobile-base</artifactId>
     <packaging>pom</packaging>
-    <version>2.0-SNAPSHOT</version>
+    <version>2.1-SNAPSHOT</version>
     <name>SWM Mobile Project Collection</name>
     <description>This is the common project for all smw mobile project collections</description>
     <inceptionYear>2011</inceptionYear>
     <properties>
-        <swm.gwtclient.version>2.0-SNAPSHOT</swm.gwtclient.version>
-        <swm.mobile.version>2.0-SNAPSHOT</swm.mobile.version>
+        <swm.gwtclient.version>2.0</swm.gwtclient.version>
+        <swm.mobile.version>2.0</swm.mobile.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <guice.version>3.0</guice.version>
         <gwt.version>2.6.1</gwt.version>
@@ -19,9 +19,9 @@
         <maven.javadoc.skip>true</maven.javadoc.skip>
     </properties>
     <scm>
-        <connection>scm:git:https://SWM-IT@github.com/SWM-IT/swm-mobile.git</connection>
-        <developerConnection>scm:git:https://SWM-IT@github.com/SWM-IT/swm-mobile.git</developerConnection>
-        <url>SWM-IT@github.com/SWM-IT/swm-mobile.git</url>
+        <connection>scm:git:git@github.com:SWM-IT/swm-mobile.git</connection>
+        <developerConnection>scm:git:git@github.com:SWM-IT/swm-mobile.git</developerConnection>
+        <url>git@github.com:SWM-IT/swm-mobile.git</url>
     </scm>
     <organization>
         <name>SWM</name>
