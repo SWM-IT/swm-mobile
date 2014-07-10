@@ -16,7 +16,6 @@
         <guice.version>3.0</guice.version>
         <gwt.version>2.6.1</gwt.version>
         <gwt.plugin.version>2.6.1</gwt.plugin.version>
-        <maven.javadoc.skip>true</maven.javadoc.skip>
     </properties>
     <scm>
         <connection>scm:git:git@github.com/SWM-IT/swm-mobile.git</connection>
@@ -239,10 +238,6 @@
                             <value>**/local/**/*</value>
                         </excludes>
                     </configuration>
-                </plugin>
-                <plugin>
-                    <artifactId>maven-release-plugin</artifactId>
-                    <version>2.2.1</version>
                 </plugin>
             </plugins>
         </pluginManagement>
