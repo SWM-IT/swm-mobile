@@ -5,17 +5,20 @@
     <groupId>de.swm</groupId>
     <artifactId>swm-mobile-base</artifactId>
     <packaging>pom</packaging>
-    <version>2.0</version>
+    <version>2.1-SNAPSHOT</version>
     <name>SWM Mobile Project Collection</name>
     <description>This is the common project for all smw mobile project collections</description>
     <inceptionYear>2011</inceptionYear>
     <properties>
+        <swm-mobile-version>2.1-SNAPSHOT</swm-mobile-version>
         <swm.gwtclient.version>2.0</swm.gwtclient.version>
         <swm.mobile.version>2.0</swm.mobile.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <guice.version>3.0</guice.version>
         <gwt.version>2.6.1</gwt.version>
         <gwt.plugin.version>2.6.1</gwt.plugin.version>
+        <!-- 1) Fuer release auskommentieren (schritt 1 von 3)-->
+        <maven.javadoc.skip>true</maven.javadoc.skip>
     </properties>
     <scm>
         <connection>scm:git:git@github.com/SWM-IT/swm-mobile.git</connection>
@@ -45,18 +48,18 @@
             <dependency>
                 <groupId>de.swm</groupId>
                 <artifactId>swm-gwt-client</artifactId>
-                <version>2.0</version>
+                <version>${swm-mobile-version}</version>
             </dependency>
             <dependency>
                 <groupId>de.swm</groupId>
                 <artifactId>swm-mobile</artifactId>
-                <version>2.0</version>
+                <version>${swm-mobile-version}</version>
             </dependency>
-            <!--<dependency>-->
-                <!--<groupId>de.swm</groupId>-->
-                <!--<artifactId>swm-mobile-kitchensink</artifactId>-->
-                <!--<version>2.1-SNAPSHOT</version>-->
-            <!--</dependency>-->
+            <dependency>
+                <groupId>de.swm</groupId>
+                <artifactId>swm-mobile-kitchensink</artifactId>
+                <version>${swm-mobile-version}</version>
+            </dependency>
             <!-- ENDE SUBPROJEKTE -->
             <!-- Open Street-Map integration -->
             <dependency>
@@ -207,10 +210,10 @@
                     <executions>
                         <execution>
                             <id>sign-artifacts</id>
-                            <!-- 1) Fuer das release: verify einstellen -->
-                            <phase>verify</phase>
+                            <!-- 2) Fuer das release: verify einstellen -->
+                            <!--<phase>verify</phase>-->
                             <!-- Fuer normale benutzung auf deploy stellen (dann braucht nicht jeder das pgp plugin) -->
-                            <!--<phase>deploy</phase>-->
+                            <phase>deploy</phase>
                             <goals>
                                 <goal>sign</goal>
                             </goals>
@@ -257,6 +260,6 @@
         <module>swm-gwt</module>
         <module>swm-mobile</module>
         <!-- 2) Fuer das release: kitchensink raus (noch nicht registriert) -->
-        <!--<module>swm-mobile-kitchensink</module>-->
+        <module>swm-mobile-kitchensink</module>
     </modules>
 </project>

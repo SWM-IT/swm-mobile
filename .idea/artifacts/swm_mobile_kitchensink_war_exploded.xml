@@ -10,10 +10,10 @@
         <element id="directory" name="lib">
           <element id="library" level="project" name="Maven: com.google.gwt:gwt-servlet:2.6.1" />
           <element id="library" level="project" name="Maven: javax.validation:validation-api:1.0.0.GA" />
-          <element id="archive" name="swm-mobile-2.0-SNAPSHOT.jar">
+          <element id="archive" name="swm-mobile-2.1-SNAPSHOT.jar">
             <element id="module-output" name="swm-mobile" />
           </element>
-          <element id="archive" name="swm-gwt-client-2.0-SNAPSHOT.jar">
+          <element id="archive" name="swm-gwt-client-2.1-SNAPSHOT.jar">
             <element id="module-output" name="swm-gwt-client" />
           </element>
           <element id="library" level="project" name="Maven: com.google.gwt.eventbinder:eventbinder:1.0.2" />
