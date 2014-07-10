@@ -17,11 +17,6 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.javadoc.skip>true</maven.javadoc.skip>
     </properties>
-    <scm>
-        <connection>scm:git:https://github.com/SWM-IT/swm-mobile.git</connection>
-        <developerConnection>scm:git:https://github.com/SWM-IT/swm-mobile.git</developerConnection>
-        <url>https://github.com/SWM-IT/swm-mobile.git</url>
-    </scm>
     <organization>
         <name>SWM</name>
         <url>http://www.swm.de</url>
