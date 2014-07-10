@@ -20,7 +20,7 @@
     </properties>
     <scm>
         <connection>scm:git:SWM-IT@github.com:SWM-IT/swm-mobile.git</connection>
-        <developerConnection>scm:SWM-IT:git@github.com:SWM-IT/swm-mobile.git</developerConnection>
+        <developerConnection>scm:git:SWM-IT@github.com:SWM-IT/swm-mobile.git</developerConnection>
         <url>SWM-IT@github.com:SWM-IT/swm-mobile.git</url>
     </scm>
     <organization>
