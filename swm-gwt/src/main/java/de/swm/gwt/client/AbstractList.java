@@ -122,7 +122,7 @@ public abstract class AbstractList<D extends IModelData> extends Composite imple
 	 *
 	 * @return the widget.
 	 */
-	private Label createEmptyTableWidget() {
+	protected Label createEmptyTableWidget() {
 		return new Label(i18ValueForEmptyTable);
 	}
 
@@ -139,7 +139,7 @@ public abstract class AbstractList<D extends IModelData> extends Composite imple
 	/**
 	 * Initializes the DataGrid. Must be called in the constructor, before uiBinder.createAndBindUi(Widget).
 	 */
-	private void initDataGrid() {
+	protected void initDataGrid() {
 		DataGrid.Resources dataGridResources = (SWMGwt.getTheme() != null) ? SWMGwt.getTheme().getCssBundle() : null;
 		if (dataGridResources != null) {
 			dataGrid = new DataGrid<D>(getPageSize(), dataGridResources, dataStore.getKeyProvider());
@@ -281,6 +281,16 @@ public abstract class AbstractList<D extends IModelData> extends Composite imple
 
 
 	/**
+	 * Setter for subclasses.
+	 *
+	 * @param selectionModel sets a new selectionModel
+	 */
+	protected void setSelectionModel(SingleSelectionModel<D> selectionModel) {
+		this.selectionModel = selectionModel;
+	}
+
+
+	/**
 	 * Getter for subclasses.
 	 *
 	 * @return the IListPresenter.
@@ -289,6 +299,47 @@ public abstract class AbstractList<D extends IModelData> extends Composite imple
 		return presenter;
 	}
 
+
+
+	/**
+	 * Getter for subclasses.
+	 *
+	 * @return the DataGrid
+	 */
+	protected DataGrid<D> getDataGrid() {
+		return dataGrid;
+	}
+
+
+
+	/**
+	 * Setter for subclasses.
+	 *
+	 * @param dataGrid sets a new DataGrid
+	 */
+	protected void setDataGrid(DataGrid<D> dataGrid) {
+		this.dataGrid = dataGrid;
+	}
+
+
+	/**
+	 * Getter for subclasses.
+	 *
+	 * @return the Pager
+	 */
+	protected SimplePager getPager() {
+		return pager;
+	}
+
+
+	/**
+	 * Setter for subclasses.
+	 *
+	 * @param pager sets a new Pager
+	 */
+	protected void setPager(SimplePager pager) {
+		this.pager = pager;
+	}
 
 	/**
 	 * Getter for subclasses.
