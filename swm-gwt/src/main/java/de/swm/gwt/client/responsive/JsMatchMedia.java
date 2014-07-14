@@ -17,19 +17,25 @@ class JsMatchMedia extends JavaScriptObject implements IMatchMedia {
 	}
 
 	// @formatter:off
-	public final native boolean hasMatch() /*-{ return this.matches; }-*/;
+	public final native boolean hasMatch() /*-{
+        return this.matches;
+    }-*/;
 
-	public final native String getMedia() /*-{ return this.media; }-*/;
+	public final native String getMedia() /*-{
+        return this.media;
+    }-*/;
 
 	private void forward(IMatchMediaChangeHandler handler) {
 		handler.onMatchMediaChange(this);
 	}
-	
+
 	private native JsHandlerRegistration addHandler(IMatchMediaChangeHandler handler) /*-{
-		func = function(matchMedia) {handler.@de.swm.hrtool.client.util.MatchMediaChangeHandler::onMatchMediaChange(Lde/swm/hrtool/client/util/MatchMedia;)(matchMedia);}
-		this.addListener(func);
-		return {callback:func, match:this}; 
-	}-*/;
+        func = function (matchMedia) {
+            handler.@de.swm.gwt.client.responsive.IMatchMediaChangeHandler::onMatchMediaChange(Lde/swm/gwt/client/responsive/IMatchMedia;)(matchMedia);
+        }
+        this.addListener(func);
+        return {callback: func, match: this};
+    }-*/;
 	// @formatter:on
 
 }
