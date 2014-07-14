@@ -5,10 +5,17 @@
     <groupId>de.swm</groupId>
     <artifactId>swm-mobile-base</artifactId>
     <packaging>pom</packaging>
-    <version>2.1-SNAPSHOT</version>
-    <name>SWM Mobile Project Collection</name>
+    <version>2.1</version>
+    <name>SWM Mobile project collection</name>
     <description>This is the common project for all smw mobile project collections</description>
     <inceptionYear>2011</inceptionYear>
+    <url>https://code.google.com/p/swm-mobile/</url>
+    <licenses>
+        <license>
+            <name>Apache License Version 2</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.html</url>
+        </license>
+    </licenses>
     <properties>
         <swm-mobile-version>2.1-SNAPSHOT</swm-mobile-version>
         <swm.gwtclient.version>2.0</swm.gwtclient.version>
@@ -163,18 +170,6 @@
     <build>
         <pluginManagement>
             <plugins>
-                <!-- START: Plugins for maven central distribution -->
-                <plugin>
-                    <groupId>org.sonatype.plugins</groupId>
-                    <artifactId>nexus-staging-maven-plugin</artifactId>
-                    <version>1.6.1</version>
-                    <extensions>true</extensions>
-                    <configuration>
-                        <serverId>ossrh</serverId>
-                        <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-                        <autoReleaseAfterClose>true</autoReleaseAfterClose>
-                    </configuration>
-                </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-source-plugin</artifactId>
@@ -231,6 +226,18 @@
             <id>central-deployment</id>
             <build>
                 <plugins>
+                    <!-- START: Plugins for maven central distribution -->
+                    <plugin>
+                        <groupId>org.sonatype.plugins</groupId>
+                        <artifactId>nexus-staging-maven-plugin</artifactId>
+                        <version>1.6.1</version>
+                        <extensions>true</extensions>
+                        <configuration>
+                            <serverId>ossrh</serverId>
+                            <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+                            <autoReleaseAfterClose>true</autoReleaseAfterClose>
+                        </configuration>
+                    </plugin>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-gpg-plugin</artifactId>
@@ -269,14 +276,14 @@
                 <repository>
                     <id>SWMRepository</id>
                     <name>SWM-Main-Repository</name>
-                    <url>file:///Users/Shared/Development/swm-mobile/repository</url>
-                    <!--<url>http://ci.intra.swm.de/nexus/content/repositories/SWM-S-IP-AN-Repository</url>-->
+                    <!--<url>file:///Users/Shared/Development/swm-mobile/repository</url>-->
+                    <url>http://ci.intra.swm.de/nexus/content/repositories/SWM-S-IP-AN-Repository</url>
                 </repository>
                 <snapshotRepository>
                     <id>SWMSnapshots</id>
                     <name>SWM Snapshots</name>
-                    <url>file:///Users/Shared/Development/swm-mobile/repository</url>
-                    <!--<url>http://nexus.intra.swm.de/nexus/content/repositories/swm-snapshot-repo/</url>-->
+                    <!--<url>file:///Users/Shared/Development/swm-mobile/repository</url>-->
+                    <url>http://nexus.intra.swm.de/nexus/content/repositories/swm-snapshot-repo/</url>
                 </snapshotRepository>
             </distributionManagement>
         </profile>
