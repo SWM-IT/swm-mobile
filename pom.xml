@@ -18,7 +18,7 @@
         <gwt.version>2.6.1</gwt.version>
         <gwt.plugin.version>2.6.1</gwt.plugin.version>
         <!-- 1) Fuer release auskommentieren (schritt 1 von 3)-->
-        <maven.javadoc.skip>true</maven.javadoc.skip>
+        <maven.javadoc.skip>false</maven.javadoc.skip>
     </properties>
     <scm>
         <connection>scm:git:git@github.com:SWM-IT/swm-mobile.git</connection>
@@ -201,24 +201,6 @@
                         </execution>
                     </executions>
                 </plugin>
-
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-gpg-plugin</artifactId>
-                    <version>1.5</version>
-                    <executions>
-                        <execution>
-                            <id>sign-artifacts</id>
-                            <!-- 2) Fuer das release: verify einstellen -->
-                            <phase>verify</phase>
-                            <!-- Fuer normale benutzung auf deploy stellen (dann braucht nicht jeder das pgp plugin) -->
-                            <!--<phase>deploy</phase>-->
-                            <goals>
-                                <goal>sign</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                </plugin>
                 <!-- END: Plugins for maven central distribution -->
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -247,6 +229,27 @@
     <profiles>
         <profile>
             <id>central-deployment</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>1.5</version>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <!-- 2) Fuer das release: verify einstellen -->
+                                <phase>verify</phase>
+                                <!-- Fuer normale benutzung auf deploy stellen (dann braucht nicht jeder das pgp plugin) -->
+                                <!--<phase>deploy</phase>-->
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
             <!-- Central Distribution -->
             <distributionManagement>
                 <snapshotRepository>
