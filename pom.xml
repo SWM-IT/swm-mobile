@@ -160,7 +160,6 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-
     <build>
         <pluginManagement>
             <plugins>
@@ -211,9 +210,9 @@
                         <execution>
                             <id>sign-artifacts</id>
                             <!-- 2) Fuer das release: verify einstellen -->
-                            <!--<phase>verify</phase>-->
+                            <phase>verify</phase>
                             <!-- Fuer normale benutzung auf deploy stellen (dann braucht nicht jeder das pgp plugin) -->
-                            <phase>deploy</phase>
+                            <!--<phase>deploy</phase>-->
                             <goals>
                                 <goal>sign</goal>
                             </goals>
@@ -245,17 +244,40 @@
             </plugins>
         </pluginManagement>
     </build>
-    <!-- Central Distribution -->
-    <distributionManagement>
-        <snapshotRepository>
-            <id>ossrh</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-        </snapshotRepository>
-        <repository>
-            <id>ossrh</id>
-            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-        </repository>
-    </distributionManagement>
+    <profiles>
+        <profile>
+            <id>central-deployment</id>
+            <!-- Central Distribution -->
+            <distributionManagement>
+                <snapshotRepository>
+                    <id>ossrh</id>
+                    <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+                </snapshotRepository>
+                <repository>
+                    <id>ossrh</id>
+                    <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+                </repository>
+            </distributionManagement>
+        </profile>
+        <profile>
+            <id>swm-deployment</id>
+            <!-- Central Distribution -->
+            <distributionManagement>
+                <repository>
+                    <id>SWMRepository</id>
+                    <name>SWM-Main-Repository</name>
+                    <url>file:///Users/Shared/Development/swm-mobile/repository</url>
+                    <!--<url>http://ci.intra.swm.de/nexus/content/repositories/SWM-S-IP-AN-Repository</url>-->
+                </repository>
+                <snapshotRepository>
+                    <id>SWMSnapshots</id>
+                    <name>SWM Snapshots</name>
+                    <url>file:///Users/Shared/Development/swm-mobile/repository</url>
+                    <!--<url>http://nexus.intra.swm.de/nexus/content/repositories/swm-snapshot-repo/</url>-->
+                </snapshotRepository>
+            </distributionManagement>
+        </profile>
+    </profiles>
     <modules>
         <module>swm-gwt</module>
         <module>swm-mobile</module>
