@@ -7,23 +7,24 @@ import com.google.gwt.core.client.Scheduler.ScheduledCommand;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.event.shared.UmbrellaException;
-
 import de.swm.commons.mobile.client.SWMMobile;
 import de.swm.commons.mobile.client.SWMMobileSettings;
 import de.swm.commons.mobile.client.page.SimplePage;
 import de.swm.commons.mobile.client.setup.StatusBarStyle;
 import de.swm.commons.mobile.client.setup.ViewPort;
 import de.swm.commons.mobile.client.widgets.HeaderPanel;
+import de.swm.gwt.client.responsive.IMatchMedia;
+import de.swm.gwt.client.responsive.IMatchMediaChangeHandler;
+import de.swm.gwt.client.responsive.MatchMediaFacade;
 import de.swm.gwt.client.utils.Utils;
 import de.swm.mobile.kitchensink.client.theme.bootstrap.BootsrapSWMMobileTheme;
 
 
 /**
  * EntryPoint for the swm-mobile showcase.
- * 
+ *
  * @author wiese.daniel <br>
  *         copyright (C) 2011, SWM Services GmbH
- * 
  */
 public class Application implements EntryPoint {
 
@@ -43,6 +44,23 @@ public class Application implements EntryPoint {
 		GWT.create(GeneratorInfo.class);
 
 		SWMMobile.setTheme(new BootsrapSWMMobileTheme());
+		//Test: Media query support
+		if (MatchMediaFacade.getInstance().isSupported()) {
+			IMatchMedia minWidth = MatchMediaFacade.getInstance().match("(min-width: 720px)");
+			minWidth.addMatchMediaChangeHandler(new IMatchMediaChangeHandler() {
+
+				public void onMatchMediaChange(IMatchMedia matchMedia) {
+					Utils.console("Query (min-width: 720px) result " + matchMedia.getMedia());
+					if (matchMedia.hasMatch()) {
+						Utils.console("Media Query (min-width: 720px) is matchig " + matchMedia.hasMatch());
+					}
+
+
+				}
+
+
+			});
+		}
 
 		GWT.setUncaughtExceptionHandler(new GWT.UncaughtExceptionHandler() {
 			public void onUncaughtException(Throwable e) {
@@ -88,11 +106,9 @@ public class Application implements EntryPoint {
 	}
 
 
-
 	public static ToolbarPage getStartPage() {
 		return mainPage;
 	}
-
 
 
 	public static void addDefaultBackButtonHanlder(HeaderPanel header) {
