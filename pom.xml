@@ -17,8 +17,6 @@
         </license>
     </licenses>
     <properties>
-        <swm.gwtclient.version>2.0</swm.gwtclient.version>
-        <swm.mobile.version>2.0</swm.mobile.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <guice.version>3.0</guice.version>
         <gwt.version>2.6.1</gwt.version>
