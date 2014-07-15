@@ -15,11 +15,11 @@
  */
 package de.swm.commons.mobile.client.widgets;
 
+import com.google.gwt.dom.client.Element;
 import com.google.gwt.dom.client.Node;
 import com.google.gwt.dom.client.NodeList;
 import com.google.gwt.dom.client.Style;
 import com.google.gwt.dom.client.Style.Unit;
-import com.google.gwt.user.client.Element;
 import com.google.gwt.user.client.ui.HasWidgets;
 import com.google.gwt.user.client.ui.Widget;
 import de.swm.commons.mobile.client.SWMMobile;
@@ -41,6 +41,10 @@ public class ScrollPanel extends PanelBase implements HasWidgets, DragEventsHand
 
 	private ScrollPanelEventsHandler scrollPanelEventsHandler;
 	private int offsetHeight = -1;
+	/**
+	 * Defines how many pixels a button overscrolling should be possible (e.g 50px).
+	 */
+	private int overscrollButtonTolerance = 0;
 
 
 	/**
@@ -50,8 +54,12 @@ public class ScrollPanel extends PanelBase implements HasWidgets, DragEventsHand
 		setStyleName(SWMMobile.getTheme().getMGWTCssBundle().getScrollPanelCss().scrollPanel());
 	}
 
+	/**
+	 * A scroll monitor provides callback when the scrolling is done.
+	 *
+	 * @param scrollMonitor
+	 */
 	public void setScrollMonitor(IScrollMonitor scrollMonitor) {
-
 		this.scrollMonitor = scrollMonitor;
 	}
 
@@ -99,6 +107,13 @@ public class ScrollPanel extends PanelBase implements HasWidgets, DragEventsHand
 		this.scrollPanelEventsHandler = scrollPanelEventsHandler;
 	}
 
+	/**
+	 * Sets the button overscroll tolerance in px
+	 * @param overscrollButtonTolerance
+	 */
+	public void setOverscrollButtonTolerance(int overscrollButtonTolerance) {
+		this.overscrollButtonTolerance = overscrollButtonTolerance;
+	}
 
 	/**
 	 * Scrolls to the default position.
@@ -203,11 +218,18 @@ public class ScrollPanel extends PanelBase implements HasWidgets, DragEventsHand
 			} else {
 				current += e.getOffsetY() * OFFSET;
 			}
-		} else if (-current + panelHeight > widgetHeight) { // exceed bottom boundary
-			if (e.getOffsetY() < 0) { // resist scroll up.
-				current += (int) (e.getOffsetY() / OFFSET);
+		} else if (-current + panelHeight > widgetHeight) {
+			//correct only scroll position if overscroll is prohibited
+			if (overscrollButtonTolerance == 0) {
+				// exceed bottom boundary
+				if (e.getOffsetY() < 0) { // resist scroll up.
+					current += (int) (e.getOffsetY() / OFFSET);
+				} else {
+					current += e.getOffsetY() * OFFSET;
+				}
 			} else {
-				current += e.getOffsetY() * OFFSET;
+				//if button overscrolling is allowed
+				current += e.getOffsetY();
 			}
 		} else {
 			current += e.getOffsetY();
@@ -261,7 +283,7 @@ public class ScrollPanel extends PanelBase implements HasWidgets, DragEventsHand
 			}
 
 			Utils.setTransitionDuration(widgetEle, DEFAULT_TRANSITION_DURATION);
-			setScrollPosition(panelHeight - widgetHeight);
+			setScrollPosition((panelHeight - overscrollButtonTolerance) - widgetHeight);
 		}
 	}
 
@@ -307,7 +329,6 @@ public class ScrollPanel extends PanelBase implements HasWidgets, DragEventsHand
 
 	@Override
 	public void add(Widget w) {
-		//assert myFlowPanel.getWidgetCount() == 0 : "Can only add one widget to ScrollPanel.";
 		super.add(w);
 		if (SWMMobile.getOsDetection().isIOs()) {
 			Utils.setTranslateY(w.getElement(), 0); // anti-flickering on iOS.

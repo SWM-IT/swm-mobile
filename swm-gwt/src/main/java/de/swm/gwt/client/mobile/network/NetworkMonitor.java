@@ -5,7 +5,8 @@ import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.inject.Inject;
 import de.swm.gwt.client.eventbus.IDispatcher;
 import de.swm.gwt.client.mobile.network.rpcservice.NetworkServiceAsync;
-import de.swm.gwt.client.utils.Utils;
+
+import java.util.logging.Logger;
 
 
 /**
@@ -19,6 +20,10 @@ public class NetworkMonitor implements INetworkMonitor {
 	private static final int DEFAULT_NETWORK_CHECK_INTERVALL_MS = 30 * 1000;
 	private static final int DEFAULT_NETWORK_CHECK_DELAY_MS = 50;
 	public static final int MIN_TIMEOUT_MS = 2000;
+
+	private static final Logger LOGGER = Logger.getLogger(NetworkMonitor.class.getName());
+
+
 	/**
 	 * Defines the first check intervall after the service was started. *
 	 */
@@ -158,7 +163,7 @@ public class NetworkMonitor implements INetworkMonitor {
 			public void onFailure(Throwable caught) {
 				if (networkAvailable) {
 					networkAvailable = false;
-					Utils.console("Sending Network-Unavailable Event");
+					LOGGER.info("Sending Network-Unavailable Event");
 
 					if (timer != null) {
 						timer.cancel();
@@ -179,7 +184,7 @@ public class NetworkMonitor implements INetworkMonitor {
 				}
 				if (!networkAvailable) {
 					networkAvailable = true;
-					Utils.console("Sending Network-Available Event");
+					LOGGER.info("Sending Network-Available Event");
 
 					if (timer != null) {
 						timer.cancel();

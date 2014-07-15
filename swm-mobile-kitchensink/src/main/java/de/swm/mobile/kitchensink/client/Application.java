@@ -19,16 +19,21 @@ import de.swm.gwt.client.responsive.MatchMediaFacade;
 import de.swm.gwt.client.utils.Utils;
 import de.swm.mobile.kitchensink.client.theme.bootstrap.BootsrapSWMMobileTheme;
 
+import java.util.logging.Logger;
+
 
 /**
  * EntryPoint for the swm-mobile showcase.
  *
  * @author wiese.daniel <br>
- *         copyright (C) 2011, SWM Services GmbH
+ *         copyright (C) 2011-2014, SWM Services GmbH
  */
 public class Application implements EntryPoint {
 
 	public static ToolbarPage mainPage;
+
+	private static final Logger LOGGER = Logger.getLogger(Application.class.getName());
+
 
 	/**
 	 * The type passed into the
@@ -50,9 +55,9 @@ public class Application implements EntryPoint {
 			minWidth.addMatchMediaChangeHandler(new IMatchMediaChangeHandler() {
 
 				public void onMatchMediaChange(IMatchMedia matchMedia) {
-					Utils.console("Query (min-width: 720px) result " + matchMedia.getMedia());
+					LOGGER.info("Query (min-width: 720px) result " + matchMedia.getMedia());
 					if (matchMedia.hasMatch()) {
-						Utils.console("Media Query (min-width: 720px) is matchig " + matchMedia.hasMatch());
+						LOGGER.info("Media Query (min-width: 720px) is matching " + matchMedia.hasMatch());
 					}
 
 
@@ -65,7 +70,7 @@ public class Application implements EntryPoint {
 		GWT.setUncaughtExceptionHandler(new GWT.UncaughtExceptionHandler() {
 			public void onUncaughtException(Throwable e) {
 				Throwable unwrapped = unwrap(e);
-				Utils.console("uncaught exception: " + unwrapped.getMessage());
+				LOGGER.severe("uncaught exception: " + unwrapped.getMessage());
 			}
 
 			public Throwable unwrap(Throwable e) {

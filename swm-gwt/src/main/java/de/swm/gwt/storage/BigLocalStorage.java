@@ -8,12 +8,12 @@ import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.shared.HandlerRegistration;
 import com.google.gwt.storage.client.StorageEvent;
 import com.google.gwt.user.client.rpc.AsyncCallback;
-import de.swm.gwt.client.mobile.keystore.IStorageOperationCompleted;
 import de.swm.gwt.client.mobile.keystore.IStorage;
+import de.swm.gwt.client.mobile.keystore.IStorageOperationCompleted;
 import de.swm.gwt.client.mobile.keystore.ITransaction;
-import de.swm.gwt.client.utils.Utils;
 
 import java.util.*;
+import java.util.logging.Logger;
 
 /**
  * This class implements all operation specified in http://www.w3.org/TR/webstorage/.  Under the hood
@@ -25,9 +25,11 @@ import java.util.*;
  * @author wiese.daniel
  *         <br> copyright (C) 2012, SWM Services GmbH
  * @see <code>http://www.w3.org/TR/webstorage/</code>
- *      but avoiding the <b>5 mb</b> limit.
+ * but avoiding the <b>5 mb</b> limit.
  */
 public class BigLocalStorage implements IStorage {
+
+	private static final Logger LOGGER = Logger.getLogger(BigLocalStorage.class.getName());
 
 
 	public static final String NOT_SUPPORTED = "Not supported";
@@ -64,7 +66,7 @@ public class BigLocalStorage implements IStorage {
 	 */
 	@Override
 	public void initialize(final AsyncCallback<Void> afterInitHanlder) {
-		Utils.console("initializing SQL-Lite-Datatbase ...");
+		LOGGER.info("initializing SQL-Lite-Datatbase ...");
 		sqlLayer.initTable(new VoidCallback() {
 			@Override
 			public void onSuccess() {
@@ -74,13 +76,13 @@ public class BigLocalStorage implements IStorage {
 						for (GenericRow genericRow : result) {
 							inMemoryStorage.put(genericRow.getString("id"), genericRow.getString("value"));
 						}
-						Utils.console("SQL-Lite-Datatbase initialized");
+						LOGGER.info("SQL-Lite-Datatbase initialized");
 						afterInitHanlder.onSuccess(null);
 					}
 
 					@Override
 					public void onFailure(DataServiceException error) {
-						Utils.console("Can't read storage");
+						LOGGER.info("Can't read storage");
 						afterInitHanlder.onFailure(error);
 					}
 				});
@@ -89,7 +91,7 @@ public class BigLocalStorage implements IStorage {
 
 			@Override
 			public void onFailure(DataServiceException e) {
-				Utils.console("SQL Lite datatbase not supported");
+				LOGGER.info("SQL Lite datatbase not supported");
 				afterInitHanlder.onFailure(e);
 			}
 		});
@@ -145,12 +147,12 @@ public class BigLocalStorage implements IStorage {
 		this.sqlLayer.deleteAll(new VoidCallback() {
 			@Override
 			public void onSuccess() {
-				Utils.console("All rows deleted");
+				LOGGER.info("All rows deleted");
 			}
 
 			@Override
 			public void onFailure(DataServiceException e) {
-				Utils.console("Can't delete rowns");
+				LOGGER.info("Can't delete rowns");
 				if (uncaughtExceptionHandler != null) {
 					uncaughtExceptionHandler.onUncaughtException(e);
 				}
@@ -199,7 +201,7 @@ public class BigLocalStorage implements IStorage {
 	 */
 	@Override
 	public void removeItem(String key) {
-		final VoidCallback callback =  new VoidCallback() {
+		final VoidCallback callback = new VoidCallback() {
 
 			@Override
 			public void onSuccess() {
@@ -230,7 +232,6 @@ public class BigLocalStorage implements IStorage {
 		this.sqlLayer.deleteKeyAndValue(key, callback);
 
 	}
-
 
 
 	/**
@@ -281,13 +282,13 @@ public class BigLocalStorage implements IStorage {
 		this.sqlLayer.deleteAll(new VoidCallback() {
 			@Override
 			public void onSuccess() {
-				Utils.console("All rows deleted");
+				LOGGER.info("All rows deleted");
 				callback.isCompleted();
 			}
 
 			@Override
 			public void onFailure(DataServiceException e) {
-				Utils.console("Can't delete rows");
+				LOGGER.info("Can't delete rows");
 				if (uncaughtExceptionHandler != null) {
 					uncaughtExceptionHandler.onUncaughtException(e);
 				} else {
@@ -320,7 +321,7 @@ public class BigLocalStorage implements IStorage {
 			public void onFailure(DataServiceException e) {
 				if (uncaughtExceptionHandler != null) {
 					uncaughtExceptionHandler.onUncaughtException(e);
-				}else{
+				} else {
 					final String nextKey = keysToInsert.poll();
 					if (nextKey != null) {
 						removeItemInternal(nextKey, this);
@@ -363,7 +364,7 @@ public class BigLocalStorage implements IStorage {
 			public void onFailure(DataServiceException e) {
 				if (uncaughtExceptionHandler != null) {
 					uncaughtExceptionHandler.onUncaughtException(e);
-				}else{
+				} else {
 					final String nextKey = keysToInsert.poll();
 					if (nextKey != null) {
 						setItemInternal(nextKey, values.get(nextKey), this);

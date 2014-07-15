@@ -3,6 +3,8 @@
 <module>
 	<inherits name='com.google.gwt.inject.Inject'/>
     <inherits name='com.google.web.bindery.event.EventBinder'/>
+    <!-- GWT Logging -->
+    <inherits name='com.google.gwt.logging.Logging'/>
     <!-- durch das Include wurden andere Projekte (klassische GWT Projekte) nicht compile faehig -->
 	<!--<inherits name='name.pehl.piriti.json.JSON'/>-->
     <source path="client">

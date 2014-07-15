@@ -39,7 +39,6 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <!-- 			<groupId>de.swm.commons.mobile.client</groupId> -->
             <groupId>de.swm</groupId>
             <artifactId>swm-mobile</artifactId>
         </dependency>

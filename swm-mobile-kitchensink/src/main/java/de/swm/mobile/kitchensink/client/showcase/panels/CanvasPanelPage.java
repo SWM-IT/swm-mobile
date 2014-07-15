@@ -120,7 +120,6 @@ public class CanvasPanelPage extends ShowcaseDetailPage {
         context.fillRect(0, 0, 300, 300);
 
         context.setFillStyle("blue");
-        GWT.log("Font: " + context.getFont());
         context.fillText("Hallo", 50, 50);
 
         context.setFont("30px sans-serif");

@@ -12,19 +12,20 @@ import com.google.gwt.user.client.rpc.impl.RequestCallbackAdapter.ResponseReader
 import com.google.gwt.user.client.rpc.impl.RpcStatsContext;
 import com.google.gwt.user.client.rpc.impl.Serializer;
 
-import de.swm.gwt.client.utils.Utils;
-
+import java.util.logging.Logger;
 
 
 /**
  * An extension of {@link RemoteServiceProxy} that uses JSONP as a transport mechanism. Makes use of
  * {@link JsonpRequestBuilder} to make JSONP requests
- * 
+ *
  * @author wiese.daniel <br>
  *         copyright (C) 2011, SWM Services GmbH
- * 
  */
 public class JsonpServiceProxy extends RemoteServiceProxy {
+
+	private static final Logger LOGGER = Logger.getLogger(JsonpServiceProxy.class.getName());
+
 
 	/**
 	 * The request parameter for the gwt-rpc payload.
@@ -37,31 +38,24 @@ public class JsonpServiceProxy extends RemoteServiceProxy {
 	public static final String CALLBACK_PARAM = "callback";
 
 
-
 	/**
 	 * Protected constructor of {@code JsonpServiceProxy}.
-	 * 
-	 * @param moduleBaseURL
-	 *            the base URL of the module
-	 * @param remoteServiceRelativePath
-	 *            the relative path to this remote service
-	 * @param serializationPolicyName
-	 *            the serialization policy name
-	 * @param serializer
-	 *            the serializer
+	 *
+	 * @param moduleBaseURL             the base URL of the module
+	 * @param remoteServiceRelativePath the relative path to this remote service
+	 * @param serializationPolicyName   the serialization policy name
+	 * @param serializer                the serializer
 	 */
 	protected JsonpServiceProxy(String moduleBaseURL, String remoteServiceRelativePath, String serializationPolicyName,
-			Serializer serializer) {
+								Serializer serializer) {
 		super(moduleBaseURL, remoteServiceRelativePath, serializationPolicyName, serializer);
 	}
 
 
-
 	/**
 	 * Wenn Ok kommt.
-	 * 
-	 * @param encodedResponse
-	 *            .
+	 *
+	 * @param encodedResponse .
 	 * @return .
 	 */
 	static boolean isReturnValue(String encodedResponse) {
@@ -69,25 +63,22 @@ public class JsonpServiceProxy extends RemoteServiceProxy {
 	}
 
 
-
 	/**
 	 * Return <code>true</code> if the encoded response contains a checked exception that was thrown by the method
 	 * invocation.
-	 * 
-	 * @param encodedResponse
-	 *            .
+	 *
+	 * @param encodedResponse .
 	 * @return <code>true</code> if the encoded response contains a checked exception that was thrown by the method
-	 *         invocation
+	 * invocation
 	 */
 	static boolean isThrownException(String encodedResponse) {
 		return encodedResponse.startsWith("//EX");
 	}
 
 
-
 	@Override
 	protected <T> Request doInvoke(final ResponseReader responseReader, String methodName,
-		RpcStatsContext statsContext, String requestData, final AsyncCallback<T> tAsyncCallback) {
+								   RpcStatsContext statsContext, String requestData, final AsyncCallback<T> tAsyncCallback) {
 
 		try {
 
@@ -101,17 +92,17 @@ public class JsonpServiceProxy extends RemoteServiceProxy {
 			//int indexOf = serviceEntryPoint.indexOf("mvgfahrplan");
 			//serviceEntryPoint = serviceEntryPoint.substring(indexOf, serviceEntryPoint.length());
 			//serviceEntryPoint = "http://mo-swm-i.intra.swm.de/mvg/" + serviceEntryPoint;
-			Utils.console("Seding RPC Request:" + serviceEntryPoint);
+			LOGGER.info("Seding RPC Request:" + serviceEntryPoint);
 			// serviceEntryPoint = "http://localhost:8090/mvg/" + serviceEntryPoint;
 
 			String encode = URL.encode(requestData);
 			//encode = encode.replace("file:///android_asset/www/", "http://mo-swm-i.intra.swm.de/mvg/");
-			Utils.console("Payload:" + encode);
+			LOGGER.info("Payload:" + encode);
 			jprb.requestObject(serviceEntryPoint + "?" + RPC_PAYLOAD_PARAM + "=" + encode,
 					new AsyncCallback<JsonpResponseJso>() {
 
 						public void onFailure(Throwable throwable) {
-							Utils.console("RPC Fehler: " + throwable.getMessage());
+							LOGGER.info("RPC Fehler: " + throwable.getMessage());
 							tAsyncCallback
 									.onFailure(new InvocationException(
 											"Unable to initiate the asynchronous service invocation -- check the network connection"));
@@ -119,12 +110,11 @@ public class JsonpServiceProxy extends RemoteServiceProxy {
 						}
 
 
-
 						/**
 						 * On success, the JSONP callback will send back a StringJso object, which contains one field: a
 						 * GWT-RPC encoded string. We'll decode the GWT-RPC response and return control back to the
 						 * onSuccess/onFailure of the {@link AsyncCallback} of the initial GWT-RPC call
-						 * 
+						 *
 						 * @param encodedResponse
 						 */
 						@SuppressWarnings("unchecked")
@@ -135,7 +125,7 @@ public class JsonpServiceProxy extends RemoteServiceProxy {
 								// 'getEntry()' in the StringJso. We'll clean up
 								// the escaping of quotes though
 								String rpcString = encodedResponse.getEntry().replaceAll("\\\\\"", "\"");
-								Utils.console("RCP -Success: " + rpcString);
+								LOGGER.info("RCP -Success: " + rpcString);
 								if (isReturnValue(rpcString)) {
 									tAsyncCallback.onSuccess((T) responseReader.read(createStreamReader(rpcString)));
 								} else if (isThrownException(encodedResponse.getEntry())) {
@@ -165,10 +155,9 @@ public class JsonpServiceProxy extends RemoteServiceProxy {
 
 	/**
 	 * Jsonp response object.
-	 * 
+	 *
 	 * @author wiese.daniel <br>
 	 *         copyright (C) 2011, SWM Services GmbH
-	 * 
 	 */
 	public static class JsonpResponseJso extends JavaScriptObject {
 
@@ -179,15 +168,14 @@ public class JsonpServiceProxy extends RemoteServiceProxy {
 		}
 
 
-
 		/**
 		 * Liefert den Json string vom Server.
-		 * 
+		 *
 		 * @return der Json String.
 		 */
 		public final native String getEntry() /*-{
-												return this.entry;
-												}-*/;
+            return this.entry;
+        }-*/;
 	}
 
 }

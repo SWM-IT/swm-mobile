@@ -1,5 +1,7 @@
 <module>
     <inherits name='com.google.code.gwt.database.Html5Database' />
     <inherits name='com.google.web.bindery.event.EventBinder'/>
+    <!-- GWT Logging -->
+    <inherits name='com.google.gwt.logging.Logging'/>
     <source path="storage"/>
 </module>

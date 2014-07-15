@@ -2,5 +2,7 @@
 	<inherits name='com.google.gwt.inject.Inject'/>
     <!-- durch das Include wurden andere Projekte (klassische GWT Projekte) nicht compile faehig -->
     <inherits name='com.google.web.bindery.event.EventBinder'/>
+    <!-- GWT Logging -->
+    <inherits name='com.google.gwt.logging.Logging'/>
     <source path="client"/>
 </module>

@@ -37,9 +37,6 @@ public class ButtonPage extends ShowcaseDetailPage {
 	 */
 	@Override
 	public HeaderPanel getHeaderPanel() {
-		StringBuilder sb = new StringBuilder();
-		sb.append("halooo showcase");
-		GWT.log(sb.toString());
 		return header;
 	}
 

@@ -11,7 +11,8 @@ import de.swm.gwt.client.mobile.ApplicationCache;
 import de.swm.gwt.client.mobile.ApplicationRedirecter;
 import de.swm.gwt.client.mobile.keystore.IStorage;
 import de.swm.gwt.client.progressbar.IProgressBarNoCancelWaitDialog;
-import de.swm.gwt.client.utils.Utils;
+
+import java.util.logging.Logger;
 
 
 /**
@@ -22,6 +23,9 @@ import de.swm.gwt.client.utils.Utils;
  *         copyright (C) 2012, SWM Services GmbH
  */
 public abstract class AbstractVersionControlMonitor implements IVersionControlMonitor {
+
+	private static final Logger LOGGER = Logger.getLogger(AbstractVersionControlMonitor.class.getName());
+
 
 	private static final int FORCE_RELOAD_AFTER_SECONDS = 20;
 
@@ -87,16 +91,16 @@ public abstract class AbstractVersionControlMonitor implements IVersionControlMo
 
 		if (!updateIsRunning && GWT.isScript()) {
 			updateIsRunning = true;
-			Utils.console("Trying to update offline cache...");
+			LOGGER.info("Trying to update offline cache...");
 			if (ApplicationCache.isSupported() && cache != null) {
 				showNewVersionInfo(newVersion18NMessage, currentVersion, newVersion);
 				showProgressBar();
 
 				if (cache.getStatus() == ApplicationCache.IDLE) {
-					Utils.console("Cache is idle - triggering Update");
+					LOGGER.info("Cache is idle - triggering Update");
 					cache.update();
 				} else if (cache.getStatus() == ApplicationCache.UPDATEREADY) {
-					Utils.console("Cache is updateready - triggering swap of cache");
+					LOGGER.info("Cache is updateready - triggering swap of cache");
 					onUpdateReady();
 				}
 
@@ -160,10 +164,10 @@ public abstract class AbstractVersionControlMonitor implements IVersionControlMo
 	 * Bei Cache Event "updateready". Swapt Cache und aktualisiert storage via updateStorage.
 	 */
 	protected void onUpdateReady() {
-		Utils.console("Cache Update erfolgreich");
+		LOGGER.info("Cache Update erfolgreich");
 		// den neuen cache benutzen
 		cache.swapCache();
-		Utils.console("Swap cache erfolgreich - reload folgt");
+		LOGGER.info("Swap cache erfolgreich - reload folgt");
 		cacheUpdated = true;
 
 		updateStorage(newVersion, currentVersion);
@@ -180,7 +184,7 @@ public abstract class AbstractVersionControlMonitor implements IVersionControlMo
 	 * Bei Cache Event "error". Default: Logging.
 	 */
 	protected void onError() {
-		Utils.console("Cache Event error: Fehler beim Update des Caches");
+		LOGGER.info("Cache Event error: Fehler beim Update des Caches");
 	}
 
 
@@ -188,7 +192,7 @@ public abstract class AbstractVersionControlMonitor implements IVersionControlMo
 	 * Bei Cache Event "checking". Default: Logging.
 	 */
 	protected void onChecking() {
-		Utils.console("Cache Event checking: Cache wird ueberprueft...");
+		LOGGER.info("Cache Event checking: Cache wird ueberprueft...");
 	}
 
 
@@ -196,7 +200,7 @@ public abstract class AbstractVersionControlMonitor implements IVersionControlMo
 	 * Bei Cache Event "noupdate". Default: Logging.
 	 */
 	protected void onNoUpdate() {
-		Utils.console("Cache Event noupdate: Kein Update erforderlich");
+		LOGGER.info("Cache Event noupdate: Kein Update erforderlich");
 	}
 
 
@@ -255,7 +259,7 @@ public abstract class AbstractVersionControlMonitor implements IVersionControlMo
 			@Override
 			public void run() {
 				updateIsRunning = false;
-				Utils.console("Forcing cache update...");
+				LOGGER.info("Forcing cache update...");
 				//Force update --> update rady laedt die Anwendung neu
 				cache.update();
 			}
