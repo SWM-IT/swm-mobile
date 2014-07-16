@@ -18,7 +18,7 @@ package de.swm.commons.mobile.client.widgets.experimental;
 import com.google.gwt.core.client.JavaScriptObject;
 import com.google.gwt.core.client.JsArray;
 import com.google.gwt.dom.client.Touch;
-import com.google.gwt.user.client.Element;
+import com.google.gwt.dom.client.Element;
 import com.google.gwt.user.client.Event;
 import com.google.gwt.user.client.EventListener;
 import com.google.gwt.user.client.ui.HasWidgets;
@@ -27,11 +27,13 @@ import de.swm.commons.mobile.client.SWMMobile;
 import de.swm.commons.mobile.client.event.DragController;
 import de.swm.commons.mobile.client.utils.Utils;
 import de.swm.commons.mobile.client.base.PanelBase;
+import de.swm.commons.mobile.client.widgets.scroll.IScrollMonitor;
+import de.swm.commons.mobile.client.widgets.scroll.IScrollPanel;
 
 /**
  * Improved scroll panel (still experimental)
  */
-public class SimpleScrollPanel extends PanelBase implements HasWidgets, EventListener  {
+public class SimpleScrollPanel extends PanelBase implements HasWidgets, EventListener, IScrollPanel {
 	
 	JavaScriptObject scrollListener;
 	JavaScriptObject touchListener;
@@ -116,7 +118,7 @@ public class SimpleScrollPanel extends PanelBase implements HasWidgets, EventLis
 	public int getScrollPosition() {
 		return getElement().getScrollTop();
 	}
-	
+
 	public void restoreScrollPosition() {
 		getElement().setScrollTop(scrollTop);
 	}
@@ -178,5 +180,21 @@ public class SimpleScrollPanel extends PanelBase implements HasWidgets, EventLis
 		}
 		
 		super.onBrowserEvent(event);
+	}
+
+	//TODO: Implement this methods
+	@Override
+	public void setScrollMonitor(IScrollMonitor scrollMonitor) {
+
+	}
+
+	@Override
+	public int getScrollToPosition() {
+		return 0;
+	}
+
+	@Override
+	public void setOffsetHeight(int offsetHeight) {
+
 	}
 }

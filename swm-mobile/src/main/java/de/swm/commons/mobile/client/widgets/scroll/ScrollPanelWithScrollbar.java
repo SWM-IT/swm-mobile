@@ -1,66 +1,55 @@
 /*
  * Copyright 2011 SWM Services GmbH.
- *
+ * 
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
  * the License at
- *
+ * 
  * http://www.apache.org/licenses/LICENSE-2.0
- *
+ * 
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
  * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
  * License for the specific language governing permissions and limitations under
  * the License.
  */
-package de.swm.commons.mobile.client.widgets;
+package de.swm.commons.mobile.client.widgets.scroll;
 
 import com.google.gwt.dom.client.Element;
-import com.google.gwt.dom.client.Node;
-import com.google.gwt.dom.client.NodeList;
 import com.google.gwt.dom.client.Style;
 import com.google.gwt.dom.client.Style.Unit;
+import com.google.gwt.event.dom.client.MouseWheelEvent;
+import com.google.gwt.event.dom.client.MouseWheelHandler;
 import com.google.gwt.user.client.ui.HasWidgets;
 import com.google.gwt.user.client.ui.Widget;
 import de.swm.commons.mobile.client.SWMMobile;
 import de.swm.commons.mobile.client.base.PanelBase;
 import de.swm.commons.mobile.client.event.*;
 import de.swm.commons.mobile.client.utils.Utils;
+import de.swm.commons.mobile.client.widgets.ScrollBar;
+
 
 /**
  * Scroll panel - has the ability to keep the {@link de.swm.commons.mobile.client.widgets.itf.IHeaderPanel} implementations always on the top.
  */
-public class ScrollPanel extends PanelBase implements HasWidgets, DragEventsHandler, SwipeEventsHandler {
+public class ScrollPanelWithScrollbar extends PanelBase implements HasWidgets, DragEventsHandler, SwipeEventsHandler, IScrollPanel {
 
 	private static final int TIME_FACTOR = 3000;
 	private static final double DISTANCE_FACTOR = 0.25;
-	private static final int DEFAULT_TRANSITION_DURATION = 500;
+	public static final int DEFAULT_TRANSITION_DURATION = 500;
 	private static final int OFFSET = 2;
 	private boolean myHasTextBox = false;
 	private IScrollMonitor scrollMonitor;
+	private final ScrollBar scrollBar;
 
-	private ScrollPanelEventsHandler scrollPanelEventsHandler;
-	private int offsetHeight = -1;
-	/**
-	 * Defines how many pixels a button overscrolling should be possible (e.g 50px).
-	 */
-	private int overscrollButtonTolerance = 0;
-
+	private boolean showScrollBar = true;
 
 	/**
 	 * Default constructor.
 	 */
-	public ScrollPanel() {
+	public ScrollPanelWithScrollbar() {
 		setStyleName(SWMMobile.getTheme().getMGWTCssBundle().getScrollPanelCss().scrollPanel());
-	}
-
-	/**
-	 * A scroll monitor provides callback when the scrolling is done.
-	 *
-	 * @param scrollMonitor
-	 */
-	public void setScrollMonitor(IScrollMonitor scrollMonitor) {
-		this.scrollMonitor = scrollMonitor;
+		this.scrollBar = new ScrollBar();
 	}
 
 
@@ -76,8 +65,14 @@ public class ScrollPanel extends PanelBase implements HasWidgets, DragEventsHand
 
 	@Override
 	public void onLoad() {
+		boolean isDesktop = SWMMobile.getOsDetection().isDesktop();
+
 		DragController.get().addDragEventsHandler(this);
 		DragController.get().addSwipeEventsHandler(this);
+
+		if (isDesktop) {
+			addMouseWheelHandler();
+		}
 	}
 
 
@@ -90,46 +85,53 @@ public class ScrollPanel extends PanelBase implements HasWidgets, DragEventsHand
 
 	@Override
 	public Widget getWidget() {
-		return myFlowPanel.getWidget(0);
+		return myFlowPanel.getWidget(1);
 	}
 
-
-	public ScrollPanelEventsHandler getScrollPanelEventsHandler() {
-		return scrollPanelEventsHandler;
-	}
-
-	/**
-	 * Neuen Handler fuer Scroll Panel Events registrieren.
-	 *
-	 * @param scrollPanelEventsHandler eventhandler
-	 */
-	public void addScrollPanelEventsHandler(ScrollPanelEventsHandler scrollPanelEventsHandler) {
-		this.scrollPanelEventsHandler = scrollPanelEventsHandler;
-	}
-
-	/**
-	 * Sets the button overscroll tolerance in px
-	 * @param overscrollButtonTolerance
-	 */
-	public void setOverscrollButtonTolerance(int overscrollButtonTolerance) {
-		this.overscrollButtonTolerance = overscrollButtonTolerance;
-	}
 
 	/**
 	 * Scrolls to the default position.
 	 */
+
+	private void addMouseWheelHandler() {
+		this.addDomHandler(new MouseWheelHandler() {
+			@Override
+			public void onMouseWheel(MouseWheelEvent mouseWheelEvent) {
+				int newScrollPosition = getScrollPosition() - mouseWheelEvent.getDeltaY() * 10;
+
+				if (newScrollPosition > 0) {
+					newScrollPosition = 0;
+				} else if (-newScrollPosition + Utils.getHeight(getElement()) > getWidget().getElement().getOffsetHeight()) {
+					newScrollPosition = Utils.getHeight(getElement()) - getWidget().getElement().getOffsetHeight();
+				}
+
+				int screeHeight = Utils.getHeight(getElement());
+				int widgetHeight = getWidget().getElement().getOffsetHeight();
+				if (screeHeight > widgetHeight) {
+					newScrollPosition = 0;
+				}
+
+				setScrollPosition(newScrollPosition);
+			}
+		}, MouseWheelEvent.getType());
+	}
+
 	public void reset() {
 		Utils.setTransitionDuration(getWidget().getElement(), 0);
 		Utils.setTranslateY(getWidget().getElement(), 0);
 	}
 
 
+	@Override
+	public void setScrollMonitor(IScrollMonitor scrollMonitor) {
+		this.scrollMonitor = scrollMonitor;
+	}
+
 	/**
 	 * Scrolls to the top.
 	 */
 	public void setPostionToTop() {
-		Utils.setTransitionDuration(getWidget().getElement(), 0);
-		Utils.setTranslateY(getWidget().getElement(), 0);
+		setScrollPosition(0, 0);
 	}
 
 
@@ -137,23 +139,37 @@ public class ScrollPanel extends PanelBase implements HasWidgets, DragEventsHand
 	 * Scrolls to the button.
 	 */
 	public void setPositionToBottom() {
-		Utils.setTransitionDuration(getWidget().getElement(), 0);
-		Utils.setTranslateY(getWidget().getElement(), this.getElement().getClientHeight()
-				- this.getElement().getScrollHeight());
+		setScrollPosition(this.getElement().getClientHeight() - this.getElement().getScrollHeight(), 0);
 	}
 
 
-	/**
-	 * Sets the croll position
-	 *
-	 * @param pos the x axis pos
-	 */
 	public void setScrollPosition(int pos) {
+		setScrollPosition(pos, 0);
+	}
+
+	/**
+	 * Sets the scroll position
+	 *
+	 * @param pos the y axis pos
+	 */
+	public void setScrollPosition(int pos, int transitionDuration) {
+		Element element = getWidget().getElement();
+		Utils.setTransitionDuration(element, transitionDuration);
+
 		if (myHasTextBox) {
 			setStyleTop(pos);
 		} else {
-			Element element = getWidget().getElement();
 			Utils.setTranslateY(element, pos);
+		}
+
+
+		if (showScrollBar) {
+			int panelHeight = Utils.getHeight(this.getElement());
+			int widgetHeight = getWidget().getElement().getOffsetHeight();
+			this.scrollBar.renderScrollbar(widgetHeight, panelHeight, -pos, transitionDuration);
+			this.scrollBar.fadeOut((int) transitionDuration + DEFAULT_TRANSITION_DURATION * 2);
+		} else {
+			this.scrollBar.hide();
 		}
 	}
 
@@ -187,6 +203,11 @@ public class ScrollPanel extends PanelBase implements HasWidgets, DragEventsHand
 		}
 	}
 
+	@Override
+	public void setOffsetHeight(int offsetHeight) {
+
+	}
+
 
 	@Override
 	public void onDragStart(DragEvent e) {
@@ -195,13 +216,13 @@ public class ScrollPanel extends PanelBase implements HasWidgets, DragEventsHand
 		}
 		int matrix = getScrollToPosition();
 		int current = getScrollPosition();
-		Utils.setTransitionDuration(getWidget().getElement(), 0);
 		if (current != matrix) { // scroll on going
 			int diff = current - matrix;
 			int offset = diff > OFFSET ? OFFSET : diff > -OFFSET ? diff : -OFFSET;
-			setScrollPosition(matrix + offset);
+			setScrollPosition(matrix + offset, 0);
 			DragController.get().suppressNextClick();
 		}
+		e.stopPropagation();
 	}
 
 
@@ -209,7 +230,7 @@ public class ScrollPanel extends PanelBase implements HasWidgets, DragEventsHand
 	public void onDragMove(DragEvent e) {
 		Element widgetEle = getWidget().getElement();
 		int panelHeight = Utils.getHeight(this.getElement());
-		int widgetHeight = calcOffsetHeight(widgetEle);
+		int widgetHeight = widgetEle.getOffsetHeight();
 		int current = getScrollPosition();
 		if (current > 0) {
 			// exceed top boundary
@@ -218,39 +239,18 @@ public class ScrollPanel extends PanelBase implements HasWidgets, DragEventsHand
 			} else {
 				current += e.getOffsetY() * OFFSET;
 			}
-		} else if (-current + panelHeight > widgetHeight) {
-			//correct only scroll position if overscroll is prohibited
-			if (overscrollButtonTolerance == 0) {
-				// exceed bottom boundary
-				if (e.getOffsetY() < 0) { // resist scroll up.
-					current += (int) (e.getOffsetY() / OFFSET);
-				} else {
-					current += e.getOffsetY() * OFFSET;
-				}
+		} else if (-current + panelHeight > widgetHeight) { // exceed bottom boundary
+			if (e.getOffsetY() < 0) { // resist scroll up.
+				current += (int) (e.getOffsetY() / OFFSET);
 			} else {
-				//if button overscrolling is allowed
-				current += e.getOffsetY();
+				current += e.getOffsetY() * OFFSET;
 			}
 		} else {
 			current += e.getOffsetY();
 		}
-		setScrollPosition(current);
+		setScrollPosition(current, 0);
+		e.stopPropagation();
 	}
-
-	private int calcOffsetHeight(Element widgetEle) {
-		return ((this.offsetHeight > 0) ? this.offsetHeight : widgetEle.getOffsetHeight());
-	}
-
-	/**
-	 * A value greater zero will set the offset height of the panel manually.
-	 * Otherwise it will be calculated automatically.
-	 *
-	 * @param offsetHeight the offset height.
-	 */
-	public void setOffsetHeight(int offsetHeight) {
-		this.offsetHeight = offsetHeight;
-	}
-
 
 	@Override
 	public void onDragEnd(DragEvent e) {
@@ -263,28 +263,14 @@ public class ScrollPanel extends PanelBase implements HasWidgets, DragEventsHand
 			return;
 		}
 		int panelHeight = Utils.getHeight(this.getElement());
-		int widgetHeight = getHeightOfElementOrChildElements(widgetEle);
-
+		int widgetHeight = widgetEle.getOffsetHeight();
 		if (current > 0 // exceed top boundary
 				|| panelHeight > widgetHeight) {
-
-			// fire eventshandler for top boundary
-			if (getScrollPanelEventsHandler() != null) {
-				getScrollPanelEventsHandler().onTop(e);
-			}
-
-			Utils.setTransitionDuration(widgetEle, DEFAULT_TRANSITION_DURATION);
-			setScrollPosition(0);
+			setScrollPosition(0, DEFAULT_TRANSITION_DURATION);
 		} else if (-current + panelHeight > widgetHeight) { // exceed bottom boundary
-
-			// fire eventshandler for bottom boundary
-			if (getScrollPanelEventsHandler() != null) {
-				getScrollPanelEventsHandler().onBottom(e);
-			}
-
-			Utils.setTransitionDuration(widgetEle, DEFAULT_TRANSITION_DURATION);
-			setScrollPosition((panelHeight - overscrollButtonTolerance) - widgetHeight);
+			setScrollPosition(panelHeight - widgetHeight, DEFAULT_TRANSITION_DURATION);
 		}
+		e.stopPropagation();
 	}
 
 
@@ -317,8 +303,7 @@ public class ScrollPanel extends PanelBase implements HasWidgets, DragEventsHand
 			time = (long) (time * timeAdj);
 			current = bottom;
 		}
-		Utils.setTransitionDuration(widgetEle, time);
-		setScrollPosition((int) current);
+		setScrollPosition((int) current, (int) time);
 	}
 
 
@@ -329,56 +314,13 @@ public class ScrollPanel extends PanelBase implements HasWidgets, DragEventsHand
 
 	@Override
 	public void add(Widget w) {
+		assert myFlowPanel.getWidgetCount() == 0 : "Can only add one widget to ScrollPanel.";
+		super.add(this.scrollBar);
+
 		super.add(w);
 		if (SWMMobile.getOsDetection().isIOs()) {
 			Utils.setTranslateY(w.getElement(), 0); // anti-flickering on iOS.
 		}
-	}
-
-
-	/**
-	 * Returns the height of the given element. If the element has a height of 0 it searches
-	 * recursively for the height of the next visible child (e.g. the next visible slide of a
-	 * SliderPanel).
-	 *
-	 * @param element parent element
-	 * @return height of the element of a visible child
-	 */
-	private int getHeightOfElementOrChildElements(Element element) {
-		if (this.offsetHeight > 0) {
-			return this.offsetHeight;
-		}
-
-		// current element has height? Return this height.
-		if (element.getOffsetHeight() != 0) {
-			return element.getOffsetHeight();
-		}
-
-		// current element is hidden? no height for this element.
-		if (element.getStyle().getVisibility().equals("hidden")
-				|| element.getStyle().getDisplay().equals("none")) {
-			return 0;
-		}
-
-		// search children for height
-		NodeList<Node> children = element.getChildNodes();
-		if (children.getLength() == 0) {
-			return 0;
-		}
-
-		int height = 0;
-		for (int i = 0; i < children.getLength(); i++) {
-			Node currentNode = children.getItem(i);
-			if (currentNode instanceof Element) {
-				height = getHeightOfElementOrChildElements((Element) currentNode);
-			}
-
-			if (height != 0) {
-				return height;
-			}
-		}
-
-		return 0;
 	}
 
 
@@ -409,14 +351,22 @@ public class ScrollPanel extends PanelBase implements HasWidgets, DragEventsHand
 		style.setTop(top, Unit.PX);
 	}
 
+
 	/**
-	 * Enables reactions to scroll gestures.
+	 * Indicates if the scroll bar should be shown or not.
+	 *
+	 * @return .
 	 */
-	public static interface IScrollMonitor {
-
-		void onScrollStart();
-
-		void onScrollEnd();
+	public boolean isShowScrollBar() {
+		return showScrollBar;
 	}
 
+	/**
+	 * Indicates if the scroll bar should be shown or not.
+	 *
+	 * @param showScrollBar true if it should be shown, false if not.
+	 */
+	public void setShowScrollBar(boolean showScrollBar) {
+		this.showScrollBar = showScrollBar;
+	}
 }

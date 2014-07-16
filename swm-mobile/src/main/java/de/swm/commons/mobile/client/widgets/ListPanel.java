@@ -29,7 +29,7 @@ import de.swm.commons.mobile.client.utils.Utils;
 
 
 /**
- * List panel which contains list items an is typically placed inside a {@link ScrollPanel}.
+ * List panel which contains list items an is typically placed inside a {@link de.swm.commons.mobile.client.widgets.scroll.ScrollPanel}.
  * 
  */
 public class ListPanel extends PanelBase implements ClickHandler, DragEventsHandler {

@@ -29,6 +29,7 @@ import de.swm.commons.mobile.client.event.*;
 import de.swm.commons.mobile.client.theme.components.TreePanelCss;
 import de.swm.commons.mobile.client.utils.Utils;
 import de.swm.commons.mobile.client.widgets.*;
+import de.swm.commons.mobile.client.widgets.scroll.ScrollPanelWithScrollbar;
 import de.swm.commons.mobile.client.widgets.tree.TreeChangedEvent.EventType;
 
 import java.util.HashMap;

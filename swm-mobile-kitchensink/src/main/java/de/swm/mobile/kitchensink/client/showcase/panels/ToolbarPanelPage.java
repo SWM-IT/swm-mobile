@@ -9,7 +9,7 @@ import com.google.gwt.user.client.ui.Widget;
 import de.swm.commons.mobile.client.widgets.HeaderPanel;
 import de.swm.commons.mobile.client.widgets.ListItem;
 import de.swm.commons.mobile.client.widgets.ListPanel;
-import de.swm.commons.mobile.client.widgets.ScrollPanel;
+import de.swm.commons.mobile.client.widgets.scroll.ScrollPanel;
 import de.swm.commons.mobile.client.widgets.toolbar.ToolbarContent;
 import de.swm.commons.mobile.client.widgets.toolbar.ToolbarElement;
 import de.swm.commons.mobile.client.widgets.toolbar.ToolbarPanel;

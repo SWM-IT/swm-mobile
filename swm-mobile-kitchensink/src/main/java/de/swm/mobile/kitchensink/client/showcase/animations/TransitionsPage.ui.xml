@@ -1,12 +1,13 @@
 <!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
              xmlns:g="urn:import:com.google.gwt.user.client.ui"
-             xmlns:m="urn:import:de.swm.commons.mobile.client.widgets">
+             xmlns:m="urn:import:de.swm.commons.mobile.client.widgets"
+             xmlns:ms="urn:import:de.swm.commons.mobile.client.widgets.scroll">
     <g:HTMLPanel>
         <m:HeaderPanel ui:field="header" leftButton="Back">
             <m:OnlyDesktopLabel>Transitions</m:OnlyDesktopLabel>
         </m:HeaderPanel>
-        <m:ScrollPanel>
+        <ms:ScrollPanel>
             <m:ListPanel ui:field="list" showArrow="false">
                 <g:Label>Slide</g:Label>
                 <g:Label>Slide Up</g:Label>
@@ -16,7 +17,7 @@
                 <g:Label>Swap</g:Label>
                 <g:Label>Flip</g:Label>
             </m:ListPanel>
-        </m:ScrollPanel>
+        </ms:ScrollPanel>
 
     </g:HTMLPanel>
 </ui:UiBinder> 

@@ -2,7 +2,8 @@
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
 	xmlns:g="urn:import:com.google.gwt.user.client.ui"
 	xmlns:m="urn:import:de.swm.commons.mobile.client.widgets"
-	xmlns:mc="urn:import:de.swm.commons.mobile.client.widgets.command">
+	xmlns:mc="urn:import:de.swm.commons.mobile.client.widgets.command"
+    xmlns:ms="urn:import:de.swm.commons.mobile.client.widgets.scroll">
 	<ui:style>
 	</ui:style>
 	
@@ -21,7 +22,7 @@
 					<m:DropDownItem key="3" text="Option 3"/>
 				</mc:CommandDropDown>
 		</mc:CommandPanel>
-		<m:ScrollPanel>
+		<ms:ScrollPanel>
 			<m:ListPanel showArrow="false">
 				<g:Label>Scroll Me 01</g:Label>
 				<g:Label>Scroll Me 02</g:Label>
@@ -44,7 +45,7 @@
 				<g:Label>Scroll Me 19</g:Label>
 				<g:Label>Scroll Me 20</g:Label>
 			</m:ListPanel>
-		</m:ScrollPanel>
+		</ms:ScrollPanel>
 		<mc:CommandPanel>
 				<mc:CommandItem ui:field='command21' headerText='' normalIcon='{icon.home}' highlightIcon='{icon.home_selected}' />
 				<mc:CommandItem ui:field='command22' headerText='' normalIcon='{icon.download}' highlightIcon='{icon.download_selected}' />

@@ -3,7 +3,8 @@
 	xmlns:g="urn:import:com.google.gwt.user.client.ui"
     xmlns:b="urn:import:org.gwtbootstrap3.client.ui"
 	xmlns:m="urn:import:de.swm.commons.mobile.client.widgets"
-    xmlns:md="urn:import:de.swm.commons.mobile.client.widgets.date">
+    xmlns:md="urn:import:de.swm.commons.mobile.client.widgets.date"
+    xmlns:ms="urn:import:de.swm.commons.mobile.client.widgets.scroll">
 
 	<ui:style>
 		.flex > div {
@@ -37,7 +38,7 @@
 		<m:HeaderPanel ui:field="header" leftButton="Back">
 			<m:OnlyDesktopLabel>Editor</m:OnlyDesktopLabel>
 		</m:HeaderPanel>
-		<m:ScrollPanel>
+		<ms:ScrollPanel>
             <g:HTMLPanel>
                 <m:ListPanel selectable="false">
                     <m:ListItem>
@@ -94,6 +95,6 @@
                     </m:ListItem>
                 </m:ListPanel>
             </g:HTMLPanel>
-		</m:ScrollPanel>		
+		</ms:ScrollPanel>
 	</g:HTMLPanel>	
 </ui:UiBinder> 

@@ -3,7 +3,8 @@
              xmlns:g="urn:import:com.google.gwt.user.client.ui"
              xmlns:b="urn:import:org.gwtbootstrap3.client.ui"
              xmlns:bhtml="urn:import:org.gwtbootstrap3.client.ui"
-             xmlns:m="urn:import:de.swm.commons.mobile.client.widgets">
+             xmlns:m="urn:import:de.swm.commons.mobile.client.widgets"
+             xmlns:ms="urn:import:de.swm.commons.mobile.client.widgets.scroll">
     <g:HTMLPanel>
         <m:HeaderPanel ui:field="header" leftButton="Back">
             <m:OnlyDesktopLabel>Bootstrap3 integration</m:OnlyDesktopLabel>
@@ -13,7 +14,7 @@
                 <h4>&nbsp;&nbsp;SWM-Mobile and Bootstrap3</h4>
             </div>
         </div>
-        <m:ScrollPanel hasTextBox="true">
+        <ms:ScrollPanel hasTextBox="true">
             <bhtml:Div styleName="container-fluid">
                 <bhtml:Div styleName="row">
                     <bhtml:Div styleName="col-md-12">
@@ -128,7 +129,7 @@
                     </bhtml:Div>
                 </bhtml:Div>
             </bhtml:Div>
-        </m:ScrollPanel>
+        </ms:ScrollPanel>
 
     </g:HTMLPanel>
 </ui:UiBinder>
