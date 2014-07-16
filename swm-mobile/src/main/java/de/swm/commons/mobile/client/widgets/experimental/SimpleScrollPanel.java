@@ -17,34 +17,43 @@ package de.swm.commons.mobile.client.widgets.experimental;
 
 import com.google.gwt.core.client.JavaScriptObject;
 import com.google.gwt.core.client.JsArray;
-import com.google.gwt.dom.client.Touch;
 import com.google.gwt.dom.client.Element;
+import com.google.gwt.dom.client.Touch;
 import com.google.gwt.user.client.Event;
 import com.google.gwt.user.client.EventListener;
 import com.google.gwt.user.client.ui.HasWidgets;
 import com.google.gwt.user.client.ui.Widget;
 import de.swm.commons.mobile.client.SWMMobile;
+import de.swm.commons.mobile.client.base.PanelBase;
 import de.swm.commons.mobile.client.event.DragController;
 import de.swm.commons.mobile.client.utils.Utils;
-import de.swm.commons.mobile.client.base.PanelBase;
 import de.swm.commons.mobile.client.widgets.scroll.IScrollMonitor;
 import de.swm.commons.mobile.client.widgets.scroll.IScrollPanel;
+
+import java.util.logging.Logger;
 
 /**
  * Improved scroll panel (still experimental)
  */
 public class SimpleScrollPanel extends PanelBase implements HasWidgets, EventListener, IScrollPanel {
-	
-	JavaScriptObject scrollListener;
-	JavaScriptObject touchListener;
-	int scrollTop = 0;
+
+	private static final Logger LOGGER = Logger.getLogger(SWMMobile.class.getName());
+
+
+	private int lastTouchY = 0;
+	private int eventSample = 0;
+	private static final int NUM_SAMPLES = 3; // sample every third touchmove event to get better direction signal
+
+	private JavaScriptObject scrollListener;
+	private JavaScriptObject touchListener;
+	private int scrollTop = 0;
 
 	public SimpleScrollPanel() {
 		setStyleName(SWMMobile.getTheme().getMGWTCssBundle().getScrollPanelCss().simpleScrollPanel());
 		sinkEvents(Event.TOUCHEVENTS);
 		sinkEvents(Event.ONSCROLL);
 	}
-	
+
 	@Override
 	public void onLoad() {
 		super.onLoad();
@@ -56,7 +65,7 @@ public class SimpleScrollPanel extends PanelBase implements HasWidgets, EventLis
 			touchListener = Utils.addEventListener(getElement(), "touchmove", true, this);
 		}
 	}
-	
+
 	@Override
 	protected void onUnload() {
 		if (touchListener != null) {
@@ -67,15 +76,15 @@ public class SimpleScrollPanel extends PanelBase implements HasWidgets, EventLis
 			Utils.removeEventListener(getElement(), "onscroll", true, scrollListener);
 			scrollListener = null;
 		}
-		DragController.get().getOptions().setEnableNativeEventPropagation(false);		
+		DragController.get().getOptions().setEnableNativeEventPropagation(false);
 		super.onUnload();
 	}
-	
+
 	@Override
 	public Widget getWidget() {
 		return myFlowPanel.getWidget(0);
 	}
-	
+
 	/**
 	 * Scrolls to the default position.
 	 */
@@ -101,9 +110,8 @@ public class SimpleScrollPanel extends PanelBase implements HasWidgets, EventLis
 
 	/**
 	 * Sets the croll position
-	 * 
-	 * @param pos
-	 *            the y axis pos
+	 *
+	 * @param pos the y axis pos
 	 */
 	public void setScrollPosition(int pos) {
 		scrollTop = pos;
@@ -112,7 +120,7 @@ public class SimpleScrollPanel extends PanelBase implements HasWidgets, EventLis
 
 	/**
 	 * Returns the current scroll position.
-	 * 
+	 *
 	 * @return the position
 	 */
 	public int getScrollPosition() {
@@ -131,31 +139,28 @@ public class SimpleScrollPanel extends PanelBase implements HasWidgets, EventLis
 			Utils.setTranslateY(w.getElement(), 0); // anti-flickering on iOS.
 		}
 	}
-	
-	private int lastTouchY = 0;
-	private int eventSample = 0;
-	private static final int NUM_SAMPLES = 3; // sample every third touchmove event to get better direction signal
+
 
 	@Override
-	public void onBrowserEvent(Event event) {		
+	public void onBrowserEvent(Event event) {
 		String type = event.getType();
-		
+
 		if ("touchmove".equals(type)) {
 			eventSample++;
 			if (eventSample == NUM_SAMPLES) {
 				eventSample = 0;
-			
+
 				boolean limitTop = false;
 				boolean limitBottom = false;
 				int newTouchY = 0;
-				
+
 				JsArray<Touch> touches = event.getTouches();
 				if (touches != null && touches.length() > 0) {
 					newTouchY = touches.get(0).getClientY();
 				}
 				int delta = newTouchY - lastTouchY;
 				int newScrollTop = getElement().getScrollTop();
-	
+
 				if (delta < 0) {
 					limitTop = (newScrollTop == 0);
 					limitBottom = false;
@@ -163,26 +168,25 @@ public class SimpleScrollPanel extends PanelBase implements HasWidgets, EventLis
 					limitBottom = (newScrollTop == (getElement().getScrollHeight() - getElement().getClientHeight()));
 					limitTop = false;
 				}
-								
+
 				if (limitTop || limitBottom) {
 					event.preventDefault();
 				}
-				
+
 				lastTouchY = newTouchY;
 			}
 		}
-		
+
 		Element target = event.getEventTarget().cast();
 		if (getElement().equals(target)) {
 			if ("scroll".equals(type)) {
 				scrollTop = getElement().getScrollTop();
 			}
 		}
-		
+
 		super.onBrowserEvent(event);
 	}
 
-	//TODO: Implement this methods
 	@Override
 	public void setScrollMonitor(IScrollMonitor scrollMonitor) {
 
@@ -190,11 +194,11 @@ public class SimpleScrollPanel extends PanelBase implements HasWidgets, EventLis
 
 	@Override
 	public int getScrollToPosition() {
-		return 0;
+		return lastTouchY;
 	}
 
 	@Override
 	public void setOffsetHeight(int offsetHeight) {
-
+		LOGGER.info("Offset Height is not sopported");
 	}
 }
