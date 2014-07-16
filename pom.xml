@@ -5,7 +5,7 @@
     <groupId>de.swm</groupId>
     <artifactId>swm-mobile-base</artifactId>
     <packaging>pom</packaging>
-    <version>2.2-SNAPSHOT</version>
+    <version>2.2</version>
     <name>SWM Mobile project collection</name>
     <description>This is the common project for all smw mobile project collections</description>
     <inceptionYear>2011</inceptionYear>
