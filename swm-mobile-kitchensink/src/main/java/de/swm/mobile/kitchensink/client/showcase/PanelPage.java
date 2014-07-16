@@ -21,6 +21,7 @@ public class PanelPage extends ShowcaseOverviewPage {
 		addPage(new ListPanelPage());
 		addPage(new PaintableCanvasPage());
 		addPage(new ScrollPanelPage());
+		addPage(new ScrollPanelPageExperimental());
 		addPage(new SlidePanelPage());
 		addPage(new TabPanelPage());
 		addPage(new ToolbarPanelPage());

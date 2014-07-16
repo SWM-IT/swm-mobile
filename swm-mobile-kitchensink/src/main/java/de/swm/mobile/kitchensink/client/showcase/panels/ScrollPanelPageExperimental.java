@@ -12,28 +12,28 @@ import static de.swm.mobile.kitchensink.client.ShowcaseAnnotations.ShowcaseSourc
 import static de.swm.mobile.kitchensink.client.ShowcaseAnnotations.ShowcaseUiXML;
 
 @ShowcaseSource
-@ShowcaseUiXML({"ScrollPanelPage.ui.xml"})
-public class ScrollPanelPage extends ShowcaseDetailPage {
+@ShowcaseUiXML({"ScrollPanelPageExperimental.ui.xml"})
+public class ScrollPanelPageExperimental extends ShowcaseDetailPage {
 
     @UiField
 	HeaderPanel header;
 
-    private static ScrollPanelPageUiBinder uiBinder = GWT
-            .create(ScrollPanelPageUiBinder.class);
+    private static ScrollPanelPageUiBinderExperimental uiBinder = GWT
+            .create(ScrollPanelPageUiBinderExperimental.class);
 
 
-    interface ScrollPanelPageUiBinder extends UiBinder<Widget, ScrollPanelPage> {
+    interface ScrollPanelPageUiBinderExperimental extends UiBinder<Widget, ScrollPanelPageExperimental> {
     }
 
-    public ScrollPanelPage() {
-        super(ScrollPanelPage.class);
+    public ScrollPanelPageExperimental() {
+        super(ScrollPanelPageExperimental.class);
         initWidget(uiBinder.createAndBindUi(this));
         Application.addDefaultBackButtonHanlder(header);
     }
 
     @Override
     public String getName() {
-        return "Scrollpanel";
+        return "Scrollpanel (Experimental)";
     }
 
     @Override
