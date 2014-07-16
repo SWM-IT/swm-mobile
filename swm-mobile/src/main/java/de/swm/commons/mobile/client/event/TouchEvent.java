@@ -19,10 +19,8 @@ import com.google.gwt.core.client.JsArray;
 import com.google.gwt.user.client.Event;
 
 
-
 /**
  * Low level the touch event wrapper to use native browser touch events. http://www.html5rocks.com/en/mobile/touch.html
- * 
  */
 public class TouchEvent extends Event {
 
@@ -33,36 +31,33 @@ public class TouchEvent extends Event {
 	}
 
 
-
 	/**
 	 * Changed Touches: a list of fingers involved in the current event. For example, in a touchend event, this will be the finger that
 	 * was removed.
-	 * 
+	 *
 	 * @return the touch js object
 	 */
 	public final native JsArray<Touch> changedTouches() /*-{
-														return this.changedTouches;
-														}-*/;
-
+        return this.changedTouches;
+    }-*/;
 
 
 	/**
 	 * Target Touches - a list of fingers on the current DOM element.
-	 * 
+	 *
 	 * @return the touch js object
 	 */
 	public final native JsArray<Touch> targetTouches() /*-{
-														return this.targetTouches;
-														}-*/;
-
+        return this.targetTouches;
+    }-*/;
 
 
 	/**
 	 * All Touches -  a list of all fingers currently on the screen.
-	 * 
+	 *
 	 * @return the touch js object
 	 */
 	public final native JsArray<Touch> touches() /*-{
-													return this.touches;
-													}-*/;
+        return this.touches;
+    }-*/;
 }
