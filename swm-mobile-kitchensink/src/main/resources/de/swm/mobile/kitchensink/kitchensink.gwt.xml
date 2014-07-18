@@ -51,7 +51,11 @@
     <generate-with class="de.swm.mobile.kitchensink.generator.ShowcaseGenerator">
         <when-type-assignable class="de.swm.mobile.kitchensink.client.Application.GeneratorInfo" />
     </generate-with>
-    
+
+    <set-configuration-property name="swm.superdevmode" value="on" />
+    <set-configuration-property name="swm.superdevmode_host" value="http://localhost:9876" />
+    <set-configuration-property name='xsiframe.failIfScriptTag' value='FALSE'/>
+
 	<entry-point class="de.swm.mobile.kitchensink.client.Application" />
 
 </module>

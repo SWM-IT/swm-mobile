@@ -16,6 +16,7 @@ import de.swm.commons.mobile.client.widgets.HeaderPanel;
 import de.swm.gwt.client.responsive.IMatchMedia;
 import de.swm.gwt.client.responsive.IMatchMediaChangeHandler;
 import de.swm.gwt.client.responsive.MatchMediaFacade;
+import de.swm.gwt.client.superdev.SuperDevModeUtil;
 import de.swm.gwt.client.utils.Utils;
 import de.swm.mobile.kitchensink.client.theme.bootstrap.BootsrapSWMMobileTheme;
 
@@ -106,6 +107,8 @@ public class Application implements EntryPoint {
 			public void execute() {
 				mainPage = new ToolbarPage();
 				SimplePage.load(mainPage);
+				//Enables the super dev mode recompilation
+				SuperDevModeUtil.showDevMode();
 			}
 		});
 	}

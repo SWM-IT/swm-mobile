@@ -15,4 +15,15 @@
     	<exclude name="asyncjs/**" />
     	-->
     </source>
+
+    <!-- super dev mode -->
+    <define-configuration-property name="swm.superdevmode" is-multi-valued="false" />
+    <set-configuration-property name="swm.superdevmode" value="off" />
+
+    <define-configuration-property name="swm.superdevmode_host" is-multi-valued="false" />
+
+    <!-- generater to build util! -->
+    <generate-with class="de.swm.gwt.generator.SuperDevModeGenerator">
+        <when-type-assignable class="de.swm.gwt.client.superdev.SuperDevModeHelper" />
+    </generate-with>
 </module>
