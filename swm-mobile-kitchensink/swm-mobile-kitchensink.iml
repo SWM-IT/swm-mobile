@@ -48,6 +48,9 @@
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.json:json:20090211" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: com.google.gwt:gwt-dev:2.6.1" level="project" />
     <orderEntry type="module" module-name="swm-mobile" />
+    <orderEntry type="module" module-name="swm-gwt-client" />
+    <orderEntry type="library" name="Maven: com.google.gwt.eventbinder:eventbinder:1.0.2" level="project" />
+    <orderEntry type="library" name="Maven: org.gwtopenmaps.openlayers:gwt-openlayers-client:0.8" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.gwtbootstrap3:gwtbootstrap3:0.7" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.gwtbootstrap3:gwtbootstrap3-extras:0.7" level="project" />
     <orderEntry type="library" name="Maven: com.google.appengine:appengine-api-1.0-sdk:1.9.1" level="project" />

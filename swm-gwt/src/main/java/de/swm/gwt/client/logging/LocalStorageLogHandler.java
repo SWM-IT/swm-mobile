@@ -13,7 +13,7 @@ import com.google.gwt.storage.client.Storage;
  * is impossible / has side effects.
  * 
  * @author wimmel.guido
- *         copyright (C) 2012, SWM Services GmbH
+ *         copyright (C) 2012-214, SWM Services GmbH
  *
  */
 public class LocalStorageLogHandler extends Handler {
