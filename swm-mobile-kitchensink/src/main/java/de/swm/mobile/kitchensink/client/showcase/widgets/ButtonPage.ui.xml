@@ -13,7 +13,7 @@
 	
 	<ui:with field='icon' type='de.swm.mobile.kitchensink.client.theme.bootstrap.icon.IconResources'/>
 	
-	<g:HTMLPanel>
+	<g:HTMLPanel ui:field="htmlPanel">
 		<m:HeaderPanel ui:field="header" leftButton="Back">
 			<m:OnlyDesktopLabel>Button</m:OnlyDesktopLabel>
 		</m:HeaderPanel>
@@ -35,7 +35,7 @@
 					<m:ImageHighlightButton ui:field="img" normalIcon='{icon.information}' headerText="Image Button Test" />
 				</m:ListItem>
                 <m:ListItem>
-                    <m:BigButton text="Big Button" />
+                    <m:BigButton ui:field="bigButton" text="Big Button" />
                 </m:ListItem>
 			</m:ListPanel>			
 		</ms:ScrollPanel>

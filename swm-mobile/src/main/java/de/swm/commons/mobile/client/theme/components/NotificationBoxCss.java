@@ -31,6 +31,13 @@ public interface NotificationBoxCss extends CssResource {
 	@CssResource.ClassName("bottomPanel")
 	String getBottomPanel();
 
+	/**
+	 * <p>getCloseLink</p>
+	 *
+	 * @return a {@link String} object.
+	 */
+	@CssResource.ClassName("closeLink")
+	String getCloseLink();
 
 	/**
 	 * <p>animationContainerCenter</p>

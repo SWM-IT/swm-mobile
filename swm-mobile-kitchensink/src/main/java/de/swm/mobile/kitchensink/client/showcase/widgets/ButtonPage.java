@@ -6,8 +6,11 @@ import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.uibinder.client.UiHandler;
 import com.google.gwt.user.client.Window;
+import com.google.gwt.user.client.ui.HTMLPanel;
 import com.google.gwt.user.client.ui.Widget;
 import de.swm.commons.mobile.client.widgets.HeaderPanel;
+import de.swm.commons.mobile.client.widgets.NotificationBox;
+import de.swm.commons.mobile.client.widgets.scroll.ScrollPanel;
 import de.swm.mobile.kitchensink.client.base.ShowcaseDetailPage;
 
 import static de.swm.mobile.kitchensink.client.ShowcaseAnnotations.ShowcaseSource;
@@ -21,6 +24,9 @@ public class ButtonPage extends ShowcaseDetailPage {
 
 	@UiField
 	HeaderPanel header;
+
+	@UiField
+	HTMLPanel htmlPanel;
 
 
 	interface ButtonPageUiBinder extends UiBinder<Widget, ButtonPage> {
@@ -95,6 +101,15 @@ public class ButtonPage extends ShowcaseDetailPage {
 	public void onClickImageButton(ClickEvent e) {
 		Window.alert("You clicked Image Button");
 	}
+
+	/**
+	 * Handler.
+	 */
+	@UiHandler("bigButton")
+	public void onClickBigButton(ClickEvent e) {
+		NotificationBox.showPopupDialog(htmlPanel, 50, 800000, true, "test", "more Text", "even more Text");
+	}
+
 
 
 	@Override

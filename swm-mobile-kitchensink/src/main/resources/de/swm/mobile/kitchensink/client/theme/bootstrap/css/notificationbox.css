@@ -1,5 +1,5 @@
 @if swmmobile.css pretty {
-	@external bottomPanel, dialogAnimationContainer-center;
+	@external bottomPanel, dialogAnimationContainer-center, closeLink;
 }
 
 .bottomPanel {
@@ -7,9 +7,12 @@
 	bottom: 0px;
 	left: 0px;
 	right: 0px;
-	background-color: rgba(255, 255, 200, 0.9);
-	border-top: 1px solid #030506;
+    color: white;
+	background-color: rgba(43, 164, 255, 0.8);
+	border-top: 2px solid white;
+    border-radius: 2px;
 	padding: 10px;
+    z-index: 10;
 }
 
 .dialogAnimationContainer-center {
@@ -19,4 +22,31 @@
 		
 	-ms-flex-pack: center;
 	-ms-flex-align: center;
+}
+
+.closeLink {
+    float:right;
+    cursor:pointer;
+    color: #fff;
+    border: 3px solid white;
+    border-radius: 30px;
+    background: #605F61;
+    font-size: 31px;
+    font-weight: bold;
+    display: inline-block;
+    line-height: 0px;
+    padding: 14px 7px 18px;
+    margin-right: -10px;
+    margin-top: -30px;
+    position: relative;
+    z-index: 11;
+}
+
+.closeLink:before {
+    content: "x";
+}
+
+.closeLink:hover {
+    color: white;
+    text-decoration: none;
 }

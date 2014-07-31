@@ -1,5 +1,7 @@
 package de.swm.commons.mobile.client.widgets;
 
+import com.google.gwt.event.dom.client.ClickEvent;
+import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.Timer;
 import com.google.gwt.user.client.ui.*;
 import de.swm.commons.mobile.client.SWMMobile;
@@ -30,6 +32,7 @@ public class NotificationBox extends Composite implements HasWidgets, IsSWMMobil
 	private final FlowPanel container;
 	protected HasWidgets panelToOverlay;
 	protected final NotificationBoxCss css;
+	protected final Anchor closeButton;
 
 	private boolean isVisible = false;
 	private final IsSWMMobileWidgetHelper myWidgetHelper = new IsSWMMobileWidgetHelper();
@@ -44,10 +47,14 @@ public class NotificationBox extends Composite implements HasWidgets, IsSWMMobil
 
 		container = new FlowPanel();
 		container.addStyleName(css.getBottomPanel());
+
+		closeButton = new Anchor();
+		closeButton.setStyleName(css.getCloseLink());
+		container.add(closeButton);
+
 		slideUpPanel.add(container);
+
 		initWidget(slideUpPanel);
-
-
 	}
 
 	/**
@@ -198,6 +205,23 @@ public class NotificationBox extends Composite implements HasWidgets, IsSWMMobil
 		myWidgetHelper.setSecondaryStyle(this, style);
 	}
 
+	/**
+	 * Defines if the notificationbox should have a close button or not.
+	 * @param show .
+	 * @param containerForThisWidget .
+	 */
+	public void showCloseButton(boolean show, final HasWidgets containerForThisWidget) {
+		this.closeButton.setVisible(show);
+		if (show) {
+			closeButton.addClickHandler(new ClickHandler() {
+				@Override
+				public void onClick(ClickEvent clickEvent) {
+					fadeOut(containerForThisWidget);
+				}
+			});
+		}
+	}
+
 
 	/**
 	 * Will dispay a notification for 5 seconds and hide it again.
@@ -205,14 +229,37 @@ public class NotificationBox extends Composite implements HasWidgets, IsSWMMobil
 	 * @param messages messages to display
 	 */
 	public static void showPopupDialog(final HasWidgets containerForThisWidget, final String... messages) {
-		showPopupDialog(containerForThisWidget, FADE_IN_AFTER_MS, FADE_OUT_AFTER_MS, messages);
+		showPopupDialog(containerForThisWidget, FADE_IN_AFTER_MS, FADE_OUT_AFTER_MS, false, messages);
 	}
 
-	public static void showPopupDialog(final HasWidgets containerForThisWidget, final int fadeInAfter, final int fadeOutAfter, final String... messages) {
+	/**
+	 * Will display a notification box, which will fade in and out after a specified time.
+	 * @param containerForThisWidget -
+	 * @param fadeInAfter .
+	 * @param fadeOutAfter .
+	 * @param messages .
+	 */
+	public static void showPopupDialog(final HasWidgets containerForThisWidget, final int fadeInAfter,
+			final int fadeOutAfter, final String... messages) {
+		showPopupDialog(containerForThisWidget, fadeInAfter, fadeOutAfter, false, messages);
+	}
+
+	/**
+	 * Will display a notification box, which will fade in and out after a specified time and defines if it should
+	 * have a close button or not.
+	 * @param containerForThisWidget .
+	 * @param fadeInAfter .
+	 * @param fadeOutAfter .
+	 * @param showCloseButton .
+	 * @param messages .
+	 */
+	public static void showPopupDialog(final HasWidgets containerForThisWidget, final int fadeInAfter,
+			final int fadeOutAfter, final boolean showCloseButton, final String... messages) {
 		new Timer() {
 			@Override
 			public void run() {
 				final NotificationBox popinDialog = new NotificationBox();
+				popinDialog.showCloseButton(showCloseButton, containerForThisWidget);
 				for (String message : messages) {
 					popinDialog.add(new Label(message));
 				}
