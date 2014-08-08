@@ -7,7 +7,7 @@
 	<ui:style>
 	</ui:style>
 	
-	<ui:with field='icon' type='de.swm.commons.mobile.client.theme.bootstrap.icon.IconResources'/>
+	<ui:with field='icon' type='de.swm.mobile.kitchensink.client.theme.icon.IconResources'/>
 	
 	<g:HTMLPanel>
 		<m:HeaderPanel ui:field="header" leftButton="Back">

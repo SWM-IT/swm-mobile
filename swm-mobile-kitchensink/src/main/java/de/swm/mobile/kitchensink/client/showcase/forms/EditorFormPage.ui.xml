@@ -32,7 +32,7 @@
 		}
 	</ui:style>
 
-    <ui:with field='res' type='de.swm.commons.mobile.client.theme.bootstrap.extention.TestResources'/>
+    <ui:with field='res' type='de.swm.mobile.kitchensink.client.theme.TestResources'/>
 		
 	<g:HTMLPanel>
 		<m:HeaderPanel ui:field="header" leftButton="Back">

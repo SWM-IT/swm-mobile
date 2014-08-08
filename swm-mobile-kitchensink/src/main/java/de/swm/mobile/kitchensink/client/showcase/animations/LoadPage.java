@@ -14,7 +14,7 @@ import de.swm.commons.mobile.client.widgets.ListItem;
 import de.swm.commons.mobile.client.widgets.PagingListPanel;
 import de.swm.commons.mobile.client.widgets.PagingListPanel.ListItemProvider;
 import de.swm.mobile.kitchensink.client.base.ShowcaseDetailPage;
-import de.swm.commons.mobile.client.theme.bootstrap.extention.TestResources;
+import de.swm.mobile.kitchensink.client.theme.TestResources;
 
 import java.util.ArrayList;
 import java.util.List;

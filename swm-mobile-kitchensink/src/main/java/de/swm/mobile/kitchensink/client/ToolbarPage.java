@@ -9,7 +9,7 @@ import de.swm.commons.mobile.client.page.SimplePage;
 import de.swm.commons.mobile.client.widgets.toolbar.ToolbarElement;
 import de.swm.commons.mobile.client.widgets.toolbar.ToolbarPanel;
 import de.swm.commons.mobile.client.widgets.toolbar.ToolbarPanel.ToolbarSelectionHandler;
-import de.swm.commons.mobile.client.theme.bootstrap.extention.TestResources;
+import de.swm.mobile.kitchensink.client.theme.TestResources;
 import de.swm.mobile.kitchensink.client.showcase.*;
 import de.swm.mobile.kitchensink.client.showcase.about.AboutDetailPage;
 

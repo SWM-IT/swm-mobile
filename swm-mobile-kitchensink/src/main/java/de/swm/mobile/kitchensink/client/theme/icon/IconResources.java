@@ -1,4 +1,4 @@
-package de.swm.commons.mobile.client.theme.bootstrap.icon;
+package de.swm.mobile.kitchensink.client.theme.icon;
 
 import com.google.gwt.resources.client.ClientBundle;
 import com.google.gwt.resources.client.ImageResource;
