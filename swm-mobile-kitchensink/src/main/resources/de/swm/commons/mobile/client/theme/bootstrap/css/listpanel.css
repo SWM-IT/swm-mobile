@@ -1,0 +1,84 @@
+@if swmmobile.css pretty {
+	@external listPanel, pressed, disabled, iOS, chevron;	
+}
+
+.listPanel {
+	position:relative;
+	display: \-webkit-box;
+	\-webkit-box-orient: vertical;
+}
+
+.listPanel > div {
+	border-top:1px solid #C0C0C0;
+    padding: 1.2em 1.2em 1.2em 1.2em;
+	vertical-align:middle !important;
+	display: \-webkit-box;
+	\-webkit-box-orient: horizontal;
+	\-webkit-box-pack: justify;
+	\-webkit-box-align: center;
+    background-image: literal('-webkit-gradient(linear, 0% 0%, 0% 100%, from(#E9E9E9), to(#f5f5f5))');
+} 
+
+.listPanel > div:first-child {
+	border-top:0px;
+	border-top-left-radius: 0.4em 0.4em;
+	border-top-right-radius: 0.4em 0.4em;
+	\-webkit-box-shadow: rgba(0, 0, 0, .5) 0em -.2em 0.2em;
+	
+	box-shadow: rgba(0, 0, 0, .5) 0em -.2em 0.2em;
+} 
+
+.listPanel > div:last-child {
+	border-bottom:0px;
+	border-bottom-left-radius: 0.4em 0.4em;
+	border-bottom-right-radius: 0.4em 0.4em;
+	\-webkit-box-shadow: rgba(0, 0, 0, 0.5) 0em 0.2em 0.2em;
+	
+	box-shadow: rgba(0, 0, 0, 0.5) 0em 0.2em 0.2em;
+} 
+
+.listPanel > div:only-child {
+	\-webkit-box-shadow: rgba(0, 0, 0, 1) 0em 0em 0.5em;
+	
+	box-shadow: rgba(0, 0, 0, 1) 0em 0em 0.5em;
+}
+
+.listPanel > div.pressed {
+    background: literal('-webkit-gradient(linear, 0% 0%, 0% 100%, from(#D5D5D5), to(#A09D9D))');
+}
+
+.listPanel > div.disabled {
+	color: gray;
+}
+
+.chevron {
+	position: relative;
+	margin-right: 0.5em;
+	padding-left: 0.5em;
+	top: -0.6em;	
+}
+
+.chevron > span {
+	position: absolute;
+	width: 0.3em;
+	height: 0.8em;
+	background: gray;
+}
+
+.chevron > span:first-child {
+	\-webkit-transform: rotate(-45deg);
+	
+	transform: rotate(-45deg);
+}
+
+.chevron > span:last-child {
+	\-webkit-transform: rotate(45deg);
+	top: 0.4em;	
+
+	transform: rotate(45deg);
+}
+
+/* anti-flickering */
+.iOS .scrollPanel > .listPanel > div {
+    -webkit-transform: translate3d(0px, 0px, 0px);
+}

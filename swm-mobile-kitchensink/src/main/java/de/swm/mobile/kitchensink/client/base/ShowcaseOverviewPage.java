@@ -13,7 +13,7 @@ import de.swm.commons.mobile.client.widgets.HeaderPanel;
 import de.swm.commons.mobile.client.widgets.ListItem;
 import de.swm.commons.mobile.client.widgets.ListPanel;
 import de.swm.gwt.client.mobile.Direction;
-import de.swm.mobile.kitchensink.client.theme.bootstrap.extention.TestResources;
+import de.swm.commons.mobile.client.theme.bootstrap.extention.TestResources;
 
 /**
  * SWM S-IP-AN
