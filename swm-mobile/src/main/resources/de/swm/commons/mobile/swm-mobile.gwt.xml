@@ -3,8 +3,6 @@
 	<inherits name='com.google.gwt.user.User' />
 	<inherits name='de.swm.gwt.SwmGwtClient' />
     <inherits name='com.google.gwt.logging.Logging'/>
-	<!-- OpenLayers -->
-	<inherits name='org.gwtopenmaps.openlayers.OpenLayers' />
 
 	<define-configuration-property name="swmmobile.css" is-multi-valued="false" />
 	<set-configuration-property name="swmmobile.css" value="obf" />

@@ -267,15 +267,6 @@ public interface SWMMobileCssBundle {
 	FlexCss getFlexCss();
 
 
-
-	/**
-	 * Defines one part of the SWMMobile widget system.
-	 * 
-	 * @return the css representation, see {@link CssResource}
-	 */
-	MapCss getMapCss();
-
-
 	/**
 	 * Defines one part of the SWMMobile widget system.
 	 * 

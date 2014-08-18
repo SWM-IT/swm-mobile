@@ -67,7 +67,6 @@ public class BaseSWMMobileTheme implements SWMMobileTheme {
 		cssBundle.getErrorCss().ensureInjected();
 		cssBundle.getFlipTimePanelCss().ensureInjected();
 		cssBundle.getConnectionListItemCss().ensureInjected();
-		cssBundle.getMapCss().ensureInjected();
 		cssBundle.getTreePanelCss().ensureInjected();
 		cssBundle.getTripListItemCss().ensureInjected();
 		cssBundle.getSearchBoxCss().ensureInjected();

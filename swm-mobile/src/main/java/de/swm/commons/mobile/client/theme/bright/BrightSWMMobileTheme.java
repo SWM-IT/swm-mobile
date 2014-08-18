@@ -23,8 +23,9 @@ import de.swm.commons.mobile.client.theme.SWMMobileTheme;
 
 /**
  * Defines all resources belonging to this bright style. Details see {@link de.swm.commons.mobile.client.theme.SWMMobileTheme}.
+ *
  * @author karsunke.franziskus
- * 			copyright (C) 2012, SWM Services GmbH
+ *         copyright (C) 2012, SWM Services GmbH
  */
 public class BrightSWMMobileTheme implements SWMMobileTheme {
 
@@ -65,7 +66,6 @@ public class BrightSWMMobileTheme implements SWMMobileTheme {
 		cssBundle.getErrorCss().ensureInjected();
 		cssBundle.getFlipTimePanelCss().ensureInjected();
 		cssBundle.getConnectionListItemCss().ensureInjected();
-		cssBundle.getMapCss().ensureInjected();
 		cssBundle.getTripListItemCss().ensureInjected();
 		cssBundle.getSearchBoxCss().ensureInjected();
 		cssBundle.getSelectPanelCss().ensureInjected();
@@ -73,12 +73,10 @@ public class BrightSWMMobileTheme implements SWMMobileTheme {
 	}
 
 
-
 	@Override
 	public SWMMobileCssBundle getMGWTCssBundle() {
 		return cssBundle;
 	}
-
 
 
 	@Override

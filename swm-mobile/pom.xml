@@ -41,11 +41,6 @@
             <groupId>de.swm</groupId>
             <artifactId>swm-gwt-client</artifactId>
         </dependency>
-        <!-- Open Street-Map integration -->
-        <dependency>
-            <groupId>org.gwtopenmaps.openlayers</groupId>
-            <artifactId>gwt-openlayers-client</artifactId>
-        </dependency>
         <!-- Enable to use GIN as DI framework -->
         <dependency>
             <groupId>com.google.inject</groupId>

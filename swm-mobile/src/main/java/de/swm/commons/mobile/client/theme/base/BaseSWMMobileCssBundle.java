@@ -189,11 +189,6 @@ public interface BaseSWMMobileCssBundle extends SWMMobileCssBundle, ClientBundle
 	FlexCss getFlexCss();
 
 
-
-	@Override
-	@Source("css/map.css")
-	MapCss getMapCss();
-
 	@Override
 	@Source("css/treepanel.css")
 	TreePanelCss getTreePanelCss();

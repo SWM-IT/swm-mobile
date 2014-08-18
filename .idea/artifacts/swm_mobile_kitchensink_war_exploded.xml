@@ -17,7 +17,6 @@
             <element id="module-output" name="swm-gwt-client" />
           </element>
           <element id="library" level="project" name="Maven: com.google.gwt.eventbinder:eventbinder:1.0.2" />
-          <element id="library" level="project" name="Maven: org.gwtopenmaps.openlayers:gwt-openlayers-client:0.8" />
           <element id="library" level="project" name="Maven: com.google.appengine:appengine-api-1.0-sdk:1.9.1" />
           <element id="library" level="project" name="Maven: com.google.inject:guice:3.0" />
           <element id="library" level="project" name="Maven: aopalliance:aopalliance:1.0" />
