@@ -7,8 +7,7 @@
 .commandPanel {
 	display: \-webkit-box;
 	\-webkit-box-orient: horizontal;
-	\-webkit-box-shadow: 0px 4px 6px #666666, 0 0 20px rgba(255, 255, 255, 1);
-	background: literal('-webkit-radial-gradient(circle, white, white)');
+	background: white;
 	position: relative;
 	z-index: 1;
 }
@@ -19,19 +18,23 @@
 	padding: 4px;
 	\-webkit-box-flex: 1;
 	display: -webkit-box;
-	border-left: 1px solid grey;
-	border-right: 1px solid grey;
+	border: 1px solid #004180;
 	padding-top: 10px;
 	padding-bottom: 10px;
 	\-webkit-box-orient: vertical;
 	\-webkit-box-align: center;
 	\-webkit-box-pack: center;
+    text-align: center;
+}
+
+/** CommandItem **/
+.commandPanel > div > .gwt-Label {
+    text-align: center;
 }
 
 /** CommandItem wenn es gedrückt wird **/
 .commandPanel > div.pressed {
-	text-shadow: grey 0 -0.1em 0.1em;
-	background: literal('-webkit-radial-gradient(circle, #53a9e8, white)');
+	background: #004180;
 }
 
 /** Deaktiviertes CommandItem **/
@@ -41,7 +44,7 @@
 
 /** Deaktiviertes CommandItem **/
 .commandPanel > div.disabled {
-	background: literal('-webkit-radial-gradient(circle, #E6E6E6, #E6E6E6)');
+	background: #E6E6E6;
 }
 
 /** Deaktiviertes CommandItem **/

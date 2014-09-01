@@ -56,38 +56,8 @@ public class ScrollBar extends SimplePanel {
 
 		// Move the Scrollbar to the correct Position.
 		renderPosition(widgetHeight, screenHeight, currentPosition, transistionDuration);
-
-		// Animate the Scrollbar in the right height (depending on the content and the position).
-		renderHeight(widgetHeight, screenHeight, currentPosition, transistionDuration);
 	}
 
-	private void renderHeight(int widgetHeight, int screenHeight, int currentPosition, int transistionDuration) {
-		// Calculate (in percent) where the scrollbar should be.
-		double positionInPercent = (double) currentPosition / (double) widgetHeight;
-
-		// Calculate (in pixel) where the scrollbar should be.
-		int scrollbarposition = (int) (positionInPercent * screenHeight);
-
-		// Calculate the base height of the Scrollbar depending on the relation between screen and widget height.
-		double screenRatio = (double) screenHeight / (double) widgetHeight;
-		if (screenRatio > 1.0) {
-			screenRatio = 1.0;
-		} else if (screenRatio < 0.0) {
-			screenRatio = 0.0;
-		}
-		int height = (int) (screenRatio * screenHeight) - 6;
-
-
-		if (scrollbarposition < 0) {
-			// if the scrollbar would be above the widget, then squeeze the height.
-			height += scrollbarposition;
-		} else if (scrollbarposition + height > screenHeight) {
-			// if the scrollbar would be below the widget, then squeeze the height.
-			height -= scrollbarposition + height - screenHeight;
-		}
-
-		scrollbarIndicator.getElement().getStyle().setHeight(height, Style.Unit.PX);
-	}
 
 	private void renderPosition(int widgetHeight, int screenHeight, int currentPosition, int transistionDuration) {
 		// Calculate (in percent) where the scrollbar should be.
@@ -100,9 +70,24 @@ public class ScrollBar extends SimplePanel {
 			// If the position is negative, set the position to zero.
 			scrollbarposition = 0;
 		}
+
+		// Calculate the base height of the Scrollbar depending on the relation between screen and widget height.
+		double screenRatio = (double) screenHeight / (double) widgetHeight;
+		if (screenRatio > 1.0) {
+			screenRatio = 1.0;
+		} else if (screenRatio < 0.0) {
+			screenRatio = 0.0;
+		}
+		int height = (int) (screenRatio * screenHeight) - 6;
+
+		if (scrollbarposition + height > screenHeight) {
+			scrollbarposition = screenHeight - height;
+		}
+
 		// Set the Transitionduration and move the scrollbar to the Position where it should be.
 		Utils.setTransitionDuration(scrollbarIndicator.getElement(), transistionDuration);
 		Utils.setTranslateY(scrollbarIndicator.getElement(), scrollbarposition);
+		scrollbarIndicator.getElement().getStyle().setHeight(height, Style.Unit.PX);
 	}
 
 	/**

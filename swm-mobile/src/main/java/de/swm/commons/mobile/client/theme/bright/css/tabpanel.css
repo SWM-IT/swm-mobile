@@ -16,7 +16,7 @@
 	\-webkit-box-orient: horizontal;
 	border-bottom: 0.2em solid #D4D9D5;
 	/*\-webkit-box-shadow: rgba(0, 0, 0, 1) 0 0 1em;*/
-	background-image: literal('-webkit-gradient(linear, 0% 0%, 0% 100%, from(#2E76CD), to(#20528F))');
+	background: #abc452;
 	/*background: #2E76CD;*/
 	padding-top: 0.4em;
 	font-size: 1.1em;
@@ -36,7 +36,7 @@
 	border-bottom: 1px solid #333333;
 	margin: 0 0.2em 0 0.2em;
 	color: grey;
-	background-image: literal('-webkit-gradient(linear, 0% 0%, 0% 100%, from(grey), to(#404142))');
+	background: #004180;
 	border-top-left-radius: 0.3em 0.3em;
 	border-top-right-radius: 0.3em 0.3em;
 }
@@ -56,11 +56,9 @@
 /* currently selected tab */
 .tabPanel > div:first-child > div.selected {
 	color:black;
-	text-shadow: white 0 .1em .1em;
 	border-left: 1px solid white;
 	border-top: 1px solid white;
-	border-bottom: 1px solid #BDBDBD;
-	background-image: literal('-webkit-gradient(linear, 0% 0%, 0% 100%, from(white), to(#D4D9D5))');
+	background: white;
 }
 
 .tabPanel > div:first-child > div.selected .gwt-Image {

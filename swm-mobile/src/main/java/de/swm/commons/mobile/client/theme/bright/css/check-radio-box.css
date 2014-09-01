@@ -38,12 +38,12 @@
 	border-radius: 0.4em 0.4em;
 	padding: .8em .8em;
 	color: black;
-	background-image: literal('-webkit-gradient(linear, 0% 0%, 0% 100%, from(#F0F2F1), to(#D5D9E0), color-stop(.6,#F0F2F1))');
+	background: literal('-webkit-gradient(linear, 0% 0%, 0% 100%, from(#F0F2F1), to(#D5D9E0), color-stop(.6,#F0F2F1))');
 }
 
 .checkBoxGroup.horizontal > span.selected,
 .radioButtonGroup.horizontal > span.selected {
-	background-image: literal('-webkit-gradient(linear, 0% 0%, 0% 100%, from(#53a9e8), to(#2e76cd))');
+	background: #004810;
 	color: white;
 }
 

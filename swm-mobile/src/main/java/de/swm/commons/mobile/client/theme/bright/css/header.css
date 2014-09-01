@@ -12,8 +12,7 @@
 	\-webkit-box-pack: justify;
 	\-webkit-user-select: none;
 	padding: 0.3em 0.3em;
-	background-image: literal('-webkit-gradient(linear, 0% 0%, 0% 100%, from(#53a9e8), to(#2e76cd))');
-	\-webkit-box-shadow: 0 0 .6em white;
+	background: #abc452;
 	z-index: 1;
     color: white;
 }
@@ -41,35 +40,34 @@
 
 .header-Panel > div > div.button {
 	color: white;
-	background-image: literal('-webkit-linear-gradient(top, #53a9e8, #2e76cd)');
+	background: #004180;
 	border: 1px solid white;
-
 }
 
 .header-Panel > div > div.pressed {
-	background-image: literal('-webkit-linear-gradient(top, #4295d3, #2e76cd)');
+	background: literal('-webkit-linear-gradient(top, #005eb5, #004180)');
 }
 
 
 .header-Panel > div > div.backButton > span.button {
     \-webkit-box-shadow: white 1px 1px 1px;
     border: none;
-    background-image: literal('-webkit-linear-gradient(top, #53a9e8, #2e76cd)');
+    background: #004180;
 }
 
 .header-Panel > div > div.backButton.pressed > span.button {
-	background-image: literal('-webkit-linear-gradient(top, #4295d3, #2e76cd)');
+	background: literal('-webkit-linear-gradient(top, #005eb5, #004180)');
 }
 
 
 .header-Panel > div > div.backButton > span.pointer {
 	\-webkit-box-shadow: white 1px 1px 1px;
 	border: none;
-	background-image: literal('-webkit-linear-gradient(top, #53a9e8, #2e76cd)');
+    background: #004180;
 }
 
 .header-Panel > div > div.backButton.pressed > span.pointer {
-	background: literal('-webkit-linear-gradient(top, #4295d3, #2e76cd)');
+	background: literal('-webkit-linear-gradient(top, #005eb5, #004180)');
 }
 
 
@@ -81,19 +79,19 @@
 .header-Panel > div > div.nextButton > span.button {
     \-webkit-box-shadow: white 1px 1px 1px;
     border: none;
-	background-image: literal('-webkit-linear-gradient(top, #53a9e8, #2e76cd)');
+    background: #004180;
 }
 
 .header-Panel > div > div.nextButton.pressed > span.button {
-	background: literal('-webkit-linear-gradient(top, #53a9e8, #2e76cd)');
+	background: literal('-webkit-linear-gradient(top, #005eb5, #004180)');
 }
 
 .header-Panel > div > div.nextButton > span.pointer {
     \-webkit-box-shadow: white 1px 1px 1px;
     border: none;
-	background-image: literal('-webkit-linear-gradient(top, #53a9e8, #2e76cd)');
+    background: #004180;
 }
 
 .header-Panel > div > div.nextButton.pressed > span.pointer {
-    background: literal('-webkit-linear-gradient(top, #53a9e8, #2e76cd)');
+    background: literal('-webkit-linear-gradient(top, #004180, #004180)');
 }

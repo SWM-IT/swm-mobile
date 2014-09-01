@@ -22,11 +22,13 @@
 }
 
 .textBox.focus, .textArea.focus {
-	\-webkit-box-shadow: #2e76cd 0em 0em .4em;
+	border: 3px solid #004180;
+    box-shadow: none;
 }
 
 .textBox.error, .textArea.error {
-	\-webkit-box-shadow: red 0em 0em .8em;
+    border: 3px solid red;
+    box-shadow: none;
 }
 
 .decoratedTextBox {

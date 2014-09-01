@@ -12,7 +12,9 @@
 }
 
 .listPanel > div {
-	border-bottom:1px solid #AAAAAA;
+	border-bottom: 1px solid #004180;
+	border-left: 1px solid #004180;
+	border-right: 1px solid #004180;
 	padding: 0.5em 0.5em 0.5em 0.5em;
 	margin-right: 10px;
 	margin-left: 10px;
@@ -26,17 +28,12 @@
 } 
 
 .listPanel > div:first-child {
-	border-top:0px;
+	border-top: 1px solid #004180;
 	margin-top: 10px;
-	border-top-left-radius: 0.7em 0.7em;
-	border-top-right-radius: 0.7em 0.7em;
 	webkit-box-shadow: none;
 } 
 
 .listPanel > div:last-child {
-	border-bottom:0px;
-	border-bottom-left-radius: 0.7em 0.7em;
-	border-bottom-right-radius: 0.7em 0.7em;
 	webkit-box-shadow: none;
 } 
 
@@ -46,7 +43,7 @@
 
 .listPanel > div.pressed {
 	color: white;
-	background: #2E76CD !important;
+	background: #004180 !important;
 }
 
 .listPanel > div > span {
@@ -84,7 +81,7 @@
 	position: absolute;
 	width: 0.3em;
 	height: 0.8em;
-	background: gray;
+	background: #004180;
 }
 
 .chevron > span:first-child {

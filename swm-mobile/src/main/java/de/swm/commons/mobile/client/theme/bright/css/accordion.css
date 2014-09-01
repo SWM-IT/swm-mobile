@@ -6,6 +6,7 @@
 
 /* stack */
 .accordion > div {
+    border: 2px solid #004180;
 }
 
  /* header */
@@ -15,27 +16,19 @@
 	\-webkit-box-align: center;
 	cursor: pointer;
 	padding:.5em .5em .5em 0em;
-	border-bottom:1px solid #333333;
-	border-top: 1px solid #666666;
-	background-image: literal('-webkit-gradient(linear, 0% 0%, 0% 100%, from(#F0F2F1), to(#D5D9E0), color-stop(.6,#F0F2F1))');
+	background: #ffffff;
 }
 
 .accordion > div > div:first-child.pressed {
-	background: literal('-webkit-gradient(linear, 0% 0%, 0% 100%, from(#D5D9E0), to(#F0F2F1), color-stop(.6,#D5D9E0))');
+
 }
 
 .accordion > div:first-child > div:first-child {
 	border-top:0;
-	border-top-left-radius: 0.4em 0.4em;
-	border-top-right-radius: 0.4em 0.4em;
-	\-webkit-box-shadow: rgba(0, 0, 0, 1) 0em 0em 0.5em;
 }
 
 .accordion > div:last-child.collapse > div:first-child {
 	border-bottom:0;
-	border-bottom-left-radius: 0.4em 0.4em;
-	border-bottom-right-radius: 0.4em 0.4em;
-	\-webkit-box-shadow: rgba(0, 0, 0, 0.5) 0em 0.2em 0.2em;
 }
 
 /* content */
@@ -43,26 +36,31 @@
 	overflow: hidden;
 	padding:.5em;
 	color: black;
-	background:#e3e3e3;
+	background: #ffffff;
 	\-webkit-transition-property: height;
 	\-webkit-transition-duration: 200ms;
 	\-webkit-transition-timing-function: ease;
 }
 
 /* content */
-.accordion > div:last-child.expand > div:last-child {
-	border-bottom-left-radius: 0.4em 0.4em;
-	border-bottom-right-radius: 0.4em 0.4em;
-	\-webkit-box-shadow: rgba(0, 0, 0, 0.5) 0em 0.2em 0.2em;
+.accordion > div:last-child.expand > div:first-child {
+    border-bottom: 1px solid #004180;
 }
 
 .accordion > div:last-child.expand > div:last-child > .buttonLightLeftText {
-    background-image: literal('-webkit-gradient(linear, 0% 0%, 0% 100%, from(#F0F2F1), to(#D5D9E0), color-stop(.6,#F0F2F1))');
+    background: #ffffff;
+    border: 1px solid #004180;
+    color: black;
+}
+
+.accordion > div:last-child.collapse > div:last-child > .buttonLightLeftText {
+    background: #ffffff;
+    border: 1px solid #004180;
     color: black;
 }
 
 .accordion > div:last-child.expand > div:last-child > .buttonLightLeftText.pressed {
-    background-image: literal('-webkit-gradient(linear, 0% 0%, 0% 100%, from(#D5D9E0), to(#F0F2F1), color-stop(.6,#D5D9E0))') !important;
+    background: #004180;
     color: black;
 }
 
@@ -81,7 +79,7 @@
 }
 
 .accordionArrow {
-	border: .4em solid gray;
+	border: .4em solid #004180;
 	border-right-color: transparent;
 	border-top-color: transparent;
 	border-bottom-color: transparent;
@@ -100,6 +98,6 @@
 	position: relative;
 	top: .3em;
 	left: -.2em;
-	border-top-color: gray;
+    border-top-color: #004180;
 	border-left-color: transparent;
 }

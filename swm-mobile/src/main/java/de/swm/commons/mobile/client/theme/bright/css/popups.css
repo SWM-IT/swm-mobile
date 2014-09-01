@@ -3,13 +3,13 @@
 }
 
 .loadingIndicatorPopup {
-	background-image: literal('-webkit-gradient(linear, 0% 0%, 0% 100%, from(#F0F2F1), to(#D5D9E0), color-stop(.6,#F0F2F1))');
+	background: white;
 	padding: 10px;
 	border-radius: 6px;	
 }
 
 .loadingIndicatorGlassPanel {
-	background-image: literal('-webkit-gradient(linear, 0% 0%, 0% 100%, from(#F0F2F1), to(#D5D9E0), color-stop(.6,#F0F2F1))');
+    background: white;
 	opacity: 0.7;
 }
 
@@ -26,11 +26,11 @@
 /********** Command Popup **********/
 
 .commandPopup {
-	background-image: literal('-webkit-gradient(linear, 0% 0%, 0% 100%, from(#F0F2F1), to(#D5D9E0), color-stop(.6,#F0F2F1))');
-	padding: 10px;
+    background: white;
+	padding: 20px;
 	border-radius: 6px;
-	border-color: black;
-	border-width: 1px;
+	border-color: #004180;
+	border-width: 3px;
 	border-style: solid;
 	max-width: 80%;
 	\-webkit-user-select: none;
