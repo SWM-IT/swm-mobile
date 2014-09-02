@@ -37,13 +37,14 @@
 	\-webkit-box-pack: center;
 	border-radius: 0.4em 0.4em;
 	padding: .8em .8em;
-	color: black;
-	background: literal('-webkit-gradient(linear, 0% 0%, 0% 100%, from(#F0F2F1), to(#D5D9E0), color-stop(.6,#F0F2F1))');
+	color: #004180;
+    border: 1px solid #004180;
+	background: #ffffff;
 }
 
 .checkBoxGroup.horizontal > span.selected,
 .radioButtonGroup.horizontal > span.selected {
-	background: #004810;
+    background: #004180;
 	color: white;
 }
 
@@ -52,6 +53,10 @@
 .radioButtonGroup.horizontal > span > input, 
 .radioButtonGroup.horizontal > span > div {
 	display: none;
+}
+
+.radioButtonGroup.horizontal {
+    min-width: 50%;
 }
 
 .checkBoxGroup.vertical > span > input,
@@ -74,13 +79,13 @@
 
 .checkBoxGroup.vertical > span.pressed,
 .radioButtonGroup.vertical > span.pressed {
-	background-image: literal('-webkit-gradient(linear, 0% 0%, 0% 100%, from(#53a9e8), to(#2e76cd))');
-	color: white;
+    background: #004180;
+    color: white;
 }
 
 .checkBoxGroup.vertical > span.selected,
 .radioButtonGroup.vertical > span.selected {
-    background-image: literal('-webkit-gradient(linear, 0% 0%, 0% 100%, from(#53a9e8), to(#2e76cd))');
+    background: #004180;
     color: white;
 }
 

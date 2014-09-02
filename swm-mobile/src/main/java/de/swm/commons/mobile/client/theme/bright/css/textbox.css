@@ -23,12 +23,12 @@
 
 .textBox.focus, .textArea.focus {
 	border: 3px solid #004180;
-    box-shadow: none;
+    outline: none;
 }
 
 .textBox.error, .textArea.error {
     border: 3px solid red;
-    box-shadow: none;
+    outline: none;
 }
 
 .decoratedTextBox {

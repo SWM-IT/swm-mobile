@@ -28,8 +28,8 @@
 	\-webkit-box-pack: center;
 	min-height: 2em;
 	font-size: 0.8em;
-	padding-bottom: 2px;
-	padding-top: 2px;
+	padding-bottom: 4px;
+	padding-top: 10px;
     background: #ffffff;
     border: 1px solid #004180;
     color: #004180
@@ -46,6 +46,7 @@
 
 .toolbarPanel > div:last-child > div .gwt-Image {
 	opacity: 0.5;
+    margin-bottom: 4px;
 }
 
 .toolbarPanel > div:last-child > div > div.gwt-Label {
