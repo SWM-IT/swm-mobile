@@ -34,7 +34,7 @@
 
 /** CommandItem wenn es gedrückt wird **/
 .commandPanel > div.pressed {
-	background: #004180;
+	background: #00a6eb;
 }
 
 /** Deaktiviertes CommandItem **/
