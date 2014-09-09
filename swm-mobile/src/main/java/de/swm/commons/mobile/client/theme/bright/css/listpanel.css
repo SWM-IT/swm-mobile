@@ -25,13 +25,13 @@
 	\-webkit-box-pack: justify;
 	\-webkit-box-align: center;
 	background: white;
-} 
+}
 
 .listPanel > div:first-child {
 	border-top: 1px solid #004180;
 	margin-top: 10px;
 	webkit-box-shadow: none;
-} 
+}
 
 .listPanel > div:last-child {
 	webkit-box-shadow: none;
