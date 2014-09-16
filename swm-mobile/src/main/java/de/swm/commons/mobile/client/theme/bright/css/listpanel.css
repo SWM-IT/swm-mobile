@@ -43,7 +43,7 @@
 
 .listPanel > div.pressed {
 	color: white;
-	background: #00a6eb !important;
+	background: rgb(202, 229, 254) !important;
 }
 
 .listPanel > div > span {
