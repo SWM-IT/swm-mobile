@@ -2,7 +2,7 @@
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
 	xmlns:g="urn:import:com.google.gwt.user.client.ui"
 	xmlns:m="urn:import:de.swm.commons.mobile.client.widgets"
-    xmlns:ms="urn:import:de.swm.commons.mobile.client.widgets.experimental">
+    xmlns:ms="urn:import:de.swm.commons.mobile.client.widgets.scroll">
 	<ui:style>
 	</ui:style>
 	<g:HTMLPanel>
