@@ -20,17 +20,9 @@
 .simpleScrollPanel {
 	width: 100%;
 	overflow-y: auto;
-	-webkit-overflow-scrolling: touch;
-	-webkit-box-flex: 1.0;
-	display: -webkit-box;
-	-webkit-box-orient: vertical;
 	padding-top: .3em;
 	padding-bottom: .5em;
-
- 	display: -ms-flexbox;
-    -ms-flex-direction: column;
 	-webkit-box-flex: 1.0;
-  	-ms-flex: 1.0;
 }
 
 .simpleScrollPanel > * {

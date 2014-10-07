@@ -16,7 +16,7 @@
 	\-webkit-box-orient: horizontal;
 	border-bottom: 0.2em solid #D4D9D5;
 	/*\-webkit-box-shadow: rgba(0, 0, 0, 1) 0 0 1em;*/
-	background: #abc452;
+	background: #004180;
 	/*background: #2E76CD;*/
 	padding-top: 0.4em;
 	font-size: 1.1em;
@@ -35,30 +35,29 @@
 	border-top: 1px solid #666666;
 	border-bottom: 1px solid #333333;
 	margin: 0 0.2em 0 0.2em;
-	color: grey;
-	background: #004180;
+	color: #000000;
+	background: white;
 	border-top-left-radius: 0.3em 0.3em;
 	border-top-right-radius: 0.3em 0.3em;
 }
 
 /* Label in the tab header */
 .tabPanel > div:first-child > div > .gwt-Label {
-  	color: white;
+  	color: #000000;
  }
 
 /* Label in the selected tab header */
 .tabPanel > div:first-child > div.selected > .gwt-Label {
 	font-weight: bold;
 	text-shadow: none;
- 	color: black;
+ 	color: #ffffff;
 }
 
 /* currently selected tab */
 .tabPanel > div:first-child > div.selected {
-	color:black;
-	border-left: 1px solid white;
-	border-top: 1px solid white;
-	background: white;
+	color:white;
+	border: 2px solid white;
+	background: #004180;
 }
 
 .tabPanel > div:first-child > div.selected .gwt-Image {
