@@ -76,7 +76,8 @@ public class SimpleScrollPanel extends PanelBase implements HasWidgets, EventLis
 			Utils.removeEventListener(getElement(), "onscroll", true, scrollListener);
 			scrollListener = null;
 		}
-		DragController.get().getOptions().setEnableNativeEventPropagation(false);
+		//Testweise rausgenommen.
+		//DragController.get().getOptions().setEnableNativeEventPropagation(false);
 		super.onUnload();
 	}
 

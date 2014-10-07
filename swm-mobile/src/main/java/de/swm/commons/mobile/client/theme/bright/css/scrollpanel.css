@@ -23,6 +23,7 @@
 	padding-top: .3em;
 	padding-bottom: .5em;
 	-webkit-box-flex: 1.0;
+    -webkit-overflow-scrolling: touch;
 }
 
 .simpleScrollPanel > * {
