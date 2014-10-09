@@ -161,10 +161,19 @@ public class BoxBase<T> extends com.google.gwt.user.client.ui.ValueBoxBase<T> im
 	 * @return the input element.
 	 */
 	protected static native InputElement createNumberInputElement(String type) /*-{
-																				var e = $doc.createElement("INPUT");
-																				e.type = type;
-																				return e;
-																				}-*/;
+        var e = $doc.createElement("INPUT");
+        e.type = type;
+		if (type === "number") {
+			e.type = "text";
+            e.pattern = "\d+(\,\d*)?*";
+			e.onkeypress = function isNumber(evt) {
+                evt = (evt) ? evt : window.event;
+                var charCode = (evt.which) ? evt.which : evt.keyCode;
+                return (charCode >= 48 && charCode <= 57) || String.fromCharCode(charCode) === ",";
+            };
+		}
+        return e;
+	}-*/;
 
 
 

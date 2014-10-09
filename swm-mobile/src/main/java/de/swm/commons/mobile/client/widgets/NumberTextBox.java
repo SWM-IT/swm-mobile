@@ -37,6 +37,7 @@ public class NumberTextBox extends BoxBase<Integer> {
 				return null;
 			}
 			String str = text.toString();
+			str = str.split(",")[0];
 			try{
 				return Integer.parseInt(str);
 			}catch(NumberFormatException e) {
@@ -55,5 +56,9 @@ public class NumberTextBox extends BoxBase<Integer> {
 	public NumberTextBox() {
 	    super("number", new ToStringRenderer<Integer>(),
 	            IntegerParser.instance());
-	}	
+	}
+
+	public boolean validate() {
+		return this.getValue() != null;
+	}
 }

@@ -39,7 +39,7 @@ public class NumberDoubleTextBox extends BoxBase<Double> {
 			}
 			String str = text.toString();
 			try{
-				return Double.parseDouble(str);
+				return Double.parseDouble(str.replace(",", "."));
 			}catch(NumberFormatException e) {
 				return null;
 			}
