@@ -164,8 +164,8 @@ public class BoxBase<T> extends com.google.gwt.user.client.ui.ValueBoxBase<T> im
         var e = $doc.createElement("INPUT");
         e.type = type;
 		if (type === "number") {
-			e.type = "text";
-            e.pattern = "\d+(\,\d*)?*";
+			e.type = "tel";
+            e.pattern = "[0-9]";
 			e.onkeypress = function isNumber(evt) {
                 evt = (evt) ? evt : window.event;
                 var charCode = (evt.which) ? evt.which : evt.keyCode;
