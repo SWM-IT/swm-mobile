@@ -75,6 +75,8 @@ public abstract class AbstractMobilePresenter implements IMobilePresenter {
 
 	private boolean isVisible = false;
 
+	private IEvent leaveToEvent;
+
 	/**
 	 * Default constructor.
 	 *
@@ -169,6 +171,7 @@ public abstract class AbstractMobilePresenter implements IMobilePresenter {
 	 */
 	protected ClickHandler addBackButtonNavigationHandlers(final IPageWithHeader myView, final IEvent eventToFire, boolean showSpinner) {
 		ClickHandler backClickHandler = null;
+		this.leaveToEvent = eventToFire;
 		if (myView.getHeader() != null) {
 			if (showSpinner) {
 				backClickHandler = new ClickHandler() {
@@ -527,4 +530,11 @@ public abstract class AbstractMobilePresenter implements IMobilePresenter {
 		void onBack(ClickEvent clickEvent);
 	}
 
+	public IEvent getLeaveToEvent() {
+		return leaveToEvent;
+	}
+
+	public void setLeaveToEvent(IEvent leaveToEvent) {
+		this.leaveToEvent = leaveToEvent;
+	}
 }
