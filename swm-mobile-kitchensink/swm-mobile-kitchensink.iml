@@ -58,8 +58,7 @@
     <orderEntry type="library" name="Maven: aopalliance:aopalliance:1.0" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: com.google.gwt.inject:gin:2.1.2" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: com.google.inject.extensions:guice-assistedinject:3.0" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: name.pehl.piriti:piriti-core:0.7b3" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: name.pehl:totoe:0.2.4" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: name.pehl:piriti-user:0.10" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: junit:junit:4.5" level="project" />
   </component>
 </module>

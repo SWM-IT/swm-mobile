@@ -80,16 +80,10 @@
             </dependency>
             <!-- Piriti for GWT-JSON-Mapping http://code.google.com/p/piriti/ -->
             <dependency>
-                <groupId>name.pehl.piriti</groupId>
-                <artifactId>piriti-core</artifactId>
-                <version>0.7b3</version>
-                <scope>provided</scope>
-            </dependency>
-            <dependency>
                 <groupId>name.pehl</groupId>
-                <artifactId>totoe</artifactId>
-                <version>0.2.4</version>
+                <artifactId>piriti-user</artifactId>
                 <scope>provided</scope>
+                <version>0.10</version>
             </dependency>
             <dependency>
                 <groupId>javax.inject</groupId>

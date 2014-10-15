@@ -1,9 +1,13 @@
 package de.swm.gwt.client.testhelper;
 
+import com.google.gwt.event.shared.GwtEvent;
+import com.google.gwt.event.shared.HandlerRegistration;
 import com.google.gwt.json.client.JSONArray;
 import com.google.gwt.json.client.JSONException;
 import com.google.gwt.json.client.JSONObject;
 import com.thoughtworks.xstream.XStream;
+import name.pehl.piriti.commons.client.ModelReadHandler;
+import name.pehl.piriti.commons.client.ModelWriteHandler;
 import name.pehl.piriti.json.client.JsonReader;
 import name.pehl.piriti.json.client.JsonWriter;
 
@@ -120,6 +124,26 @@ public class SwmJsonWriterReader<T> implements JsonReader<T>, JsonWriter<T> {
 	@Override
 	public String toJson(List<T> ts, String s) {
 		throw new IllegalArgumentException("Not supported");
+	}
+
+	@Override
+	public HandlerRegistration addModelReadHandler(ModelReadHandler<T, JSONObject> tjsonObjectModelReadHandler) {
+		return null;
+	}
+
+	@Override
+	public HandlerRegistration addModelWriteHandler(ModelWriteHandler<T> tModelWriteHandler) {
+		return null;
+	}
+
+	@Override
+	public void fireEvent(GwtEvent<?> event) {
+
+	}
+
+	@Override
+	public T idRef(String s) {
+		return null;
 	}
 
 	private String serialize(Object toSerialize) {

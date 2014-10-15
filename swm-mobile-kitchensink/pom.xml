@@ -92,14 +92,8 @@
 
         <!-- Piriti for GWT-JSON-Mapping http://code.google.com/p/piriti/ -->
         <dependency>
-            <groupId>name.pehl.piriti</groupId>
-            <artifactId>piriti-core</artifactId>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
             <groupId>name.pehl</groupId>
-            <artifactId>totoe</artifactId>
-            <scope>provided</scope>
+            <artifactId>piriti-user</artifactId>
         </dependency>
 
         <!-- Test -->
