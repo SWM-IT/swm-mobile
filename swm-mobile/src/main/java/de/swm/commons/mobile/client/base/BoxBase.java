@@ -169,8 +169,8 @@ public class BoxBase<T> extends com.google.gwt.user.client.ui.ValueBoxBase<T> im
 			e.onkeypress = function isNumber(evt) {
                 evt = (evt) ? evt : window.event;
                 var charCode = (evt.which) ? evt.which : evt.keyCode;
-                return (charCode >= 48 && charCode <= 57) || String.fromCharCode(charCode) === ","
-					|| String.fromCharCode(charCode) === "-";
+				$wnd.console.log(charCode);
+                return (charCode >= 48 && charCode <= 57) || charCode == 44 || charCode == 45;
             };
 		}
         return e;
