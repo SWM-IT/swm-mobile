@@ -2,7 +2,6 @@
   <artifact type="exploded-war" name="swm-mobile-kitchensink:war exploded">
     <output-path>$PROJECT_DIR$/swm-mobile-kitchensink/target/kitchensink</output-path>
     <root id="root">
-      <element id="javaee-facet-resources" facet="swm-mobile-kitchensink/web/Web" />
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
           <element id="module-output" name="swm-mobile-kitchensink" />
@@ -16,11 +15,13 @@
           <element id="archive" name="swm-gwt-client-2.4-SNAPSHOT.jar">
             <element id="module-output" name="swm-gwt-client" />
           </element>
+          <element id="library" level="project" name="Maven: com.google.gwt.eventbinder:eventbinder:1.0.2" />
           <element id="library" level="project" name="Maven: com.google.appengine:appengine-api-1.0-sdk:1.9.1" />
           <element id="library" level="project" name="Maven: com.google.inject:guice:3.0" />
           <element id="library" level="project" name="Maven: aopalliance:aopalliance:1.0" />
         </element>
       </element>
+      <element id="javaee-facet-resources" facet="swm-mobile-kitchensink/web/Web" />
       <element id="gwt-compiler-output" facet="swm-mobile-kitchensink/gwt/GWT" />
     </root>
   </artifact>

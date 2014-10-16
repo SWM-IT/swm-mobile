@@ -178,5 +178,12 @@
                 <directory>src/main/resources</directory>
             </resource>
         </resources>
+
     </build>
+    <repositories>
+        <repository>
+            <id>gwt-mobile-webkit</id>
+            <url>http://gwt-mobile-webkit.googlecode.com/svn/repo</url>
+        </repository>
+    </repositories>
 </project>
