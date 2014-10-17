@@ -74,6 +74,9 @@ public class DragControllerMobile extends DragController {
 	}
 
 
+	private native void toConsole(String string)/*-{
+		$wnd.console.log(string);
+	}-*/;
 
 	/**
 	 * Will be invoked on touch start.
@@ -84,12 +87,12 @@ public class DragControllerMobile extends DragController {
 	public void onTouchStart(TouchEvent e) {
 		EventTarget target = e.getEventTarget();
 		boolean preventDefault = true;
+		toConsole(target.toString());
 		if (Element.is(target)) {
 			Element ele = Element.as(target);
 			
 			// INPUT element will not get focus if default action is prevented.
 			if (Utils.isHtmlFormControl(ele)) {
-				ele.focus();
 				preventDefault = false;
 			}
 			touchTarget = ele;
