@@ -131,12 +131,13 @@
             <metadata name="com.atlassw.tools.eclipse.checkstyle.comment"
                       value="Erwzingt, dass nach  '}' für try-, catch-, finally-, if- und else- Schlüsselwort das nächste Statement in derselben Linie steht."/>
         </module>
+        <!--
         <module name="Indentation">
             <property name="basicOffset" value="8"/>
             <property name="caseIndent" value="8"/>
             <metadata name="com.atlassw.tools.eclipse.checkstyle.customMessage" value="Einrückung inkorrekt."/>
             <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="Überprüft korrekte Einrückung."/>
-        </module>
+        </module>  -->
         <module name="PackageDeclaration">
             <metadata name="com.atlassw.tools.eclipse.checkstyle.comment"
                       value="Erwzwingt Verwendung eines eigenen Packages."/>
