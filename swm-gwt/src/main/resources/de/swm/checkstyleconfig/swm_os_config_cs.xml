@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module PUBLIC "-//Puppy Crawl//DTD Check Configuration 1.3//EN"
+        "http://www.puppycrawl.com/dtds/configuration_1_3.dtd">
+
+<!--
+    This configuration file was written by the eclipse-cs plugin configuration editor
+-->
+<!--
+    Checkstyle-Configuration: SWM Checks für Plugin
+    Description: HINWEIS: Die Checks "de.unkrig.cscontrib..." benötigen das entsprechende ECLIPSE-Plugin, welches von
+                 der Update-Site "http://cs-contrib.unkrig.de/update" gezogen werden muss.
+-->
+<module name="Checker">
+    <property name="severity" value="warning"/>
+    <property name="localeLanguage" value="de"/>
+    <property name="charset" value="UTF-8"/>
+    <module name="TreeWalker">
+        <module name="FileContentsHolder"/>
+        <module name="JavadocMethod">
+            <property name="scope" value="package"/>
+            <property name="allowMissingPropertyJavadoc" value="true"/>
+            <property name="allowUndeclaredRTE" value="true"/>
+            <property name="logLoadErrors" value="true"/>
+            <property name="suppressLoadErrors" value="true"/>
+            <metadata name="com.atlassw.tools.eclipse.checkstyle.comment"
+                      value="Stellt sicher, dass Methoden (inkl. Konstruktoren) JavaDoc-Kommentare inkl. @param, @return und ggf. @throws-Tag besitzen."/>
+        </module>
+        <module name="JavadocType">
+            <property name="allowUnknownTags" value="true"/>
+            <metadata name="com.atlassw.tools.eclipse.checkstyle.comment"
+                      value="Erzwingt JavaDoc-Kommentare für Klassen und Interfaces."/>
+        </module>
+        <module name="JavadocVariable">
+            <property name="scope" value="public"/>
+            <metadata name="com.atlassw.tools.eclipse.checkstyle.comment"
+                      value="Erzwingt JavaDoc-Kommentare für Instanz- und Klassenvariablen, die public sind"/>
+        </module>
+        <module name="ConstantName">
+            <property name="format" value="^[A-Z][A-Z0-9_]*$"/>
+            <metadata name="com.atlassw.tools.eclipse.checkstyle.customMessage"
+                      value="Name der Konstanten entspricht nicht  den Namenskonventionen."/>
+        </module>
+        <module name="LocalFinalVariableName">
+            <property name="format" value="^[a-z][a-zA-Z0-9_]*$"/>
+            <metadata name="com.atlassw.tools.eclipse.checkstyle.customMessage"
+                      value="Variablenname entspricht nicht  den Namenskonventionen."/>
+        </module>
+        <module name="LocalVariableName">
+            <property name="format" value="^[a-z][a-zA-Z0-9_]*$"/>
+            <metadata name="com.atlassw.tools.eclipse.checkstyle.customMessage"
+                      value="Variablenname entspricht nicht  den Namenskonventionen."/>
+        </module>
+        <module name="MemberName">
+            <property name="format" value="^[a-z][a-zA-Z0-9_]*$"/>
+            <metadata name="com.atlassw.tools.eclipse.checkstyle.customMessage"
+                      value="Name der Instanzvariable entspricht nicht den Namenskonventionen"/>
+        </module>
+        <module name="MethodName">
+            <property name="format" value="^[a-z][a-zA-Z0-9_]*$"/>
+            <metadata name="com.atlassw.tools.eclipse.checkstyle.customMessage"
+                      value="Methodennamen entspricht nicht  den Namenskonventionen."/>
+        </module>
+        <module name="PackageName">
+            <property name="format" value="^de.swm.[a-z]+(\.[a-zA-Z_][a-zA-Z0-9_]*)*$"/>
+            <metadata name="com.atlassw.tools.eclipse.checkstyle.customMessage"
+                      value="Package-Name entspricht nicht der Vorgabe de.swm.&lt;ANWENDUNGSNAME&gt;."/>
+        </module>
+        <module name="ParameterName">
+            <property name="format" value="^[a-z][a-zA-Z0-9_]*$"/>
+            <metadata name="com.atlassw.tools.eclipse.checkstyle.customMessage"
+                      value="Parametername entspricht nicht  den Namenskonventionen."/>
+        </module>
+        <module name="StaticVariableName">
+            <property name="format" value="^[a-z][a-zA-Z0-9_]*$"/>
+            <metadata name="com.atlassw.tools.eclipse.checkstyle.customMessage"
+                      value="Klassenvariablenname entspricht nicht den Namenskonventionen."/>
+        </module>
+        <module name="LineLength">
+            <property name="max" value="120"/>
+            <property name="tabWidth" value="4"/>
+            <message key="maxLineLen" value="Zeile länger als 120 Zeichen"/>
+            <metadata name="com.atlassw.tools.eclipse.checkstyle.comment"
+                      value="Legt maximale Zeilenlänge auf 100 Zeichen fest."/>
+        </module>
+        <module name="LeftCurly">
+            <property name="maxLineLength" value="120"/>
+            <property name="tokens"
+                      value="LITERAL_CATCH,CLASS_DEF,CTOR_DEF,LITERAL_DO,LITERAL_ELSE,LITERAL_FINALLY,LITERAL_FOR,LITERAL_IF,INTERFACE_DEF,METHOD_DEF,LITERAL_SWITCH,LITERAL_SYNCHRONIZED,LITERAL_TRY,LITERAL_WHILE"/>
+            <metadata name="com.atlassw.tools.eclipse.checkstyle.comment"
+                      value="Erzwingt, dass linke geschweifte Klammer stets in derselben Linie wie auslÃ¶sende(s) Schlüsselwort / Deklaration steht"/>
+        </module>
+        <module name="NeedBraces">
+            <metadata name="com.atlassw.tools.eclipse.checkstyle.comment"
+                      value="Erzwingt geschweifte Klammern für do-, else-, if-, for- und while-Schlüsselwort"/>
+        </module>
+        <module name="EmptyStatement"/>
+        <module name="MagicNumber">
+            <property name="severity" value="ignore"/>
+            <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="Verhindert feste Konstanten im Code."/>
+            <metadata name="net.sf.eclipsecs.core.lastEnabledSeverity" value="inherit"/>
+        </module>
+        <module name="VisibilityModifier">
+            <metadata name="com.atlassw.tools.eclipse.checkstyle.comment"
+                      value="Erzwingt, dass Instanzvariablen private sind."/>
+        </module>
+        <module name="InterfaceIsType">
+            <property name="severity" value="ignore"/>
+            <metadata name="com.atlassw.tools.eclipse.checkstyle.comment"
+                      value="Erlaubt keine Interfaces, die nur Konstanten und keine Methoden enthalten und somit keine Schnittstelle darstellen. (Marker-Interfaces sind zugelassen)."/>
+            <metadata name="net.sf.eclipsecs.core.lastEnabledSeverity" value="inherit"/>
+        </module>
+        <module name="TypeName">
+            <property name="format" value="^[A-Z][a-zA-Z0-9_]*$"/>
+            <property name="tokens" value="CLASS_DEF"/>
+            <metadata name="com.atlassw.tools.eclipse.checkstyle.customMessage"
+                      value="Klassenname entspricht nicht den Namenskonventionen."/>
+        </module>
+        <module name="JavadocStyle">
+            <property name="checkEmptyJavadoc" value="true"/>
+            <metadata name="com.atlassw.tools.eclipse.checkstyle.comment"
+                      value="Überprüft JavaDoc-Kommentare auf Korrektheit."/>
+        </module>
+        <module name="WriteTag">
+            <property name="tag" value="copyright"/>
+            <property name="tagFormat" value=".*"/>
+            <property name="tagSeverity" value="ignore"/>
+            <metadata name="com.atlassw.tools.eclipse.checkstyle.comment"
+                      value="Erzwingt @copyright-Tag für Klassen und Interfaces"/>
+        </module>
+        <module name="RightCurly">
+            <metadata name="com.atlassw.tools.eclipse.checkstyle.comment"
+                      value="Erwzingt, dass nach  '}' für try-, catch-, finally-, if- und else- Schlüsselwort das nächste Statement in derselben Linie steht."/>
+        </module>
+        <!--
+        <module name="Indentation">
+            <property name="basicOffset" value="8"/>
+            <property name="caseIndent" value="8"/>
+            <metadata name="com.atlassw.tools.eclipse.checkstyle.customMessage" value="Einrückung inkorrekt."/>
+            <metadata name="com.atlassw.tools.eclipse.checkstyle.comment" value="Überprüft korrekte Einrückung."/>
+        </module>  -->
+        <module name="PackageDeclaration">
+            <metadata name="com.atlassw.tools.eclipse.checkstyle.comment"
+                      value="Erwzwingt Verwendung eines eigenen Packages."/>
+        </module>
+        <module name="TypeName">
+            <property name="format" value="^[A-Z][a-zA-Z0-9_]*$"/>
+            <property name="tokens" value="INTERFACE_DEF"/>
+            <metadata name="com.atlassw.tools.eclipse.checkstyle.customMessage"
+                      value="Name des Interface entspricht nicht den Namenskonventionen."/>
+        </module>
+        <module name="ModifierOrder">
+            <metadata name="com.atlassw.tools.eclipse.checkstyle.comment"
+                      value="Stellt sicher, dass Modifier in richtiger Ordnung verwendet werden."/>
+        </module>
+        <module name="OneStatementPerLine"/>
+        <module name="RegexpSinglelineJava">
+            <metadata name="net.sf.eclipsecs.core.comment" value="Lässt keine Leerzeichen zur Einrückung zu"/>
+            <property name="format" value="^( +)(.*)"/>
+            <property name="message" value="Zum Einrücken werden Leerzeichen verwendet."/>
+            <property name="ignoreComments" value="true"/>
+        </module>
+        <module name="RegexpSinglelineJava">
+            <metadata name="net.sf.eclipsecs.core.comment" value="Lässt Standardausgabe nicht zum Loggen zu."/>
+            <property name="format" value="System.out|System.err"/>
+            <property name="message" value="Standardausgabe anstelle von Logger verwendet."/>
+            <property name="ignoreComments" value="true"/>
+        </module>
+    </module>
+    <module name="SuppressionCommentFilter"/>
+    <module name="SuppressionFilter">
+        <property name="file" value="${config_loc}/suppressions.xml"/>
+    </module>
+</module>
