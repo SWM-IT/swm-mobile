@@ -282,9 +282,9 @@ public abstract class AbstractMobilePresenter implements IMobilePresenter {
 		}
 	}
 
-	public void fireMobileEvent(MobileEvent eventToFire, final IPage page) {
+	public void fireMobileEvent(MobileEvent eventToFire, final IPage originatorPage) {
 		if(eventBus != null) {
-			eventToFire.setOriginatorPage(page);
+			eventToFire.setOriginatorPage(originatorPage);
 			eventBus.fireEvent(eventToFire);
 		}
 	}
