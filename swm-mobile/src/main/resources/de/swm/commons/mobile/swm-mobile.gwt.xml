@@ -3,6 +3,7 @@
 	<inherits name='com.google.gwt.user.User' />
 	<inherits name='de.swm.gwt.SwmGwtClient' />
     <inherits name='com.google.gwt.logging.Logging'/>
+    <inherits name='com.google.web.bindery.event.EventBinder'/>
 
 	<define-configuration-property name="swmmobile.css" is-multi-valued="false" />
 	<set-configuration-property name="swmmobile.css" value="obf" />

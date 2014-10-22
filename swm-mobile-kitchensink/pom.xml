@@ -89,6 +89,12 @@
             <artifactId>javax.inject</artifactId>
             <scope>provided</scope>
         </dependency>
+        <!-- GWT Event bus -->
+        <dependency>
+            <groupId>com.google.gwt.eventbinder</groupId>
+            <artifactId>eventbinder</artifactId>
+            <scope>provided</scope>
+        </dependency>
 
         <!-- Piriti for GWT-JSON-Mapping http://code.google.com/p/piriti/ -->
         <dependency>

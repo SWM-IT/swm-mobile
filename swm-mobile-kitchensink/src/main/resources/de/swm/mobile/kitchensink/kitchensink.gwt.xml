@@ -9,6 +9,7 @@
 	<!-- Inherit GWT Mobile UI module -->
 	<inherits name='de.swm.commons.mobile.swm-mobile'/>
     <inherits name='org.gwtbootstrap3.GwtBootstrap3'/>
+    <inherits name='com.google.web.bindery.event.EventBinder'/>
 
     <!--For SDM-->
     <!--<add-linker name="xsiframe"/>-->

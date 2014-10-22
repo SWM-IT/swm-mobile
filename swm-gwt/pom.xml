@@ -77,6 +77,7 @@
         <dependency>
             <groupId>com.google.gwt.eventbinder</groupId>
             <artifactId>eventbinder</artifactId>
+            <scope>provided</scope>
         </dependency>
         <!--http://gwt-mobile-webkit.googlecode.com/svn/repo/  -->
         <dependency>
