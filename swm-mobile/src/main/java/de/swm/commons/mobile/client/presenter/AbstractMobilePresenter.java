@@ -379,12 +379,12 @@ public abstract class AbstractMobilePresenter implements IMobilePresenter {
 	 */
 	protected ClickHandler addBackButtonNavigationHandlers(final IPageWithHeader myView, final IEvent eventToFire, boolean showSpinner) {
 		ClickHandler backClickHandler = null;
-		this.leaveToEvent = eventToFire;
 		if(myView.getHeader() != null) {
 			if(showSpinner) {
 				backClickHandler = new ClickHandler() {
 					@Override
 					public void onClick(ClickEvent clickEvent) {
+						leaveToEvent = eventToFire;
 						if(!isSpinnerStarted) {
 							startPopup(new ISpinnerStarted() {
 								@Override
@@ -414,6 +414,7 @@ public abstract class AbstractMobilePresenter implements IMobilePresenter {
 				backClickHandler = new ClickHandler() {
 					@Override
 					public void onClick(ClickEvent event) {
+						leaveToEvent = eventToFire;
 						PresenterController.get().beforePageLeave(new AsyncCallbackSuccess<Boolean>() {
 
 							@Override
@@ -453,6 +454,7 @@ public abstract class AbstractMobilePresenter implements IMobilePresenter {
 
 				@Override
 				public void onClick(final ClickEvent event) {
+					leaveToEvent = null;
 					PresenterController.get().beforePageLeave(new AsyncCallbackSuccess<Boolean>() {
 						@Override
 						public void onSuccess(Boolean result) {
