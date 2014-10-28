@@ -15,10 +15,10 @@
     padding: .4em;
     border: 1px solid black;
     \-webkit-appearance: none;
-    overflow: hidden;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
     outline: none;
     font: normal 1.0em Helvetica, Arial, sans-serif;
-    resize: none;
 }
 
 .textBox.focus, .textArea.focus {
