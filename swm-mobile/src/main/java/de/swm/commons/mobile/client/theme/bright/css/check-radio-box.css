@@ -1,5 +1,7 @@
 @url checkBoxImage checkBox;
 
+@external .gwt-RadioButton-disabled;
+
 @if swmmobile.css pretty {
 	@external checkBoxGroup, radioButtonGroup, radioButton, checkBoxIndicator, horizontal, vertical, selected, pressed, gwt-CheckBox;
 }
@@ -23,6 +25,12 @@
 
 .gwt-CheckBox input[type="checkbox"]:checked {
 	background-position: left top;
+}
+
+.gwt-RadioButton-disabled {
+    color: silver;
+    border: 1px solid grey;
+    background: grey;
 }
 
 .checkBoxGroup, .radioButtonGroup {
@@ -74,7 +82,8 @@
 .checkBoxGroup.vertical > span,
 .radioButtonGroup.vertical > span {
 	\-webkit-box-pack: start;
-	border: 0;
+    color: #004180;
+    border: 1px solid #004180;
 }
 
 .checkBoxGroup.vertical > span.pressed,
@@ -127,7 +136,7 @@
 	background-image: literal('-webkit-gradient(radial, 50% 50%, 0, 50% 50%, 16, from(lightgreen), to(green))');
 	\-webkit-box-shadow:0 0 .1em darkgreen;
 }
-	
+
 .WVGA .checkBoxIndicator {
 	position: relative;
 	margin: 0 .4em 0 .4em;
@@ -136,7 +145,7 @@
 .WVGA .checkBoxIndicator > div:first-child {
 	width: .8em;
 	height: .8em;
-	padding: .1em;	
+	padding: .1em;
 	background: literal('-webkit-gradient(linear, 0% 0%, 0% 100%, from(#555), to(#777))');
 	\-webkit-background-clip: padding;
 	border: .1em solid #333;
@@ -157,7 +166,7 @@
 	background: #00CC00;
 	border: .1em solid #111;
 }
-	
+
 .WVGA .selected .checkBoxIndicator > div:nth-child\(2\) {
 	width: .2em;
 	height: .3em;

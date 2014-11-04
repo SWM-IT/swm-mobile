@@ -201,7 +201,7 @@
                     <encoding>UTF-8</encoding>
                 </configuration>
             </plugin>
-            <plugin>
+           <!-- <plugin>
                 <groupId>com.google.appengine</groupId>
                 <artifactId>appengine-maven-plugin</artifactId>
                 <version>${appengine.target.version}</version>
@@ -211,14 +211,14 @@
                     <oauth2>false</oauth2>
                     <email>wiesed.swm@gmail.com</email>
                     <jvmFlags>
-                        <!--<jvmFlag>-Xdebug</jvmFlag>-->
+                        <jvmFlag>-Xdebug</jvmFlag>-->
                         <!--<jvmFlag>-Xrunjdwp:transport=dt_socket,address=8000,server=y,suspend=y</jvmFlag>-->
-                        <jvmFlag>-Xmx512m</jvmFlag>
+            <!-- <jvmFlag>-Xmx512m</jvmFlag>
 
-                    </jvmFlags>
-                    <disableUpdateCheck>false</disableUpdateCheck>
-                </configuration>
-            </plugin>
+         </jvmFlags>
+         <disableUpdateCheck>false</disableUpdateCheck>
+     </configuration>
+ </plugin>-->
         </plugins>
     </build>
 
