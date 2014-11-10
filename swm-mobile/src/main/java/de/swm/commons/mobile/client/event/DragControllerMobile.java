@@ -87,6 +87,7 @@ public class DragControllerMobile extends DragController {
 			
 			// INPUT element will not get focus if default action is prevented.
 			if (Utils.isHtmlFormControl(ele)) {
+				ele.focus();
 				preventDefault = false;
 			}
 			touchTarget = ele;
