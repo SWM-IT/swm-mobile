@@ -4,6 +4,7 @@ import com.google.gwt.dom.client.Style;
 import com.google.gwt.user.client.ui.Widget;
 import de.swm.commons.mobile.client.SWMMobile;
 import de.swm.commons.mobile.client.base.PanelBase;
+import de.swm.commons.mobile.client.widgets.toolbar.ToolbarPanel;
 
 /**
  * This Scrollpanel detects which OS it is running on and shows the SimpleScrollPanelWithScrollbar for iOS
@@ -29,9 +30,12 @@ public class AdaptiveScrollPanel extends PanelBase implements IScrollPanel {
 			} else {
 				SimpleScrollPanel scrollPanel = new SimpleScrollPanel();
 				super.add(scrollPanel);
+				scrollPanel.getElement().getStyle().setOverflowY(Style.Overflow.HIDDEN);
+				this.getElement().getStyle().setOverflowY(Style.Overflow.SCROLL);
 				this.realPanel = scrollPanel;
 			}
-			this.getElement().getStyle().setHeight(100.0, Style.Unit.PCT);
+			this.getElement().getStyle().setProperty("WebkitBoxFlex", "1");
+			this.setHeight("100%");
 		}
 	}
 
@@ -39,8 +43,6 @@ public class AdaptiveScrollPanel extends PanelBase implements IScrollPanel {
 	public void onLoad() {
 		super.onLoad();
 		createScrollPanelIfNeeded();
-		((PanelBase) realPanel).getElement().getStyle().setHeight(
-				this.getElement().getOffsetHeight() - 50, Style.Unit.PX);
 	}
 
 	@Override
