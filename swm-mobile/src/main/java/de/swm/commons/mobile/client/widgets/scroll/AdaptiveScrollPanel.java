@@ -24,7 +24,7 @@ public class AdaptiveScrollPanel extends PanelBase implements IScrollPanel {
 
 	private void createScrollPanelIfNeeded() {
 		if (this.realPanel == null) {
-			if (SWMMobile.getOsDetection().isDesktop()) {
+			if (SWMMobile.getOsDetection().isIOs()) {
 				ScrollPanelWithScrollbar scrollPanelWithScrollbar = new ScrollPanelWithScrollbar();
 				this.getElement().getStyle().setProperty("display", "-webkit-box");
 				this.realPanel = scrollPanelWithScrollbar;
