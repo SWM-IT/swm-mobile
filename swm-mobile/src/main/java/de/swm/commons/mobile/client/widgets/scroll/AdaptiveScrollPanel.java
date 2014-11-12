@@ -23,19 +23,21 @@ public class AdaptiveScrollPanel extends PanelBase implements IScrollPanel {
 	private IScrollPanel realPanel;
 
 	private void createScrollPanelIfNeeded() {
-		if (SWMMobile.getOsDetection().isIOs()) {
-			ScrollPanelWithScrollbar scrollPanelWithScrollbar = new ScrollPanelWithScrollbar();
-			this.getElement().getStyle().setProperty("display", "-webkit-box");
-			this.realPanel = scrollPanelWithScrollbar;
-		} else {
-			SimpleScrollPanel scrollPanel = new SimpleScrollPanel();
-			scrollPanel.getElement().getStyle().setOverflowY(Style.Overflow.HIDDEN);
-			this.getElement().getStyle().setOverflowY(Style.Overflow.SCROLL);
-			this.realPanel = scrollPanel;
+		if (this.realPanel == null) {
+			if (SWMMobile.getOsDetection().isDesktop()) {
+				ScrollPanelWithScrollbar scrollPanelWithScrollbar = new ScrollPanelWithScrollbar();
+				this.getElement().getStyle().setProperty("display", "-webkit-box");
+				this.realPanel = scrollPanelWithScrollbar;
+			} else {
+				SimpleScrollPanel scrollPanel = new SimpleScrollPanel();
+				scrollPanel.getElement().getStyle().setOverflowY(Style.Overflow.HIDDEN);
+				this.getElement().getStyle().setOverflowY(Style.Overflow.SCROLL);
+				this.realPanel = scrollPanel;
+			}
+			super.add((PanelBase) realPanel);
+			this.getElement().getStyle().setProperty("WebkitBoxFlex", "1");
+			this.setHeight("100%");
 		}
-		super.add((PanelBase) realPanel);
-		this.getElement().getStyle().setProperty("WebkitBoxFlex", "1");
-		this.setHeight("100%");
 	}
 
 	@Override
