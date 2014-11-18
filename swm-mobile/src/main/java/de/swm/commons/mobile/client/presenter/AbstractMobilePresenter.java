@@ -172,6 +172,10 @@ public abstract class AbstractMobilePresenter implements IMobilePresenter {
 	 */
 	@Override
 	public void gotoPage(final IPage originator, final IPageWithoutHeader targetView) {
+		//Otherwise we get an exception
+		if(targetView != null && targetView.equals(originator)){
+			return;
+		}
 		if(transitionsFromMainViewDisabled) {
 			gotoPage(originator, targetView, !(originator instanceof IMainView), null, null);
 		} else {
@@ -192,6 +196,10 @@ public abstract class AbstractMobilePresenter implements IMobilePresenter {
 	@Override
 	public void gotoPage(final IPage originator, final IPageWithoutHeader targetView, boolean automaticTransition,
 						 Transition transition, Direction transitionDirection) {
+		//Otherwise we get an exception
+		if(targetView != null && targetView.equals(originator)){
+			return;
+		}
 		isVisible = true;
 		PresenterController.get().setActivePresenter(this, targetView);
 		//if a page is shown but next transisition event is used with wrong originator
