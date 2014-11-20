@@ -151,8 +151,7 @@ public class SimpleDatePopup extends SimplePopup {
 		mainPanel.add(dateTimeSelectionCaption);
 		dateTimeSelectionCaption.setVisible(false);
 
-		if (SWMMobile.getOsDetection().isIOs() && (SWMMobile.getOsDetection().isIOS5() || SWMMobile.getOsDetection()
-				.isIOS6())) {
+		if (SWMMobile.getOsDetection().isIOs()) {
 			renderIOS5DateBox(givenDate, dateStyle);
 		} else {
 			renderDateBox(dateStyle);
@@ -277,7 +276,7 @@ public class SimpleDatePopup extends SimplePopup {
 
 		dateInput.focus();
 		dateTextBox = TextBox.wrap(dateInput);
-		dateTextBox.setSize("95%", "20px");
+		dateTextBox.setSize("95%", "40px");
 
 		dateTextBox.setValue(dateCalc.formatToRfc3339(givenDate, dateStyle, true));
 		// TODO: on value change, call clearRelativeTime() (special handling necessary)
