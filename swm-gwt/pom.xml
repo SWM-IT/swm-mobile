@@ -3,12 +3,12 @@
     <parent>
         <groupId>de.swm</groupId>
         <artifactId>swm-mobile-base</artifactId>
-        <version>2.4-SNAPSHOT</version>
+        <version>2.5-SNAPSHOT</version>
     </parent>
 
     <groupId>de.swm</groupId>
     <artifactId>swm-gwt-client</artifactId>
-    <version>2.4-SNAPSHOT</version>
+    <version>2.5-SNAPSHOT</version>
 
     <!-- lesbare Namen u. Beschreibung fuer nicht computer (Menschen). -->
     <packaging>jar</packaging>
