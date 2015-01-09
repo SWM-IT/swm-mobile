@@ -8,7 +8,7 @@ import com.google.gwt.user.cellview.client.DataGrid;
  * @author GwtBootstrap3, Marko Krajnc <br>
  *         copyright (C) 2013-14, GwtBootstrap3
  */
-public class BootstrapStyleAdapter  implements DataGrid.Style {
+public class BootstrapStyleAdapter implements DataGrid.Style {
 	private static final String B = "gwtb3-";
 	private static final String DUMMY = B + "d";
 
