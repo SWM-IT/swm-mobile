@@ -23,6 +23,8 @@ import java.util.Iterator;
  */
 public class NotificationBox extends Composite implements HasWidgets, IsSWMMobileWidget {
 
+    public static NotificationBox HIGH_LANDER;
+
 	private static final int DEFAULT_DELAY = 10;
 	private static final int FADE_IN_AFTER_MS = 1000;
 	private static final int FADE_OUT_AFTER_MS = 5000;
@@ -255,10 +257,15 @@ public class NotificationBox extends Composite implements HasWidgets, IsSWMMobil
 	 */
 	public static void showPopupDialog(final HasWidgets containerForThisWidget, final int fadeInAfter,
 			final int fadeOutAfter, final boolean showCloseButton, final String... messages) {
-		new Timer() {
+		if (HIGH_LANDER != null) {
+            HIGH_LANDER.fadeOut(containerForThisWidget);
+        }
+
+        new Timer() {
 			@Override
 			public void run() {
 				final NotificationBox popinDialog = new NotificationBox();
+                HIGH_LANDER = popinDialog;
 				popinDialog.showCloseButton(showCloseButton, containerForThisWidget);
 				for (String message : messages) {
 					popinDialog.add(new Label(message));
