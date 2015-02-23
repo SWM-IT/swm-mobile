@@ -3,8 +3,13 @@
 }
 
 .flex > div {
-	display: table !important;
-	width: 95%;
+    display: table;
+    width: 100%;
+}
+
+.listPanel.flex > div {
+    display: table;
+    width: 100%;
 }
 
 .flex > div > * {
