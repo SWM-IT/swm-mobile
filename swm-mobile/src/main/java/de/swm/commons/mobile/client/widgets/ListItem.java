@@ -31,6 +31,8 @@ public class ListItem extends FlowPanel {
 
 	private final ShimClickHandler shimClickHandler = new ShimClickHandler();
 
+	private ListPanel.Chevron arrow;
+
 	/**
 	 * Arrow visibility.
 	 */
@@ -86,10 +88,12 @@ public class ListItem extends FlowPanel {
 			if (widget != null && widget instanceof ListPanel.Chevron) {
 				if (!show) {
 					remove(last);
+					arrow = null;
 				}
 			} else {
 				if (show) {
-					add(new ListPanel.Chevron());
+					arrow = new ListPanel.Chevron();
+					add(arrow);
 				}
 			}
 		}
@@ -114,6 +118,16 @@ public class ListItem extends FlowPanel {
 
 	public boolean getDisabled() {
 		return myDisabled;
+	}
+
+
+	/**
+	 * Returns the arrow widget.
+	 *
+	 * @return arrow widget
+	 */
+	protected Widget getArrow() {
+		return arrow;
 	}
 
 
