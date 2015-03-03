@@ -35,6 +35,7 @@ import de.swm.commons.mobile.client.utils.Utils;
 public class ListPanel extends PanelBase implements ClickHandler, DragEventsHandler {
 
 	private static final int DRAG_DELAY = 75;
+	private static final int DRAG_MOVE_DELAY = 1000;
 	private boolean myShowArrow;
 	protected int mySelected = -1; // allow access in derived classes
 	private boolean mySelectable = true;
@@ -211,7 +212,13 @@ public class ListPanel extends PanelBase implements ClickHandler, DragEventsHand
 	public void onDragMove(DragEvent e) {
 		if (mySelected >= 0) {
 			getWidget(mySelected).removeStyleName(SWMMobile.getTheme().getMGWTCssBundle().getListPanelCss().pressed());
-			mySelected = -1;
+			final Timer timer = new Timer() {
+				@Override
+				public void run() {
+					mySelected = -1;
+				}
+			};
+			timer.schedule(DRAG_MOVE_DELAY);
 		}
 	}
 
