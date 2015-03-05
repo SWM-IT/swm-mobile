@@ -23,6 +23,9 @@ import java.util.Iterator;
  */
 public class NotificationBox extends Composite implements HasWidgets, IsSWMMobileWidget {
 
+    /**
+     * There should only be one NotificationBox!
+     */
     public static NotificationBox HIGH_LANDER;
 
 	private static final int DEFAULT_DELAY = 10;
@@ -197,35 +200,35 @@ public class NotificationBox extends Composite implements HasWidgets, IsSWMMobil
 	public void onTransitionEnd() {
 	}
 
-	/**
-	 * Will set the secondary style.
-	 *
-	 * @param style the style to set.
-	 */
-	@Override
-	public void setSecondaryStyle(String style) {
-		myWidgetHelper.setSecondaryStyle(this, style);
-	}
+    /**
+     * Will set the secondary style.
+     *
+     * @param style the style to set.
+     */
+    @Override
+    public void setSecondaryStyle(String style) {
+        myWidgetHelper.setSecondaryStyle(this, style);
+    }
 
-	/**
-	 * Defines if the notificationbox should have a close button or not.
-	 * @param show .
-	 * @param containerForThisWidget .
-	 */
-	public void showCloseButton(boolean show, final HasWidgets containerForThisWidget) {
-		this.closeButton.setVisible(show);
-		if (show) {
-			closeButton.addClickHandler(new ClickHandler() {
-				@Override
-				public void onClick(ClickEvent clickEvent) {
-					fadeOut(containerForThisWidget);
-				}
-			});
-		}
-	}
+    /**
+     * Defines if the notificationbox should have a close button or not.
+     * @param show .
+     * @param containerForThisWidget .
+     */
+    public void showCloseButton(boolean show, final HasWidgets containerForThisWidget) {
+        this.closeButton.setVisible(show);
+        if (show) {
+            closeButton.addClickHandler(new ClickHandler() {
+                @Override
+                public void onClick(ClickEvent clickEvent) {
+                    fadeOut(containerForThisWidget);
+                }
+            });
+        }
+    }
 
 
-	/**
+    /**
 	 * Will dispay a notification for 5 seconds and hide it again.
 	 * @param containerForThisWidget the container (may outer HTML pannel of a Page)
 	 * @param messages messages to display
