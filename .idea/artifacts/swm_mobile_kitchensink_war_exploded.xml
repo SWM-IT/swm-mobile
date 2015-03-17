@@ -8,10 +8,10 @@
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="Maven: com.google.gwt:gwt-servlet:2.6.1" />
-          <element id="archive" name="swm-mobile-2.5.jar">
+          <element id="archive" name="swm-mobile-2.6-SNAPSHOT.jar">
             <element id="module-output" name="swm-mobile" />
           </element>
-          <element id="archive" name="swm-gwt-client-2.5.jar">
+          <element id="archive" name="swm-gwt-client-2.6-SNAPSHOT.jar">
             <element id="module-output" name="swm-gwt-client" />
           </element>
           <element id="library" level="project" name="Maven: javax.validation:validation-api:1.0.0.GA" />
