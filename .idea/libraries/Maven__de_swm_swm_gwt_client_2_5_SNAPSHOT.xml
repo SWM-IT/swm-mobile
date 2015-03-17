@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: de.swm:swm-gwt-client:2.5-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/swm-gwt/pom.xml!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/swm-gwt/swm-gwt-client-2.5-SNAPSHOT-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/swm-gwt/swm-gwt-client-2.5-SNAPSHOT-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
