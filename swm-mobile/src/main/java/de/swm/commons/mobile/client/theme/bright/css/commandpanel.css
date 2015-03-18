@@ -30,6 +30,7 @@
 /** CommandItem **/
 .commandPanel > div > .gwt-Label {
     text-align: center;
+	display: table-caption;
 }
 
 /** CommandItem wenn es gedrückt wird **/
