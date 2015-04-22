@@ -27,11 +27,13 @@ public class AdaptiveScrollPanel extends PanelBase implements IScrollPanel {
 			if (SWMMobile.getOsDetection().isIOs()) {
 				ScrollPanelWithScrollbar scrollPanelWithScrollbar = new ScrollPanelWithScrollbar();
 				this.getElement().getStyle().setProperty("display", "-webkit-box");
+				this.getElement().getStyle().setOverflowX(Style.Overflow.HIDDEN);
 				this.realPanel = scrollPanelWithScrollbar;
 			} else {
 				SimpleScrollPanel scrollPanel = new SimpleScrollPanel();
-				scrollPanel.getElement().getStyle().setOverflowY(Style.Overflow.HIDDEN);
+				scrollPanel.getElement().getStyle().setOverflow(Style.Overflow.HIDDEN);
 				this.getElement().getStyle().setOverflowY(Style.Overflow.SCROLL);
+				this.getElement().getStyle().setOverflowX(Style.Overflow.HIDDEN);
 				this.realPanel = scrollPanel;
 			}
 			super.add((PanelBase) realPanel);
@@ -39,6 +41,7 @@ public class AdaptiveScrollPanel extends PanelBase implements IScrollPanel {
 			this.setHeight("100%");
 		}
 	}
+
 
 	@Override
 	public void onLoad() {
