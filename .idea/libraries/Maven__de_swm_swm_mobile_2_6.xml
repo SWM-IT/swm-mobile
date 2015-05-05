@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Maven: de.swm:swm-mobile:2.6">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/de/swm/swm-mobile/2.6/swm-mobile-2.6.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/swm-mobile/swm-mobile-2.6-javadoc.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/de/swm/swm-mobile/2.6/swm-mobile-2.6-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/swm-mobile/swm-mobile-2.6-sources.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/de/swm/swm-mobile/2.6/swm-mobile-2.6-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
