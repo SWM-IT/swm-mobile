@@ -32,8 +32,8 @@
     <bytecodeTargetLevel>
       <module name="swm-gwt-client" target="1.7" />
       <module name="swm-mobile" target="1.7" />
+      <module name="swm-mobile-base" target="1.5" />
       <module name="swm-mobile-kitchensink" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>
-
