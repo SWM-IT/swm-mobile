@@ -100,14 +100,12 @@
 
 .checkBoxGroup.vertical > span:first-child,
 .radioButtonGroup.vertical > span:first-child {
-	border-bottom-left-radius: 0;
 	border-top-right-radius: 0.4em 0.4em;
 }
 
 .checkBoxGroup.vertical > span:last-child,
 .radioButtonGroup.vertical > span:last-child {
 	border-bottom-left-radius: 0.4em 0.4em;
-	border-top-right-radius: 0;
 }
 
 /* android radius antialias workaround */
