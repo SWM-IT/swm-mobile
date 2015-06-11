@@ -4,6 +4,7 @@ target
 
 #intelij
 workspace.xml
+.idea
 
 # Package Files #
 *.war
