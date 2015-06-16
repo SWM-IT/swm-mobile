@@ -17,6 +17,7 @@ package de.swm.commons.mobile.client.widgets.progressbar;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.core.client.RunAsyncCallback;
+import com.google.gwt.resources.client.ImageResource;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.rpc.IncompatibleRemoteServiceException;
 import com.google.gwt.user.client.rpc.InvocationException;
@@ -72,12 +73,19 @@ public class MobileProgressBar implements IProgressBarNoCancelWaitDialog {
 	/**
 	 * Sets the subtitle that is shown inside the loading indicator popup.
 	 * 
-	 * @param loadingText
+	 * @param loadingSubtitleText
 	 */
 	public void setLoadingSubtitleText(String loadingSubtitleText) {
 		this.loadingPanel.setLoadingSubtitleText(loadingSubtitleText);
 	}
 
+	/**
+	 * Sets the loading indicator image inside the loading indicator popup.
+	 * @param imageResource
+	 */
+	public void setLoadingImage(ImageResource imageResource) {
+		this.loadingPanel.setLoadingImage(imageResource);
+	}
 
 	/**
 	 * Zeigt den Wartebalken an.
