@@ -22,6 +22,7 @@ import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.PopupPanel;
+import com.google.gwt.user.client.ui.Widget;
 import de.swm.commons.mobile.client.SWMMobile;
 
 
@@ -36,7 +37,6 @@ public class LoadingIndicatorPopup extends PopupPanel {
 	private final Label loadingLabel;
 	private final Label loadingSubLabel;
 	private ImageResource loadingImage = SWMMobile.getTheme().getMGWTImageBundle().loading();
-
 
 	/**
 	 * Default constructor.
@@ -154,7 +154,21 @@ public class LoadingIndicatorPopup extends PopupPanel {
 	}
 
 
+	/**
+	 * Sets the loading image.
+	 *
+	 * @param loadingImage the image to set.
+	 */
 	public void setLoadingImage(ImageResource loadingImage) {
 		this.loadingImage = loadingImage;
+		VerticalPanel vPanel = (VerticalPanel) this.getWidget();
+		HorizontalPanel imagePanel = (HorizontalPanel) vPanel.getWidget(0);
+
+		// remove current image
+		imagePanel.clear();
+
+		// set the new image
+		Image image = new Image(loadingImage);
+		imagePanel.add(image);
 	}
 }
