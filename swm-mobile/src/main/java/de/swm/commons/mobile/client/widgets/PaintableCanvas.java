@@ -208,6 +208,13 @@ public class PaintableCanvas extends Widget implements DragEventsHandler {
 			}
 		});
 
+		addImageToRootPanel(image);
+	}
+
+	private void addImageToRootPanel(Image image) {
+		// This prevents Google Chrome from throwing a CORS security exception.
+		image.getElement().setAttribute("crossOrigin", "anonymous");
+
 		// Force the image to be loaded. This is probably one of the dirtiest things
 		// i have ever done in HTML/Javascript/GWT. FK
 		RootPanel.get().add(image);
@@ -232,8 +239,6 @@ public class PaintableCanvas extends Widget implements DragEventsHandler {
 			}
 		});
 
-		// Force the image to be loaded. This is probably one of the dirtiest things
-		// i have ever done in HTML/Javascript/GWT. FK
-		RootPanel.get().add(image);
+		addImageToRootPanel(image);
 	}
 }
