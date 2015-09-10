@@ -538,7 +538,7 @@ public abstract class AbstractMobilePresenter implements IMobilePresenter {
 	 * @param spinnerStarted spinner is started
 	 * @return the loading indicator.
 	 */
-	private LoadingIndicatorPopup startPopup(final ISpinnerStarted spinnerStarted) {
+	protected LoadingIndicatorPopup startPopup(final ISpinnerStarted spinnerStarted) {
 		spinner.showCentered(true);
 		final Timer timer = new Timer() {
 
@@ -555,7 +555,7 @@ public abstract class AbstractMobilePresenter implements IMobilePresenter {
 	/**
 	 * Will hide a loading indicator popup.
 	 */
-	private void stopSpinnerIfRunning() {
+	protected void stopSpinnerIfRunning() {
 		if(isSpinnerStarted) {
 			isSpinnerStarted = false;
 			spinner.setVisible(false);
