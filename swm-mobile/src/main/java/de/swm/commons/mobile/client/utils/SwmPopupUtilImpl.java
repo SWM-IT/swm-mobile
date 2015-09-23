@@ -100,6 +100,9 @@ public class SwmPopupUtilImpl implements ISwmPopupUtil {
 		Collections.sort(buttonDesciptors);
 
 		HorizontalPanel hp = new HorizontalPanel();
+		hp.getElement().getStyle().setProperty("display", "flex");
+		hp.getElement().getStyle().setProperty("justifyContent", "center");
+		hp.getElement().getStyle().setMarginTop(1.0, Style.Unit.EM);
 		final CommandPopup commandPopup = new CommandPopup(header, this.images.information(),
 				getWidgetArray(textlabels, hp));
 
