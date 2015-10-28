@@ -3,11 +3,11 @@
     <parent>
         <groupId>de.swm</groupId>
         <artifactId>swm-mobile-base</artifactId>
-        <version>3.0</version>
+        <version>3.1-SNAPSHOT</version>
     </parent>
 
     <artifactId>swm-gwt-client</artifactId>
-    <version>3.0</version>
+    <version>3.1-SNAPSHOT</version>
 
     <!-- lesbare Namen u. Beschreibung fuer nicht computer (Menschen). -->
     <packaging>jar</packaging>
